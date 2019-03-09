@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Alerta de cambio de IP en terminal MacOSX"
-date:   2019-02-16 17:09:20 -0600
+date:   2019-03-09 11:45:20 -0600
 categories: ["terminal", "macosx", "programación"]
 ---
 
