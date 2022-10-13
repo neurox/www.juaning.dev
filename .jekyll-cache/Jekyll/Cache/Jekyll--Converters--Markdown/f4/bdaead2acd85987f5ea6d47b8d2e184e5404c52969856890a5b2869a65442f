@@ -1,0 +1,25 @@
+I"�<p>Esta semana estuve algo ocupado poniendome al tanto con mi equipo de trabajo, hay que acceder a servidores remotamente por lo que es muy importante saber siempre que sigo teniendo la misma ip publica, no tengo servicio de ip fija con mi proveedor de internet así que buscaba algo sencillo que me pudiera notificar si mi ip cambia.</p>
+
+<p>Así que me puse a investigar cual seria la mejor manera, en mi trabajo utilizo bastante la terminal de línea de comandos así que un pequeño mensaje a la hora de abrir una ventana de terminal seria muy util.</p>
+
+<p>Primero ejecutamos el siguiente comando para saber nuestra ip pública:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>dig @resolver1.opendns.com ANY myip.opendns.com +short
+</code></pre></div></div>
+
+<p>A continuación vamos a abrir el archivo .bash_profile que debe de estar en la raíz de tu usuario, ejemplo: /Users/tu_nombre_de_usuario/.bash_profile</p>
+
+<p>Se agrega el siguiente código, de preferencia hasta abajo, después de todo lo que ya tengas escrito en ese archivo.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nv">ip</span><span class="o">=</span><span class="s2">"</span><span class="si">$(</span>dig @resolver1.opendns.com ANY myip.opendns.com +short<span class="si">)</span><span class="s2">"</span>
+
+<span class="k">if</span> <span class="o">[[</span> <span class="s2">"</span><span class="nv">$ip</span><span class="s2">"</span> <span class="o">==</span> <span class="s2">"tu_ip_publica"</span> <span class="o">]]</span> <span class="p">;</span> <span class="k">then
+else
+    </span><span class="nb">echo</span> <span class="s2">"</span><span class="se">\0</span><span class="s2">33[0;31mLa IP publica cambio a </span><span class="nv">$ip</span><span class="s2">"</span>
+<span class="k">fi</span>
+
+</code></pre></div></div>
+
+<p>Así es, lo único que hacemos es comparar la ip que tenemos actualmente con la ip que devuelva el comando, siempre que abramos una ventana de la terminal, si esta cambia nos mostrará un texto rojo con la nueva ip para poder modificar el código y avisar al administrador del servidor.</p>
+:ET

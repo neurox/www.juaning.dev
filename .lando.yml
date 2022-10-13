@@ -1,0 +1,20 @@
+name: blog.ingomez
+services:
+  defaults:
+    type: ruby
+    build:
+      - gem install jekyll bundler jekyll-paginate
+    command: ruby /app/server.rb
+  custom:
+    type: ruby:2.6
+    port: 8080
+    command: ruby /app/server-custom.rb
+  patch:
+    type: ruby:2.5.3
+  cli:
+    type: ruby
+
+# This is important because it lets lando know to test against the plugin in this repo
+# DO NOT REMOVE THIS!
+plugins:
+  "@lando/ruby": ./../../

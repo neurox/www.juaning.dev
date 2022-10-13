@@ -1,0 +1,21 @@
+languages:
+- language:
+    name: "es"
+    route: /
+    links:
+    - data:
+        title: "Sobre"
+        url: /sobre
+    - data:
+        title: "Archivos"
+        url: /archivos
+- language:
+    name: "en"
+    route: "/en"
+    links:
+    - data:
+        title: "About"
+        url: /about
+    - data:
+        title: "Archives"
+        url: /archives

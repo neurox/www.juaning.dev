@@ -6,9 +6,9 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Neurox
+title: Neurox's Blogs
 email: juanjose@ingomez.com
-author: Juan Gómez
+author: Neurox Gómez
 description: Programación, Electrónica y Videojuegos
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://neurox.github.io" # the base hostname & protocol for your site
@@ -16,7 +16,26 @@ twitter_username: juan_ingomez
 github_username:  neurox
 paginate: 5
 theme-dark: false #Set to true to change to dark website theme
+permalink: /:year/:month/:title:output_ext
 
-plugins: [jekyll-paginate, kramdown]
+pages: [
+  "home",
+  "blog"
+]
+
+plugins: [
+  jekyll-polyglot,
+  jekyll-paginate,
+  kramdown
+]
+
 # Build settings
 markdown: kramdown
+
+languages: ["es", "en"]
+default_lang: "es"
+exclude_from_localization: ["assets/css", "assets/img"]
+parallel_localization: true
+
+sass:
+  sourcemap: never

@@ -3,6 +3,7 @@ layout: post
 title:  "Alerta de cambio de IP en terminal MacOSX"
 date:   2019-03-09 11:45:20 -0600
 categories: ["terminal", "macosx", "programación"]
+lang: es
 ---
 
 Esta semana estuve algo ocupado poniendome al tanto con mi equipo de trabajo, hay que acceder a servidores remotamente por lo que es muy importante saber siempre que sigo teniendo la misma ip publica, no tengo servicio de ip fija con mi proveedor de internet así que buscaba algo sencillo que me pudiera notificar si mi ip cambia.

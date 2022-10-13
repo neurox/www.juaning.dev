@@ -1,0 +1,15 @@
+languages:
+  es:
+    value: Español
+    slug: es
+  en:
+    value: English
+    slug: en
+
+back:
+  es: Ir Arriba
+  en: Back to the Top
+
+top:
+  es: Arriba
+  en: Top

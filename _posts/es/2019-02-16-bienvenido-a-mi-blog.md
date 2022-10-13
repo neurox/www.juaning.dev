@@ -3,6 +3,7 @@ layout: post
 title:  "Bienvenido a mi Blog"
 date:   2019-02-16 17:09:20 -0600
 categories: ["programación", "electrónica", "videojuegos"]
+lang: es
 ---
 
 Hola, primero que nada explico porque esta mezcla de temas(programación, electrónica y videojuegos), pues resulta que son mis mayores pasiones y no estoy seguro de cual sea la mayor de todas.

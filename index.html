@@ -1,11 +1,14 @@
 ---
-layout: default
+layout: page
+permalink: /
+lang: es
 ---
 
 <div class="home">
 
+  <h1>Hola Mundo!</h1>
 
-  {% for post in paginator.posts%}
+  <!-- {% for post in paginator.posts%}
   <div class="post postContent">
     <div  class="postDate"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time>
     </div>
@@ -21,8 +24,9 @@ layout: default
     </div>
   </div>
 
-  {% endfor %}
-  {% if paginator.total_pages > 1 %}
+  {% endfor %} -->
+
+  <!-- {% if paginator.total_pages > 1 %}
     <nav class="pagination">
       {% if paginator.previous_page %}
         <a class="paginationLink" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
@@ -42,7 +46,8 @@ layout: default
       <a class="paginationLink" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
     {% endif %}
     </nav>
-  {% endif %}
+  {% endif %} -->
+
   <!--<ul class="post-list">
     {% for post in site.posts %}
       <li>
@@ -54,7 +59,5 @@ layout: default
       </li>
     {% endfor %}
   </ul>-->
-
-
 
 </div>
