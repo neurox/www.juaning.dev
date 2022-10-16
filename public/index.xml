@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>INGOMEZ</title>
-    <link>/</link>
+    <link>//localhost:1313/</link>
     <description>Recent content on INGOMEZ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>INGOMEZ</copyright><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>INGOMEZ</copyright><atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
