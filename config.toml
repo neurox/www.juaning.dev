@@ -1,0 +1,44 @@
+baseURL = 'https://neurox.github.io/'
+languageCode = 'en-us'
+title = 'INGOMEZ'
+theme = 'cactus'
+googleAnalytics = 'UA-123915805-1'
+disqusShortname = 'ingomez'
+copyright = 'INGOMEZ'
+publishDir = 'site'
+
+[params]
+  colortheme = 'dark'
+  rss = true
+  description = 'Fullstack Web Devlopment | SysOps | Electronics | Videogames'
+  mainSection = 'posts'
+  mainSectionTitle = 'Blog'
+  showAllPostsOnHomePage = false
+  postsOnHomePage = 5
+  css = ['css/custom.css']
+
+[params.comments]
+  enabled = true
+
+[[menu.main]]
+  name = 'Home'
+  url = '/'
+  weight = 1
+
+[[menu.main]]
+name = 'About'
+url = '/about'
+weight = 2
+
+[[menu.main]]
+name = 'Blog'
+url = '/posts'
+weight = 3
+
+[[params.social]]
+  name = 'github'
+  link = 'https://github.com/neurox'
+
+[[params.social]]
+  name = 'linkedin'
+  link = 'https://www.linkedin.com/in/juanjose-ingomez/'
