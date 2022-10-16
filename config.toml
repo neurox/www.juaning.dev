@@ -5,7 +5,7 @@ theme = 'cactus'
 googleAnalytics = 'UA-123915805-1'
 disqusShortname = 'ingomez'
 copyright = 'INGOMEZ'
-publishDir = 'site'
+publishDir = 'docs'
 
 [params]
   colortheme = 'dark'
