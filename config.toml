@@ -1,4 +1,4 @@
-baseURL = 'https://neurox.github.io/'
+baseURL = 'https://www.ingomez.com/'
 languageCode = 'en-us'
 title = 'INGOMEZ'
 theme = 'cactus'
@@ -10,7 +10,7 @@ publishDir = 'docs'
 [params]
   colortheme = 'dark'
   rss = true
-  description = 'Fullstack Web Devlopment | SysOps | Electronics | Videogames'
+  description = 'Fullstack Web Development | SysOps | Electronics | Videogames'
   mainSection = 'posts'
   mainSectionTitle = 'Blog'
   showAllPostsOnHomePage = false
