@@ -3,9 +3,13 @@
   <channel>
     <title>INGOMEZ</title>
     <link>/</link>
-    <description>Recent content on INGOMEZ</description>
+    <description>INGOMEZ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>INGOMEZ</copyright><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>INGOMEZ</copyright>
+    
+    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
   </channel>
 </rss>

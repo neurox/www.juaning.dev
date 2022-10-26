@@ -1,3 +1,9 @@
 [submodule "themes/cactus"]
   path = themes/cactus
   url = https://github.com/monkeyWzr/hugo-theme-cactus.git
+[submodule "themes/hugo-theme-cleanwhite"]
+	path = themes/hugo-theme-cleanwhite
+	url = https://github.com/zhaohuabing/hugo-theme-cleanwhite.git
+[submodule "themes/anubis"]
+	path = themes/anubis
+	url = https://github.com/mitrichius/hugo-theme-anubis.git
