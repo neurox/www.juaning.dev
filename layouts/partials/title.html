@@ -1,0 +1,5 @@
+{{ if .Params.seoTitle }}
+  <title>{{ if and (.Params.seoTitle) (not .IsHome) }}{{ .Params.seoTitle }} | {{ end }}{{ .Site.Title }}</title>
+{{ else }}
+  <title>{{ if and (.Title) (not .IsHome) }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+{{ end }}

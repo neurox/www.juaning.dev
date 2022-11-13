@@ -1,20 +1,21 @@
-languageCode: 'en-us'
+languageCode: 'en-US'
 defaultContentLanguage: 'en'
 baseURL: ''
-title: 'INGOMEZ'
+title: 'JUANING.dev'
 theme: 'anubis'
 paginate: 10
 googleAnalytics: 'UA-123915805-1'
-disqusShortname: 'ingomez'
-copyright: 'INGOMEZ'
+disqusShortname: 'juaning'
+copyright: 'JUANING'
 publishDir: 'docs'
 enableRobotsTXT: true
 
 params:
+  title: 'JUANING'
   author: 'Juan Gómez'
   email: juanjose@ingomez.com
   #avatar:
-  dateFormat: '2022-12-31'
+  #dateFormat: '2022-12-31'
   paginationSinglePost: true
   style: dark-without-switcher
   readMore: true
@@ -31,26 +32,48 @@ languages:
     languageName: 'English'
     menu:
       main:
-        - identifier: blog
-          name: Blog
-          title: Blog
-          url: /blog/
-          weight: 0
+        - identifier: home
+          name: Home
+          title: Homepage
+          url: /
+          weight: -1
+        - identifier: about
+          name: About
+          title: About me
+          url: /about/
+          weight: 1
+        # - identifier: contact
+        #   name: Contact
+        #   title: Contact me
+        #   url: /contact/
+        #   weight: 2
     params:
       description: 'Fullstack Web Development | SysOps | Electronics | Videogames'
-      locale: 'en-us'
+      locale: 'en-US'
+    weight: 1
   es:
     languageName: 'Spanish'
     menu:
       main:
-        - identifier: blog
-          name: Blog
-          title: Blog
-          url: /blog/
-          weight: 0
+        - identifier: inicio
+          name: Inicio
+          title: Pagina de inicio
+          url: /
+          weight: -1
+        - identifier: acerca
+          name: Acerca
+          title: Acerca de mí
+          url: /acerca/
+          weight: 1
+        # - identifier: contacto
+        #   name: Contacto
+        #   title: Contáctame
+        #   url: /contacto/
+        #   weight: 2
     params:
       description: 'Desarrollo Web Fullstack | SysOps | Electrónica | Videojuegos'
-      locale: 'es-mx'
+      locale: 'es-MX'
+    weight: 2
 
 markup:
   goldmark:

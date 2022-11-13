@@ -1,0 +1,26 @@
+<article class="post-list h-feed">
+  <div class="post-header">
+    <header>
+      <h2 class="p-name post-title{{ if .Params.draft }} draft{{end}}">
+        <a class="u-url" href="{{ .RelPermalink }}">{{ trim .Title " " }}</a>
+        {{ if .Params.favorite }}
+          {{ partial "font-awesome.html" (dict "iconName" "star-solid" "custom" false) }}
+        {{end}}
+      </h2>
+    </header>
+    {{ partial "post-language-switcher.html" . }}
+  </div>
+
+  {{ if not .Site.Params.disableSummary }}
+    <div class="content post-summary p-summary">
+      {{ .Summary | safeHTML }}
+    </div>
+  {{ end }}
+  {{ if and (.Truncated) (.Site.Params.readMore) }}
+    <div class="read-more">
+      <a class="u-url" href="{{ .RelPermalink }}">{{ i18n "readMore" }}</a>
+    </div>
+  {{ end }}
+
+  {{ partial "post-info.html" . }}
+</article>

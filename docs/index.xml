@@ -1,15 +1,72 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>INGOMEZ</title>
+    <title>Homepage on JUANING.dev</title>
     <link>/</link>
-    <description>INGOMEZ</description>
+    <description>JUANING.dev (Homepage)</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>INGOMEZ</copyright>
+    <language>en-US</language>
+    <copyright>JUANING</copyright>
     
     <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Contact me</title>
+      <link>/contact/</link>
+      <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/contact/</guid>
+      <description>&lt;form action=&#34;https://formcarry.com/s/niJEC0fcl&#34; method=&#34;POST&#34; accept-charset=&#34;UTF-8&#34;&gt;
+  &lt;input type=&#34;email&#34; name=&#34;email&#34;&gt;&lt;!-- use this to reply visitors and prevent spam --&gt;
+  &lt;input type=&#34;text&#34; name=&#34;firstName&#34;&gt;
+  &lt;input type=&#34;text&#34; name=&#34;lastName&#34;&gt;
+  &lt;input type=&#34;text&#34; name=&#34;anotherInput&#34;&gt;
+  &lt;input type=&#34;hidden&#34; name=&#34;_gotcha&#34;&gt;&lt;!-- use this to prevent spam --&gt;
+  &lt;input type=&#34;submit&#34;&gt;
+&lt;/form&gt;
+&lt;form action=&#34;https://airform.io/contact@juaning.dev&#34; method=&#34;post&#34;&gt;
+  &lt;input type=&#34;text&#34; name=&#34;name&#34; placeholder=&#34;Enter your name&#34;&gt;
+  &lt;textarea name=&#34;message&#34; placeholder=&#34;Enter your message&#34;&gt;&lt;/textarea&gt;
+  &lt;button&gt;Send&lt;/button&gt;
+&lt;/form&gt;
+&lt;form action=&#34;https://submit-form.com/kSzukXs0&#34;&gt;
+  &lt;label for=&#34;name&#34;&gt;Name&lt;/label&gt;
+  &lt;input type=&#34;text&#34; id=&#34;name&#34; name=&#34;name&#34; placeholder=&#34;Name&#34; required=&#34;&#34; /&gt;
+  &lt;label for=&#34;email&#34;&gt;Email&lt;/label&gt;
+  &lt;input type=&#34;email&#34; id=&#34;email&#34; name=&#34;email&#34; placeholder=&#34;Email&#34; required=&#34;&#34; /&gt;
+  &lt;label for=&#34;message&#34;&gt;Message&lt;/label&gt;
+  &lt;textarea
+    id=&#34;message&#34;
+    name=&#34;message&#34;
+    placeholder=&#34;Message&#34;
+    required=&#34;&#34;
+  &gt;&lt;/textarea&gt;
+  &lt;button type=&#34;submit&#34;&gt;Send&lt;/button&gt;
+&lt;/form&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>I&#39;m a full-stack developer with more than 6 years of experience and I&#39;m open to working part-time as a freelance programmer, coder</title>
+      <link>/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      <description>&lt;p&gt;Since the beginning of 2016, I&#39;ve been working continuously as a web developer full-time for different companies and as a freelance for different clients, currently, I&#39;m working full-time for D4ALL, a Mexican web development company specializing in Drupal, located in Tepic, Nayarit. México.&lt;/p&gt;
+&lt;h2&gt;Work experience as a programmer&lt;/h2&gt;
+&lt;p&gt;I have more than 6 years of experience in PHP, Javascript, MySQL, and CSS, more than 3 years working with C#, MS SQL, Net Framework 4.5 and Net Core, Drupal 7, 8, and 9, Amazon Web Services, Cloudflare, page speed load time optimization best practices, accessibility standards, and requirements.&lt;/p&gt;
+&lt;h3&gt;Programming languages&lt;/h3&gt;
+&lt;p&gt;PHP, C#, Javascript.&lt;/p&gt;
+&lt;h3&gt;CMS&#39;s&lt;/h3&gt;
+&lt;p&gt;Wordpress, Drupal, Umbraco.&lt;/p&gt;
+&lt;h2&gt;Why you should hire a freelance programmer for your project?&lt;/h2&gt;
+&lt;p&gt;I&#39;m the freelance programmer you need for your project because during the past years I&#39;ve been involved and sometimes in charge of significant projects for private and government entities from start to product launch as a developer, sysops, and as lead programmer.&lt;/p&gt;
+&lt;p&gt;An experienced freelancer  developer works with a given budget, and also optimizes the time coding with or without a given website design, also as a freelance developer it&#39;s level of adaptability is high, working alone or integrate with a developers team is not a problem.&lt;/p&gt;
+&lt;h2&gt;Hire programmers directly vs toptal, upwork, peopleperhour&lt;/h2&gt;
+&lt;p&gt;You don&#39;t have to wait for them to contact me and test my capabilities, I can talk with you directly and tell you my experience working with several technologies and real world projects, if you are a recruiter you can send me the project requirements.&lt;/p&gt;
+&lt;p&gt;I have proven experience in web development services, I&#39;m a good candidate if you&#39;re looking to hire a great freelance developer which will take care of all the best sites practices and accessibility standards to complete your web project.&lt;/p&gt;</description>
+    </item>
     
   </channel>
 </rss>
