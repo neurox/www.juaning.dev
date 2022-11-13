@@ -249,6 +249,7 @@ header nav a {
   height: 24px;
   display: inline-block;
   border-bottom: none;
+  position: relative;
 }
 
 .social-icons li {
@@ -271,10 +272,10 @@ header nav a {
   display: inline-block;
   height: 1.15rem;
   width: 1.15rem;
-  top: 0.15rem;
-  position: relative;
+  top: 50%;
+  position: absolute;
+  transform: translateY(-50%);
 }
-
 
 /* Pages */
 main h1 {
