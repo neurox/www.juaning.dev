@@ -1,6 +1,6 @@
 languageCode: 'en-US'
 defaultContentLanguage: 'en'
-baseURL: ''
+baseURL: 'https://www.juaning.dev'
 title: 'JUANING.dev'
 theme: 'anubis'
 paginate: 10

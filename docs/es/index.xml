@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JUANING.dev</title>
-    <link>/es/</link>
+    <link>https://www.juaning.dev/es/</link>
     <description>JUANING.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>JUANING</copyright>
     
-    <atom:link href="/es/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.juaning.dev/es/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Contáctame</title>
-      <link>/es/contacto/</link>
+      <link>https://www.juaning.dev/es/contacto/</link>
       <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/es/contacto/</guid>
+      <guid>https://www.juaning.dev/es/contacto/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Soy desarrollador full-stack con más de 6 años de experiencia y estoy abierto a trabajar a tiempo parcial como programador freelance, coder.</title>
-      <link>/es/acerca/</link>
+      <link>https://www.juaning.dev/es/acerca/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/es/acerca/</guid>
+      <guid>https://www.juaning.dev/es/acerca/</guid>
       <description>&lt;p&gt;Desde principios de 2016, he estado trabajando continuamente como desarrollador web de tiempo completo para diferentes empresas y como freelance para diferentes clientes, actualmente, estoy trabajando de tiempo completo para D4ALL, una empresa mexicana de desarrollo web especializada en Drupal, ubicada en Tepic, Nayarit. México.&lt;/p&gt;
 &lt;h2&gt;Experiencia laboral como programador&lt;/h2&gt;
 &lt;p&gt;Tengo más de 6 años de experiencia en PHP, Javascript, MySQL y CSS, más de 3 años trabajando con C#, MS SQL, Net Framework 4.5 y Net Core, Drupal 7, 8 y 9, Amazon Web Services, Cloudflare, mejores prácticas de optimización de tiempo de carga de páginas, estándares y requerimientos de accesibilidad.&lt;/p&gt;

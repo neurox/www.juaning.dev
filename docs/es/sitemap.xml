@@ -2,66 +2,66 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/es/contacto/</loc>
+    <loc>https://www.juaning.dev/es/contacto/</loc>
     <lastmod>2019-02-28T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/contact/"
+                href="https://www.juaning.dev/contact/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="/es/contacto/"
+                href="https://www.juaning.dev/es/contacto/"
                 />
   </url><url>
-    <loc>/es/</loc>
+    <loc>https://www.juaning.dev/es/</loc>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/"
+                href="https://www.juaning.dev/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="/es/"
+                href="https://www.juaning.dev/es/"
                 />
   </url><url>
-    <loc>/es/categories/</loc>
+    <loc>https://www.juaning.dev/es/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/categories/"
+                href="https://www.juaning.dev/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="/es/categories/"
+                href="https://www.juaning.dev/es/categories/"
                 />
   </url><url>
-    <loc>/es/acerca/</loc>
+    <loc>https://www.juaning.dev/es/acerca/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/about/"
+                href="https://www.juaning.dev/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="/es/acerca/"
+                href="https://www.juaning.dev/es/acerca/"
                 />
   </url><url>
-    <loc>/es/tags/</loc>
+    <loc>https://www.juaning.dev/es/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/tags/"
+                href="https://www.juaning.dev/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="/es/tags/"
+                href="https://www.juaning.dev/es/tags/"
                 />
   </url>
 </urlset>

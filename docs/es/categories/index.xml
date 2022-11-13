@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on JUANING.dev</title>
-    <link>/es/categories/</link>
+    <link>https://www.juaning.dev/es/categories/</link>
     <description>JUANING.dev (Categories)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>JUANING</copyright>
     
-    <atom:link href="/es/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.juaning.dev/es/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

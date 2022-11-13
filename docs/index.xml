@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Homepage on JUANING.dev</title>
-    <link>/</link>
+    <link>https://www.juaning.dev/</link>
     <description>JUANING.dev (Homepage)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>JUANING</copyright>
     
-    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.juaning.dev/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Contact me</title>
-      <link>/contact/</link>
+      <link>https://www.juaning.dev/contact/</link>
       <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/contact/</guid>
+      <guid>https://www.juaning.dev/contact/</guid>
       <description>&lt;form action=&#34;https://formcarry.com/s/niJEC0fcl&#34; method=&#34;POST&#34; accept-charset=&#34;UTF-8&#34;&gt;
   &lt;input type=&#34;email&#34; name=&#34;email&#34;&gt;&lt;!-- use this to reply visitors and prevent spam --&gt;
   &lt;input type=&#34;text&#34; name=&#34;firstName&#34;&gt;
@@ -49,10 +49,10 @@
     
     <item>
       <title>I&#39;m a full-stack developer with more than 6 years of experience and I&#39;m open to working part-time as a freelance programmer, coder</title>
-      <link>/about/</link>
+      <link>https://www.juaning.dev/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/about/</guid>
+      <guid>https://www.juaning.dev/about/</guid>
       <description>&lt;p&gt;Since the beginning of 2016, I&#39;ve been working continuously as a web developer full-time for different companies and as a freelance for different clients, currently, I&#39;m working full-time for D4ALL, a Mexican web development company specializing in Drupal, located in Tepic, Nayarit. México.&lt;/p&gt;
 &lt;h2&gt;Work experience as a programmer&lt;/h2&gt;
 &lt;p&gt;I have more than 6 years of experience in PHP, Javascript, MySQL, and CSS, more than 3 years working with C#, MS SQL, Net Framework 4.5 and Net Core, Drupal 7, 8, and 9, Amazon Web Services, Cloudflare, page speed load time optimization best practices, accessibility standards, and requirements.&lt;/p&gt;
