@@ -40,4 +40,4 @@ noComment: true
 <h2>Contratar programadores directamente vs toptal, upwork, peopleperhour</h2>
 <p>No tienes que esperar a que se pongan en contacto conmigo y comprueben mis capacidades, puedo hablar contigo directamente y contarte mi experiencia trabajando con varias tecnologías y proyectos del mundo real, si eres un reclutador puedes enviarme los requisitos del proyecto.</p>
 
-<p>Tengo experiencia probada en servicios de desarrollo web, si estás buscando contratar a un gran desarrollador freelance que se encargue de todas las mejores prácticas de sitios y estándares de accesibilidad para completar tu proyecto.</p>
+<p>Tengo experiencia probada en servicios de desarrollo web, soy un buen candidato si estás buscando contratar a un gran desarrollador freelance que se encargue de todas las mejores prácticas de sitios y estándares de accesibilidad para completar tu proyecto web.</p>
