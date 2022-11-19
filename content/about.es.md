@@ -2,8 +2,10 @@
 seoTitle: "Contratar programador freelance, 6+ años de experiencia"
 title: "Soy desarrollador full-stack con más de 6 años de experiencia y estoy abierto a trabajar a tiempo parcial como programador freelance, coder."
 description: "Soy un programador freelance full-stack, he estado trabajando para diferentes empresas y clientes en proyectos desde el día 0 hasta el lanzamiento a producción"
+date: "2022-11-12"
 slug: "acerca"
 noComment: true
+noDate: true
 # menu:
 #   subpage:
 #     identifier: about-subpage

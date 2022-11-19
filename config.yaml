@@ -15,7 +15,7 @@ params:
   author: 'Juan Gómez'
   email: juanjose@ingomez.com
   #avatar:
-  #dateFormat: '2022-12-31'
+  dateFormat: 'January 2, 2006'
   paginationSinglePost: true
   style: dark-without-switcher
   readMore: true
@@ -42,11 +42,11 @@ languages:
           title: About me
           url: /about/
           weight: 1
-        # - identifier: contact
-        #   name: Contact
-        #   title: Contact me
-        #   url: /contact/
-        #   weight: 2
+        - identifier: contact
+          name: Contact
+          title: Contact me
+          url: /contact/
+          weight: 2
     params:
       description: 'Fullstack Web Development | SysOps | Electronics | Videogames'
       locale: 'en-US'
@@ -65,11 +65,11 @@ languages:
           title: Acerca de mí
           url: /acerca/
           weight: 1
-        # - identifier: contacto
-        #   name: Contacto
-        #   title: Contáctame
-        #   url: /contacto/
-        #   weight: 2
+        - identifier: contacto
+          name: Contacto
+          title: Contáctame
+          url: /contacto/
+          weight: 2
     params:
       description: 'Desarrollo Web Fullstack | SysOps | Electrónica | Videojuegos'
       locale: 'es-MX'

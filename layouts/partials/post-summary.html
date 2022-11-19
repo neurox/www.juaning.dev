@@ -2,7 +2,7 @@
   <div class="post-header">
     <header>
       <h2 class="p-name post-title{{ if .Params.draft }} draft{{end}}">
-        <a class="u-url" href="{{ .RelPermalink }}">{{ trim .Title " " }}</a>
+        {{ trim .Title " " }}
         {{ if .Params.favorite }}
           {{ partial "font-awesome.html" (dict "iconName" "star-solid" "custom" false) }}
         {{end}}
@@ -18,7 +18,7 @@
   {{ end }}
   {{ if and (.Truncated) (.Site.Params.readMore) }}
     <div class="read-more">
-      <a class="u-url" href="{{ .RelPermalink }}">{{ i18n "readMore" }}</a>
+      <a class="u-url" href="{{ .RelPermalink }}" aria-label="{{ .Title }}">{{ i18n "readMore" }} {{ .Title }}</a>
     </div>
   {{ end }}
 

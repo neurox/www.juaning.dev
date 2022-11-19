@@ -208,6 +208,7 @@ header h2 {
   font-size: 1em;
   margin: 0;
   font-weight: normal;
+  display: inline;
 }
 
 .header-top {
@@ -356,8 +357,7 @@ article:not(:last-of-type) {
   padding-bottom: 2em;
 }
 
-article header h1,
-article header h2 {
+article header h1 {
   font-size: 1.35em;
   line-height: 1.1em;
   margin-bottom: 0.5em;
@@ -715,6 +715,43 @@ ul.language-select > li, ul.footer-menu > li {
 .highlight-copy-btn svg {
   vertical-align: middle;
   margin: 8px;
+}
+
+.form-container{
+  position: relative;
+  max-width: 430px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.responsive-form .field-container + .field-container,
+.responsive-form .field-container + hr,
+.responsive-form button + hr{
+  margin-top: 15px;
+}
+
+.responsive-form button{
+  background-color: var(--link-color);
+  color: var(--bg-color);
+  padding: 10px 50px;
+  margin-top: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.responsive-form button:hover{
+  background-color: var(--link-state-color);
+  cursor: pointer;
+}
+
+.field-container input,
+.field-container textarea{
+  width: calc(100% - 20px);
+  padding: 10px;
+  border-radius: 3px;
+  border: none;
 }
 
 /* Media Queries */

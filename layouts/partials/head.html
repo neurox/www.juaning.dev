@@ -29,15 +29,6 @@
   }
 </style>
 
-<noscript>
-  <style>
-    body {
-      visibility: visible;
-      opacity: 1;
-    }
-  </style>
-</noscript>
-
 {{ partial "resource.html" (dict "context" . "type" "css" "filename" "css/main.css") }}
 
 {{ if .Site.Params.copyCodeButton | default true }}

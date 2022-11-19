@@ -12,18 +12,9 @@
     
     
     <item>
-      <title>Contáctame</title>
-      <link>https://www.juaning.dev/es/contacto/</link>
-      <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.juaning.dev/es/contacto/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Soy desarrollador full-stack con más de 6 años de experiencia y estoy abierto a trabajar a tiempo parcial como programador freelance, coder.</title>
       <link>https://www.juaning.dev/es/acerca/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 12 Nov 2022 00:00:00 +0000</pubDate>
       
       <guid>https://www.juaning.dev/es/acerca/</guid>
       <description>&lt;p&gt;Desde principios de 2016, he estado trabajando continuamente como desarrollador web de tiempo completo para diferentes empresas y como freelance para diferentes clientes, actualmente, estoy trabajando de tiempo completo para D4ALL, una empresa mexicana de desarrollo web especializada en Drupal, ubicada en Tepic, Nayarit. México.&lt;/p&gt;
@@ -39,6 +30,15 @@
 &lt;h2&gt;Contratar programadores directamente vs toptal, upwork, peopleperhour&lt;/h2&gt;
 &lt;p&gt;No tienes que esperar a que se pongan en contacto conmigo y comprueben mis capacidades, puedo hablar contigo directamente y contarte mi experiencia trabajando con varias tecnologías y proyectos del mundo real, si eres un reclutador puedes enviarme los requisitos del proyecto.&lt;/p&gt;
 &lt;p&gt;Tengo experiencia probada en servicios de desarrollo web, soy un buen candidato si estás buscando contratar a un gran desarrollador freelance que se encargue de todas las mejores prácticas de sitios y estándares de accesibilidad para completar tu proyecto web.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Contáctame</title>
+      <link>https://www.juaning.dev/es/contacto/</link>
+      <pubDate>Fri, 11 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.juaning.dev/es/contacto/</guid>
+      <description></description>
     </item>
     
   </channel>

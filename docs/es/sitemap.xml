@@ -2,8 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://www.juaning.dev/es/acerca/</loc>
+    <lastmod>2022-11-12T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.juaning.dev/about/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://www.juaning.dev/es/acerca/"
+                />
+  </url><url>
     <loc>https://www.juaning.dev/es/contacto/</loc>
-    <lastmod>2019-02-28T00:00:00+00:00</lastmod>
+    <lastmod>2022-11-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -38,18 +51,6 @@
                 rel="alternate"
                 hreflang="es"
                 href="https://www.juaning.dev/es/categories/"
-                />
-  </url><url>
-    <loc>https://www.juaning.dev/es/acerca/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://www.juaning.dev/about/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://www.juaning.dev/es/acerca/"
                 />
   </url><url>
     <loc>https://www.juaning.dev/es/tags/</loc>

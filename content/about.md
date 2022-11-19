@@ -2,8 +2,9 @@
 seoTitle: "Hire freelance programmer, 6+ years of experience"
 title: "I'm a full-stack developer with more than 6 years of experience and I'm open to working part-time as a freelance programmer, coder"
 description: "I'm a full-stack freelance programmer, I've been working for different companies and clients on projects from day 0 to production release."
-#date: "2019-02-28"
+date: "2022-11-12"
 noComment: true
+noDate: true
 # menu:
 #   subpage:
 #     identifier: about-subpage
