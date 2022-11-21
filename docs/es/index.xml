@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>JUANING.dev</title>
+    <title>Pagina de Inicio on JUANING.dev</title>
     <link>https://www.juaning.dev/es/</link>
-    <description>JUANING.dev</description>
+    <description>JUANING.dev (Pagina de Inicio)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>JUANING</copyright>
@@ -38,7 +38,42 @@
       <pubDate>Fri, 11 Nov 2022 00:00:00 +0000</pubDate>
       
       <guid>https://www.juaning.dev/es/contacto/</guid>
-      <description></description>
+      <description>&lt;div class=&#34;form-container&#34;&gt;
+  &lt;form
+    action=&#34;https://formspree.io/f/mbjbqlbn&#34;
+    method=&#34;POST&#34;
+    class=&#34;responsive-form&#34;
+  &gt;
+    &lt;div class=&#34;field-container&#34;&gt;
+      &lt;label&gt;
+        Nombre*
+        &lt;input type=&#34;text&#34; name=&#34;fname&#34; required&gt;
+      &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;field-container&#34;&gt;
+      &lt;label&gt;
+        Apellidos*
+        &lt;input type=&#34;text&#34; name=&#34;lname&#34; required&gt;
+      &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;field-container&#34;&gt;
+      &lt;label&gt;
+        Email*
+        &lt;input type=&#34;email&#34; name=&#34;email&#34; required&gt;
+      &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;field-container&#34;&gt;
+      &lt;label&gt;
+        Mensaje*
+        &lt;textarea name=&#34;message&#34; rows=&#34;5&#34; required&gt;&lt;/textarea&gt;
+      &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;button type=&#34;submit&#34;&gt;Enviar&lt;/button&gt;
+    &lt;hr&gt;
+    &lt;small&gt;*Campos requeridos&lt;/small&gt;
+  &lt;/form&gt;
+&lt;/div&gt;
+</description>
     </item>
     
   </channel>

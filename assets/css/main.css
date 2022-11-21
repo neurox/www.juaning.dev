@@ -205,7 +205,6 @@ header h1 {
 }
 
 header h2 {
-  font-size: 1em;
   margin: 0;
   font-weight: normal;
   display: inline;
@@ -289,6 +288,11 @@ main h1 {
 
 .post-short-list:first-of-type {
   margin-top: 1em;
+}
+
+.profile-image{
+  float: left;
+  max-width: 140px;
 }
 
 /* Articles */

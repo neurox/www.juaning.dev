@@ -28,19 +28,6 @@
                 href="https://www.juaning.dev/es/contacto/"
                 />
   </url><url>
-    <loc>https://www.juaning.dev/es/</loc>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://www.juaning.dev/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://www.juaning.dev/es/"
-                />
-  </url><url>
     <loc>https://www.juaning.dev/es/categories/</loc>
     <xhtml:link
                 rel="alternate"
@@ -51,6 +38,18 @@
                 rel="alternate"
                 hreflang="es"
                 href="https://www.juaning.dev/es/categories/"
+                />
+  </url><url>
+    <loc>https://www.juaning.dev/es/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.juaning.dev/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://www.juaning.dev/es/"
                 />
   </url><url>
     <loc>https://www.juaning.dev/es/tags/</loc>
