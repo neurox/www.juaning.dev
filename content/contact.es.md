@@ -7,6 +7,16 @@ noComment: true
 noDate: true
 ---
 
+<img src="https://res.cloudinary.com/dlx1uk6lu/image/upload/f_auto,q_auto:best/v1668993506/juaning.dev/samurai-logo_n5xn6v.png" class="profile-image" alt="Un logo de mascara samurai" width="140" height="140">
+
+<h2 style="font-style: italic;">Hola, soy <span style="color: var(--bold-with-gold);">Juan Gómez</span>,<br>
+un experimentado desarrollador web full-stack.</h2>
+<p>
+  No dudes en ponerte en contacto conmigo si tienes más preguntas, ofertas de proyectos,
+  necesita ayuda para arreglar un problema con tu sitio o la arquitectura del servidor, estoy abierto a trabajar por hora.
+</p>
+<br>
+
 <div class="form-container">
   <form
     action="https://formspree.io/f/mbjbqlbn"

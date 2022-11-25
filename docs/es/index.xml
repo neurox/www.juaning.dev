@@ -7,9 +7,75 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>JUANING</copyright>
+    <lastBuildDate>Thu, 24 Nov 2022 00:00:00 +0000</lastBuildDate>
     
     <atom:link href="https://www.juaning.dev/es/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Instalar y habilitar acceso FTP en una instancia AWS EC2 con Linux Centos 7</title>
+      <link>https://www.juaning.dev/es/post/2022/2022-11-24-install-and-enable-ftp-access-in-aws-ec2-instance-with-linux-centos-7/</link>
+      <pubDate>Thu, 24 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.juaning.dev/es/post/2022/2022-11-24-install-and-enable-ftp-access-in-aws-ec2-instance-with-linux-centos-7/</guid>
+      <description>&lt;p&gt;Te guiaré a través de la manera más rápida y fácil de configurar el acceso FTP
+a una instancia EC2 con la distribución Centos 7 en AWS (Amazon Web Services),
+vamos a usar VSFTPD(Very Secure FTP Daemon) asi que el primer paso es instalarlo.&lt;/p&gt;
+&lt;h2&gt;Paso 1: Instala VSFTPD&lt;/h2&gt;
+&lt;p&gt;1.1 Actualiza el administrador de paquetes:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  sudo yum update&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;1.2 Instala el software VSFTP:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  sudo yum install vsftpd&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;1.3 Inicia el servicio:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  sudo systemctl start vsftpd&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;1.4 Configura el servicio inicie automaticamente cuando cargue el servidor:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  sudo systemctl enable vsftpd&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;h2&gt;Paso 2: Crea un nuevo usuario FTP&lt;/h2&gt;
+&lt;p&gt;2.1 El siguiente comando creara el nuevo usuario:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  sudo adduser ftpuser&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;2.2 Asigna un password para el usuario:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  sudo passwd ftpuser&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;2.3 Agrega el nuevo usuario la lista de usuarios de VSFTP:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ftpuser&amp;#34;&lt;/span&gt; | sudo tee -a /etc/vsftpd/user_list&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;h2&gt;Paso 3: Configura VSFTPD&lt;/h2&gt;
+&lt;p&gt;3.1 Primero, crea una copia de respaldo del archivo de configuración:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  sudo cp /etc/vsftpd/vsftpd.conf /etc/vsftpd/vsftpd.conf.default&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;3.2 Abre el archivo de configuración con vim:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  sudo nano /etc/vsftpd/vsftpd.conf&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;3.3 Busca las siguientes variables en el archivo y actualizalas como se muestra a continuación:&lt;br&gt;
+&lt;strong&gt;Nota:&lt;/strong&gt; Es probable que algunas de las variables no existan, solo agregalas al final de archivo.
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  anonymous_enable&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;NO
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  local_enable&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;YES
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  write_enable&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;YES
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  chroot_local_user&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;YES
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  allow_writeable_chroot&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;YES
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  userlist_enable&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;YES
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  userlist_file&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;/etc/vsftpd/user_list
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  userlist_deny&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;NO&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;3.4 Reinicia el servicio:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  sudo systemctl restart vsftpd&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;h2&gt;Paso 4: Crea una carpeta para el nuevo usuario&lt;/h2&gt;
+&lt;p&gt;4.1 Crea la carpeta dentro del directorio raiz del usuario:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  sudo mkdir -p /home/ftpuser/ftp/upload&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;4.2 Asigna los permsisos de acceso de la siguiente manera:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  sudo chmod &lt;span style=&#34;color:#ae81ff&#34;&gt;550&lt;/span&gt; /home/ftpuser/ftp
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  sudo chmod &lt;span style=&#34;color:#ae81ff&#34;&gt;750&lt;/span&gt; /home/ftpuser/ftp/upload
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  sudo chown -R ftpuser: /home/ftpuser/ftp&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;h2&gt;Solución de problemas:&lt;/h2&gt;
+&lt;h3&gt;Problema 1: Acceso denegado(Access Denied)&lt;/h3&gt;
+Por defecto, las instancias Linux EC2 de AWS solo admiten conexion por ssh con una llave privada,
+esto significa que para conectarte debes de usar un comando como el siguiente:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  ssh -i your-private-key.pem username@ec2_ip_address&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;1.1 Edita el archivo sshd_config:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  sudo vi /etc/ssh/sshd_config&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;1.2 Agrega las siguientes lineas al final del archivo:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Match User ftpuser
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    PasswordAuthentication yes
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ChrootDirectory /home/ftpuser/ftp&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;1.3 Reinicia el servicio:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  sudo service sshd restart&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Soy desarrollador full-stack con más de 6 años de experiencia y estoy abierto a trabajar a tiempo parcial como programador freelance, coder.</title>
@@ -38,7 +104,15 @@
       <pubDate>Fri, 11 Nov 2022 00:00:00 +0000</pubDate>
       
       <guid>https://www.juaning.dev/es/contacto/</guid>
-      <description>&lt;div class=&#34;form-container&#34;&gt;
+      <description>&lt;img src=&#34;https://res.cloudinary.com/dlx1uk6lu/image/upload/f_auto,q_auto:best/v1668993506/juaning.dev/samurai-logo_n5xn6v.png&#34; class=&#34;profile-image&#34; alt=&#34;Un logo de mascara samurai&#34; width=&#34;140&#34; height=&#34;140&#34;&gt;
+&lt;h2 style=&#34;font-style: italic;&#34;&gt;Hola, soy &lt;span style=&#34;color: var(--bold-with-gold);&#34;&gt;Juan Gómez&lt;/span&gt;,&lt;br&gt;
+un experimentado desarrollador web full-stack.&lt;/h2&gt;
+&lt;p&gt;
+  No dudes en ponerte en contacto conmigo si tienes más preguntas, ofertas de proyectos,
+  necesita ayuda para arreglar un problema con tu sitio o la arquitectura del servidor, estoy abierto a trabajar por hora.
+&lt;/p&gt;
+&lt;br&gt;
+&lt;div class=&#34;form-container&#34;&gt;
   &lt;form
     action=&#34;https://formspree.io/f/mbjbqlbn&#34;
     method=&#34;POST&#34;
