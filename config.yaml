@@ -4,7 +4,7 @@ baseURL: 'https://www.juaning.dev'
 title: 'JUANING.dev'
 theme: 'anubis'
 paginate: 10
-googleAnalytics: 'UA-123915805-1'
+googleAnalytics: 'G-ZSRN0E5HWF'
 disqusShortname: 'juaning'
 copyright: 'JUANING'
 publishDir: 'docs'
@@ -79,3 +79,8 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+
+disableKinds:
+  - taxonomy
+  - term
+  - post
