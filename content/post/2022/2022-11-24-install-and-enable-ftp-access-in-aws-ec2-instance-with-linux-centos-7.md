@@ -58,7 +58,7 @@ step is to install it.
 
 3.2 Open the configuration file with vim:
 {{< highlight zsh >}}
-  sudo nano /etc/vsftpd/vsftpd.conf
+  sudo vi /etc/vsftpd/vsftpd.conf
 {{< /highlight >}}
 
 3.3 Look for the following variables and update as below:<br>

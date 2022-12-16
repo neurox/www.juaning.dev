@@ -57,7 +57,7 @@ vamos a usar VSFTPD(Very Secure FTP Daemon) asi que el primer paso es instalarlo
 
 3.2 Abre el archivo de configuración con vim:
 {{< highlight zsh >}}
-  sudo nano /etc/vsftpd/vsftpd.conf
+  sudo vi /etc/vsftpd/vsftpd.conf
 {{< /highlight >}}
 
 3.3 Busca las siguientes variables en el archivo y actualizalas como se muestra a continuación:<br>
