@@ -1,0 +1,44 @@
+<div class="post-info">
+  {{ if .Params.date }}
+    {{ if not .Params.noDate }}
+
+      {{ $date := .Params.date }}
+      {{ $month := i18n (printf "month_%02d" $date.Month) }}
+      {{ $day := dateFormat "02" $date }}
+      {{ $year := dateFormat "2006" $date }}
+      {{ $formattedDate := "" }}
+
+      {{ if (eq .Lang  "es") }}
+        {{ $formattedDate = printf "%s de %s, de %s" $day $month $year }}
+      {{ else }}
+        {{ $formattedDate = printf "%s %s, %s" $month $day $year }}
+      {{ end }}
+
+      <div class="post-date dt-published" itemprop="datePublished" content='{{ .Params.date.Format "2006-01-02" }}'>{{ $formattedDate }}</div>
+    {{ end }}
+  {{ end }}
+
+  <a class="post-hidden-url u-url" href="{{ .Permalink }}" itemprop="mainEntityOfPage">{{ .Permalink }}</a>
+  <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+    <a href="{{ .Site.BaseURL }}" class="p-name p-author post-hidden-author h-card" itemprop="name" rel="author">{{ .Params.author | default .Site.Params.author }}</a>
+  </div>
+
+  <div class="post-taxonomies" hidden>
+    {{ if .Params.categories }}
+      <ul class="post-categories">
+        {{ range $cat_name := .Params.categories }}
+          {{ $cat := ($.Site.GetPage (printf "/categories/%s" $cat_name)) }}
+          <li><a href="{{ $cat.Permalink }}">{{ $cat.Title | default $cat_name }}</a></li>
+        {{ end }}
+      </ul>
+      {{ end }}
+      {{ if .Params.tags }}
+        <ul class="post-tags">
+          {{ range $tag_name := .Params.tags }}
+            {{ $tag := ($.Site.GetPage (printf "/tags/%s" $tag_name)) }}
+            <li><a href="{{ $tag.Permalink }}">#{{ $tag.Title | default $tag_name }}</a></li>
+          {{ end }}
+        </ul>
+    {{ end }}
+  </div>
+</div>

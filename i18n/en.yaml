@@ -1,0 +1,89 @@
+powered:
+  other: "Powered by"
+
+theme:
+  other: "theme"
+
+postTranslations:
+  other: "Post translations"
+
+readMore:
+  other: "Read more"
+
+readAbout:
+  other: "about"
+
+toNewPosts:
+  other: "to new posts"
+
+toOldPosts:
+  other: "to old posts"
+
+tag:
+  other: "tag"
+
+Tags:
+  other: "Tags"
+
+Posts:
+  other: "Posts"
+
+category:
+  other: "category"
+
+Categories:
+  other: "Categories"
+
+toAllTags:
+  other: "to all tags"
+
+toAllCategories:
+  other: "to all categories"
+
+skipToContent:
+  other: "Skip to main content"
+
+darkTheme:
+  other: "Dark theme"
+
+lightTheme:
+  other: "Light theme"
+
+readNext:
+  other: "Read next"
+
+month_01:
+  other: "January"
+
+month_02:
+  other: "February"
+
+month_03:
+  other: "March"
+
+month_04:
+  other: "April"
+
+month_05:
+  other: "May"
+
+month_06:
+  other: "June"
+
+month_07:
+  other: "July"
+
+month_08:
+  other: "August"
+
+month_09:
+  other: "Septempber"
+
+month_10:
+  other: "October"
+
+month_11:
+  other: "November"
+
+month_12:
+  other: "December"

@@ -1,0 +1,16 @@
+{{ if .IsTranslated }}
+  {{ $pageLang := .Page.Lang}}
+  <span aria-label='{{ i18n "postTranslations"}}'>
+    {{ range $index, $element := .AllTranslations }}
+      {{ if eq .Lang $pageLang }}
+        <span lang="{{ .Lang }}">{{ upper .Lang }}</span>
+      {{ else }}
+        <a href="{{ .Permalink }}" lang="{{ .Lang }}">{{ upper .Lang }}</a>
+      {{ end }}
+
+      {{ if eq $index 0 }}
+        |
+      {{ end }}
+    {{ end }}
+  </span>
+{{ end }}

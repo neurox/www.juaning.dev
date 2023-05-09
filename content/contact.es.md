@@ -1,0 +1,143 @@
+---
+title: "Contáctame"
+description: "Hugo, the world’s fastest framework for building websites"
+date: "2022-11-11"
+slug: "contacto"
+noComment: true
+noDate: true
+---
+
+<div class="featured-banner">
+  <img src="/samurai-logo.svg"
+    class="profile-image"
+    alt="A samurai mask logo"
+    width="140">
+
+  <h2 style="font-style: italic;">Hola, soy <span style="color: var(--bold-with-gold);">Juan Gómez</span>,<br>
+  Experto desarrollador web full-stack y apasionado creador de soluciones digitales.</h2>
+  <p>Si eres un cliente potencial o un reclutador buscando talento en desarrollo web, no dudes en contactarme para explorar
+    oportunidades de colaboración y llevar tus proyectos al éxito. ¡Estoy ansioso por trabajar contigo en nuevos y emocionantes desafíos!</p>
+</div>
+
+<div class="form-container">
+  <form
+    id="contact-form"
+    method="post"
+    class="responsive-form"
+  >
+    <div class="field-container">
+      <label for="name">Nombre*:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div class="field-container">
+      <label for="email">Email*:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="field-container">
+      <label for="subject">Asunto*:</label>
+      <input type="text" id="subject" name="subject" required>
+    </div>
+    <div class="field-container">
+      <label for="message">Mensaje*:</label>
+      <textarea id="message" name="message" rows="10" required></textarea>
+    </div>
+    <div class="g-recaptcha" data-sitekey="6LfH2-oiAAAAAO8yeRMVEugLESUVWaUe8qUtTNCn"
+    aria-label="Por favor, complete el reCAPTCHA para verificar que no eres un robot."></div>
+    <button type="submit">Enviar Mensaje</button>
+    <br>
+    <small>*Campos requeridos</small>
+  </form>
+</div>
+
+<link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
+<script>
+  // Load reCAPTCHA API script
+  var reCaptchaScript = document.createElement('script');
+  reCaptchaScript.src = 'https://www.google.com/recaptcha/api.js';
+  document.head.appendChild(reCaptchaScript);
+
+  // Add event listener to contact form
+  var form = document.getElementById('contact-form');
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Get form data
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var message = document.getElementById('message').value;
+    var recaptchaResponse = grecaptcha.getResponse();
+
+    // Verify reCAPTCHA response
+    var response = grecaptcha.getResponse();
+    if (!response) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oh no...',
+        text: 'Por favor completa la verificación reCAPTCHA.'
+      });
+
+      return;
+    }
+
+    // Set Mailgun API parameters
+    var sender = 'JUANING.dev<contact@juaning.dev>';
+    var recipient = 'Juan Gómez<contact@juaning.dev>';
+    var subject = 'New message from ' + name;
+    var body = 'Name: ' + name + '\n\nEmail: ' + email +
+      + '\n\nSubject: ' + subject +'\n\nMessage: ' + message;
+
+    // Send form data to Mailgun API
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'https://api.mailgun.net/v3/mg.juaning.dev/messages');
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.setRequestHeader('Authorization', 'Basic ' + btoa('api:' + process.env.MAILGUN_API_KEY));
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+        if (xhr.status === 200) {
+
+          Swal.fire({
+            icon: 'success',
+            title: '¡Gracias por contactarme!',
+            text: 'Agradezco tu interés y personalmente te responderé tan pronto como sea posible.'
+          });
+
+          // Clear form fields
+          document.getElementById('contact-form').reset();
+          grecaptcha.reset();
+        } else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oh no...',
+            text: 'Lo siento, parece que algo salió mal con el envío. Te sugiero que lo intente de nuevo más tarde.'
+          });
+        }
+      }
+    };
+
+    xhr.send(
+      'from=' + encodeURIComponent(sender) +
+      '&to=' + encodeURIComponent(recipient) +
+      '&subject=' + encodeURIComponent(subject) +
+      '&text=' + encodeURIComponent(body));
+  });
+
+  // Make reCaptcha compliance 508 valid.
+  function addAriaLabelToRecaptcha() {
+    const recaptchaContainer = document.getElementById('g-recaptcha-response');
+
+    if (recaptchaContainer) {
+      recaptchaContainer.setAttribute('aria-label', 'Esta es una respuesta de reCAPTCHA');
+    }
+  }
+
+  // Create a new observer and specify what to observe
+  const observer = new MutationObserver(addAriaLabelToRecaptcha);
+
+  // Configure the observer to watch for changes in the target node's child list
+  const config = { childList: true };
+
+  // Start observing the target node for configured mutations
+  observer.observe(document.body, config);
+</script>

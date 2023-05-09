@@ -1,0 +1,91 @@
+languageCode: 'en-US'
+defaultContentLanguage: 'en'
+baseURL: 'https://www.juaning.dev'
+title: 'JUANING.dev'
+theme: 'anubis'
+paginate: 10
+googleAnalytics: 'G-ZSRN0E5HWF'
+disqusShortname: 'juaning'
+copyright: 'JUANING'
+publishDir: 'docs'
+enableRobotsTXT: true
+
+params:
+  title: 'JUANING'
+  author: 'Juan Gómez'
+  email: juanjose@ingomez.com
+  #avatar:
+  dateFormat: 'January 2, 2006'
+  paginationSinglePost: true
+  style: dark-without-switcher
+  readMore: true
+  readNextPosts: 5
+  disableSummary: false
+  rssAsSocialIcon: true
+
+  social:
+    - id: github
+      name: neurox
+
+languages:
+  en:
+    languageName: 'English'
+    menu:
+      main:
+        - identifier: home
+          name: Home
+          title: Homepage
+          url: /
+          weight: -1
+        - identifier: about
+          name: About
+          title: About me
+          url: /about/
+          weight: 1
+        - identifier: contact
+          name: Contact
+          title: Contact me
+          url: /contact/
+          weight: 2
+    params:
+      description: 'Fullstack Web Development | SysOps | Electronics | Videogames'
+      locale: 'en-US'
+    weight: 1
+  es:
+    languageName: 'Spanish'
+    menu:
+      main:
+        - identifier: inicio
+          name: Inicio
+          title: Pagina de inicio
+          url: /
+          weight: -1
+        - identifier: acerca
+          name: Acerca
+          title: Acerca de mí
+          url: /acerca/
+          weight: 1
+        - identifier: contacto
+          name: Contacto
+          title: Contáctame
+          url: /contacto/
+          weight: 2
+    params:
+      description: 'Desarrollo Web Fullstack | SysOps | Electrónica | Videojuegos'
+      locale: 'es-MX'
+    weight: 2
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+sitemap:
+  changefreq: weekly
+  filename: sitemap.xml
+  priority: 0.5
+
+disableKinds:
+  - taxonomy
+  - term
+  - post

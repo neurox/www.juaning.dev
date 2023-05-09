@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hello, I am Juan Gómez, expert full-stack web developer and passionate creator of digital solutions. on JUANING.dev</title>
+    <link>https://www.juaning.dev/</link>
+    <description>JUANING.dev (Hello, I am Juan Gómez, expert full-stack web developer and passionate creator of digital solutions.)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>JUANING</copyright>
+    <lastBuildDate>Fri, 14 Apr 2023 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://www.juaning.dev/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to Install Solr 8 on macOS 13 Ventura for Drupal Compatibility.</title>
+      <link>https://www.juaning.dev/post/2023/2023-04-14-how-to-install-solr-8-on-macos-13-ventura-for-drupal-compatibility/</link>
+      <pubDate>Fri, 14 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.juaning.dev/post/2023/2023-04-14-how-to-install-solr-8-on-macos-13-ventura-for-drupal-compatibility/</guid>
+      <description>&lt;p&gt;You might have observed that the solr version included in the most recent homebrew package is 9.
+However, its schema is currently not compatible with Drupal. Therefore, I will guide you on how to obtain version 8 of solr,
+which is compatible with Drupal.&lt;/p&gt;
+&lt;h2&gt;Requirements&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Homebrew&lt;/li&gt;
+&lt;li&gt;Java 8&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Step 1: Install Java 8 using Homebrew&lt;/h2&gt;
+&lt;p&gt;If you haven&#39;t installed Homebrew, you can find the installation instructions at &lt;a href=&#34;https://brew.sh/&#34; target=&#34;_blank&#34;&gt;https://brew.sh/&lt;/a&gt;.
+After installing Homebrew, open Terminal and run the following command to install Java 8:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;brew install --cask adoptopenjdk/openjdk/adoptopenjdk8&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Step 2: Find the Java 8 installation path&lt;/h2&gt;
+&lt;p&gt;To find the path of the installed Java 8, run this command in Terminal:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;/usr/libexec/java_home -v 1.8&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Take note of the output, which should be something like /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home.&lt;/p&gt;
+&lt;h2&gt;Step 3: Set JAVA_HOME environment variable&lt;/h2&gt;
+&lt;p&gt;To set the JAVA_HOME environment variable, open your shell profile file (e.g., ~/.bash_profile, ~/.bashrc, or ~/.zshrc)
+in a text editor and add the following line, replacing /path/to/java8 with the path you found in step 2:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;export JAVA_HOME&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/path/to/java8&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;For example, if the path from step 2 was /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home,
+the line you should add to your shell profile is:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;export JAVA_HOME&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Save the file and close the text editor.&lt;/p&gt;
+&lt;h2&gt;Step 4: Apply changes&lt;/h2&gt;
+&lt;p&gt;Run the following command to apply the changes to the current session:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;source ~/.zshrc&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Step 5: Verify Java version&lt;/h2&gt;
+&lt;p&gt;Verify that you&#39;re using the correct Java version by running:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;java -version&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Step 6: Download solr 8&lt;/h2&gt;
+&lt;p&gt;Go to the &lt;a href=&#34;https://archive.apache.org/dist/lucene/solr/8.9.0/&#34; target=&#34;_blank&#34;&gt;Apache Solr 8 archive&lt;/a&gt;
+and download the .tgz file for that version.&lt;/p&gt;
+&lt;p&gt;Extract the downloaded archive:
+Open Terminal and navigate to the directory where the downloaded .tgz file is located. Extract the contents using the following command:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tar xzf solr-8.9.0.tgz&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Replace solr-8.9.0.tgz with the name of the downloaded .tgz file.&lt;/p&gt;
+&lt;p&gt;Move the extracted directory to a desired location: You can move the extracted directory to a location of your choice.
+For instance, you can move it to the /opt directory:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo mv solr-8.9.0 /opt/solr&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Step 7: Set up environment variables&lt;/h2&gt;
+&lt;p&gt;Add the Solr binary to your system&#39;s PATH by adding the following line to your shell profile (e.g., ~/.bash_profile, ~/.bashrc, or ~/.zshrc):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;export PATH&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;$PATH:/opt/solr/bin&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Save the file, and then run source ~/.bash_profile, source ~/.bashrc, or source ~/.zshrc (depending on which file you edited) to apply the changes immediately.&lt;p&gt;
+&lt;h2&gt;Step 8: Start Solr&lt;/h2&gt;
+&lt;p&gt;Run the following command in Terminal to start Solr:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;solr start&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Step 9: Verify Solr installation&lt;/h2&gt;
+&lt;p&gt;Check that Solr is running by opening a web browser and navigating to &lt;a href=&#34;http://localhost:8983/solr/&#34; target=&#34;_blank&#34;&gt;http://localhost:8983/solr/&lt;/a&gt;.
+You should see the Solr admin dashboard.&lt;/p&gt;
+&lt;h2&gt;Step 10: Create Launch Daemon&lt;/h2&gt;
+&lt;p&gt;Now that solr is installed, you will have to start it everytime you restart the computer, to prevent that, we are going to create
+a Launch Daemon that will launch the solr service automatically.&lt;/p&gt;
+&lt;h3&gt;Create a plist file&lt;/h3&gt;
+&lt;p&gt;Create a new file called org.apache.solr.plist using a text editor like nano or vim, and add the following content:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;!DOCTYPE plist PUBLIC &amp;#34;-//Apple//DTD PLIST 1.0//EN&amp;#34; &amp;#34;http://www.apple.com/DTDs/PropertyList-1.0.dtd&amp;#34;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;plist&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;version=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;1.0&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;dict&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;key&amp;gt;&lt;/span&gt;Label&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/key&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;string&amp;gt;&lt;/span&gt;org.apache.solr&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/string&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;key&amp;gt;&lt;/span&gt;ProgramArguments&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/key&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;array&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;string&amp;gt;&lt;/span&gt;/opt/solr/bin/solr&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/string&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;string&amp;gt;&lt;/span&gt;start&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/string&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/array&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;key&amp;gt;&lt;/span&gt;RunAtLoad&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/key&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;true/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;key&amp;gt;&lt;/span&gt;KeepAlive&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/key&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;true/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;key&amp;gt;&lt;/span&gt;StandardErrorPath&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/key&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;string&amp;gt;&lt;/span&gt;/opt/solr/logs/solr.log&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/string&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;key&amp;gt;&lt;/span&gt;StandardOutPath&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/key&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;string&amp;gt;&lt;/span&gt;/opt/solr/logs/solr.log&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/string&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;key&amp;gt;&lt;/span&gt;WorkingDirectory&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/key&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;string&amp;gt;&lt;/span&gt;/opt/solr&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/string&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/dict&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/plist&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Move the plist file to the LaunchAgents folder&lt;/h3&gt;
+&lt;p&gt;Copy the org.apache.solr.plist file to the ~/Library/LaunchAgents/ folder:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cp org.apache.solr.plist ~/Library/LaunchAgents/&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Load the launch agent&lt;/h3&gt;
+&lt;p&gt;Load the plist file to launchd:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;launchctl load ~/Library/LaunchAgents/org.apache.solr.plist&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now, Solr should start automatically whenever you log in to your user account.
+If you want to stop Solr from starting automatically, you can unload the plist file:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;launchctl unload ~/Library/LaunchAgents/org.apache.solr.plist&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Install and enable FTP access on an AWS EC2 instance with Linux CentOS 7</title>
+      <link>https://www.juaning.dev/post/2022/2022-11-24-install-and-enable-ftp-access-in-aws-ec2-instance-with-linux-centos-7/</link>
+      <pubDate>Thu, 24 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.juaning.dev/post/2022/2022-11-24-install-and-enable-ftp-access-in-aws-ec2-instance-with-linux-centos-7/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ll guide you through the quickest and easiest way to set up FTP
+access on an EC2 instance with CentOS 7 distribution on AWS (Amazon Web Services).
+We&amp;rsquo;re going to use VSFTPD (Very Secure FTP Daemon), so the first step is to install it.&lt;/p&gt;
+&lt;h2&gt;VSFTPD Installation and Configuration&lt;/h2&gt;
+&lt;h3&gt;Step 1: Install VSFTPD&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Update the package manager:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo yum update&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Install the VSFTP software:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo yum install vsftpd&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Start the service:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo systemctl start vsftpd&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Configure the service to start automatically when the server loads:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo systemctl enable vsftpd&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;User Creation and Permission Configuration&lt;/h2&gt;
+&lt;h3&gt;Step 2: Create a new FTP user&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;The following command creates the new user:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo adduser ftpuser&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Assign a password for the user:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo passwd ftpuser&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add the new user to the VSFTP user list:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ftpuser&amp;#34;&lt;/span&gt; | sudo tee -a /etc/vsftpd/user_list&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Step 3: Configure VSFTPD&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;First, create a backup copy of the configuration file:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo cp /etc/vsftpd/vsftpd.conf /etc/vsftpd/vsftpd.conf.default&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Open the configuration file with vim:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo vi /etc/vsftpd/vsftpd.conf&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Look for the following variables in the file and update them as shown below:&lt;br&gt;
+Note: Some variables may not exist, just add them at the end of the file.
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;anonymous_enable&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;NO
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;local_enable&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;YES
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;write_enable&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;YES
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;chroot_local_user&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;YES
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;allow_writeable_chroot&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;YES
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;userlist_enable&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;YES
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;userlist_file&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;/etc/vsftpd/user_list
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;userlist_deny&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;NO&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Restart the service:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo systemctl restart vsftpd&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Step 4: Create a folder for the new user&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Create the folder within the user&amp;rsquo;s root directory:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo mkdir -p /home/ftpuser/ftp/upload&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Set the access permissions as follows:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo chmod -R &lt;span style=&#34;color:#ae81ff&#34;&gt;755&lt;/span&gt; /home/ftpuser/ftp
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo chown -R ftpuser: /home/ftpuser/ftp&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Enable Password Authentication for the FTP User&lt;/h2&gt;
+&lt;h3&gt;Step 5: Enable Password Authentication in SSH for the FTP User&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Edit the sshd_config file:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo vi /etc/ssh/sshd_config&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add the following lines at the end of the file:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Match User ftpuser
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  PasswordAuthentication yes
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  ChrootDirectory /home/ftpuser/ftp&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Restart the service:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo service sshd restart&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Freelance full-stack developer with 6&#43; years of experience in projects from scratch to launch&#34;</title>
+      <link>https://www.juaning.dev/about/</link>
+      <pubDate>Sat, 12 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.juaning.dev/about/</guid>
+      <description>&lt;p&gt;Since 2016, I have worked as a web developer for various companies and freelance clients, currently at D4ALL, a Mexican firm specializing in Drupal, located in Tepic, Nayarit.&lt;/p&gt;
+&lt;h2&gt;Work experience:&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;6+ years in PHP, Javascript, MySQL, and CSS&lt;/li&gt;
+  &lt;li&gt;3+ years in C#, MS SQL, .NET Framework 4.5, .NET Core, Drupal 7-9, AWS, Cloudflare, load optimization, and accessibility.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Languages:&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;PHP, C#, Javascript&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;CMS:&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Wordpress, Drupal, Umbraco&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Why a freelance developer?&lt;/h2&gt;
+&lt;p&gt;My experience in significant projects for private and governmental entities as a developer, sysops,
+and lead programmer makes me ideal for your project. An experienced freelancer optimizes time and budget, and my adaptability allows working solo or in a team.&lt;/p&gt;
+&lt;h2&gt;Hiring directly vs platforms:&lt;/h2&gt;
+&lt;p&gt;Let&#39;s talk directly about my experience in technologies and real-world projects. If you are a recruiter, send me the project requirements.&lt;/p&gt;
+&lt;p&gt;With proven experience in web development, I am the perfect candidate if you are looking for a competent freelance developer who follows
+best practices and accessibility standards for your web project.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Contact me</title>
+      <link>https://www.juaning.dev/contact/</link>
+      <pubDate>Fri, 11 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.juaning.dev/contact/</guid>
+      <description>&lt;div class=&#34;featured-banner&#34;&gt;
+  &lt;img src=&#34;https://www.juaning.dev/samurai-logo.svg&#34;
+    class=&#34;profile-image&#34;
+    alt=&#34;A samurai mask logo&#34;
+    width=&#34;140&#34;&gt;
+  &lt;h2 style=&#34;font-style: italic;&#34;&gt;Hi, I&#39;m &lt;span style=&#34;color: var(--bold-with-gold);&#34;&gt;Juan Gómez&lt;/span&gt;,&lt;br&gt;
+  an experienced full-stack web developer.&lt;/h2&gt;
+  &lt;p&gt;Feel free to contact me if you have any further questions, project offers,
+    you need help to fix an issue with your site or server architecture, I&#39;m open to work per hour.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;form-container&#34;&gt;
+  &lt;form
+    id=&#34;contact-form&#34;
+    method=&#34;post&#34;
+    class=&#34;responsive-form&#34;
+  &gt;
+    &lt;div class=&#34;field-container&#34;&gt;
+      &lt;label for=&#34;name&#34;&gt;Name*:&lt;/label&gt;
+      &lt;input type=&#34;text&#34; id=&#34;name&#34; name=&#34;name&#34; required&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;field-container&#34;&gt;
+      &lt;label for=&#34;email&#34;&gt;Email*:&lt;/label&gt;
+      &lt;input type=&#34;email&#34; id=&#34;email&#34; name=&#34;email&#34; required&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;field-container&#34;&gt;
+      &lt;label for=&#34;subject&#34;&gt;Subject*:&lt;/label&gt;
+      &lt;input type=&#34;text&#34; id=&#34;subject&#34; name=&#34;subject&#34; required&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;field-container&#34;&gt;
+      &lt;label for=&#34;message&#34;&gt;Message*:&lt;/label&gt;
+      &lt;textarea id=&#34;message&#34; name=&#34;message&#34; rows=&#34;10&#34; required&gt;&lt;/textarea&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;g-recaptcha&#34; data-sitekey=&#34;6LfH2-oiAAAAAO8yeRMVEugLESUVWaUe8qUtTNCn&#34;
+    aria-label=&#34;Please complete the reCAPTCHA to verify that you are not a robot.&#34;&gt;&lt;/div&gt;
+    &lt;button type=&#34;submit&#34;&gt;Send Message&lt;/button&gt;
+    &lt;br&gt;
+    &lt;small&gt;*Required fields&lt;/small&gt;
+  &lt;/form&gt;
+&lt;/div&gt;
+&lt;link href=&#34;https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css&#34; rel=&#34;stylesheet&#34;&gt;
+&lt;script src=&#34;https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js&#34;&gt;&lt;/script&gt;
+&lt;script&gt;
+  // Load reCAPTCHA API script
+  var reCaptchaScript = document.createElement(&#39;script&#39;);
+  reCaptchaScript.src = &#39;https://www.google.com/recaptcha/api.js&#39;;
+  document.head.appendChild(reCaptchaScript);
+
+  // Add event listener to contact form
+  var form = document.getElementById(&#39;contact-form&#39;);
+  form.addEventListener(&#39;submit&#39;, function(event) {
+    event.preventDefault();
+
+    // Get form data
+    var name = document.getElementById(&#39;name&#39;).value;
+    var email = document.getElementById(&#39;email&#39;).value;
+    var message = document.getElementById(&#39;message&#39;).value;
+    var recaptchaResponse = grecaptcha.getResponse();
+
+    // Verify reCAPTCHA response
+    var response = grecaptcha.getResponse();
+    if (!response) {
+      Swal.fire({
+        icon: &#39;error&#39;,
+        title: &#39;Oh no...&#39;,
+        text: &#39;Please complete the reCAPTCHA challenge.&#39;
+      });
+
+      return;
+    }
+
+    // Set Mailgun API parameters
+    var sender = &#39;JUANING.dev&lt;contact@juaning.dev&gt;&#39;;
+    var recipient = &#39;Juan Gómez&lt;contact@juaning.dev&gt;&#39;;
+    var subject = &#39;New message from &#39; + name;
+    var body = &#39;Name: &#39; + name + &#39;\n\nEmail: &#39; + email +
+      + &#39;\n\nSubject: &#39; + subject +&#39;\n\nMessage: &#39; + message;
+
+    // Send form data to Mailgun API
+    var xhr = new XMLHttpRequest();
+    xhr.open(&#39;POST&#39;, &#39;https://api.mailgun.net/v3/mg.juaning.dev/messages&#39;);
+    xhr.setRequestHeader(&#39;Content-Type&#39;, &#39;application/x-www-form-urlencoded&#39;);
+    xhr.setRequestHeader(&#39;Authorization&#39;, &#39;Basic &#39; + btoa(&#39;api:&#39; + process.env.MAILGUN_API_KEY));
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+        if (xhr.status === 200) {
+
+          Swal.fire({
+            icon: &#39;success&#39;,
+            title: &#39;Thank you for reaching out to me!&#39;,
+            text: &#39;I appreciate your interest and will personally get back to you as soon as possible.&#39;
+          });
+
+          // Clear form fields
+          document.getElementById(&#39;contact-form&#39;).reset();
+          grecaptcha.reset();
+        } else {
+          Swal.fire({
+            icon: &#39;error&#39;,
+            title: &#39;Oh no...&#39;,
+            text: &#39;I apologize, but it seems that something went wrong with the submission. I suggest that you try again at a later time.&#39;
+          });
+        }
+      }
+    };
+
+    xhr.send(
+      &#39;from=&#39; + encodeURIComponent(sender) +
+      &#39;&amp;to=&#39; + encodeURIComponent(recipient) +
+      &#39;&amp;subject=&#39; + encodeURIComponent(subject) +
+      &#39;&amp;text=&#39; + encodeURIComponent(body));
+  });
+
+  // Make reCaptcha compliance 508 valid.
+  function addAriaLabelToRecaptcha() {
+    const recaptchaContainer = document.getElementById(&#39;g-recaptcha-response&#39;);
+
+    if (recaptchaContainer) {
+      recaptchaContainer.setAttribute(&#39;aria-label&#39;, &#39;This is a reCAPTCHA reponse&#39;);
+    }
+  }
+
+  // Create a new observer and specify what to observe
+  const observer = new MutationObserver(addAriaLabelToRecaptcha);
+
+  // Configure the observer to watch for changes in the target node&#39;s child list
+  const config = { childList: true };
+
+  // Start observing the target node for configured mutations
+  observer.observe(document.body, config);
+&lt;/script&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

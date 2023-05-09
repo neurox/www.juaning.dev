@@ -1,0 +1,8 @@
+{{ if .Params.seoTitle }}
+  <!-- <title>{{ if and (.Params.seoTitle) (not .IsHome) }}{{ .Params.seoTitle }} | {{ end }}{{ .Site.Title }}</title> -->
+  <title>{{ if (.Params.seoTitle) }}{{ .Params.seoTitle }} | {{ end }}{{ .Site.Title }}</title>
+{{ else if and (.IsHome) (eq .Lang "es") }}
+  <title>{{ .Site.Title }} en Español</title>
+{{ else }}
+  <title>{{ if and (.Title) (not .IsHome) }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+{{ end }}

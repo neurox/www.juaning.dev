@@ -1,0 +1,31 @@
+<article class="post-list h-feed" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="post-header">
+    <section>
+      <h2 class="p-name post-title{{ if .Params.draft }} draft{{end}}" itemprop="headline">
+        <a class="u-url" href="{{ .RelPermalink }}" itemprop="url" aria-label="{{ .Title }}">
+          {{ trim .Title " " }}
+          {{ if .Params.favorite }}
+            {{ partial "font-awesome.html" (dict "iconName" "star-solid" "custom" false) }}
+          {{end}}
+        </a>
+      </h2>
+    </section>
+    {{ partial "post-language-switcher.html" . }}
+  </div>
+
+  {{ if not .Site.Params.disableSummary }}
+    <div class="content post-summary p-summary" itemprop="description">
+      {{ .Summary | safeHTML }}
+    </div>
+  {{ end }}
+  {{ if and (.Truncated) (.Site.Params.readMore) }}
+    <div class="read-more">
+      <a class="u-url" href="{{ .RelPermalink }}" itemprop="url" aria-label="{{ .Title }}">
+        {{ i18n "readMore" }}
+        <span class="visually-hidden">{{ i18n "readAbout" }} {{ .Title }}</span>
+      </a>
+    </div>
+  {{ end }}
+
+  {{ partial "post-info.html" . }}
+</article>
