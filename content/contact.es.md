@@ -90,9 +90,8 @@ noDate: true
 
     // Send form data to Mailgun API
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://api.mailgun.net/v3/mg.juaning.dev/messages');
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhr.setRequestHeader('Authorization', 'Basic ' + btoa('api:' + process.env.MAILGUN_API_KEY));
+    xhr.open('POST', 'https://us-central1-juaningdev.cloudfunctions.net/contactForm');
+    xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.onreadystatechange = function() {
       if (xhr.readyState === XMLHttpRequest.DONE) {
         if (xhr.status === 200) {
@@ -116,11 +115,19 @@ noDate: true
       }
     };
 
-    xhr.send(
-      'from=' + encodeURIComponent(sender) +
-      '&to=' + encodeURIComponent(recipient) +
-      '&subject=' + encodeURIComponent(subject) +
-      '&text=' + encodeURIComponent(body));
+    // Prepare form data as JSON
+    var formData = {
+      'name': name,
+      'email': email,
+      'subject': subject,
+      'message': message
+    };
+
+    // Convert form data to JSON string
+    var jsonData = JSON.stringify(formData);
+
+    // Send form data to Firebase Function endpoint
+    xhr.send(jsonData);
   });
 
   // Make reCaptcha compliance 508 valid.

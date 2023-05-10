@@ -327,9 +327,8 @@ las mejores prácticas y estándares de accesibilidad para tu proyecto web.&lt;/
 
     // Send form data to Mailgun API
     var xhr = new XMLHttpRequest();
-    xhr.open(&#39;POST&#39;, &#39;https://api.mailgun.net/v3/mg.juaning.dev/messages&#39;);
-    xhr.setRequestHeader(&#39;Content-Type&#39;, &#39;application/x-www-form-urlencoded&#39;);
-    xhr.setRequestHeader(&#39;Authorization&#39;, &#39;Basic &#39; + btoa(&#39;api:&#39; + process.env.MAILGUN_API_KEY));
+    xhr.open(&#39;POST&#39;, &#39;https://us-central1-juaningdev.cloudfunctions.net/contactForm&#39;);
+    xhr.setRequestHeader(&#39;Content-Type&#39;, &#39;application/json&#39;);
     xhr.onreadystatechange = function() {
       if (xhr.readyState === XMLHttpRequest.DONE) {
         if (xhr.status === 200) {
@@ -353,11 +352,19 @@ las mejores prácticas y estándares de accesibilidad para tu proyecto web.&lt;/
       }
     };
 
-    xhr.send(
-      &#39;from=&#39; + encodeURIComponent(sender) +
-      &#39;&amp;to=&#39; + encodeURIComponent(recipient) +
-      &#39;&amp;subject=&#39; + encodeURIComponent(subject) +
-      &#39;&amp;text=&#39; + encodeURIComponent(body));
+    // Prepare form data as JSON
+    var formData = {
+      &#39;name&#39;: name,
+      &#39;email&#39;: email,
+      &#39;subject&#39;: subject,
+      &#39;message&#39;: message
+    };
+
+    // Convert form data to JSON string
+    var jsonData = JSON.stringify(formData);
+
+    // Send form data to Firebase Function endpoint
+    xhr.send(jsonData);
   });
 
   // Make reCaptcha compliance 508 valid.

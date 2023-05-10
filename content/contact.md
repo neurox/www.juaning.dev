@@ -87,21 +87,18 @@ noDate: true
     var body = 'Name: ' + name + '\n\nEmail: ' + email +
       + '\n\nSubject: ' + subject +'\n\nMessage: ' + message;
 
-    // Send form data to Mailgun API
+    // Send form data to Firebase Function endpoint
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://api.mailgun.net/v3/mg.juaning.dev/messages');
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhr.setRequestHeader('Authorization', 'Basic ' + btoa('api:' + process.env.MAILGUN_API_KEY));
+    xhr.open('POST', 'https://us-central1-juaningdev.cloudfunctions.net/contactForm');
+    xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.onreadystatechange = function() {
       if (xhr.readyState === XMLHttpRequest.DONE) {
         if (xhr.status === 200) {
-
           Swal.fire({
             icon: 'success',
             title: 'Thank you for reaching out to me!',
             text: 'I appreciate your interest and will personally get back to you as soon as possible.'
           });
-
           // Clear form fields
           document.getElementById('contact-form').reset();
           grecaptcha.reset();
@@ -115,11 +112,19 @@ noDate: true
       }
     };
 
-    xhr.send(
-      'from=' + encodeURIComponent(sender) +
-      '&to=' + encodeURIComponent(recipient) +
-      '&subject=' + encodeURIComponent(subject) +
-      '&text=' + encodeURIComponent(body));
+    // Prepare form data as JSON
+    var formData = {
+      'name': name,
+      'email': email,
+      'subject': subject,
+      'message': message
+    };
+
+    // Convert form data to JSON string
+    var jsonData = JSON.stringify(formData);
+
+    // Send form data to Firebase Function endpoint
+    xhr.send(jsonData);
   });
 
   // Make reCaptcha compliance 508 valid.
