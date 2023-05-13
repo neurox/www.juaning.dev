@@ -5,8 +5,9 @@ title: 'Hola, soy Juan Gómez, experto desarrollador web full-stack y apasionado
 <div class="featured-banner">
   <img src="/samurai-logo.svg"
     class="profile-image"
-    alt="A samurai mask logo"
-    width="140">
+    alt="Un logo de marcara de samurai"
+    width="140px"
+    height="160px">
 
   <h1 style="font-style: italic;">Hola, soy <span style="color: var(--bold-with-gold);">Juan Gómez</span>,<br>
   Experto desarrollador web full-stack y apasionado creador de soluciones digitales.</h1>

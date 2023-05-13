@@ -6,7 +6,8 @@ title: 'Hello, I am Juan Gómez, expert full-stack web developer and passionate 
   <img src="/samurai-logo.svg"
     class="profile-image"
     alt="A samurai mask logo"
-    width="140">
+    width="140px"
+    height="160px">
 
   <h1 style="font-style: italic;">Hello, I am <span style="color: var(--bold-with-gold);">Juan Gómez</span>,<br>
   Expert full-stack web developer and passionate creator of digital solutions.</h1>

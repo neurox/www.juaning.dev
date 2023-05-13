@@ -5,7 +5,7 @@
 
 <html lang="en-US" data-theme="dark">
 <head>
-	<meta name="generator" content="Hugo 0.111.3">
+	<meta name="generator" content="Hugo 0.111.2">
   
     
 <meta charset="utf-8">
@@ -194,7 +194,8 @@ if (!doNotTrack) {
   <img src="/samurai-logo.svg"
     class="profile-image"
     alt="A samurai mask logo"
-    width="140">
+    width="140px"
+    height="160px">
   <h1 style="font-style: italic;">Hello, I am <span style="color: var(--bold-with-gold);">Juan Gómez</span>,<br>
   Expert full-stack web developer and passionate creator of digital solutions.</h1>
   <p>Welcome to my personal blog and portfolio, where I share my knowledge, experiences, and achievements in the world of
@@ -457,7 +458,7 @@ document.addEventListener('DOMContentLoaded', function() {
 })
 
 function detectCurrentScheme() {
-    if (localStorage !== null && localStorage.getItem(STORAGE_KEY)) {
+    if (localStorage.getItem(STORAGE_KEY)) {
         return localStorage.getItem(STORAGE_KEY)
     } 
     if (defaultTheme) {
@@ -481,13 +482,11 @@ function changeButtonText()
 
 function switchTheme(e) {
     if (currentTheme == 'dark') {
-        if (localStorage !== null)
-            localStorage.setItem(STORAGE_KEY, 'light')
+        localStorage.setItem(STORAGE_KEY, 'light')
         document.documentElement.setAttribute('data-theme', 'light')
         currentTheme = 'light'
     } else {
-        if (localStorage !== null)
-            localStorage.setItem(STORAGE_KEY, 'dark')
+        localStorage.setItem(STORAGE_KEY, 'dark')
         document.documentElement.setAttribute('data-theme', 'dark')
         currentTheme = 'dark'
     }
