@@ -303,6 +303,7 @@ las mejores prácticas y estándares de accesibilidad para tu proyecto web.&lt;/
     // Get form data
     var name = document.getElementById(&#39;name&#39;).value;
     var email = document.getElementById(&#39;email&#39;).value;
+    var subject = &#39;New message from JUANING.dev&#39;;
     var message = document.getElementById(&#39;message&#39;).value;
     var recaptchaResponse = grecaptcha.getResponse();
 
@@ -318,17 +319,11 @@ las mejores prácticas y estándares de accesibilidad para tu proyecto web.&lt;/
       return;
     }
 
-    // Set Mailgun API parameters
-    var sender = &#39;JUANING.dev&lt;contact@juaning.dev&gt;&#39;;
-    var recipient = &#39;Juan Gómez&lt;contact@juaning.dev&gt;&#39;;
-    var subject = &#39;New message from &#39; + name;
-    var body = &#39;Name: &#39; + name + &#39;\n\nEmail: &#39; + email +
-      + &#39;\n\nSubject: &#39; + subject +&#39;\n\nMessage: &#39; + message;
-
     // Send form data to Mailgun API
     var xhr = new XMLHttpRequest();
-    xhr.open(&#39;POST&#39;, &#39;https://us-central1-juaningdev.cloudfunctions.net/contactForm&#39;);
+    xhr.open(&#39;POST&#39;, &#39;https://formsubmit.co/ajax/contact@juaning.dev&#39;);
     xhr.setRequestHeader(&#39;Content-Type&#39;, &#39;application/json&#39;);
+    xhr.setRequestHeader(&#39;Accept&#39;, &#39;application/json&#39;);
     xhr.onreadystatechange = function() {
       if (xhr.readyState === XMLHttpRequest.DONE) {
         if (xhr.status === 200) {

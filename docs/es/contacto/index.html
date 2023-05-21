@@ -278,6 +278,7 @@ if (!doNotTrack) {
     // Get form data
     var name = document.getElementById('name').value;
     var email = document.getElementById('email').value;
+    var subject = 'New message from JUANING.dev';
     var message = document.getElementById('message').value;
     var recaptchaResponse = grecaptcha.getResponse();
 
@@ -293,17 +294,11 @@ if (!doNotTrack) {
       return;
     }
 
-    // Set Mailgun API parameters
-    var sender = 'JUANING.dev<contact@juaning.dev>';
-    var recipient = 'Juan Gómez<contact@juaning.dev>';
-    var subject = 'New message from ' + name;
-    var body = 'Name: ' + name + '\n\nEmail: ' + email +
-      + '\n\nSubject: ' + subject +'\n\nMessage: ' + message;
-
     // Send form data to Mailgun API
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://us-central1-juaningdev.cloudfunctions.net/contactForm');
+    xhr.open('POST', 'https://formsubmit.co/ajax/contact@juaning.dev');
     xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.setRequestHeader('Accept', 'application/json');
     xhr.onreadystatechange = function() {
       if (xhr.readyState === XMLHttpRequest.DONE) {
         if (xhr.status === 200) {
