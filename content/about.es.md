@@ -1,8 +1,9 @@
 ---
-seoTitle: "Desarrollador Full-Stack Freelance | 6+ Años Experiencia | Proyectos desde Cero hasta Lanzamiento"
-title: "Desarrollador full-stack freelance con 6+ años de experiencia en proyectos desde cero hasta lanzamiento"
-description: "Especializado en colaboraciones a tiempo parcial, he trabajado para diversas empresas y clientes en
-proyectos de desarrollo completo, desde la conceptualización hasta la puesta en marcha en producción."
+seoTitle: Juan Gómez | Desarrollador Full Stack Sr & DevOps | Cuernavaca, MX
+title: Juan Gómez | Desarrollador Full Stack Sr & DevOps
+description: "Desarrollador Full Stack con más de 8 años de experiencia
+  en CMS, stack MERN y DevOps. Especializado en soluciones web escalables,
+  desarrollo de APIs e infraestructura en la nube. ¡Construyamos juntos!"
 date: "2022-11-12"
 slug: "acerca"
 noComment: true
@@ -24,30 +25,73 @@ noDate: true
 #     weight: 10
 ---
 
-<p>Desde 2016, he trabajado como desarrollador web para diversas empresas y clientes freelance, actualmente en D4ALL, una firma mexicana especializada en Drupal, ubicada en Tepic, Nayarit.</p>
+<p>¡Bienvenido! Soy Juan Gómez, un Desarrollador Web Full Stack Senior viviendo en
+Cuernavaca, Morelos, México. Con más de 8 años de experiencia, me especializo
+en crear soluciones web robustas y escalables utilizando tecnologías y
+plataformas de vanguardia.</p>
 
-<h2>Experiencia laboral:</h2>
+<h2>Mi Experiencia</h2>
+<h3>Mi trayectoria en desarrollo web me ha dotado de competencia en:</h3>
 <ul>
-  <li>6+ años en PHP, Javascript, MySQL y CSS</li>
-  <li>3+ años en C#, MS SQL, .NET Framework 4.5, .NET Core, Drupal 7-9, AWS, Cloudflare, optimización de carga y accesibilidad.</li>
+  <li>Desarrollo CMS: Umbraco (versiones 7-10 LTS), WordPress, Drupal</li>
+  <li>Lenguajes de Programación: PHP, C#, JavaScript</li>
+  <li>Tecnologías Web: HTML5, CSS3, SASS, LESS</li>
+  <li>Frameworks y Stacks: MERN (MongoDB, Express, React, Node.js)</li>
+  <li>Bases de Datos: MySQL, MSSQL, MongoDB</li>
+  <li>Servicios en la Nube: AWS (EC2, Load Balancers, CDN, CloudSearch, S3),
+    Cloudflare</li>
+  <li>Gestión de Servidores: Linux, Windows Server</li>
+  <li>Control de Versiones: Git</li>
+  <li>Herramientas DevOps: Docker, AWS Auto Scaling, Load Balancing</li>
 </ul>
 
-<h3>Lenguajes:</h3>
+<h2>Lo Que Me Distingue</h2>
+<ol>
+  <li>Dominio de CMS: Experto en Umbraco y Drupal, desde implementaciones personalizadas
+    hasta actualizaciones de versiones mayores.</li>
+  <li>Competencia Full Stack: Habilidades integrales tanto en desarrollo front-end como
+    back-end.</li>
+  <li>Especialista en Infraestructura en la Nube: Más de 4 años gestionando instancias AWS EC2,
+    incluyendo configuraciones avanzadas.</li>
+  <li>Desarrollador MERN Stack: Construyendo aplicaciones web modernas y eficientes con
+    MongoDB, Express, React y Node.js.</li>
+  <li>Experto en Desarrollo de APIs: Creando APIs robustas para integraciones de sistemas
+    sin problemas.</li>
+  <li>Experto en Optimización de Rendimiento: Entregando soluciones web de alta velocidad
+    a través de optimizaciones del lado del servidor y del cliente.</li>
+</ol>
+
+<h2>Logros Clave más recientes</h2>
 <ul>
-  <li>PHP, C#, Javascript</li>
+  <li>Diseñé y escalé el sitio web del Distrito Metropolitano de Agua del Sur de
+    California de Umbraco 7 a 10.</li>
+  <li>Lideré un proyecto multisitio en Drupal 10 para LACCD, desarrollando sincronización
+    de contenido personalizada entre sitios.</li>
+  <li>Diseñé una solución personalizada en Drupal 10 para Curtiss Wright: Defense
+    Solutions, migrando más de 20,000 usuarios.</li>
 </ul>
 
-<h3>CMS:</h3>
+<h2>Abrazando el Futuro</h2>
+<h3>Estoy expandiendo continuamente mi experiencia en DevOps, enfocándome en:</h3>
 <ul>
-  <li>Wordpress, Drupal, Umbraco</li>
+  <li>Containerización con Docker</li>
+  <li>AWS Auto Scaling y Load Balancing</li>
+  <li>Implementación de pipelines CI/CD</li>
 </ul>
 
-<h2>¿Por qué un desarrollador freelance?</h2>
-<p>Mi experiencia en proyectos importantes para entidades privadas y gubernamentales como desarrollador, sysops y
-programador principal me hace ideal para tu proyecto. Un freelance experimentado optimiza el tiempo y presupuesto, además, mi adaptabilidad permite trabajar en solitario o en equipo.</p>
+<p>Mi misión: Conectar el desarrollo y las operaciones para crear soluciones web más eficientes,
+  escalables y confiables.</p>
 
-<h2>Contratar directamente vs plataformas:</h2>
-<p>Hablemos directamente sobre mi experiencia en tecnologías y proyectos reales. Si eres reclutador, envíame los requisitos del proyecto.</p>
+<h2>Colaboremos</h2>
+<p>¿Listo para un nuevo desafío o tienes un proyecto emocionante? Estoy aquí para ayudar,
+  ya sea que necesites:</p>
 
-<p>Con experiencia comprobada en desarrollo web, soy el candidato perfecto si buscas un desarrollador freelance competente que cumpla con
-las mejores prácticas y estándares de accesibilidad para tu proyecto web.</p>
+<ul>
+  <li>Desarrollo robusto de aplicaciones web</li>
+  <li>Personalización y optimización de CMS</li>
+  <li>Orientación e implementación de infraestructura en la nube</li>
+</ul>
+
+<p><a href="/contact" target="_self">Conéctate conmigo</a></p>
+
+<p>¡Transformemos tu visión de desarrollo web en realidad!</p>

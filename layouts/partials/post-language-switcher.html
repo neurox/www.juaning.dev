@@ -3,14 +3,22 @@
   <span aria-label='{{ i18n "postTranslations"}}'>
     {{ range $index, $element := .AllTranslations }}
       {{ if eq .Lang $pageLang }}
-        <span lang="{{ .Lang }}">{{ upper .Lang }}</span>
+        <!-- <span lang="{{ .Lang }}">{{ upper .Lang }}</span> -->
       {{ else }}
-        <a href="{{ .Permalink }}" lang="{{ .Lang }}">{{ upper .Lang }}</a>
+        <a href="{{ .Permalink }}" lang="{{ .Lang }}">
+          {{ if eq .Lang "es" }}
+            Leer en
+          {{ else }}
+            Read in
+          {{ end }}
+
+          {{ .Language.LanguageName }}
+        </a>
       {{ end }}
 
-      {{ if eq $index 0 }}
+      <!-- {{ if eq $index 0 }}
         |
-      {{ end }}
+      {{ end }} -->
     {{ end }}
   </span>
 {{ end }}

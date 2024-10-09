@@ -26,6 +26,8 @@ params:
   social:
     - id: github
       name: neurox
+    - id: linkedin
+      url: https://www.linkedin.com/in/juaningdotdev
 
 languages:
   en:
@@ -52,7 +54,7 @@ languages:
       locale: 'en-US'
     weight: 1
   es:
-    languageName: 'Spanish'
+    languageName: 'Español'
     menu:
       main:
         - identifier: inicio

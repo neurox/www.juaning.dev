@@ -1,8 +1,9 @@
 ---
-seoTitle: "Freelance Full-Stack Developer | 6+ Years Experience | Projects from Scratch to Launch"
-title: Freelance full-stack developer with 6+ years of experience in projects from scratch to launch"
-description: "Specialized in part-time collaborations, I have worked for various companies and clients in
-complete development projects, from conceptualization to deployment in production."
+seoTitle: Juan Gómez | Sr Full Stack Developer & DevOps | Cuernavaca, MX
+title: Juan Gómez | Sr Full Stack Developer & DevOps
+description: "Senior Full Stack Developer with 8+ years experience in CMS, MERN
+ stack, and DevOps. Specializing in scalable web solutions, API development,
+ and cloud infrastructure. Let's build together!"
 date: "2022-11-12"
 noComment: true
 noDate: true
@@ -23,30 +24,73 @@ noDate: true
 #     weight: 10
 ---
 
-<p>Since 2016, I have worked as a web developer for various companies and freelance clients, currently at D4ALL, a Mexican firm specializing in Drupal, located in Tepic, Nayarit.</p>
+<p>Welcome! I'm Juan Gómez, a Senior Full Stack Web Developer based in
+Cuernavaca, Morelos, Mexico. With over 8 years of experience, I specialize
+in crafting robust, scalable web solutions using cutting-edge technologies
+and platforms.</p>
 
-<h2>Work experience:</h2>
+<h2>My Expertise</h2>
+<h3>My web development journey has equipped me with proficiency in:</h3>
 <ul>
-  <li>6+ years in PHP, Javascript, MySQL, and CSS</li>
-  <li>3+ years in C#, MS SQL, .NET Framework 4.5, .NET Core, Drupal 7-9, AWS, Cloudflare, load optimization, and accessibility.</li>
+  <li>CMS Development: Umbraco (versions 7-10 LTS), WordPress, Drupal</li>
+  <li>Programming Languages: PHP, C#, JavaScript</li>
+  <li>Web Technologies: HTML5, CSS3, SASS, LESS</li>
+  <li>Frameworks & Stacks: MERN (MongoDB, Express, React, Node.js)</li>
+  <li>Databases: MySQL, MSSQL, MongoDB</li>
+  <li>Cloud Services: AWS (EC2, Load Balancers, CDN, CloudSearch, S3),
+    Cloudflare</li>
+  <li>Server Management: Linux, Windows Server</li>
+  <li>Version Control: Git</li>
+  <li>DevOps Tools: Docker, AWS Auto Scaling, Load Balancing</li>
 </ul>
 
-<h3>Languages:</h3>
+<h2>What Sets Me Apart</h2>
+<ol>
+  <li>CMS Mastery: Expert in Umbraco & Drupal, from custom implementations
+    to major version upgrades.</li>
+  <li>Full Stack Proficiency: Comprehensive skills in both front-end and
+    back-end development.</li>
+  <li>Cloud Infrastructure Specialist: 4+ years managing AWS EC2 instances,
+    including advanced configurations.</li>
+  <li>MERN Stack Developer: Building modern, efficient web applications with
+    MongoDB, Express, React, and Node.js.</li>
+  <li>API Development Expert: Creating robust APIs for seamless system
+    integrations.</li>
+  <li>Performance Optimization Expert: Delivering high-speed web solutions
+    through server-side and client-side optimizations.</li>
+</ol>
+
+<h2>Most Recent Key Achievements</h2>
 <ul>
-  <li>PHP, C#, Javascript</li>
+  <li>Architected and scaled the Metropolitan Water District of Southern
+    California's website from Umbraco 7 to 10.</li>
+  <li>Led a Drupal 10 multisite project for LACCD, developing custom cross-site
+    content synchronization.</li>
+  <li>Engineered a bespoke Drupal 10 solution for Curtiss Wright: Defense
+    Solutions, migrating 20,000+ users.</li>
 </ul>
 
-<h3>CMS:</h3>
+<h2>Embracing the Future</h2>
+<h3>I'm continuously expanding my DevOps expertise, focusing on:</h3>
 <ul>
-  <li>Wordpress, Drupal, Umbraco</li>
+  <li>Docker containerization</li>
+  <li>AWS Auto Scaling and Load Balancing</li>
+  <li>CI/CD pipeline implementation</li>
 </ul>
 
-<h2>Why a freelance developer?</h2>
-<p>My experience in significant projects for private and governmental entities as a developer, sysops,
-and lead programmer makes me ideal for your project. An experienced freelancer optimizes time and budget, and my adaptability allows working solo or in a team.</p>
+<p>My mission: Bridging development and operations to create more efficient,
+  scalable, and reliable web solutions.</p>
 
-<h2>Hiring directly vs platforms:</h2>
-<p>Let's talk directly about my experience in technologies and real-world projects. If you are a recruiter, send me the project requirements.</p>
+<h2>Let's Collaborate</h2>
+<p>Ready for a new challenge or have an exciting project? I'm here to help,
+  whether you need:</p>
 
-<p>With proven experience in web development, I am the perfect candidate if you are looking for a competent freelance developer who follows
-best practices and accessibility standards for your web project.</p>
+<ul>
+  <li>Robust web application development</li>
+  <li>CMS customization and optimization</li>
+  <li>Cloud infrastructure guidance and implementation</li>
+</ul>
+
+<p><a href="/contact" target="_self">Connect with me</a></p>
+
+<p>Let's transform your web development vision into reality!</p>

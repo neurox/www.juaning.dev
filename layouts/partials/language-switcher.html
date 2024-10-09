@@ -7,9 +7,17 @@
 
   {{ range $translations }}
     {{ if eq .Lang $pageLang }}
-      <li><span lang="{{ .Lang }}">{{ .Language.LanguageName }}</span></li>
+      <!-- <li><span lang="{{ .Lang }}">{{ .Language.LanguageName }}</span></li> -->
     {{ else }}
-      <li><a href="{{ .Permalink }}" lang="{{ .Lang }}">{{ .Language.LanguageName }}</a></li>
+      <li><a href="{{ .Permalink }}" lang="{{ .Lang }}">
+        {{ if eq .Lang "es" }}
+          Leer en
+        {{ else }}
+          Read in
+        {{ end }}
+
+        {{ .Language.LanguageName }}
+      </a></li>
     {{ end }}
   {{ end }}
 </ul>

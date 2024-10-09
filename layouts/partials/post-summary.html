@@ -2,15 +2,13 @@
   <div class="post-header">
     <section>
       <h2 class="p-name post-title{{ if .Params.draft }} draft{{end}}" itemprop="headline">
-        <a class="u-url" href="{{ .RelPermalink }}" itemprop="url" aria-label="{{ .Title }}">
-          {{ trim .Title " " }}
-          {{ if .Params.favorite }}
-            {{ partial "font-awesome.html" (dict "iconName" "star-solid" "custom" false) }}
-          {{end}}
-        </a>
+        {{ trim .Title " " }}
+        {{ if .Params.favorite }}
+          {{ partial "font-awesome.html" (dict "iconName" "star-solid" "custom" false) }}
+        {{end}}
       </h2>
     </section>
-    {{ partial "post-language-switcher.html" . }}
+    <!-- {{ partial "post-language-switcher.html" . }} -->
   </div>
 
   {{ if not .Site.Params.disableSummary }}

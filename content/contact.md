@@ -1,51 +1,51 @@
 ---
-title: "Contact me"
-description: "Hugo, the world's fastest framework for building websites"
+title: Contact me
+description: Hugo, the world\'s fastest framework for building websites
 date: "2022-11-11"
 noComment: true
 noDate: true
 ---
 
-<div class="featured-banner">
-  <img src="/samurai-logo.svg"
-    class="profile-image"
-    alt="A samurai mask logo"
-    width="140">
-
-  <h2 style="font-style: italic;">Hi, I'm <span style="color: var(--bold-with-gold);">Juan Gómez</span>,<br>
-  an experienced full-stack web developer.</h2>
-  <p>Feel free to contact me if you have any further questions, project offers,
-    you need help to fix an issue with your site or server architecture, I'm open to work per hour.</p>
-</div>
-
-<div class="form-container">
-  <form
-    id="contact-form"
-    method="post"
-    class="responsive-form"
-  >
-    <div class="field-container">
-      <label for="name">Name*:</label>
-      <input type="text" id="name" name="name" required>
+<div class="contact-page">
+  <div class="row">
+    <div class="col">
+      <h2 style="font-style: italic;">Hi, I'm <span style="color: var(--bold-with-gold);">Juan Gómez</span>,<br>
+      Senior Full Stack Web Developer based in Cuernavaca, Morelos, Mexico.</h2>
+      <p>Feel free to contact me if you have any further questions, project offers,
+        you need help to fix an issue with your site or server architecture, I'm open to work per hour.</p>
     </div>
-    <div class="field-container">
-      <label for="email">Email*:</label>
-      <input type="email" id="email" name="email" required>
+    <div class="col">
+      <div class="form-container">
+        <form
+          id="contact-form"
+          method="post"
+          class="responsive-form"
+        >
+          <div class="field-container">
+            <label for="name">Name*:</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="field-container">
+            <label for="email">Email*:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="field-container">
+            <label for="subject">Subject*:</label>
+            <input type="text" id="subject" name="subject" required>
+          </div>
+          <div class="field-container">
+            <label for="message">Message*:</label>
+            <textarea id="message" name="message" rows="10" required></textarea>
+          </div>
+          <div class="g-recaptcha" data-sitekey="6LfH2-oiAAAAAO8yeRMVEugLESUVWaUe8qUtTNCn"
+          aria-label="Please complete the reCAPTCHA to verify that you are not a robot."></div>
+          <button type="submit">Send Message</button>
+          <br>
+          <small>*Required fields</small>
+        </form>
+      </div>
     </div>
-    <div class="field-container">
-      <label for="subject">Subject*:</label>
-      <input type="text" id="subject" name="subject" required>
-    </div>
-    <div class="field-container">
-      <label for="message">Message*:</label>
-      <textarea id="message" name="message" rows="10" required></textarea>
-    </div>
-    <div class="g-recaptcha" data-sitekey="6LfH2-oiAAAAAO8yeRMVEugLESUVWaUe8qUtTNCn"
-    aria-label="Please complete the reCAPTCHA to verify that you are not a robot."></div>
-    <button type="submit">Send Message</button>
-    <br>
-    <small>*Required fields</small>
-  </form>
+  </div>
 </div>
 
 <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">

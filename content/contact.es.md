@@ -7,46 +7,48 @@ noComment: true
 noDate: true
 ---
 
-<div class="featured-banner">
-  <img src="/samurai-logo.svg"
-    class="profile-image"
-    alt="A samurai mask logo"
-    width="140">
-
-  <h2 style="font-style: italic;">Hola, soy <span style="color: var(--bold-with-gold);">Juan Gómez</span>,<br>
-  Experto desarrollador web full-stack y apasionado creador de soluciones digitales.</h2>
-  <p>Si eres un cliente potencial o un reclutador buscando talento en desarrollo web, no dudes en contactarme para explorar
-    oportunidades de colaboración y llevar tus proyectos al éxito. ¡Estoy ansioso por trabajar contigo en nuevos y emocionantes desafíos!</p>
-</div>
-
-<div class="form-container">
-  <form
-    id="contact-form"
-    method="post"
-    class="responsive-form"
-  >
-    <div class="field-container">
-      <label for="name">Nombre*:</label>
-      <input type="text" id="name" name="name" required>
+<div class="contact-page">
+  <div class="row">
+    <div class="col">
+      <h2 style="font-style: italic;">Hola, soy <span style="color:
+        var(--bold-with-gold);">Juan Gómez</span>,<br>
+        Desarrollador Full Stack Senior en Cuernavaca, Morelos, Mexico.</h2>
+      <p>No dudes en contactarme si tienes más preguntas, ofertas de proyectos,
+        necesitas ayuda para resolver un problema con tu sitio o arquitectura
+        de servidor. Estoy disponible para trabajar por hora.</p>
     </div>
-    <div class="field-container">
-      <label for="email">Email*:</label>
-      <input type="email" id="email" name="email" required>
+    <div class="col">
+      <div class="form-container">
+        <form
+          id="contact-form"
+          method="post"
+          class="responsive-form"
+        >
+          <div class="field-container">
+            <label for="name">Nombre*:</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="field-container">
+            <label for="email">Email*:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="field-container">
+            <label for="subject">Asunto*:</label>
+            <input type="text" id="subject" name="subject" required>
+          </div>
+          <div class="field-container">
+            <label for="message">Mensaje*:</label>
+            <textarea id="message" name="message" rows="10" required></textarea>
+          </div>
+          <div class="g-recaptcha" data-sitekey="6LfH2-oiAAAAAO8yeRMVEugLESUVWaUe8qUtTNCn"
+          aria-label="Por favor, complete el reCAPTCHA para verificar que no eres un robot."></div>
+          <button type="submit">Enviar Mensaje</button>
+          <br>
+          <small>*Campos requeridos</small>
+        </form>
+      </div>
     </div>
-    <div class="field-container">
-      <label for="subject">Asunto*:</label>
-      <input type="text" id="subject" name="subject" required>
-    </div>
-    <div class="field-container">
-      <label for="message">Mensaje*:</label>
-      <textarea id="message" name="message" rows="10" required></textarea>
-    </div>
-    <div class="g-recaptcha" data-sitekey="6LfH2-oiAAAAAO8yeRMVEugLESUVWaUe8qUtTNCn"
-    aria-label="Por favor, complete el reCAPTCHA para verificar que no eres un robot."></div>
-    <button type="submit">Enviar Mensaje</button>
-    <br>
-    <small>*Campos requeridos</small>
-  </form>
+  </div>
 </div>
 
 <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">

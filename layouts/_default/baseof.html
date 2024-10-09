@@ -18,6 +18,13 @@
       {{ end }}
     </header>
     <main id="main" tabindex="-1">
+      {{ if .IsHome }}
+        {{ $languagesCount := $.Site.Home.AllTranslations }}
+        {{ if gt $languagesCount 1 }}
+          {{ partial "language-switcher.html" . }}
+        {{ end }}
+      {{ end }}
+
       {{ block "main" . }}{{ end }}
     </main>
     {{ block "footer" . }}
