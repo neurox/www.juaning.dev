@@ -1,6 +1,8 @@
 ---
 title: Contact me
-description: Hugo, the world\'s fastest framework for building websites
+description: "Senior Full Stack Developer with 8+ years experience in CMS, MERN
+ stack, and DevOps. Specializing in scalable web solutions, API development,
+ and cloud infrastructure. Let's build together!"
 date: "2022-11-11"
 noComment: true
 noDate: true

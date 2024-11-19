@@ -1,6 +1,8 @@
 ---
 title: "Contáctame"
-description: "Hugo, the world’s fastest framework for building websites"
+description: "Desarrollador Full Stack con más de 8 años de experiencia
+  en CMS, stack MERN y DevOps. Especializado en soluciones web escalables,
+  desarrollo de APIs e infraestructura en la nube. ¡Construyamos juntos!"
 date: "2022-11-11"
 slug: "contacto"
 noComment: true
