@@ -5,7 +5,7 @@
     <link>https://www.juaning.dev/</link>
     <description>JUANING.dev (Juan Gómez | Sr Full Stack Developer &amp; DevOps | Cuernavaca, MX)</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>en-US</language>
     <copyright>JUANING</copyright>
     <lastBuildDate>Fri, 14 Apr 2023 00:00:00 +0000</lastBuildDate>
     
@@ -292,7 +292,7 @@ and platforms.&lt;/p&gt;
       <description>&lt;div class=&#34;contact-page&#34;&gt;
   &lt;div class=&#34;row&#34;&gt;
     &lt;div class=&#34;col&#34;&gt;
-      &lt;h2 style=&#34;font-style: italic;&#34;&gt;Hi, I&#39;m &lt;span style=&#34;color: var(--bold-with-gold);&#34;&gt;Juan Gómez&lt;/span&gt;,&lt;br&gt;
+      &lt;h2 style=&#34;font-style: italic; font-weight: normal;&#34;&gt;Hi, I&#39;m &lt;span style=&#34;font-weight: bold;&#34;&gt;Juan Gómez&lt;/span&gt;,&lt;br&gt;
       Senior Full Stack Web Developer based in Cuernavaca, Morelos, Mexico.&lt;/h2&gt;
       &lt;p&gt;Feel free to contact me if you have any further questions, project offers,
         you need help to fix an issue with your site or server architecture, I&#39;m open to work per hour.&lt;/p&gt;
@@ -305,26 +305,26 @@ and platforms.&lt;/p&gt;
           class=&#34;responsive-form&#34;
         &gt;
           &lt;div class=&#34;field-container&#34;&gt;
-            &lt;label for=&#34;name&#34;&gt;Name*:&lt;/label&gt;
-            &lt;input type=&#34;text&#34; id=&#34;name&#34; name=&#34;name&#34; required&gt;
+            &lt;input type=&#34;text&#34; id=&#34;name&#34; name=&#34;name&#34; placeholder=&#34;Name&#34; required&gt;
+            &lt;label for=&#34;name&#34;&gt;Name&lt;/label&gt;
           &lt;/div&gt;
           &lt;div class=&#34;field-container&#34;&gt;
-            &lt;label for=&#34;email&#34;&gt;Email*:&lt;/label&gt;
-            &lt;input type=&#34;email&#34; id=&#34;email&#34; name=&#34;email&#34; required&gt;
+            &lt;input type=&#34;email&#34; id=&#34;email&#34; name=&#34;email&#34; placeholder=&#34;Email&#34; required&gt;
+            &lt;label for=&#34;email&#34;&gt;Email&lt;/label&gt;
           &lt;/div&gt;
           &lt;div class=&#34;field-container&#34;&gt;
-            &lt;label for=&#34;subject&#34;&gt;Subject*:&lt;/label&gt;
-            &lt;input type=&#34;text&#34; id=&#34;subject&#34; name=&#34;subject&#34; required&gt;
+            &lt;input type=&#34;text&#34; id=&#34;subject&#34; name=&#34;subject&#34; placeholder=&#34;Subject&#34; required&gt;
+            &lt;label for=&#34;subject&#34;&gt;Subject&lt;/label&gt;
           &lt;/div&gt;
           &lt;div class=&#34;field-container&#34;&gt;
-            &lt;label for=&#34;message&#34;&gt;Message*:&lt;/label&gt;
-            &lt;textarea id=&#34;message&#34; name=&#34;message&#34; rows=&#34;10&#34; required&gt;&lt;/textarea&gt;
+            &lt;textarea id=&#34;message&#34; name=&#34;message&#34; rows=&#34;10&#34; placeholder=&#34;Message&#34; required&gt;&lt;/textarea&gt;
+            &lt;label for=&#34;message&#34;&gt;Message&lt;/label&gt;
           &lt;/div&gt;
           &lt;div class=&#34;g-recaptcha&#34; data-sitekey=&#34;6LfH2-oiAAAAAO8yeRMVEugLESUVWaUe8qUtTNCn&#34;
           aria-label=&#34;Please complete the reCAPTCHA to verify that you are not a robot.&#34;&gt;&lt;/div&gt;
           &lt;button type=&#34;submit&#34;&gt;Send Message&lt;/button&gt;
           &lt;br&gt;
-          &lt;small&gt;*Required fields&lt;/small&gt;
+          &lt;small&gt;*All fields are required&lt;/small&gt;
         &lt;/form&gt;
       &lt;/div&gt;
     &lt;/div&gt;

@@ -765,7 +765,7 @@ ul.language-select > li, ul.footer-menu > li {
 .responsive-form .field-container + .field-container,
 .responsive-form .field-container + hr,
 .responsive-form button + hr{
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 .responsive-form button{
@@ -784,12 +784,49 @@ ul.language-select > li, ul.footer-menu > li {
   cursor: pointer;
 }
 
+.field-container{
+  position: relative;
+}
+
+.field-container label{
+  position: absolute;
+  left: 10px;
+  transform: translateY(5px) scale(1);
+  color: var(--hr-color);
+  transition: all 200ms;
+  transform-origin: left;
+}
+
+.field-container label::before{
+  background-color: transparent;
+  content: "";
+  height: 15px;
+  width: 100px;
+  position: absolute;
+  left: 0;
+  z-index: -1;
+}
+
 .field-container input,
 .field-container textarea{
-  width: calc(100% - 20px);
-  padding: 10px;
+  width: -webkit-fill-available;
+  padding: 15px 10px 5px 10px;
   border-radius: 3px;
   border: none;
+}
+
+.field-container input::placeholder,
+.field-container textarea::placeholder{
+  opacity: 0;
+}
+
+.field-container input:focus + label,
+.field-container input:not(:placeholder-shown) + label,
+.field-container textarea:focus + label,
+.field-container textarea:not(:placeholder-shown) + label{
+  transition: all 200ms;
+  transform: translateY(-7px) scale(.7);
+  transform-origin: left;
 }
 
 .visually-hidden {
@@ -812,6 +849,10 @@ ul.language-select > li, ul.footer-menu > li {
 .contact-page .col + .col{
   padding: 0;
   margin-top: 15px;
+}
+
+.g-recaptcha{
+  min-height: 78px;
 }
 
 /* Media Queries */

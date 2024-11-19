@@ -9,7 +9,7 @@ noDate: true
 <div class="contact-page">
   <div class="row">
     <div class="col">
-      <h2 style="font-style: italic;">Hi, I'm <span style="color: var(--bold-with-gold);">Juan Gómez</span>,<br>
+      <h2 style="font-style: italic; font-weight: normal;">Hi, I'm <span style="font-weight: bold;">Juan Gómez</span>,<br>
       Senior Full Stack Web Developer based in Cuernavaca, Morelos, Mexico.</h2>
       <p>Feel free to contact me if you have any further questions, project offers,
         you need help to fix an issue with your site or server architecture, I'm open to work per hour.</p>
@@ -22,26 +22,26 @@ noDate: true
           class="responsive-form"
         >
           <div class="field-container">
-            <label for="name">Name*:</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" placeholder="Name" required>
+            <label for="name">Name</label>
           </div>
           <div class="field-container">
-            <label for="email">Email*:</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <label for="email">Email</label>
           </div>
           <div class="field-container">
-            <label for="subject">Subject*:</label>
-            <input type="text" id="subject" name="subject" required>
+            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+            <label for="subject">Subject</label>
           </div>
           <div class="field-container">
-            <label for="message">Message*:</label>
-            <textarea id="message" name="message" rows="10" required></textarea>
+            <textarea id="message" name="message" rows="10" placeholder="Message" required></textarea>
+            <label for="message">Message</label>
           </div>
           <div class="g-recaptcha" data-sitekey="6LfH2-oiAAAAAO8yeRMVEugLESUVWaUe8qUtTNCn"
           aria-label="Please complete the reCAPTCHA to verify that you are not a robot."></div>
           <button type="submit">Send Message</button>
           <br>
-          <small>*Required fields</small>
+          <small>*All fields are required</small>
         </form>
       </div>
     </div>

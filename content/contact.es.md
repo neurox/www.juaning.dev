@@ -10,8 +10,7 @@ noDate: true
 <div class="contact-page">
   <div class="row">
     <div class="col">
-      <h2 style="font-style: italic;">Hola, soy <span style="color:
-        var(--bold-with-gold);">Juan Gómez</span>,<br>
+      <h2 style="font-style: italic; font-weight: normal;">Hola, soy <span style="font-weight: bold;">Juan Gómez</span>,<br>
         Desarrollador Full Stack Senior en Cuernavaca, Morelos, Mexico.</h2>
       <p>No dudes en contactarme si tienes más preguntas, ofertas de proyectos,
         necesitas ayuda para resolver un problema con tu sitio o arquitectura
@@ -25,26 +24,26 @@ noDate: true
           class="responsive-form"
         >
           <div class="field-container">
-            <label for="name">Nombre*:</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" placeholder="Nombre" required>
+            <label for="name">Nombre</label>
           </div>
           <div class="field-container">
-            <label for="email">Email*:</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <label for="email">Email</label>
           </div>
           <div class="field-container">
-            <label for="subject">Asunto*:</label>
-            <input type="text" id="subject" name="subject" required>
+            <input type="text" id="subject" name="subject" placeholder="Asunto" required>
+            <label for="subject">Asunto</label>
           </div>
           <div class="field-container">
-            <label for="message">Mensaje*:</label>
-            <textarea id="message" name="message" rows="10" required></textarea>
+            <textarea id="message" name="message" rows="10" placeholder="Mensaje" required></textarea>
+            <label for="message">Mensaje</label>
           </div>
           <div class="g-recaptcha" data-sitekey="6LfH2-oiAAAAAO8yeRMVEugLESUVWaUe8qUtTNCn"
           aria-label="Por favor, complete el reCAPTCHA para verificar que no eres un robot."></div>
           <button type="submit">Enviar Mensaje</button>
           <br>
-          <small>*Campos requeridos</small>
+          <small>*Todos los campos son obligatorios</small>
         </form>
       </div>
     </div>
