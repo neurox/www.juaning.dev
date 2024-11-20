@@ -21,7 +21,7 @@ noDate: true
         <form
           id="contact-form"
           method="post"
-          class="responsive-form"
+          class="responsive-form en"
         >
           <div class="field-container">
             <input type="text" id="name" name="name" placeholder="Name" required>

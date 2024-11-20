@@ -791,7 +791,7 @@ ul.language-select > li, ul.footer-menu > li {
 .field-container label{
   position: absolute;
   left: 10px;
-  transform: translateY(5px) scale(1);
+  transform: translateY(8px) scale(1);
   color: var(--hr-color);
   transition: all 200ms;
   transform-origin: left;
@@ -810,9 +810,10 @@ ul.language-select > li, ul.footer-menu > li {
 .field-container input,
 .field-container textarea{
   width: -webkit-fill-available;
-  padding: 15px 10px 5px 10px;
+  padding: 20px 10px 5px 10px;
   border-radius: 3px;
   border: none;
+  line-height: 1.5em;
 }
 
 .field-container input::placeholder,
@@ -825,8 +826,20 @@ ul.language-select > li, ul.footer-menu > li {
 .field-container textarea:focus + label,
 .field-container textarea:not(:placeholder-shown) + label{
   transition: all 200ms;
-  transform: translateY(-7px) scale(.7);
+  transform: translateY(-3px) scale(.7);
   transform-origin: left;
+}
+
+form.en .field-container input:focus + label::after,
+form.en .field-container textarea:focus + label::after{
+  content: " (required)";
+  color: red;
+}
+
+form.es .field-container input:focus + label::after,
+form.es .field-container textarea:focus + label::after{
+  content: " (requerido)";
+  color: red;
 }
 
 .visually-hidden {
