@@ -302,7 +302,7 @@ plataformas de vanguardia.&lt;/p&gt;
         &lt;form
           id=&#34;contact-form&#34;
           method=&#34;post&#34;
-          class=&#34;responsive-form&#34;
+          class=&#34;responsive-form es&#34;
         &gt;
           &lt;div class=&#34;field-container&#34;&gt;
             &lt;input type=&#34;text&#34; id=&#34;name&#34; name=&#34;name&#34; placeholder=&#34;Nombre&#34; required&gt;
