@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Juan Gómez | Sr Full Stack Developer &amp; DevOps | Cuernavaca, MX on JUANING.dev</title>
-    <link>http://localhost:1313/</link>
+    <link>https://www.juaning.dev/</link>
     <description>JUANING.dev (Juan Gómez | Sr Full Stack Developer &amp; DevOps | Cuernavaca, MX)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>JUANING</copyright>
     <lastBuildDate>Fri, 14 Apr 2023 00:00:00 +0000</lastBuildDate>
     
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.juaning.dev/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>How to Install Solr 8 on macOS 13 Ventura for Drupal Compatibility.</title>
-      <link>http://localhost:1313/post/2023/2023-04-14-how-to-install-solr-8-on-macos-13-ventura-for-drupal-compatibility/</link>
+      <link>https://www.juaning.dev/post/2023/2023-04-14-how-to-install-solr-8-on-macos-13-ventura-for-drupal-compatibility/</link>
       <pubDate>Fri, 14 Apr 2023 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/2023/2023-04-14-how-to-install-solr-8-on-macos-13-ventura-for-drupal-compatibility/</guid>
+      <guid>https://www.juaning.dev/post/2023/2023-04-14-how-to-install-solr-8-on-macos-13-ventura-for-drupal-compatibility/</guid>
       <description>&lt;p&gt;You might have observed that the solr version included in the most recent homebrew package is 9.
 However, its schema is currently not compatible with Drupal. Therefore, I will guide you on how to obtain version 8 of solr,
 which is compatible with Drupal.&lt;/p&gt;
@@ -110,10 +110,10 @@ If you want to stop Solr from starting automatically, you can unload the plist f
     
     <item>
       <title>Install and enable FTP access on an AWS EC2 instance with Linux CentOS 7</title>
-      <link>http://localhost:1313/post/2022/2022-11-24-install-and-enable-ftp-access-in-aws-ec2-instance-with-linux-centos-7/</link>
+      <link>https://www.juaning.dev/post/2022/2022-11-24-install-and-enable-ftp-access-in-aws-ec2-instance-with-linux-centos-7/</link>
       <pubDate>Thu, 24 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/2022/2022-11-24-install-and-enable-ftp-access-in-aws-ec2-instance-with-linux-centos-7/</guid>
+      <guid>https://www.juaning.dev/post/2022/2022-11-24-install-and-enable-ftp-access-in-aws-ec2-instance-with-linux-centos-7/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ll guide you through the quickest and easiest way to set up FTP
 access on an EC2 instance with CentOS 7 distribution on AWS (Amazon Web Services).
 We&amp;rsquo;re going to use VSFTPD (Very Secure FTP Daemon), so the first step is to install it.&lt;/p&gt;
@@ -215,10 +215,10 @@ Note: Some variables may not exist, just add them at the end of the file.
     
     <item>
       <title>Juan Gómez | Sr Full Stack Developer &amp; DevOps</title>
-      <link>http://localhost:1313/about/</link>
+      <link>https://www.juaning.dev/about/</link>
       <pubDate>Sat, 12 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/about/</guid>
+      <guid>https://www.juaning.dev/about/</guid>
       <description>&lt;p&gt;Welcome! I&#39;m Juan Gómez, a Senior Full Stack Web Developer based in
 Cuernavaca, Morelos, Mexico. With over 8 years of experience, I specialize
 in crafting robust, scalable web solutions using cutting-edge technologies
@@ -278,17 +278,17 @@ and platforms.&lt;/p&gt;
   &lt;li&gt;CMS customization and optimization&lt;/li&gt;
   &lt;li&gt;Cloud infrastructure guidance and implementation&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/contact&#34; target=&#34;_self&#34;&gt;Connect with me&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.juaning.dev/contact&#34; target=&#34;_self&#34;&gt;Connect with me&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Let&#39;s transform your web development vision into reality!&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Contact me</title>
-      <link>http://localhost:1313/contact/</link>
+      <link>https://www.juaning.dev/contact/</link>
       <pubDate>Fri, 11 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/contact/</guid>
+      <guid>https://www.juaning.dev/contact/</guid>
       <description>&lt;div class=&#34;contact-page&#34;&gt;
   &lt;div class=&#34;row&#34;&gt;
     &lt;div class=&#34;col&#34;&gt;

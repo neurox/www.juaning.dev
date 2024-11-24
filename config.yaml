@@ -1,18 +1,18 @@
-languageCode: 'en-US'
-defaultContentLanguage: 'en'
-baseURL: 'https://www.juaning.dev'
-title: 'JUANING.dev'
-theme: 'anubis'
+languageCode: en-US
+defaultContentLanguage: en
+baseURL: https://www.juaning.dev
+title: JUANING.dev
+theme: anubis
 pagerSize: 10
-copyright: 'JUANING'
-publishDir: 'docs'
+copyright: JUANING
+publishDir: docs
 enableRobotsTXT: true
 
 services:
   googleAnalytics:
-    id: 'G-ZSRN0E5HWF'
+    id: G-ZSRN0E5HWF
   disqus:
-    shortname: 'juaning'
+    shortname: juaning
 
 params:
   title: 'JUANING'
