@@ -1,4 +1,4 @@
-{{ if .Site.DisqusShortname }}
+{{ if site.Config.Services.Disqus.Shortname }}
     {{ if not .Params.noComment }}
         {{ partial "disqus.html" . }}
     {{ end }}

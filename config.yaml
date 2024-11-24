@@ -3,12 +3,16 @@ defaultContentLanguage: 'en'
 baseURL: 'https://www.juaning.dev'
 title: 'JUANING.dev'
 theme: 'anubis'
-paginate: 10
-googleAnalytics: 'G-ZSRN0E5HWF'
-disqusShortname: 'juaning'
+pagerSize: 10
 copyright: 'JUANING'
 publishDir: 'docs'
 enableRobotsTXT: true
+
+services:
+  googleAnalytics:
+    id: 'G-ZSRN0E5HWF'
+  disqus:
+    shortname: 'juaning'
 
 params:
   title: 'JUANING'
