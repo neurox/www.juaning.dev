@@ -77,6 +77,11 @@
                 href="https://www.juaning.dev/about/"
                 />
   </url><url>
+    <loc>https://www.juaning.dev/portfolio/</loc>
+    <lastmod>2022-11-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://www.juaning.dev/contact/</loc>
     <lastmod>2022-11-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>

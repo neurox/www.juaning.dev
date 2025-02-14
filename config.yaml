@@ -48,11 +48,16 @@ languages:
           title: About me
           url: /about/
           weight: 1
+        - identifier: portfolio
+          name: Portfolio
+          title: Portfolio
+          url: /portfolio/
+          weight: 2
         - identifier: contact
           name: Contact
           title: Contact me
           url: /contact/
-          weight: 2
+          weight: 3
     params:
       description: 'Fullstack Web Development | SysOps | Electronics | Videogames'
       locale: 'en-US'
