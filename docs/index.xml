@@ -7,10 +7,95 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>JUANING</copyright>
-    <lastBuildDate>Fri, 14 Apr 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 15 Feb 2025 00:00:00 +0000</lastBuildDate>
     
     <atom:link href="https://www.juaning.dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Drupal Projects</title>
+      <link>https://www.juaning.dev/portfolio/drupal/</link>
+      <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.juaning.dev/portfolio/drupal/</guid>
+      <description>&lt;p&gt;This section is under construction.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Umbraco Projects</title>
+      <link>https://www.juaning.dev/portfolio/umbraco/</link>
+      <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.juaning.dev/portfolio/umbraco/</guid>
+      <description>&lt;p&gt;This section is under construction.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Wordpress Projects</title>
+      <link>https://www.juaning.dev/portfolio/wordpress/</link>
+      <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.juaning.dev/portfolio/wordpress/</guid>
+      <description>&lt;p&gt;This section is under construction.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Professional Portfolio</title>
+      <link>https://www.juaning.dev/portfolio/</link>
+      <pubDate>Fri, 14 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.juaning.dev/portfolio/</guid>
+      <description>&lt;p&gt;Welcome to my portfolio, where I showcase a selection of projects that highlight my expertise in full-stack web development, Drupal specialization, and cloud architecture. With years of experience delivering high-performance websites and scalable solutions, I have worked on projects ranging from enterprise-level Drupal multisites to optimizing cloud infrastructures for reliability and security.&lt;/p&gt;
+&lt;p&gt;Each project represents a challenge I tackled with a combination of technical skill, problem-solving, and a commitment to creating efficient, scalable, and accessible digital solutions. Explore my work and see how I bring ideas to life with clean code, seamless integrations, and modern development practices.&lt;/p&gt;
+&lt;h2&gt;Plaforms&lt;/h2&gt;
+&lt;div class=&#34;row&#34;&gt;
+  &lt;div class=&#34;col card&#34;&gt;
+    &lt;div class=&#34;category&#34;&gt;CMS&lt;/div&gt;
+    &lt;div class=&#34;title&#34;&gt;Drupal&lt;/div&gt;
+    &lt;div class=&#34;info&#34;&gt;
+      With years of experience as a Drupal specialist, I&#39;ve led complex migrations,
+      built scalable multisite platforms, and enhanced performance for enterprise
+      clients. From custom module development to security hardening, I ensure Drupal
+      sites are fast, accessible, and SEO-friendly.
+    &lt;/div&gt;
+    &lt;a class=&#34;button&#34; href=&#34;https://www.juaning.dev/portfolio/drupal/&#34;&gt;
+      View Drupal projects
+    &lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class=&#34;col card&#34;&gt;
+    &lt;div class=&#34;category&#34;&gt;CMS&lt;/div&gt;
+    &lt;div class=&#34;title&#34;&gt;Wordpress&lt;/div&gt;
+    &lt;div class=&#34;info&#34;&gt;
+      I&#39;ve architected high-performance WordPress solutions, optimizing hosting,
+      security, and SEO for businesses of all sizes. Whether customizing themes,
+      developing plugins, or managing cloud infrastructure, I create efficient,
+      scalable, and easy-to-maintain experiences.
+    &lt;/div&gt;
+    &lt;a class=&#34;button&#34; href=&#34;portfolio/drupal/&#34;&gt;
+      View Wordpress projects
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;row&#34;&gt;
+  &lt;div class=&#34;col card&#34;&gt;
+    &lt;div class=&#34;category&#34;&gt;CMS&lt;/div&gt;
+    &lt;div class=&#34;title&#34;&gt;Umbraco&lt;/div&gt;
+    &lt;div class=&#34;info&#34;&gt;
+      Since 2019, I’ve been dedicated to enhancing and modernizing a single large-scale
+      Umbraco project, successfully migrating it through versions 7 to 10. My expertise
+      includes refining performance, strengthening security, and ensuring smooth upgrades
+      while maintaining site reliability and content integrity.
+    &lt;/div&gt;
+    &lt;a class=&#34;button&#34; href=&#34;https://www.juaning.dev/portfolio/umbraco/&#34;&gt;
+      View Umbraco project
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>How to Install Solr 8 on macOS 13 Ventura for Drupal Compatibility.</title>
@@ -284,58 +369,47 @@ and platforms.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Juan Gómez | Sr Full Stack Developer &amp; DevOps</title>
-      <link>https://www.juaning.dev/portfolio/</link>
-      <pubDate>Sat, 12 Nov 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.juaning.dev/portfolio/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Contact me</title>
       <link>https://www.juaning.dev/contact/</link>
       <pubDate>Fri, 11 Nov 2022 00:00:00 +0000</pubDate>
       
       <guid>https://www.juaning.dev/contact/</guid>
-      <description>&lt;div class=&#34;contact-page&#34;&gt;
-  &lt;div class=&#34;row&#34;&gt;
-    &lt;div class=&#34;col&#34;&gt;
-      &lt;h2 style=&#34;font-style: italic; font-weight: normal;&#34;&gt;Hi, I&#39;m &lt;span style=&#34;font-weight: bold;&#34;&gt;Juan Gómez&lt;/span&gt;,&lt;br&gt;
-      Senior Full Stack Web Developer based in Cuernavaca, Morelos, Mexico.&lt;/h2&gt;
-      &lt;p&gt;Feel free to contact me if you have any further questions, project offers,
-        you need help to fix an issue with your site or server architecture, I&#39;m open to work per hour.&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;col&#34;&gt;
-      &lt;div class=&#34;form-container&#34;&gt;
-        &lt;form
-          id=&#34;contact-form&#34;
-          method=&#34;post&#34;
-          class=&#34;responsive-form en&#34;
-        &gt;
-          &lt;div class=&#34;field-container&#34;&gt;
-            &lt;input type=&#34;text&#34; id=&#34;name&#34; name=&#34;name&#34; placeholder=&#34;Name&#34; required&gt;
-            &lt;label for=&#34;name&#34;&gt;Name&lt;/label&gt;
-          &lt;/div&gt;
-          &lt;div class=&#34;field-container&#34;&gt;
-            &lt;input type=&#34;email&#34; id=&#34;email&#34; name=&#34;email&#34; placeholder=&#34;Email&#34; required&gt;
-            &lt;label for=&#34;email&#34;&gt;Email&lt;/label&gt;
-          &lt;/div&gt;
-          &lt;div class=&#34;field-container&#34;&gt;
-            &lt;input type=&#34;text&#34; id=&#34;subject&#34; name=&#34;subject&#34; placeholder=&#34;Subject&#34; required&gt;
-            &lt;label for=&#34;subject&#34;&gt;Subject&lt;/label&gt;
-          &lt;/div&gt;
-          &lt;div class=&#34;field-container&#34;&gt;
-            &lt;textarea id=&#34;message&#34; name=&#34;message&#34; rows=&#34;10&#34; placeholder=&#34;Message&#34; required&gt;&lt;/textarea&gt;
-            &lt;label for=&#34;message&#34;&gt;Message&lt;/label&gt;
-          &lt;/div&gt;
-          &lt;div class=&#34;g-recaptcha&#34; data-sitekey=&#34;6LfH2-oiAAAAAO8yeRMVEugLESUVWaUe8qUtTNCn&#34;
-          aria-label=&#34;Please complete the reCAPTCHA to verify that you are not a robot.&#34;&gt;&lt;/div&gt;
-          &lt;button type=&#34;submit&#34;&gt;Send Message&lt;/button&gt;
-          &lt;br&gt;
-          &lt;small&gt;*All fields are required&lt;/small&gt;
-        &lt;/form&gt;
-      &lt;/div&gt;
+      <description>&lt;div class=&#34;row&#34;&gt;
+  &lt;div class=&#34;col&#34;&gt;
+    &lt;h2 style=&#34;font-style: italic; font-weight: normal;&#34;&gt;Hi, I&#39;m &lt;span style=&#34;font-weight: bold;&#34;&gt;Juan Gómez&lt;/span&gt;,&lt;br&gt;
+      Drupal specialized Senior Full Stack Web Developer located in Cuernavaca, Morelos, Mexico.&lt;/h2&gt;
+    &lt;p&gt;Feel free to contact me if you have any further questions, project offers,
+      you need help to fix an issue with your site or server architecture, I&#39;m open to work per hour.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class=&#34;col&#34;&gt;
+    &lt;div class=&#34;form-container&#34;&gt;
+      &lt;form
+        id=&#34;contact-form&#34;
+        method=&#34;post&#34;
+        class=&#34;responsive-form en&#34;
+      &gt;
+        &lt;div class=&#34;field-container&#34;&gt;
+          &lt;input type=&#34;text&#34; id=&#34;name&#34; name=&#34;name&#34; placeholder=&#34;Name&#34; required&gt;
+          &lt;label for=&#34;name&#34;&gt;Name&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;field-container&#34;&gt;
+          &lt;input type=&#34;email&#34; id=&#34;email&#34; name=&#34;email&#34; placeholder=&#34;Email&#34; required&gt;
+          &lt;label for=&#34;email&#34;&gt;Email&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;field-container&#34;&gt;
+          &lt;input type=&#34;text&#34; id=&#34;subject&#34; name=&#34;subject&#34; placeholder=&#34;Subject&#34; required&gt;
+          &lt;label for=&#34;subject&#34;&gt;Subject&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;field-container&#34;&gt;
+          &lt;textarea id=&#34;message&#34; name=&#34;message&#34; rows=&#34;10&#34; placeholder=&#34;Message&#34; required&gt;&lt;/textarea&gt;
+          &lt;label for=&#34;message&#34;&gt;Message&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;g-recaptcha&#34; data-sitekey=&#34;6LfH2-oiAAAAAO8yeRMVEugLESUVWaUe8qUtTNCn&#34;
+        aria-label=&#34;Please complete the reCAPTCHA to verify that you are not a robot.&#34;&gt;&lt;/div&gt;
+        &lt;button type=&#34;submit&#34;&gt;Send Message&lt;/button&gt;
+        &lt;br&gt;
+        &lt;small&gt;*All fields are required&lt;/small&gt;
+      &lt;/form&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;

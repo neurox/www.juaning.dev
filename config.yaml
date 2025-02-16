@@ -76,11 +76,16 @@ languages:
           title: Acerca de mí
           url: /acerca/
           weight: 1
+        - identifier: portafolio
+          name: Portafolio
+          title: Portafolio
+          url: /portafolio/
+          weight: 2
         - identifier: contacto
           name: Contacto
           title: Contáctame
           url: /contacto/
-          weight: 2
+          weight: 3
     params:
       description: 'Desarrollo Web Fullstack | SysOps | Electrónica | Videojuegos'
       locale: 'es-MX'

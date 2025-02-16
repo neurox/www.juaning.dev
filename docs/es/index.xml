@@ -7,10 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
     <copyright>JUANING</copyright>
-    <lastBuildDate>Fri, 14 Apr 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 14 Feb 2025 00:00:00 +0000</lastBuildDate>
     
     <atom:link href="https://www.juaning.dev/es/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Portafolio Profesional</title>
+      <link>https://www.juaning.dev/es/portafolio/</link>
+      <pubDate>Fri, 14 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.juaning.dev/es/portafolio/</guid>
+      <description>&lt;p&gt;Bienvenido a mi portafolio, aquí te presento una selección de proyectos que reflejan mi experiencia en desarrollo web full stack, especialización en Drupal y arquitectura en la nube. Con años de experiencia entregando sitios web de alto rendimiento y soluciones escalables, he trabajado en proyectos que van desde multisitios Drupal a nivel empresarial hasta la optimización de infraestructuras en la nube para garantizar fiabilidad y seguridad.&lt;/p&gt;
+&lt;p&gt;Cada proyecto representa un desafío que he abordado con una combinación de habilidades técnicas, resolución de problemas y un compromiso con la creación de soluciones digitales eficientes, escalables y accesibles. Explora mi trabajo y descubre cómo transformo ideas en realidad con código limpio, integraciones fluidas y prácticas de desarrollo modernas.&lt;/p&gt;
+&lt;div class=&#34;row&#34;&gt;
+&lt;div class=&#34;col&#34;&gt;Column 1&lt;/div&gt;
+&lt;div class=&#34;col&#34;&gt;Column 2&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Cómo instalar Solr 8 en macOS 13 Ventura para compatibilidad con Drupal.</title>
@@ -288,45 +303,43 @@ plataformas de vanguardia.&lt;/p&gt;
       <pubDate>Fri, 11 Nov 2022 00:00:00 +0000</pubDate>
       
       <guid>https://www.juaning.dev/es/contacto/</guid>
-      <description>&lt;div class=&#34;contact-page&#34;&gt;
-  &lt;div class=&#34;row&#34;&gt;
-    &lt;div class=&#34;col&#34;&gt;
-      &lt;h2 style=&#34;font-style: italic; font-weight: normal;&#34;&gt;Hola, soy &lt;span style=&#34;font-weight: bold;&#34;&gt;Juan Gómez&lt;/span&gt;,&lt;br&gt;
-        Desarrollador Full Stack Senior en Cuernavaca, Morelos, Mexico.&lt;/h2&gt;
-      &lt;p&gt;No dudes en contactarme si tienes más preguntas, ofertas de proyectos,
-        necesitas ayuda para resolver un problema con tu sitio o arquitectura
-        de servidor. Estoy disponible para trabajar por hora.&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;col&#34;&gt;
-      &lt;div class=&#34;form-container&#34;&gt;
-        &lt;form
-          id=&#34;contact-form&#34;
-          method=&#34;post&#34;
-          class=&#34;responsive-form es&#34;
-        &gt;
-          &lt;div class=&#34;field-container&#34;&gt;
-            &lt;input type=&#34;text&#34; id=&#34;name&#34; name=&#34;name&#34; placeholder=&#34;Nombre&#34; required&gt;
-            &lt;label for=&#34;name&#34;&gt;Nombre&lt;/label&gt;
-          &lt;/div&gt;
-          &lt;div class=&#34;field-container&#34;&gt;
-            &lt;input type=&#34;email&#34; id=&#34;email&#34; name=&#34;email&#34; placeholder=&#34;Email&#34; required&gt;
-            &lt;label for=&#34;email&#34;&gt;Email&lt;/label&gt;
-          &lt;/div&gt;
-          &lt;div class=&#34;field-container&#34;&gt;
-            &lt;input type=&#34;text&#34; id=&#34;subject&#34; name=&#34;subject&#34; placeholder=&#34;Asunto&#34; required&gt;
-            &lt;label for=&#34;subject&#34;&gt;Asunto&lt;/label&gt;
-          &lt;/div&gt;
-          &lt;div class=&#34;field-container&#34;&gt;
-            &lt;textarea id=&#34;message&#34; name=&#34;message&#34; rows=&#34;10&#34; placeholder=&#34;Mensaje&#34; required&gt;&lt;/textarea&gt;
-            &lt;label for=&#34;message&#34;&gt;Mensaje&lt;/label&gt;
-          &lt;/div&gt;
-          &lt;div class=&#34;g-recaptcha&#34; data-sitekey=&#34;6LfH2-oiAAAAAO8yeRMVEugLESUVWaUe8qUtTNCn&#34;
-          aria-label=&#34;Por favor, complete el reCAPTCHA para verificar que no eres un robot.&#34;&gt;&lt;/div&gt;
-          &lt;button type=&#34;submit&#34;&gt;Enviar Mensaje&lt;/button&gt;
-          &lt;br&gt;
-          &lt;small&gt;*Todos los campos son obligatorios&lt;/small&gt;
-        &lt;/form&gt;
-      &lt;/div&gt;
+      <description>&lt;div class=&#34;row&#34;&gt;
+  &lt;div class=&#34;col&#34;&gt;
+    &lt;h2 style=&#34;font-style: italic; font-weight: normal;&#34;&gt;Hola, soy &lt;span style=&#34;font-weight: bold;&#34;&gt;Juan Gómez&lt;/span&gt;,&lt;br&gt;
+      Desarrollador Web Full Stack Senior especialista de Drupal en Cuernavaca, Morelos, Mexico.&lt;/h2&gt;
+    &lt;p&gt;No dudes en contactarme si tienes más preguntas, ofertas de proyectos,
+      necesitas ayuda para resolver un problema con tu sitio o arquitectura
+      de servidor. Estoy disponible para trabajar por hora.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class=&#34;col&#34;&gt;
+    &lt;div class=&#34;form-container&#34;&gt;
+      &lt;form
+        id=&#34;contact-form&#34;
+        method=&#34;post&#34;
+        class=&#34;responsive-form es&#34;
+      &gt;
+        &lt;div class=&#34;field-container&#34;&gt;
+          &lt;input type=&#34;text&#34; id=&#34;name&#34; name=&#34;name&#34; placeholder=&#34;Nombre&#34; required&gt;
+          &lt;label for=&#34;name&#34;&gt;Nombre&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;field-container&#34;&gt;
+          &lt;input type=&#34;email&#34; id=&#34;email&#34; name=&#34;email&#34; placeholder=&#34;Email&#34; required&gt;
+          &lt;label for=&#34;email&#34;&gt;Email&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;field-container&#34;&gt;
+          &lt;input type=&#34;text&#34; id=&#34;subject&#34; name=&#34;subject&#34; placeholder=&#34;Asunto&#34; required&gt;
+          &lt;label for=&#34;subject&#34;&gt;Asunto&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;field-container&#34;&gt;
+          &lt;textarea id=&#34;message&#34; name=&#34;message&#34; rows=&#34;10&#34; placeholder=&#34;Mensaje&#34; required&gt;&lt;/textarea&gt;
+          &lt;label for=&#34;message&#34;&gt;Mensaje&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;g-recaptcha&#34; data-sitekey=&#34;6LfH2-oiAAAAAO8yeRMVEugLESUVWaUe8qUtTNCn&#34;
+        aria-label=&#34;Por favor, complete el reCAPTCHA para verificar que no eres un robot.&#34;&gt;&lt;/div&gt;
+        &lt;button type=&#34;submit&#34;&gt;Enviar Mensaje&lt;/button&gt;
+        &lt;br&gt;
+        &lt;small&gt;*Todos los campos son obligatorios&lt;/small&gt;
+      &lt;/form&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;

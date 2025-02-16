@@ -9,45 +9,43 @@ noComment: true
 noDate: true
 ---
 
-<div class="contact-page">
-  <div class="row">
-    <div class="col">
-      <h2 style="font-style: italic; font-weight: normal;">Hola, soy <span style="font-weight: bold;">Juan Gómez</span>,<br>
-        Desarrollador Full Stack Senior en Cuernavaca, Morelos, Mexico.</h2>
-      <p>No dudes en contactarme si tienes más preguntas, ofertas de proyectos,
-        necesitas ayuda para resolver un problema con tu sitio o arquitectura
-        de servidor. Estoy disponible para trabajar por hora.</p>
-    </div>
-    <div class="col">
-      <div class="form-container">
-        <form
-          id="contact-form"
-          method="post"
-          class="responsive-form es"
-        >
-          <div class="field-container">
-            <input type="text" id="name" name="name" placeholder="Nombre" required>
-            <label for="name">Nombre</label>
-          </div>
-          <div class="field-container">
-            <input type="email" id="email" name="email" placeholder="Email" required>
-            <label for="email">Email</label>
-          </div>
-          <div class="field-container">
-            <input type="text" id="subject" name="subject" placeholder="Asunto" required>
-            <label for="subject">Asunto</label>
-          </div>
-          <div class="field-container">
-            <textarea id="message" name="message" rows="10" placeholder="Mensaje" required></textarea>
-            <label for="message">Mensaje</label>
-          </div>
-          <div class="g-recaptcha" data-sitekey="6LfH2-oiAAAAAO8yeRMVEugLESUVWaUe8qUtTNCn"
-          aria-label="Por favor, complete el reCAPTCHA para verificar que no eres un robot."></div>
-          <button type="submit">Enviar Mensaje</button>
-          <br>
-          <small>*Todos los campos son obligatorios</small>
-        </form>
-      </div>
+<div class="row">
+  <div class="col">
+    <h2 style="font-style: italic; font-weight: normal;">Hola, soy <span style="font-weight: bold;">Juan Gómez</span>,<br>
+      Desarrollador Web Full Stack Senior especialista de Drupal en Cuernavaca, Morelos, Mexico.</h2>
+    <p>No dudes en contactarme si tienes más preguntas, ofertas de proyectos,
+      necesitas ayuda para resolver un problema con tu sitio o arquitectura
+      de servidor. Estoy disponible para trabajar por hora.</p>
+  </div>
+  <div class="col">
+    <div class="form-container">
+      <form
+        id="contact-form"
+        method="post"
+        class="responsive-form es"
+      >
+        <div class="field-container">
+          <input type="text" id="name" name="name" placeholder="Nombre" required>
+          <label for="name">Nombre</label>
+        </div>
+        <div class="field-container">
+          <input type="email" id="email" name="email" placeholder="Email" required>
+          <label for="email">Email</label>
+        </div>
+        <div class="field-container">
+          <input type="text" id="subject" name="subject" placeholder="Asunto" required>
+          <label for="subject">Asunto</label>
+        </div>
+        <div class="field-container">
+          <textarea id="message" name="message" rows="10" placeholder="Mensaje" required></textarea>
+          <label for="message">Mensaje</label>
+        </div>
+        <div class="g-recaptcha" data-sitekey="6LfH2-oiAAAAAO8yeRMVEugLESUVWaUe8qUtTNCn"
+        aria-label="Por favor, complete el reCAPTCHA para verificar que no eres un robot."></div>
+        <button type="submit">Enviar Mensaje</button>
+        <br>
+        <small>*Todos los campos son obligatorios</small>
+      </form>
     </div>
   </div>
 </div>

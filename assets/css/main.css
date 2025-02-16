@@ -855,17 +855,17 @@ form.es .field-container textarea:focus + label::after{
   clip: rect(1px, 1px, 1px, 1px);
 }
 
-.contact-page .row{
+.row{
   display: flex;
   flex-flow: column;
 }
 
-.contact-page .col{
-  width: 100%;
+.col{
+  width: -webkit-fill-available;
 }
 
-.contact-page .col + .col{
-  padding: 0;
+.col + .col,
+.row + .row{
   margin-top: 15px;
 }
 
@@ -873,20 +873,64 @@ form.es .field-container textarea:focus + label::after{
   min-height: 78px;
 }
 
+.card{
+  width: auto;
+  padding: 5px 10px 10px 10px;
+  border: 1px solid #999;
+}
+
+.card .category{
+  float: right;
+  font-weight: 600;
+}
+
+.card .title{
+  color: var(--bold-with-gold);
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.card a.button{
+  margin-left: auto;
+}
+
+a.button{
+  display: block;
+  padding: 10px 5px;
+  border: 1px solid var(--bold-with-gold);
+  animation: 1s infinite alternate ease;
+}
+
+* + a.button{
+  background-color: var(--bg-color);
+  color: var(--bold-with-gold);
+  font-weight: 600;
+  margin-top: 10px;
+  max-width: 345px;
+  text-align: center;
+}
+
+a.button:hover{
+  background-color: var(--bold-with-gold);
+  color: var(--font-color);
+  cursor: pointer;
+  animation: 5s infinite alternate ease;
+}
+
 /* Media Queries */
 
 @media (min-width: 668px) {
-  .contact-page .row{
+  .row{
     flex-flow: row;
   }
 
-  .contact-page .col{
-    width: 50%;
+  .card:nth-child(odd){
+    margin-right: 5px;
   }
-
-  .contact-page .col + .col{
-    padding: 0 0 0 15px;
+  
+  .card + .card{
     margin-top: 0;
+    margin-left: 5px;
   }
 }
 

@@ -8,44 +8,42 @@ noComment: true
 noDate: true
 ---
 
-<div class="contact-page">
-  <div class="row">
-    <div class="col">
-      <h2 style="font-style: italic; font-weight: normal;">Hi, I'm <span style="font-weight: bold;">Juan Gómez</span>,<br>
-      Senior Full Stack Web Developer based in Cuernavaca, Morelos, Mexico.</h2>
-      <p>Feel free to contact me if you have any further questions, project offers,
-        you need help to fix an issue with your site or server architecture, I'm open to work per hour.</p>
-    </div>
-    <div class="col">
-      <div class="form-container">
-        <form
-          id="contact-form"
-          method="post"
-          class="responsive-form en"
-        >
-          <div class="field-container">
-            <input type="text" id="name" name="name" placeholder="Name" required>
-            <label for="name">Name</label>
-          </div>
-          <div class="field-container">
-            <input type="email" id="email" name="email" placeholder="Email" required>
-            <label for="email">Email</label>
-          </div>
-          <div class="field-container">
-            <input type="text" id="subject" name="subject" placeholder="Subject" required>
-            <label for="subject">Subject</label>
-          </div>
-          <div class="field-container">
-            <textarea id="message" name="message" rows="10" placeholder="Message" required></textarea>
-            <label for="message">Message</label>
-          </div>
-          <div class="g-recaptcha" data-sitekey="6LfH2-oiAAAAAO8yeRMVEugLESUVWaUe8qUtTNCn"
-          aria-label="Please complete the reCAPTCHA to verify that you are not a robot."></div>
-          <button type="submit">Send Message</button>
-          <br>
-          <small>*All fields are required</small>
-        </form>
-      </div>
+<div class="row">
+  <div class="col">
+    <h2 style="font-style: italic; font-weight: normal;">Hi, I'm <span style="font-weight: bold;">Juan Gómez</span>,<br>
+      Drupal specialized Senior Full Stack Web Developer located in Cuernavaca, Morelos, Mexico.</h2>
+    <p>Feel free to contact me if you have any further questions, project offers,
+      you need help to fix an issue with your site or server architecture, I'm open to work per hour.</p>
+  </div>
+  <div class="col">
+    <div class="form-container">
+      <form
+        id="contact-form"
+        method="post"
+        class="responsive-form en"
+      >
+        <div class="field-container">
+          <input type="text" id="name" name="name" placeholder="Name" required>
+          <label for="name">Name</label>
+        </div>
+        <div class="field-container">
+          <input type="email" id="email" name="email" placeholder="Email" required>
+          <label for="email">Email</label>
+        </div>
+        <div class="field-container">
+          <input type="text" id="subject" name="subject" placeholder="Subject" required>
+          <label for="subject">Subject</label>
+        </div>
+        <div class="field-container">
+          <textarea id="message" name="message" rows="10" placeholder="Message" required></textarea>
+          <label for="message">Message</label>
+        </div>
+        <div class="g-recaptcha" data-sitekey="6LfH2-oiAAAAAO8yeRMVEugLESUVWaUe8qUtTNCn"
+        aria-label="Please complete the reCAPTCHA to verify that you are not a robot."></div>
+        <button type="submit">Send Message</button>
+        <br>
+        <small>*All fields are required</small>
+      </form>
     </div>
   </div>
 </div>
