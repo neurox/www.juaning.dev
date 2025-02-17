@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hola, soy Juan Gómez, experto desarrollador web full-stack y apasionado creador de soluciones digitales. on JUANING.dev</title>
-    <link>http://localhost:1313/es/</link>
+    <link>https://www.juaning.dev/es/</link>
     <description>JUANING.dev (Hola, soy Juan Gómez, experto desarrollador web full-stack y apasionado creador de soluciones digitales.)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
     <copyright>JUANING</copyright>
     <lastBuildDate>Fri, 14 Feb 2025 00:00:00 +0000</lastBuildDate>
     
-    <atom:link href="http://localhost:1313/es/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.juaning.dev/es/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Portafolio Profesional</title>
-      <link>http://localhost:1313/es/portafolio/</link>
+      <link>https://www.juaning.dev/es/portafolio/</link>
       <pubDate>Fri, 14 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/es/portafolio/</guid>
+      <guid>https://www.juaning.dev/es/portafolio/</guid>
       <description>&lt;p&gt;Bienvenido a mi portafolio, aquí te presento una selección de proyectos que reflejan mi experiencia en desarrollo web full stack, especialización en Drupal y arquitectura en la nube. Con años de experiencia entregando sitios web de alto rendimiento y soluciones escalables, he trabajado en proyectos que van desde multisitios Drupal a nivel empresarial hasta la optimización de infraestructuras en la nube para garantizar fiabilidad y seguridad.&lt;/p&gt;
 &lt;p&gt;Cada proyecto representa un desafío que he abordado con una combinación de habilidades técnicas, resolución de problemas y un compromiso con la creación de soluciones digitales eficientes, escalables y accesibles. Explora mi trabajo y descubre cómo transformo ideas en realidad con código limpio, integraciones fluidas y prácticas de desarrollo modernas.&lt;/p&gt;
 &lt;div class=&#34;row&#34;&gt;
@@ -29,10 +29,10 @@
     
     <item>
       <title>Cómo instalar Solr 8 en macOS 13 Ventura para compatibilidad con Drupal.</title>
-      <link>http://localhost:1313/es/post/2023/como-instalar-solr-8-en-macos-13-ventura-para-compatibilidad-con-drupal/</link>
+      <link>https://www.juaning.dev/es/post/2023/como-instalar-solr-8-en-macos-13-ventura-para-compatibilidad-con-drupal/</link>
       <pubDate>Fri, 14 Apr 2023 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/es/post/2023/como-instalar-solr-8-en-macos-13-ventura-para-compatibilidad-con-drupal/</guid>
+      <guid>https://www.juaning.dev/es/post/2023/como-instalar-solr-8-en-macos-13-ventura-para-compatibilidad-con-drupal/</guid>
       <description>&lt;p&gt;Como quizás hayas notado, la versión de Solr incluida en la última versión de Homebrew es la 9 y
 su esquema aún no es compatible con Drupal. Te mostraré cómo obtener la versión 8 de Solr, que sí es
 compatible con Drupal.&lt;/p&gt;
@@ -124,10 +124,10 @@ Si deseas detener Solr de iniciarse automáticamente, puedes deshabilitar el arc
     
     <item>
       <title>Instalar y habilitar acceso FTP en una instancia AWS EC2 con Linux Centos 7</title>
-      <link>http://localhost:1313/es/post/2022/instalar-y-habilitar-acceso-ftp-en-una-instancia-aws-ec2-con-linux-centos-7/</link>
+      <link>https://www.juaning.dev/es/post/2022/instalar-y-habilitar-acceso-ftp-en-una-instancia-aws-ec2-con-linux-centos-7/</link>
       <pubDate>Thu, 24 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/es/post/2022/instalar-y-habilitar-acceso-ftp-en-una-instancia-aws-ec2-con-linux-centos-7/</guid>
+      <guid>https://www.juaning.dev/es/post/2022/instalar-y-habilitar-acceso-ftp-en-una-instancia-aws-ec2-con-linux-centos-7/</guid>
       <description>&lt;p&gt;Te guiaré a través de la manera más rápida y fácil de configurar el acceso FTP
 a una instancia EC2 con la distribución Centos 7 en AWS (Amazon Web Services),
 vamos a usar VSFTPD (Very Secure FTP Daemon) así que el primer paso es instalarlo.&lt;/p&gt;
@@ -229,10 +229,10 @@ Nota: Es probable que algunas de las variables no existan, solo agrégalas al fi
     
     <item>
       <title>Juan Gómez | Desarrollador Full Stack Sr &amp; DevOps</title>
-      <link>http://localhost:1313/es/acerca/</link>
+      <link>https://www.juaning.dev/es/acerca/</link>
       <pubDate>Sat, 12 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/es/acerca/</guid>
+      <guid>https://www.juaning.dev/es/acerca/</guid>
       <description>&lt;p&gt;¡Bienvenido! Soy Juan Gómez, un Desarrollador Web Full Stack Senior viviendo en
 Cuernavaca, Morelos, México. Con más de 8 años de experiencia, me especializo
 en crear soluciones web robustas y escalables utilizando tecnologías y
@@ -292,17 +292,17 @@ plataformas de vanguardia.&lt;/p&gt;
   &lt;li&gt;Personalización y optimización de CMS&lt;/li&gt;
   &lt;li&gt;Orientación e implementación de infraestructura en la nube&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/contact&#34; target=&#34;_self&#34;&gt;Conéctate conmigo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.juaning.dev/contact&#34; target=&#34;_self&#34;&gt;Conéctate conmigo&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;¡Transformemos tu visión de desarrollo web en realidad!&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Contáctame</title>
-      <link>http://localhost:1313/es/contacto/</link>
+      <link>https://www.juaning.dev/es/contacto/</link>
       <pubDate>Fri, 11 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/es/contacto/</guid>
+      <guid>https://www.juaning.dev/es/contacto/</guid>
       <description>&lt;div class=&#34;row&#34;&gt;
   &lt;div class=&#34;col&#34;&gt;
     &lt;h2 style=&#34;font-style: italic; font-weight: normal;&#34;&gt;Hola, soy &lt;span style=&#34;font-weight: bold;&#34;&gt;Juan Gómez&lt;/span&gt;,&lt;br&gt;

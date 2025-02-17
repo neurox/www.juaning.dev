@@ -57,7 +57,7 @@ menu:
       developing plugins, or managing cloud infrastructure, I create efficient,
       scalable, and easy-to-maintain experiences.
     </div>
-    <a class="button" href="portfolio/drupal/">
+    <a class="button" href="/portfolio/wordpress/">
       View Wordpress projects
     </a>
   </div>

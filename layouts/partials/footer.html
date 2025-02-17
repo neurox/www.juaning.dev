@@ -15,9 +15,9 @@
     {{ end }}
     <div class="copyright">
       <p>
-        &#169; {{ if isset .Site.Params "title"}}{{ .Site.Params.title }}, {{end}}{{ now.Year }}<br>
-        {{ i18n "powered" }} <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, {{ i18n "theme" }} <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.<br>
-        {{ partial "footer-extra.html" . }}
+        <span class="sitename">&#169; {{ if isset .Site.Params "title"}}{{ .Site.Params.title }}, {{end}}{{ now.Year }}</span><br>
+        <small>{{ i18n "powered" }} <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, {{ i18n "theme" }} <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.<br>
+        {{ partial "footer-extra.html" . }}</small>
       </p>
     </div>
 

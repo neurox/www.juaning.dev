@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Juan Gómez | Sr Full Stack Developer &amp; DevOps | Cuernavaca, MX on JUANING.dev</title>
-    <link>http://localhost:1313/</link>
+    <link>https://www.juaning.dev/</link>
     <description>JUANING.dev (Juan Gómez | Sr Full Stack Developer &amp; DevOps | Cuernavaca, MX)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>JUANING</copyright>
     <lastBuildDate>Sat, 15 Feb 2025 00:00:00 +0000</lastBuildDate>
     
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.juaning.dev/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Drupal Projects</title>
-      <link>http://localhost:1313/portfolio/drupal/</link>
+      <link>https://www.juaning.dev/portfolio/drupal/</link>
       <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/portfolio/drupal/</guid>
+      <guid>https://www.juaning.dev/portfolio/drupal/</guid>
       <description>&lt;div class=&#34;row&#34;&gt;
   &lt;div class=&#34;col&#34;&gt;
     &lt;div class=&#34;card&#34;&gt;
       &lt;div class=&#34;title&#34;&gt;Altamed&lt;/div&gt;
-      &lt;!-- &lt;img class=&#34;thumbnail&#34; src=&#34;http://localhost:1313/images/altamed_screenshot.png&#34;&gt; --&gt;
+      &lt;!-- &lt;img class=&#34;thumbnail&#34; src=&#34;https://www.juaning.dev/images/altamed_screenshot.png&#34;&gt; --&gt;
       &lt;div class=&#34;info&#34;&gt;
         &lt;p&gt;Colaborated with development and creative teams as a fullstack web developer
         in the redesign of pages structure and several components, views for search and integrated
@@ -40,30 +40,84 @@
     
     <item>
       <title>Umbraco Projects</title>
-      <link>http://localhost:1313/portfolio/umbraco/</link>
+      <link>https://www.juaning.dev/portfolio/umbraco/</link>
       <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/portfolio/umbraco/</guid>
+      <guid>https://www.juaning.dev/portfolio/umbraco/</guid>
       <description>&lt;p&gt;This section is under construction.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Wordpress Projects</title>
-      <link>http://localhost:1313/portfolio/wordpress/</link>
+      <link>https://www.juaning.dev/portfolio/wordpress/</link>
       <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/portfolio/wordpress/</guid>
-      <description>&lt;p&gt;This section is under construction.&lt;/p&gt;
+      <guid>https://www.juaning.dev/portfolio/wordpress/</guid>
+      <description>&lt;div class=&#34;row&#34;&gt;
+  &lt;div class=&#34;col&#34;&gt;
+    &lt;div class=&#34;card&#34;&gt;
+      &lt;div class=&#34;title&#34;&gt;SolveIQ&lt;/div&gt;
+      &lt;div class=&#34;info&#34;&gt;
+        &lt;p&gt;SolveIQ is part of Asurvio, a Windows PC Support company, I&#39;ve worked in the redesign
+        and the setup and configuration of the deployment process in WP Engine, ensuring that the
+        tree environments of the site worked seamlessly (development, staging, production).&lt;/p&gt;
+        &lt;p&gt;Several custom components were created with ACF and custom CSS to make them available as Gutemberg blocks,
+        also custom widgets were created for the search sections filters.&lt;/p&gt;
+        &lt;p&gt;&lt;strong&gt;Technologies:&lt;/strong&gt; Wordpress, PHP, Javascript, CSS, MariaDB, Faceted Search,
+        CI/CD Pipelines, WP Engine.&lt;/p&gt;
+        &lt;a class=&#34;button&#34; href=&#34;https://www.solveiq.com&#34; target=&#34;_blank&#34;&gt;
+          Check SolveIQ Site
+        &lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;row&#34;&gt;
+  &lt;div class=&#34;col&#34;&gt;
+    &lt;div class=&#34;card&#34;&gt;
+      &lt;div class=&#34;title&#34;&gt;Ocean Protection Council&lt;/div&gt;
+      &lt;div class=&#34;info&#34;&gt;
+        &lt;p&gt;The Ocean Protection Council of California is a state agency that works to protect California&#39;s
+        ocean and coast. The OPC was created in 2004 by the California Ocean Protection Act (COPA). 
+        I&#39;ve worked in the redesign of more than 20 components, we wheren&#39;t allowed to update directly the code
+        so we&#39;ve provided all the code and detailed instructions to update the components code in their environment.&lt;/p&gt;
+        &lt;p&gt;&lt;strong&gt;Technologies:&lt;/strong&gt; Wordpress, PHP, Javascript, CSS.&lt;/p&gt;
+        &lt;a class=&#34;button&#34; href=&#34;https://opc.ca.gov&#34; target=&#34;_blank&#34;&gt;
+          Check OPC Site
+        &lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;row&#34;&gt;
+  &lt;div class=&#34;col&#34;&gt;
+    &lt;div class=&#34;card&#34;&gt;
+      &lt;div class=&#34;title&#34;&gt;Dementia Care Aware&lt;/div&gt;
+      &lt;div class=&#34;info&#34;&gt;
+        &lt;p&gt;Dementia Care Aware is a California program that trains and supports primary care providers
+        in assessing and treating dementia. The program was launched in July 2022 by the California Department
+        of Health Care Services (DHCS). I&#39;ve worked in the redesign and migration of the content from the previous
+        platform to the new environment server with Wordpress hosted in AWS.&lt;/p&gt;
+        &lt;p&gt;All the components were created with Elementor in order to make them reusable and easier to manage
+        by a non technical user.&lt;/p&gt;
+        &lt;p&gt;&lt;strong&gt;Technologies:&lt;/strong&gt; Wordpress, Elementor, PHP, Javascript, CSS, MariaDB, AWS.&lt;/p&gt;
+        &lt;a class=&#34;button&#34; href=&#34;https://www.dementiacareaware.org&#34; target=&#34;_blank&#34;&gt;
+          Check DCA Site
+        &lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 </description>
     </item>
     
     <item>
       <title>Professional Portfolio</title>
-      <link>http://localhost:1313/portfolio/</link>
+      <link>https://www.juaning.dev/portfolio/</link>
       <pubDate>Fri, 14 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/portfolio/</guid>
+      <guid>https://www.juaning.dev/portfolio/</guid>
       <description>&lt;p&gt;Welcome to my portfolio, where I showcase a selection of projects that highlight my expertise in full-stack web development, Drupal specialization, and cloud architecture. With years of experience delivering high-performance websites and scalable solutions, I have worked on projects ranging from enterprise-level Drupal multisites to optimizing cloud infrastructures for reliability and security.&lt;/p&gt;
 &lt;p&gt;Each project represents a challenge I tackled with a combination of technical skill, problem-solving, and a commitment to creating efficient, scalable, and accessible digital solutions. Explore my work and see how I bring ideas to life with clean code, seamless integrations, and modern development practices.&lt;/p&gt;
 &lt;h2&gt;Plaforms&lt;/h2&gt;
@@ -77,7 +131,7 @@
       clients. From custom module development to security hardening, I ensure Drupal
       sites are fast, accessible, and SEO-friendly.
     &lt;/div&gt;
-    &lt;a class=&#34;button&#34; href=&#34;http://localhost:1313/portfolio/drupal/&#34;&gt;
+    &lt;a class=&#34;button&#34; href=&#34;https://www.juaning.dev/portfolio/drupal/&#34;&gt;
       View Drupal projects
     &lt;/a&gt;
   &lt;/div&gt;
@@ -90,7 +144,7 @@
       developing plugins, or managing cloud infrastructure, I create efficient,
       scalable, and easy-to-maintain experiences.
     &lt;/div&gt;
-    &lt;a class=&#34;button&#34; href=&#34;portfolio/drupal/&#34;&gt;
+    &lt;a class=&#34;button&#34; href=&#34;https://www.juaning.dev/portfolio/wordpress/&#34;&gt;
       View Wordpress projects
     &lt;/a&gt;
   &lt;/div&gt;
@@ -105,7 +159,7 @@
       includes refining performance, strengthening security, and ensuring smooth upgrades
       while maintaining site reliability and content integrity.
     &lt;/div&gt;
-    &lt;a class=&#34;button&#34; href=&#34;http://localhost:1313/portfolio/umbraco/&#34;&gt;
+    &lt;a class=&#34;button&#34; href=&#34;https://www.juaning.dev/portfolio/umbraco/&#34;&gt;
       View Umbraco project
     &lt;/a&gt;
   &lt;/div&gt;
@@ -115,10 +169,10 @@
     
     <item>
       <title>How to Install Solr 8 on macOS 13 Ventura for Drupal Compatibility.</title>
-      <link>http://localhost:1313/post/2023/2023-04-14-how-to-install-solr-8-on-macos-13-ventura-for-drupal-compatibility/</link>
+      <link>https://www.juaning.dev/post/2023/2023-04-14-how-to-install-solr-8-on-macos-13-ventura-for-drupal-compatibility/</link>
       <pubDate>Fri, 14 Apr 2023 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/2023/2023-04-14-how-to-install-solr-8-on-macos-13-ventura-for-drupal-compatibility/</guid>
+      <guid>https://www.juaning.dev/post/2023/2023-04-14-how-to-install-solr-8-on-macos-13-ventura-for-drupal-compatibility/</guid>
       <description>&lt;p&gt;You might have observed that the solr version included in the most recent homebrew package is 9.
 However, its schema is currently not compatible with Drupal. Therefore, I will guide you on how to obtain version 8 of solr,
 which is compatible with Drupal.&lt;/p&gt;
@@ -211,10 +265,10 @@ If you want to stop Solr from starting automatically, you can unload the plist f
     
     <item>
       <title>Install and enable FTP access on an AWS EC2 instance with Linux CentOS 7</title>
-      <link>http://localhost:1313/post/2022/2022-11-24-install-and-enable-ftp-access-in-aws-ec2-instance-with-linux-centos-7/</link>
+      <link>https://www.juaning.dev/post/2022/2022-11-24-install-and-enable-ftp-access-in-aws-ec2-instance-with-linux-centos-7/</link>
       <pubDate>Thu, 24 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/2022/2022-11-24-install-and-enable-ftp-access-in-aws-ec2-instance-with-linux-centos-7/</guid>
+      <guid>https://www.juaning.dev/post/2022/2022-11-24-install-and-enable-ftp-access-in-aws-ec2-instance-with-linux-centos-7/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ll guide you through the quickest and easiest way to set up FTP
 access on an EC2 instance with CentOS 7 distribution on AWS (Amazon Web Services).
 We&amp;rsquo;re going to use VSFTPD (Very Secure FTP Daemon), so the first step is to install it.&lt;/p&gt;
@@ -316,10 +370,10 @@ Note: Some variables may not exist, just add them at the end of the file.
     
     <item>
       <title>Juan Gómez | Sr Full Stack Developer &amp; DevOps</title>
-      <link>http://localhost:1313/about/</link>
+      <link>https://www.juaning.dev/about/</link>
       <pubDate>Sat, 12 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/about/</guid>
+      <guid>https://www.juaning.dev/about/</guid>
       <description>&lt;p&gt;Welcome! I&#39;m Juan Gómez, a Senior Full Stack Web Developer based in
 Cuernavaca, Morelos, Mexico. With over 8 years of experience, I specialize
 in crafting robust, scalable web solutions using cutting-edge technologies
@@ -379,17 +433,17 @@ and platforms.&lt;/p&gt;
   &lt;li&gt;CMS customization and optimization&lt;/li&gt;
   &lt;li&gt;Cloud infrastructure guidance and implementation&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/contact&#34; target=&#34;_self&#34;&gt;Connect with me&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.juaning.dev/contact&#34; target=&#34;_self&#34;&gt;Connect with me&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Let&#39;s transform your web development vision into reality!&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Contact me</title>
-      <link>http://localhost:1313/contact/</link>
+      <link>https://www.juaning.dev/contact/</link>
       <pubDate>Fri, 11 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/contact/</guid>
+      <guid>https://www.juaning.dev/contact/</guid>
       <description>&lt;div class=&#34;row&#34;&gt;
   &lt;div class=&#34;col&#34;&gt;
     &lt;h2 style=&#34;font-style: italic; font-weight: normal;&#34;&gt;Hi, I&#39;m &lt;span style=&#34;font-weight: bold;&#34;&gt;Juan Gómez&lt;/span&gt;,&lt;br&gt;
