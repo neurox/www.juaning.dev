@@ -2,52 +2,68 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Juan Gómez | Sr Full Stack Developer &amp; DevOps | Cuernavaca, MX on JUANING.dev</title>
-    <link>https://www.juaning.dev/</link>
+    <link>http://localhost:1313/</link>
     <description>JUANING.dev (Juan Gómez | Sr Full Stack Developer &amp; DevOps | Cuernavaca, MX)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>JUANING</copyright>
     <lastBuildDate>Sat, 15 Feb 2025 00:00:00 +0000</lastBuildDate>
     
-    <atom:link href="https://www.juaning.dev/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Drupal Projects</title>
-      <link>https://www.juaning.dev/portfolio/drupal/</link>
+      <link>http://localhost:1313/portfolio/drupal/</link>
       <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://www.juaning.dev/portfolio/drupal/</guid>
-      <description>&lt;p&gt;This section is under construction.&lt;/p&gt;
+      <guid>http://localhost:1313/portfolio/drupal/</guid>
+      <description>&lt;div class=&#34;row&#34;&gt;
+  &lt;div class=&#34;col&#34;&gt;
+    &lt;div class=&#34;card&#34;&gt;
+      &lt;div class=&#34;title&#34;&gt;Altamed&lt;/div&gt;
+      &lt;!-- &lt;img class=&#34;thumbnail&#34; src=&#34;http://localhost:1313/images/altamed_screenshot.png&#34;&gt; --&gt;
+      &lt;div class=&#34;info&#34;&gt;
+        &lt;p&gt;Colaborated with development and creative teams as a fullstack web developer
+        in the redesign of pages structure and several components, views for search and integrated
+        third party services APIs.&lt;/p&gt;
+        &lt;p&gt;&lt;strong&gt;Technologies:&lt;/strong&gt; Drupal, PHP, MariaDB, Solr, AWS, Cloudflare.&lt;/p&gt;
+        &lt;a class=&#34;button&#34; href=&#34;https://www.altamed.org&#34; target=&#34;_blank&#34;&gt;
+          Check Site
+        &lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 </description>
     </item>
     
     <item>
       <title>Umbraco Projects</title>
-      <link>https://www.juaning.dev/portfolio/umbraco/</link>
+      <link>http://localhost:1313/portfolio/umbraco/</link>
       <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://www.juaning.dev/portfolio/umbraco/</guid>
+      <guid>http://localhost:1313/portfolio/umbraco/</guid>
       <description>&lt;p&gt;This section is under construction.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Wordpress Projects</title>
-      <link>https://www.juaning.dev/portfolio/wordpress/</link>
+      <link>http://localhost:1313/portfolio/wordpress/</link>
       <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://www.juaning.dev/portfolio/wordpress/</guid>
+      <guid>http://localhost:1313/portfolio/wordpress/</guid>
       <description>&lt;p&gt;This section is under construction.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Professional Portfolio</title>
-      <link>https://www.juaning.dev/portfolio/</link>
+      <link>http://localhost:1313/portfolio/</link>
       <pubDate>Fri, 14 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://www.juaning.dev/portfolio/</guid>
+      <guid>http://localhost:1313/portfolio/</guid>
       <description>&lt;p&gt;Welcome to my portfolio, where I showcase a selection of projects that highlight my expertise in full-stack web development, Drupal specialization, and cloud architecture. With years of experience delivering high-performance websites and scalable solutions, I have worked on projects ranging from enterprise-level Drupal multisites to optimizing cloud infrastructures for reliability and security.&lt;/p&gt;
 &lt;p&gt;Each project represents a challenge I tackled with a combination of technical skill, problem-solving, and a commitment to creating efficient, scalable, and accessible digital solutions. Explore my work and see how I bring ideas to life with clean code, seamless integrations, and modern development practices.&lt;/p&gt;
 &lt;h2&gt;Plaforms&lt;/h2&gt;
@@ -61,7 +77,7 @@
       clients. From custom module development to security hardening, I ensure Drupal
       sites are fast, accessible, and SEO-friendly.
     &lt;/div&gt;
-    &lt;a class=&#34;button&#34; href=&#34;https://www.juaning.dev/portfolio/drupal/&#34;&gt;
+    &lt;a class=&#34;button&#34; href=&#34;http://localhost:1313/portfolio/drupal/&#34;&gt;
       View Drupal projects
     &lt;/a&gt;
   &lt;/div&gt;
@@ -89,7 +105,7 @@
       includes refining performance, strengthening security, and ensuring smooth upgrades
       while maintaining site reliability and content integrity.
     &lt;/div&gt;
-    &lt;a class=&#34;button&#34; href=&#34;https://www.juaning.dev/portfolio/umbraco/&#34;&gt;
+    &lt;a class=&#34;button&#34; href=&#34;http://localhost:1313/portfolio/umbraco/&#34;&gt;
       View Umbraco project
     &lt;/a&gt;
   &lt;/div&gt;
@@ -99,10 +115,10 @@
     
     <item>
       <title>How to Install Solr 8 on macOS 13 Ventura for Drupal Compatibility.</title>
-      <link>https://www.juaning.dev/post/2023/2023-04-14-how-to-install-solr-8-on-macos-13-ventura-for-drupal-compatibility/</link>
+      <link>http://localhost:1313/post/2023/2023-04-14-how-to-install-solr-8-on-macos-13-ventura-for-drupal-compatibility/</link>
       <pubDate>Fri, 14 Apr 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://www.juaning.dev/post/2023/2023-04-14-how-to-install-solr-8-on-macos-13-ventura-for-drupal-compatibility/</guid>
+      <guid>http://localhost:1313/post/2023/2023-04-14-how-to-install-solr-8-on-macos-13-ventura-for-drupal-compatibility/</guid>
       <description>&lt;p&gt;You might have observed that the solr version included in the most recent homebrew package is 9.
 However, its schema is currently not compatible with Drupal. Therefore, I will guide you on how to obtain version 8 of solr,
 which is compatible with Drupal.&lt;/p&gt;
@@ -195,10 +211,10 @@ If you want to stop Solr from starting automatically, you can unload the plist f
     
     <item>
       <title>Install and enable FTP access on an AWS EC2 instance with Linux CentOS 7</title>
-      <link>https://www.juaning.dev/post/2022/2022-11-24-install-and-enable-ftp-access-in-aws-ec2-instance-with-linux-centos-7/</link>
+      <link>http://localhost:1313/post/2022/2022-11-24-install-and-enable-ftp-access-in-aws-ec2-instance-with-linux-centos-7/</link>
       <pubDate>Thu, 24 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://www.juaning.dev/post/2022/2022-11-24-install-and-enable-ftp-access-in-aws-ec2-instance-with-linux-centos-7/</guid>
+      <guid>http://localhost:1313/post/2022/2022-11-24-install-and-enable-ftp-access-in-aws-ec2-instance-with-linux-centos-7/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ll guide you through the quickest and easiest way to set up FTP
 access on an EC2 instance with CentOS 7 distribution on AWS (Amazon Web Services).
 We&amp;rsquo;re going to use VSFTPD (Very Secure FTP Daemon), so the first step is to install it.&lt;/p&gt;
@@ -300,10 +316,10 @@ Note: Some variables may not exist, just add them at the end of the file.
     
     <item>
       <title>Juan Gómez | Sr Full Stack Developer &amp; DevOps</title>
-      <link>https://www.juaning.dev/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Sat, 12 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://www.juaning.dev/about/</guid>
+      <guid>http://localhost:1313/about/</guid>
       <description>&lt;p&gt;Welcome! I&#39;m Juan Gómez, a Senior Full Stack Web Developer based in
 Cuernavaca, Morelos, Mexico. With over 8 years of experience, I specialize
 in crafting robust, scalable web solutions using cutting-edge technologies
@@ -363,17 +379,17 @@ and platforms.&lt;/p&gt;
   &lt;li&gt;CMS customization and optimization&lt;/li&gt;
   &lt;li&gt;Cloud infrastructure guidance and implementation&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.juaning.dev/contact&#34; target=&#34;_self&#34;&gt;Connect with me&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/contact&#34; target=&#34;_self&#34;&gt;Connect with me&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Let&#39;s transform your web development vision into reality!&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Contact me</title>
-      <link>https://www.juaning.dev/contact/</link>
+      <link>http://localhost:1313/contact/</link>
       <pubDate>Fri, 11 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://www.juaning.dev/contact/</guid>
+      <guid>http://localhost:1313/contact/</guid>
       <description>&lt;div class=&#34;row&#34;&gt;
   &lt;div class=&#34;col&#34;&gt;
     &lt;h2 style=&#34;font-style: italic; font-weight: normal;&#34;&gt;Hi, I&#39;m &lt;span style=&#34;font-weight: bold;&#34;&gt;Juan Gómez&lt;/span&gt;,&lt;br&gt;

@@ -1,23 +1,77 @@
-{{ $light := resources.Get "css/light.css" }}
-{{ $dark := resources.Get "css/dark.css" }}
 
-{{ $light.Content }}
 
-{{ if eq site.Params.style "dark-without-switcher" }}
+
 :root {
-  {{ $dark.Content }}
+   /* light.css */ 
+    --font-color: #333;
+    --bg-color: #fff;
+
+    --link-color:#1d60a3;
+    --link-state-color:#a31d1d;
+    --link-state-border-color: rgba(163, 29, 29, .5);
+
+    --thead-bg-color: lightgrey;
+    --table-border-color: lightgrey;
+
+    --nav-bg-color: #fafafa;
+    --nav-link-color: #696969;
+
+    --pre-color: #f8f8f2;
+    --pre-bg-color: #272822;
+
+    --bq-color: #ccc;
+    --hr-color: #ccc;
+
+    --pagination-bg-color: #fafafa;
+    --pagination-link-color: #696969;
+
+    --post-info-color: grey;
+
+    --switcher-color: #fff;
+    --switcher-bg-color: #333; 
+
+    --svg-color: #333;
+    --svg-state-color: #a31d1d;
 }
-{{ else if eq site.Params.style "auto-without-switcher" }}
-@media (prefers-color-scheme: dark) {
-  :root {
-    {{ $dark.Content }}
-  }
+
+
+
+:root {
+  /* dark.css */
+--font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#7db0e3;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--nav-bg-color: #242424;
+--nav-link-color: #b6b6b6;
+
+--pre-color: #f8f8f2;
+--pre-bg-color: #272822;
+
+--bq-color: #ccc;
+--hr-color: #555;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: #bcbcbc;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+--svg-color: #ccc;
+--svg-state-color:#ff5858;
+
+--bold-with-gold: #b08f26;
+
 }
-{{else }}
-[data-theme="dark"] {
-  {{ $dark.Content }}
-}
-{{ end }}
+
 
 /* Basic */
 html {
@@ -880,7 +934,6 @@ form.es .field-container textarea:focus + label::after{
 }
 
 .card:after{
-  content: '';
   display: table;
   clear: both;
 }
@@ -975,17 +1028,6 @@ a.button:hover{
   }
 }
 
-{{ range site.Params.customCSS }}
-    {{ $custom := resources.Get . }}
-    {{ $custom.Content }}
-{{ end }}
 
-{{ if site.Params.isso.enabled }}
-  #isso-thread .textarea {
-    color: #000;
-  }
-  #isso-thread .isso-feedlink {
-    position: relative;
-    z-index: 1;
-  }
-{{ end }}
+
+

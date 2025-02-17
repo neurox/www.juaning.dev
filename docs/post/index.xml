@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on JUANING.dev</title>
-    <link>https://www.juaning.dev/post/</link>
+    <link>http://localhost:1313/post/</link>
     <description>JUANING.dev (Posts)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>JUANING</copyright>
     <lastBuildDate>Fri, 14 Apr 2023 00:00:00 +0000</lastBuildDate>
     
-    <atom:link href="https://www.juaning.dev/post/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>How to Install Solr 8 on macOS 13 Ventura for Drupal Compatibility.</title>
-      <link>https://www.juaning.dev/post/2023/2023-04-14-how-to-install-solr-8-on-macos-13-ventura-for-drupal-compatibility/</link>
+      <link>http://localhost:1313/post/2023/2023-04-14-how-to-install-solr-8-on-macos-13-ventura-for-drupal-compatibility/</link>
       <pubDate>Fri, 14 Apr 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://www.juaning.dev/post/2023/2023-04-14-how-to-install-solr-8-on-macos-13-ventura-for-drupal-compatibility/</guid>
+      <guid>http://localhost:1313/post/2023/2023-04-14-how-to-install-solr-8-on-macos-13-ventura-for-drupal-compatibility/</guid>
       <description>&lt;p&gt;You might have observed that the solr version included in the most recent homebrew package is 9.
 However, its schema is currently not compatible with Drupal. Therefore, I will guide you on how to obtain version 8 of solr,
 which is compatible with Drupal.&lt;/p&gt;
@@ -110,10 +110,10 @@ If you want to stop Solr from starting automatically, you can unload the plist f
     
     <item>
       <title>Install and enable FTP access on an AWS EC2 instance with Linux CentOS 7</title>
-      <link>https://www.juaning.dev/post/2022/2022-11-24-install-and-enable-ftp-access-in-aws-ec2-instance-with-linux-centos-7/</link>
+      <link>http://localhost:1313/post/2022/2022-11-24-install-and-enable-ftp-access-in-aws-ec2-instance-with-linux-centos-7/</link>
       <pubDate>Thu, 24 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://www.juaning.dev/post/2022/2022-11-24-install-and-enable-ftp-access-in-aws-ec2-instance-with-linux-centos-7/</guid>
+      <guid>http://localhost:1313/post/2022/2022-11-24-install-and-enable-ftp-access-in-aws-ec2-instance-with-linux-centos-7/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ll guide you through the quickest and easiest way to set up FTP
 access on an EC2 instance with CentOS 7 distribution on AWS (Amazon Web Services).
 We&amp;rsquo;re going to use VSFTPD (Very Secure FTP Daemon), so the first step is to install it.&lt;/p&gt;

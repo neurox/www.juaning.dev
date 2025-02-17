@@ -2,124 +2,124 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.juaning.dev/portfolio/drupal/</loc>
+    <loc>http://localhost:1313/portfolio/drupal/</loc>
     <lastmod>2025-02-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://www.juaning.dev/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2025-02-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://www.juaning.dev/es/"
+                href="http://localhost:1313/es/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.juaning.dev/"
+                href="http://localhost:1313/"
                 />
   </url><url>
-    <loc>https://www.juaning.dev/portfolio/umbraco/</loc>
+    <loc>http://localhost:1313/portfolio/umbraco/</loc>
     <lastmod>2025-02-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://www.juaning.dev/portfolio/wordpress/</loc>
+    <loc>http://localhost:1313/portfolio/wordpress/</loc>
     <lastmod>2025-02-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://www.juaning.dev/portfolio/</loc>
+    <loc>http://localhost:1313/portfolio/</loc>
     <lastmod>2025-02-14T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://www.juaning.dev/es/portafolio/"
+                href="http://localhost:1313/es/portafolio/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.juaning.dev/portfolio/"
+                href="http://localhost:1313/portfolio/"
                 />
   </url><url>
-    <loc>https://www.juaning.dev/post/2023/2023-04-14-how-to-install-solr-8-on-macos-13-ventura-for-drupal-compatibility/</loc>
+    <loc>http://localhost:1313/post/2023/2023-04-14-how-to-install-solr-8-on-macos-13-ventura-for-drupal-compatibility/</loc>
     <lastmod>2023-04-14T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://www.juaning.dev/es/post/2023/como-instalar-solr-8-en-macos-13-ventura-para-compatibilidad-con-drupal/"
+                href="http://localhost:1313/es/post/2023/como-instalar-solr-8-en-macos-13-ventura-para-compatibilidad-con-drupal/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.juaning.dev/post/2023/2023-04-14-how-to-install-solr-8-on-macos-13-ventura-for-drupal-compatibility/"
+                href="http://localhost:1313/post/2023/2023-04-14-how-to-install-solr-8-on-macos-13-ventura-for-drupal-compatibility/"
                 />
   </url><url>
-    <loc>https://www.juaning.dev/post/</loc>
+    <loc>http://localhost:1313/post/</loc>
     <lastmod>2023-04-14T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://www.juaning.dev/es/post/"
+                href="http://localhost:1313/es/post/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.juaning.dev/post/"
+                href="http://localhost:1313/post/"
                 />
   </url><url>
-    <loc>https://www.juaning.dev/post/2022/2022-11-24-install-and-enable-ftp-access-in-aws-ec2-instance-with-linux-centos-7/</loc>
+    <loc>http://localhost:1313/post/2022/2022-11-24-install-and-enable-ftp-access-in-aws-ec2-instance-with-linux-centos-7/</loc>
     <lastmod>2022-11-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://www.juaning.dev/es/post/2022/instalar-y-habilitar-acceso-ftp-en-una-instancia-aws-ec2-con-linux-centos-7/"
+                href="http://localhost:1313/es/post/2022/instalar-y-habilitar-acceso-ftp-en-una-instancia-aws-ec2-con-linux-centos-7/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.juaning.dev/post/2022/2022-11-24-install-and-enable-ftp-access-in-aws-ec2-instance-with-linux-centos-7/"
+                href="http://localhost:1313/post/2022/2022-11-24-install-and-enable-ftp-access-in-aws-ec2-instance-with-linux-centos-7/"
                 />
   </url><url>
-    <loc>https://www.juaning.dev/about/</loc>
+    <loc>http://localhost:1313/about/</loc>
     <lastmod>2022-11-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://www.juaning.dev/es/acerca/"
+                href="http://localhost:1313/es/acerca/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.juaning.dev/about/"
+                href="http://localhost:1313/about/"
                 />
   </url><url>
-    <loc>https://www.juaning.dev/contact/</loc>
+    <loc>http://localhost:1313/contact/</loc>
     <lastmod>2022-11-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://www.juaning.dev/es/contacto/"
+                href="http://localhost:1313/es/contacto/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.juaning.dev/contact/"
+                href="http://localhost:1313/contact/"
                 />
   </url>
 </urlset>

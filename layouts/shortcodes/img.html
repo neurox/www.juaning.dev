@@ -1,0 +1,2 @@
+{{ $img := resources.Get (printf "images/%s" .) }}
+<img src="{{ $img.RelPermalink }}" alt="{{ . }}">
