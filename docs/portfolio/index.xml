@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Portfolios on JUANING.dev</title>
+    <link>https://www.juaning.dev/portfolio/</link>
+    <description>JUANING.dev (Portfolios)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>JUANING</copyright>
+    <lastBuildDate>Sat, 15 Feb 2025 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://www.juaning.dev/portfolio/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Drupal Projects</title>
+      <link>https://www.juaning.dev/portfolio/drupal/</link>
+      <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.juaning.dev/portfolio/drupal/</guid>
+      <description>&lt;div class=&#34;row&#34;&gt;
+  &lt;div class=&#34;col&#34;&gt;
+    &lt;div class=&#34;card&#34;&gt;
+      &lt;div class=&#34;title&#34;&gt;Altamed&lt;/div&gt;
+      &lt;!-- &lt;img class=&#34;thumbnail&#34; src=&#34;https://www.juaning.dev/images/altamed_screenshot.png&#34;&gt; --&gt;
+      &lt;div class=&#34;info&#34;&gt;
+        &lt;p&gt;Colaborated with development and creative teams as a fullstack web developer
+        in the redesign of pages structure and several components, views for search and integrated
+        third party services APIs.&lt;/p&gt;
+        &lt;p&gt;&lt;strong&gt;Technologies:&lt;/strong&gt; Drupal, PHP, MariaDB, Solr, AWS, Cloudflare.&lt;/p&gt;
+        &lt;a class=&#34;button&#34; href=&#34;https://www.altamed.org&#34; target=&#34;_blank&#34;&gt;
+          Check Site
+        &lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Umbraco Projects</title>
+      <link>https://www.juaning.dev/portfolio/umbraco/</link>
+      <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.juaning.dev/portfolio/umbraco/</guid>
+      <description>&lt;p&gt;This section is under construction.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Wordpress Projects</title>
+      <link>https://www.juaning.dev/portfolio/wordpress/</link>
+      <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.juaning.dev/portfolio/wordpress/</guid>
+      <description>&lt;div class=&#34;row&#34;&gt;
+  &lt;div class=&#34;col&#34;&gt;
+    &lt;div class=&#34;card&#34;&gt;
+      &lt;div class=&#34;title&#34;&gt;SolveIQ&lt;/div&gt;
+      &lt;div class=&#34;info&#34;&gt;
+        &lt;p&gt;SolveIQ is part of Asurvio, a Windows PC Support company, I&#39;ve worked in the redesign
+        and the setup and configuration of the deployment process in WP Engine, ensuring that the
+        tree environments of the site worked seamlessly (development, staging, production).&lt;/p&gt;
+        &lt;p&gt;Several custom components were created with ACF and custom CSS to make them available as Gutemberg blocks,
+        also custom widgets were created for the search sections filters.&lt;/p&gt;
+        &lt;p&gt;&lt;strong&gt;Technologies:&lt;/strong&gt; Wordpress, PHP, Javascript, CSS, MariaDB, Faceted Search,
+        CI/CD Pipelines, WP Engine.&lt;/p&gt;
+        &lt;a class=&#34;button&#34; href=&#34;https://www.solveiq.com&#34; target=&#34;_blank&#34;&gt;
+          Check SolveIQ Site
+        &lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;row&#34;&gt;
+  &lt;div class=&#34;col&#34;&gt;
+    &lt;div class=&#34;card&#34;&gt;
+      &lt;div class=&#34;title&#34;&gt;Ocean Protection Council&lt;/div&gt;
+      &lt;div class=&#34;info&#34;&gt;
+        &lt;p&gt;The Ocean Protection Council of California is a state agency that works to protect California&#39;s
+        ocean and coast. The OPC was created in 2004 by the California Ocean Protection Act (COPA). 
+        I&#39;ve worked in the redesign of more than 20 components, we wheren&#39;t allowed to update directly the code
+        so we&#39;ve provided all the code and detailed instructions to update the components code in their environment.&lt;/p&gt;
+        &lt;p&gt;&lt;strong&gt;Technologies:&lt;/strong&gt; Wordpress, PHP, Javascript, CSS.&lt;/p&gt;
+        &lt;a class=&#34;button&#34; href=&#34;https://opc.ca.gov&#34; target=&#34;_blank&#34;&gt;
+          Check OPC Site
+        &lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;row&#34;&gt;
+  &lt;div class=&#34;col&#34;&gt;
+    &lt;div class=&#34;card&#34;&gt;
+      &lt;div class=&#34;title&#34;&gt;Dementia Care Aware&lt;/div&gt;
+      &lt;div class=&#34;info&#34;&gt;
+        &lt;p&gt;Dementia Care Aware is a California program that trains and supports primary care providers
+        in assessing and treating dementia. The program was launched in July 2022 by the California Department
+        of Health Care Services (DHCS). I&#39;ve worked in the redesign and migration of the content from the previous
+        platform to the new environment server with Wordpress hosted in AWS.&lt;/p&gt;
+        &lt;p&gt;All the components were created with Elementor in order to make them reusable and easier to manage
+        by a non technical user.&lt;/p&gt;
+        &lt;p&gt;&lt;strong&gt;Technologies:&lt;/strong&gt; Wordpress, Elementor, PHP, Javascript, CSS, MariaDB, AWS.&lt;/p&gt;
+        &lt;a class=&#34;button&#34; href=&#34;https://www.dementiacareaware.org&#34; target=&#34;_blank&#34;&gt;
+          Check DCA Site
+        &lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

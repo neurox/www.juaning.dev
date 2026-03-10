@@ -1,0 +1,35 @@
+{
+  "name": "www.juaning.dev",
+  "version": "1.0.0",
+  "description": "[cite_start]This repository contains the source code for **juaning.dev**, a professional portfolio engineered for credibility, clarity, and technical judgment[cite: 15, 16]. [cite_start]The site is built as a fast, secure static site using Hugo to prioritize performance and maintainability[cite: 111, 127].",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neurox/www.juaning.dev.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/neurox/www.juaning.dev/issues"
+  },
+  "homepage": "https://github.com/neurox/www.juaning.dev#readme",
+  "devDependencies": {
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@tailwindcss/forms": "^0.5.11",
+    "@tailwindcss/postcss": "^4.2.1",
+    "@tailwindcss/typography": "^0.5.19",
+    "autoprefixer": "^10.4.27",
+    "playwright": "^1.58.2",
+    "postcss": "^8.5.8",
+    "postcss-cli": "^11.0.1",
+    "tailwindcss": "^4.2.1"
+  }
+}

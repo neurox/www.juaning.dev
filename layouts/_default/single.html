@@ -1,48 +1,43 @@
 {{ define "main" }}
-  {{ if .Params.menu }}
-    <nav class="post-navigation">
-      {{ range $index, $element := .Params.menu }}
-        <a href="{{ .URL | absURL }}" title="{{ .Title }}">{{ .Name }}</a>
-      {{ end }}
-    </nav>
-  {{ end }}
-
-  <article class="post h-entry">
-    <div class="post-header">
-      <section>
-        <h1 class="p-name post-title{{ if .Params.draft }} draft{{end}}">
-          {{ trim .Title  " " }}
-          {{ if .Params.favorite }}
-            {{ partial "font-awesome.html" (dict "iconName" "star-solid" "custom" false) }}
-          {{end}}
+<article class="@container flex flex-col w-full py-10 px-4 md:px-0">
+    <header class="flex flex-col gap-4 mb-10 pb-10 border-b border-slate-200 dark:border-slate-800">
+        <h1 class="text-slate-900 dark:text-white text-4xl @[480px]:text-5xl lg:text-6xl font-black leading-tight tracking-[-0.033em]">
+            {{ .Title }}
         </h1>
-
-        {{ partial "post-language-switcher.html" . }}
-      </section>
-    </div>
-    <div class="content e-content">
-      {{ .Content }}
-    </div>
-    {{ partial "post-info.html" . }}
-  </article>
-
-  {{ if gt .Site.Params.readNextPosts 0 }}
-    {{ $related := .Site.RegularPages.Related . | first .Site.Params.readNextPosts }}
-    {{ with $related }}
-      <h3 class="read-next-title">{{ i18n "readNext" }}</h3>
-      <ul class="read-next-posts">
-        {{ range . }}
-        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        <div class="flex flex-wrap items-center gap-4 text-sm text-slate-500 dark:text-slate-400 font-medium">
+            <span class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-base">calendar_month</span>
+                {{ .Date.Format "January 2, 2006" }}
+            </span>
+            {{ if .Params.readingTime }}
+            <span>•</span>
+            <span class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-base">schedule</span>
+                {{ .Params.readingTime }} min read
+            </span>
+            {{ end }}
+        </div>
+        
+        {{ with .Params.tags }}
+        <div class="flex flex-wrap gap-2 mt-2">
+            {{ range . }}
+            <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="inline-block px-3 py-1 bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors rounded-full text-xs font-bold uppercase tracking-wider">
+                {{ . }}
+            </a>
+            {{ end }}
+        </div>
         {{ end }}
-      </ul>
+    </header>
+
+    <div class="prose prose-slate dark:prose-invert prose-lg lg:prose-xl max-w-4xl prose-headings:font-bold prose-headings:tracking-tight prose-a:text-primary hover:prose-a:text-primary/80 prose-img:rounded-xl prose-h2:text-3xl prose-h2:@[480px]:text-4xl prose-h2:leading-tight prose-h3:text-xl prose-h3:leading-tight">
+        {{ .Content }}
+    </div>
+
+    {{ if site.Config.Services.Disqus.Shortname }}
+    <div class="mt-20 pt-10 border-t border-slate-200 dark:border-slate-800">
+        <h3 class="text-xl font-bold mb-8 text-slate-900 dark:text-white">Comments</h3>
+        {{ partial "internal/disqus.html" . }}
+    </div>
     {{ end }}
-  {{ end }}
-
-  {{ if and (.Site.Params.paginationSinglePost) (ne .Type "page") }}
-    {{ partial "post-pagination.html" . }}
-  {{ end }}
-
-  {{ if not .Params.disableComments }}
-    {{ partial "comments.html" . }}
-  {{ end }}
+</article>
 {{ end }}

@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap') layer(base);
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/container-queries";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #13b6ec;
+  --color-background-light: #f6f8f8;
+  --color-background-dark: #101d22;
+  --color-surface-light: #e2e8f0;
+  --color-surface-dark: #1e293b;
+
+  --font-display: "Inter", sans-serif;
+
+  --radius-DEFAULT: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
+}
+
+@layer utilities {
+  /* Premium Code Snippet Styling (Reference Match) */
+  .highlight {
+    @apply relative py-4 pl-12 pr-14 rounded-xl overflow-hidden mt-6 mb-8 border border-slate-700/50 bg-[#0d1a20];
+  }
+
+  .highlight pre {
+    @apply text-sm m-0 overflow-x-auto;
+  }
+
+  /* Add the '$' prompt indicator before the code */
+  .highlight::before {
+    content: "$";
+    @apply absolute top-4 left-5 text-primary/80 font-mono select-none pointer-events-none;
+  }
+
+  /* Ensure prose pre styles don't conflict with our custom wrapper */
+  .prose pre {
+    @apply p-0 bg-transparent m-0 rounded-none;
+  }
+}

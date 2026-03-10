@@ -22,6 +22,11 @@
                 href="https://www.juaning.dev/"
                 />
   </url><url>
+    <loc>https://www.juaning.dev/portfolio/</loc>
+    <lastmod>2025-02-15T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://www.juaning.dev/portfolio/umbraco/</loc>
     <lastmod>2025-02-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -31,21 +36,6 @@
     <lastmod>2025-02-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-  </url><url>
-    <loc>https://www.juaning.dev/portfolio/</loc>
-    <lastmod>2025-02-14T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://www.juaning.dev/es/portafolio/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://www.juaning.dev/portfolio/"
-                />
   </url><url>
     <loc>https://www.juaning.dev/post/2023/2023-04-14-how-to-install-solr-8-on-macos-13-ventura-for-drupal-compatibility/</loc>
     <lastmod>2023-04-14T00:00:00+00:00</lastmod>

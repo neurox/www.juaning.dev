@@ -1,0 +1,146 @@
+{{ define "main" }}
+<div class="@container flex flex-col w-full py-10 px-4 md:px-0">
+    <header class="flex flex-col gap-4 mb-10 pb-10 border-b border-slate-200 dark:border-slate-800">
+        <h1 class="text-slate-900 dark:text-white text-4xl @[480px]:text-5xl lg:text-6xl font-black leading-tight tracking-[-0.033em]">
+            {{ .Title }}
+        </h1>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 max-w-6xl">
+        
+        <!-- Contact Information & Intro -->
+        <div class="flex flex-col gap-6">
+            <div class="prose prose-slate dark:prose-invert prose-lg max-w-none prose-headings:font-bold prose-h2:text-3xl prose-h2:@[480px]:text-4xl prose-h2:leading-tight">
+                {{ .Content }}
+            </div>
+            
+            <div class="mt-8 flex flex-col gap-4">
+                <a class="flex items-center gap-3 text-slate-700 dark:text-slate-300 hover:text-primary transition-colors" href="mailto:{{ .Site.Params.email }}">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary">
+                        <span class="material-symbols-outlined">mail</span>
+                    </div>
+                    <div>
+                        <span class="block text-sm text-slate-500 font-medium">Email</span>
+                        <span class="font-bold text-lg">{{ .Site.Params.email }}</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="bg-white dark:bg-surface-dark border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 shadow-sm">
+            <h3 class="text-3xl @[480px]:text-4xl leading-tight font-bold text-slate-900 dark:text-white mb-6">Send Me a Message</h3>
+            
+            <form id="contact-form" method="post" class="flex flex-col gap-5">
+                
+                <div class="flex flex-col gap-1.5">
+                    <label for="name" class="text-sm font-semibold text-slate-700 dark:text-slate-300">Name <span class="text-red-500">*</span></label>
+                    <input type="text" id="name" name="name" required class="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 px-4 py-3 text-slate-900 dark:text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-slate-400">
+                </div>
+
+                <div class="flex flex-col gap-1.5">
+                    <label for="email" class="text-sm font-semibold text-slate-700 dark:text-slate-300">Email <span class="text-red-500">*</span></label>
+                    <input type="email" id="email" name="email" required class="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 px-4 py-3 text-slate-900 dark:text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-slate-400">
+                </div>
+
+                <div class="flex flex-col gap-1.5">
+                    <label for="subject" class="text-sm font-semibold text-slate-700 dark:text-slate-300">Subject <span class="text-red-500">*</span></label>
+                    <input type="text" id="subject" name="subject" required class="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 px-4 py-3 text-slate-900 dark:text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-slate-400">
+                </div>
+
+                <div class="flex flex-col gap-1.5">
+                    <label for="message" class="text-sm font-semibold text-slate-700 dark:text-slate-300">Message <span class="text-red-500">*</span></label>
+                    <textarea id="message" name="message" rows="5" required class="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 px-4 py-3 text-slate-900 dark:text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none placeholder:text-slate-400"></textarea>
+                </div>
+
+                <div class="mt-2">
+                    <div class="g-recaptcha" data-sitekey="6LfH2-oiAAAAAO8yeRMVEugLESUVWaUe8qUtTNCn" aria-label="Please complete the reCAPTCHA to verify that you are not a robot."></div>
+                </div>
+
+                <button type="submit" class="mt-4 flex w-full items-center justify-center rounded-lg bg-primary px-6 py-4 text-background-dark font-bold text-lg hover:bg-primary/90 transition-colors">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
+<script>
+  // Load reCAPTCHA API script
+  var reCaptchaScript = document.createElement('script');
+  reCaptchaScript.src = 'https://www.google.com/recaptcha/api.js';
+  document.head.appendChild(reCaptchaScript);
+
+  // Add event listener to contact form
+  var form = document.getElementById('contact-form');
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Get form data
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var subject = document.getElementById('subject').value || 'New message from JUANING.dev';
+    var message = document.getElementById('message').value;
+    var recaptchaResponse = grecaptcha.getResponse();
+
+    // Verify reCAPTCHA response
+    if (!recaptchaResponse) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oh no...',
+        text: 'Please complete the reCAPTCHA challenge.'
+      });
+      return;
+    }
+
+    // Prepare form data as JSON
+    var formData = {
+      'name': name,
+      'email': email,
+      'subject': subject,
+      'message': message
+    };
+    var jsonData = JSON.stringify(formData);
+
+    // Send form data to Firebase Function endpoint
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'https://formsubmit.co/ajax/contact@juaning.dev');
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.setRequestHeader('Accept', 'application/json');
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+        if (xhr.status === 200) {
+          Swal.fire({
+            icon: 'success',
+            title: 'Thank you for reaching out to me!',
+            text: 'I appreciate your interest and will personally get back to you as soon as possible.'
+          });
+          document.getElementById('contact-form').reset();
+          grecaptcha.reset();
+        } else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oh no...',
+            text: 'I apologize, but it seems that something went wrong with the submission. I suggest that you try again at a later time.'
+          });
+        }
+      }
+    };
+    xhr.send(jsonData);
+  });
+
+  // Make reCaptcha compliance 508 valid.
+  function addAriaLabelToRecaptcha() {
+    const recaptchaContainer = document.getElementById('g-recaptcha-response');
+    if (recaptchaContainer) {
+      recaptchaContainer.setAttribute('aria-label', 'This is a reCAPTCHA reponse');
+    }
+  }
+
+  const observer = new MutationObserver(addAriaLabelToRecaptcha);
+  observer.observe(document.body, { childList: true });
+</script>
+{{ end }}

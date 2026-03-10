@@ -1,23 +1,15 @@
 <ul class="language-select">
-  {{ $pageLang := .Page.Lang}}
-  {{ $translations := .AllTranslations }}
-  {{ if not .IsTranslated }}
-    {{ $translations = $.Site.Home.AllTranslations }}
-  {{ end }}
-
-  {{ range $translations }}
-    {{ if eq .Lang $pageLang }}
-      <!-- <li><span lang="{{ .Lang }}">{{ .Language.LanguageName }}</span></li> -->
-    {{ else }}
-      <li><a href="{{ .Permalink }}" lang="{{ .Lang }}">
-        {{ if eq .Lang "es" }}
-          Leer en
-        {{ else }}
-          Read in
-        {{ end }}
-
-        {{ .Language.LanguageName }}
-      </a></li>
+    {{ $pageLang := .Page.Lang}}
+    {{ $translations := .AllTranslations }}
+    {{ if not .IsTranslated }}
+        {{ $translations = $.Site.Home.AllTranslations }}
     {{ end }}
-  {{ end }}
+
+    {{ range $translations }}
+        {{ if eq .Lang $pageLang }}
+            <li>{{ .Language.LanguageName }}</li>
+        {{ else }}
+            <li><a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li>
+        {{ end }}
+    {{ end }}
 </ul>

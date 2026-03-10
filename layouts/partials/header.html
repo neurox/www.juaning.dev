@@ -1,16 +1,51 @@
-<div class="header-top">
-  {{ partial "site-title.html" . }}
-  {{ partial "social.html" . }}
-</div>
-{{ if .Site.Menus.main }}
-  <nav>
-    {{ $currentPage := . }}
+<!-- Header -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-4 md:px-10 py-4 mb-8">
+    <div class="flex items-center gap-4 text-primary">
+        <a href="{{ .Site.BaseURL }}" class="flex items-center gap-4 text-primary hover:opacity-80 transition-opacity">
+            <span class="material-symbols-outlined text-3xl">code</span>
+            <h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight tracking-[-0.015em]">{{ .Site.Title }}</h2>
+        </a>
+    </div>
+    <div class="hidden md:flex flex-1 justify-end gap-8 items-center">
+        <nav class="flex items-center gap-9">
+            {{ $current := . }}
+            {{ range .Site.Menus.main }}
+                <a class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm font-medium leading-normal {{ if $current.IsMenuCurrent "main" . }}text-primary{{ end }}" href="{{ .URL | relLangURL }}">
+                    {{ .Name }}
+                </a>
+            {{ end }}
+        </nav>
+        <a class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary text-background-dark hover:bg-primary/90 transition-colors text-sm font-bold leading-normal tracking-[0.015em]" href="/contact">
+            <span class="truncate">Contact</span>
+        </a>
+    </div>
+    
+    <button class="md:hidden text-slate-900 dark:text-slate-100" id="mobile-menu-btn">
+        <span class="material-symbols-outlined">menu</span>
+    </button>
+</header>
+
+<!-- Mobile Menu (Hidden by default) -->
+<div id="mobile-menu" class="hidden md:hidden flex-col gap-4 px-4 py-4 mb-4 border-b border-slate-200 dark:border-slate-800">
     {{ range .Site.Menus.main }}
-      <a class='{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}' href="{{ .URL | relLangURL }}" title="{{ .Title }}">{{ .Name }}</a>
+        <a class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-base font-medium" href="{{ .URL | relLangURL }}">
+            {{ .Name }}
+        </a>
     {{ end }}
-  </nav>
-{{ end }}
+    <a class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-primary text-background-dark font-bold mt-2" href="/contact">
+        Contact
+    </a>
+</div>
 
-{{ if .Site.Params.mathjax }}{{ partial "mathjax_support.html" . }}{{ end }}
-
-{{ partial "header-extra.html" . }}
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    if(btn && menu) {
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+        });
+    }
+});
+</script>

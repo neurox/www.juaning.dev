@@ -1,28 +1,21 @@
-<footer class="common-footer">
-  <!-- {{ $languagesCount := $.Site.Home.AllTranslations }}
-  {{ if gt $languagesCount 1 }}
-    {{ partial "language-switcher.html" . }}
-  {{ end }} -->
-
-  <div class="common-footer-bottom">
-    {{ if .Site.Menus.footer }}
-      {{ $currentPage := . }}
-      <ul class="footer-menu">
-      {{ range .Site.Menus.footer }}
-      <li><a class='{{if or ($currentPage.IsMenuCurrent "footer" .) ($currentPage.HasMenuCurrent "footer" .) }} active{{end}}' href="{{ .URL | absLangURL }}" title="{{ .Title }}">{{ .Name }}</a></li>
-      {{ end }}
-      </ul>
-    {{ end }}
-    <div class="copyright">
-      <p>
-        <span class="sitename">&#169; {{ if isset .Site.Params "title"}}{{ .Site.Params.title }}, {{end}}{{ now.Year }}</span><br>
-        <small>{{ i18n "powered" }} <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, {{ i18n "theme" }} <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.<br>
-        {{ partial "footer-extra.html" . }}</small>
-      </p>
+<!-- Footer -->
+<footer class="w-full border-t border-slate-200 dark:border-slate-800 py-8 px-4 mt-auto">
+    <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-slate-500 dark:text-slate-400 text-sm">
+        <div class="flex items-center gap-2 font-medium text-slate-700 dark:text-slate-300">
+            <span class="material-symbols-outlined text-primary text-xl">code</span>
+            <span>{{ .Site.Title }}</span>
+        </div>
+        <p>&copy; {{ now.Format "2006" }} {{ .Site.Params.author }}. All rights reserved.</p>
+        <div class="flex gap-6">
+            {{ range .Site.Menus.footer }}
+                <a class="hover:text-primary transition-colors" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
+            {{ end }}
+        </div>
     </div>
-
-    <!-- {{ partial "theme-switcher.html" . }} -->
-  </div>
-
-  {{ partial "h-card.html" . }}
 </footer>
+
+<!-- Functional Scripts -->
+{{ if (fileExists "assets/js/copy-code.js") }}
+{{ $copyJs := resources.Get "js/copy-code.js" | minify | fingerprint }}
+<script src="{{ $copyJs.Permalink }}" integrity="{{ $copyJs.Data.Integrity }}" defer></script>
+{{ end }}

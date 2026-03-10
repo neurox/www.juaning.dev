@@ -1,7 +1,5 @@
 {{ if site.Config.Services.Disqus.Shortname }}
-    {{ if not .Params.noComment }}
-        {{ partial "disqus.html" . }}
-    {{ end }}
+    {{ partial "disqus.html" . }}
 {{ end }}
 
 {{ if .Site.Params.UtterancesRepo }}

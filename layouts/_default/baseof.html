@@ -1,35 +1,22 @@
 <!DOCTYPE html>
-{{ $dataTheme := "" }}
-{{ if eq site.Params.style "dark-without-switcher" }}
-  {{ $dataTheme = "dark" }}
-{{ end }}
-<html lang="{{ .Site.Params.locale | default .Site.LanguageCode }}" data-theme="{{ $dataTheme }}">
+<html lang="{{ site.Language.Lang }}" class="dark">
 <head>
-  {{ block "head" . }}
     {{ partial "head.html" . }}
-  {{ end }}
+    {{ block "head" . }}{{ end }}
 </head>
-<body>
-  <a class="skip-main" href="#main">{{ i18n "skipToContent" }}</a>
-  <div class="container">
-    <header class="common-header">
-      {{ block "header" . }}
-        {{ partial "header.html" . }}
-      {{ end }}
-    </header>
-    <main id="main" tabindex="-1">
-      {{ if .IsHome }}
-        {{ $languagesCount := $.Site.Home.AllTranslations }}
-        {{ if gt $languagesCount 1 }}
-          {{ partial "language-switcher.html" . }}
-        {{ end }}
-      {{ end }}
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col group/design-root overflow-x-hidden">
+    <div class="layout-container flex h-full grow flex-col w-full">
+        <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-5">
+            <div class="layout-content-container flex flex-col max-w-[1200px] w-full flex-1">
+                {{ partial "header.html" . }}
 
-      {{ block "main" . }}{{ end }}
-    </main>
-    {{ block "footer" . }}
-      {{ partial "footer.html" . }}
-    {{ end }}
-  </div>
+                <main class="w-full">
+                    {{ block "main" . }}{{ end }}
+                </main>
+                
+            </div>
+        </div>
+        {{ partial "footer.html" . }}
+    </div>
 </body>
 </html>

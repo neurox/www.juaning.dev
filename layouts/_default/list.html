@@ -1,0 +1,56 @@
+{{ define "main" }}
+<div class="@container flex flex-col gap-10 py-10 px-4 md:px-0">
+    <header class="flex flex-col gap-4 mb-8">
+        <h1 class="text-slate-900 dark:text-white text-4xl @[480px]:text-5xl lg:text-6xl font-black leading-tight tracking-[-0.033em] capitalize">
+            {{ .Title }}
+        </h1>
+        {{ if .Content }}
+        <div class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl">
+            {{ .Content }}
+        </div>
+        {{ end }}
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {{ range .Paginator.Pages }}
+        <article class="flex flex-col gap-4 group cursor-pointer" onclick="window.location.href='{{ .Permalink }}'">
+            <div class="w-full bg-slate-200 dark:bg-surface-dark aspect-video rounded-xl overflow-hidden relative">
+                <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-slate-900/40 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-6xl text-white/50 group-hover:scale-110 transition-transform duration-300">article</span>
+                </div>
+            </div>
+            <div class="flex flex-col gap-2 px-2">
+                <div class="flex gap-3 text-sm text-slate-500 dark:text-slate-400 font-medium">
+                    <span>{{ .Date.Format "2 Jan, 2006" }}</span>
+                </div>
+                <h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight group-hover:text-primary transition-colors">
+                    {{ .Title }}
+                </h2>
+                <div class="prose prose-sm prose-slate dark:prose-invert line-clamp-3 text-slate-600 dark:text-slate-400 leading-relaxed">
+                    {{ .Summary }}
+                </div>
+            </div>
+        </article>
+        {{ end }}
+    </div>
+
+    {{ $paginator := .Paginator }}
+    {{ if gt $paginator.TotalPages 1 }}
+    <nav class="flex justify-center mt-10">
+        <ul class="flex items-center gap-2 text-slate-700 dark:text-slate-300">
+            {{ if $paginator.HasPrev }}
+            <li><a href="{{ $paginator.Prev.URL }}" class="px-4 py-2 border border-slate-300 dark:border-slate-700 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Prev</a></li>
+            {{ end }}
+            
+            {{ range $paginator.Pagers }}
+            <li><a href="{{ .URL }}" class="px-4 py-2 border rounded-md transition-colors {{ if eq . $paginator }}bg-primary text-slate-900 border-primary font-bold{{ else }}border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800{{ end }}">{{ .PageNumber }}</a></li>
+            {{ end }}
+            
+            {{ if $paginator.HasNext }}
+            <li><a href="{{ $paginator.Next.URL }}" class="px-4 py-2 border border-slate-300 dark:border-slate-700 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Next</a></li>
+            {{ end }}
+        </ul>
+    </nav>
+    {{ end }}
+</div>
+{{ end }}

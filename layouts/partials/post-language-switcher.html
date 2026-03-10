@@ -1,24 +1,18 @@
 {{ if .IsTranslated }}
-  {{ $pageLang := .Page.Lang}}
-  <span aria-label='{{ i18n "postTranslations"}}'>
-    {{ range $index, $element := .AllTranslations }}
-      {{ if eq .Lang $pageLang }}
-        <!-- <span lang="{{ .Lang }}">{{ upper .Lang }}</span> -->
-      {{ else }}
-        <a href="{{ .Permalink }}" lang="{{ .Lang }}">
-          {{ if eq .Lang "es" }}
-            Leer en
-          {{ else }}
-            Read in
-          {{ end }}
-
-          {{ .Language.LanguageName }}
-        </a>
-      {{ end }}
-
-      <!-- {{ if eq $index 0 }}
-        |
-      {{ end }} -->
-    {{ end }}
-  </span>
+    {{ $pageLang := .Page.Lang}}
+    <span>
+        <ul class="post-translations">
+            {{ range .AllTranslations }}
+                {{ if eq .Lang $pageLang }}
+                    <li>
+                        {{ upper .Lang }}
+                    </li>
+                {{ else }}
+                    <li>
+                        <a href="{{ .Permalink }}">{{ upper .Lang }}</a>
+                    </li>
+                {{ end }}
+            {{ end }}
+        </ul>
+    </span>
 {{ end }}
