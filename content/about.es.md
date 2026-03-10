@@ -25,51 +25,25 @@ noDate: true
 #     weight: 10
 ---
 
-¡Bienvenido! Soy Juan Gómez, un Desarrollador Web Full Stack Senior viviendo en
-Cuernavaca, Morelos, México. Con más de 8 años de experiencia, me especializo
-en crear soluciones web robustas y escalables utilizando tecnologías y
-plataformas de vanguardia.
+Como Consultor Senior Full Stack y Arquitecto Cloud, me especializo en resolver desafíos de ingeniería de alta complejidad para clientes corporativos B2B. Con más de 9 años de experiencia práctica, mi enfoque radica en rescatar y modernizar sistemas legacy, diseñar infraestructuras Cloud resilientes y entregar aplicaciones empresariales escalables y multi-tenant.
 
-## Mi Experiencia
-### Mi trayectoria en desarrollo web me ha dotado de competencia en:
-*   Desarrollo CMS: Umbraco (versiones 7-10 LTS), WordPress, Drupal
-*   Lenguajes de Programación: PHP, C#, JavaScript
-*   Tecnologías Web: HTML5, CSS3, SASS, LESS
-*   Frameworks y Stacks: MERN (MongoDB, Express, React, Node.js)
-*   Bases de Datos: MySQL, MSSQL, MongoDB
-*   Servicios en la Nube: AWS (EC2, Load Balancers, CDN, CloudSearch, S3), Cloudflare
-*   Gestión de Servidores: Linux, Windows Server
-*   Control de Versiones: Git
-*   Herramientas DevOps: Docker, AWS Auto Scaling, Load Balancing
+## Ingeniería Estratégica y Valor de Negocio
 
-## Lo Que Me Distingue
-1.  Dominio de CMS: Experto en Umbraco y Drupal, desde implementaciones personalizadas hasta actualizaciones de versiones mayores.
-2.  Competencia Full Stack: Habilidades integrales tanto en desarrollo front-end como back-end.
-3.  Especialista en Infraestructura en la Nube: Más de 4 años gestionando instancias AWS EC2, incluyendo configuraciones avanzadas.
-4.  Desarrollador MERN Stack: Construyendo aplicaciones web modernas y eficientes con MongoDB, Express, React y Node.js.
-5.  Experto en Desarrollo de APIs: Creando APIs robustas para integraciones de sistemas sin problemas.
-6.  Experto en Optimización de Rendimiento: Entregando soluciones web de alta velocidad a través de optimizaciones del lado del servidor y del cliente.
+En el acelerado ecosistema digital actual, las corporaciones requieren más que solo código: necesitan estrategias arquitectónicas robustas que garanticen alta disponibilidad y cero tiempos de inactividad (zero downtime). Operando bajo un modelo Nearshore desde México, me asocio con empresas de clase mundial para brindar consultoría técnica y arquitectónica de élite:
 
-## Logros Clave más recientes
-*   Diseñé y escalé el sitio web del Distrito Metropolitano de Agua del Sur de California de Umbraco 7 a 10.
-*   Lideré un proyecto multisitio en Drupal 10 para LACCD, desarrollando sincronización de contenido personalizada entre sitios.
-*   Diseñé una solución personalizada en Drupal 10 para Curtiss Wright: Defense Solutions, migrando más de 20,000 usuarios.
+*   **Modernización de Sistemas Legacy:** Refactorización de aplicaciones monolíticas y obsoletas hacia arquitecturas basadas en microservicios, preparadas para escalar.
+*   **Arquitectura CMS Empresarial:** Dominio experto de implementaciones avanzadas en Drupal y Umbraco para ecosistemas de contenido masivos bajo transformación digital.
+*   **Infraestructura Cloud:** Diseño de entornos automatizados y de auto-escalado dentro de AWS (EC2, S3, Load Balancers) integrados de forma nativa con pipelines CI/CD en Docker para acelerar la cadencia de los despliegues y aislar el error humano.
+*   **APIs de Alto Rendimiento:** Construcción e integración de sistemas backend robustos y altamente seguros utilizando PHP 8+ y el ecosistema moderno de JS.
 
-## Abrazando el Futuro
-### Estoy expandiendo continuamente mi experiencia en DevOps, enfocándome en:
-*   Containerización con Docker
-*   AWS Auto Scaling y Load Balancing
-*   Implementación de pipelines CI/CD
+## Historial y Ejecución
 
-Mi misión: Conectar el desarrollo y las operaciones para crear soluciones web más eficientes, escalables y confiables.
+He liderado exitosamente equipos técnicos especializados a través de intrincados cambios sistémicos, incluyendo migraciones masivas de bases de datos y sincronizaciones cross-system para entidades gubernamentales y contratistas de defensa de primer nivel. Mi filosofía de ingeniería prioriza los protocolos de seguridad estricta, la accesibilidad impecable (WCAG) y métricas de Core Web Vitals excepcionales para maximizar el retorno de inversión (ROI) tecnológico.
 
-## Colaboremos
-¿Listo para un nuevo desafío o tienes un proyecto emocionante? Estoy aquí para ayudar, ya sea que necesites:
+## Currículum Vitae 
 
-*   Desarrollo robusto de aplicaciones web
-*   Personalización y optimización de CMS
-*   Orientación e implementación de infraestructura en la nube
+Para obtener una línea de tiempo cronológica y detallada de mis roles corporativos, competencias técnicas específicas y certificaciones formales, puedes revisar mi Currículum Vitae íntegro.
 
-[Conéctate conmigo](/contact)
+[Descargar CV en PDF](/pdf/juan-gomez-cv.pdf)
 
-¡Transformemos tu visión de desarrollo web en realidad!
+Hablemos sobre cómo podemos rediseñar y asegurar el futuro de tu plataforma tecnológica. [Conéctate conmigo](/contact/es).

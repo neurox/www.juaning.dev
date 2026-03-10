@@ -3,9 +3,11 @@
 <meta name="generator" content="Hugo {{ hugo.Version }}">
 
 {{ $title := print .Title " | " .Site.Title }}
-{{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
+{{ if .IsHome }}{{ $title = .Title }}{{ end }}
 <title>{{ $title }}</title>
-{{ if .Site.Params.description }}<meta name="description" content="{{ .Site.Params.description }}">{{ end }}
+
+{{ $desc := .Description | default .Site.Params.description }}
+{{ if $desc }}<meta name="description" content="{{ $desc }}">{{ end }}
 
 <!-- Tailwind compiled via Hugo Pipes & PostCSS -->
 {{ $css := resources.Get "css/tailwind.css" | postCSS (dict "config" "postcss.config.js" "noMap" true "inlineImports" true "errors" true) | minify | fingerprint }}
@@ -15,6 +17,7 @@
 {{ $syntax := resources.Get "css/syntax.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $syntax.Permalink }}" integrity="{{ $syntax.Data.Integrity }}">
 
+{{ partial "internal/seo_schema.html" . }}
 {{ partial "internal/opengraph.html" . }}
 {{ partial "internal/twitter_cards.html" . }}
 

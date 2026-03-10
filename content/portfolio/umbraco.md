@@ -10,4 +10,6 @@ noDate: true
 noRelated: true
 ---
 
-<p>This section is under construction.</p>
+## Coming Soon
+
+This section is currently under construction. Please check back later for updates on my Umbraco enterprise integrations.

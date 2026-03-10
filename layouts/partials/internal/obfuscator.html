@@ -1,0 +1,50 @@
+{{/* 
+  Email Obfuscator
+  Usage: {{ partial "internal/obfuscator.html" .Site.Params.email }} 
+*/}}
+{{ $email := . }}
+{{ $id := delimit (shuffle (seq 1 9)) "" }} {{/* Generate a somewhat random 9 digit ID for the span */}}
+{{ $encoded := base64Encode $email }}
+
+<span id="obfuscated-email-{{ $id }}">
+  <noscript>
+    <span class="text-slate-500 text-sm italic">
+      [JavaScript required to view email address]
+    </span>
+  </noscript>
+</span>
+
+<script>
+  (function() {
+    // Read the build-time Base64 string
+    var encoded = "{{ $encoded }}";
+    // Native JS decoder (atob)
+    var decoded = atob(encoded);
+    
+    // Construct the anchor element
+    var link = document.createElement("a");
+    link.href = "mailto:" + decoded;
+    link.className = "flex items-center gap-2 text-slate-700 dark:text-slate-300 hover:text-primary transition-colors";
+    
+    // Construct the Icon
+    var icon = document.createElement("span");
+    icon.className = "material-symbols-outlined";
+    icon.textContent = "mail";
+    
+    // Construct the Text
+    var text = document.createElement("span");
+    text.className = "font-medium";
+    text.textContent = decoded;
+    
+    // Append children
+    link.appendChild(icon);
+    link.appendChild(text);
+    
+    // Inject into the DOM
+    var container = document.getElementById("obfuscated-email-{{ $id }}");
+    if (container) {
+      container.innerHTML = ""; // Clear noscript
+      container.appendChild(link);
+    }
+  })();
+</script>

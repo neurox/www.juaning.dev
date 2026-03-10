@@ -15,6 +15,10 @@
                 </a>
             {{ end }}
         </nav>
+        
+        <div class="h-6 w-px bg-slate-200 dark:bg-slate-800 hidden md:block"></div>
+        {{ partial "language-switcher.html" . }}
+
         <a class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary text-background-dark hover:bg-primary/90 transition-colors text-sm font-bold leading-normal tracking-[0.015em]" href="/contact">
             <span class="truncate">Contact</span>
         </a>
@@ -32,6 +36,12 @@
             {{ .Name }}
         </a>
     {{ end }}
+    
+    <div class="flex items-center justify-between border-t border-slate-200 dark:border-slate-800 pt-4 mt-2">
+        <span class="text-sm text-slate-500 font-medium">Idioma / Language</span>
+        {{ partial "language-switcher.html" . }}
+    </div>
+
     <a class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-primary text-background-dark font-bold mt-2" href="/contact">
         Contact
     </a>

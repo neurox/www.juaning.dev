@@ -45,3 +45,24 @@ lightTheme:
 
 readNext:
   other: "Leer el siguiente"
+
+hero_subtitle:
+  other: "Consultor Senior Web & Cloud"
+
+hero_title:
+  other: "Juan Gómez | Consultor Senior Full Stack & Arquitectura Drupal"
+
+hero_description:
+  other: "Modernización de sistemas legacy, arquitecturas multi-tenant, y modelo Nearshore para soluciones empresariales de alta complejidad en la nube (AWS)."
+
+btn_view_portfolio:
+  other: "Ver Portafolio"
+
+section_expertise_title:
+  other: "Experiencia Técnica Principal"
+
+section_expertise_desc:
+  other: "Construyendo soluciones modernas y escalables con tecnologías estándar de la industria."
+
+section_freelance_desc:
+  other: "Actualmente disponible para proyectos independientes y consultoría. Si tienes requerimientos complejos para aplicaciones web o necesitas experiencia en Drupal, me encantaría escucharte."

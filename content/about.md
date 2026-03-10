@@ -24,51 +24,25 @@ noDate: true
 #     weight: 10
 ---
 
-Welcome! I'm Juan Gómez, a Senior Full Stack Web Developer based in
-Cuernavaca, Morelos, Mexico. With over 8 years of experience, I specialize
-in crafting robust, scalable web solutions using cutting-edge technologies
-and platforms.
+As a Senior Full Stack Consultant and Cloud Architect, I specialize in solving high-complexity engineering challenges for enterprise B2B clients. With over 9 years of hands-on experience, my focus lies in rescuing and modernizing legacy systems, engineering resilient Cloud infrastructures, and delivering scalable, multi-tenant web applications.
 
-## My Expertise
-### My web development journey has equipped me with proficiency in:
-*   CMS Development: Umbraco (versions 7-10 LTS), WordPress, Drupal
-*   Programming Languages: PHP, C#, JavaScript
-*   Web Technologies: HTML5, CSS3, SASS, LESS
-*   Frameworks & Stacks: MERN (MongoDB, Express, React, Node.js)
-*   Databases: MySQL, MSSQL, MongoDB
-*   Cloud Services: AWS (EC2, Load Balancers, CDN, CloudSearch, S3), Cloudflare
-*   Server Management: Linux, Windows Server
-*   Version Control: Git
-*   DevOps Tools: Docker, AWS Auto Scaling, Load Balancing
+## Strategic Engineering & Business Value
 
-## What Sets Me Apart
-1.  CMS Mastery: Expert in Umbraco & Drupal, from custom implementations to major version upgrades.
-2.  Full Stack Proficiency: Comprehensive skills in both front-end and back-end development.
-3.  Cloud Infrastructure Specialist: 4+ years managing AWS EC2 instances, including advanced configurations.
-4.  MERN Stack Developer: Building modern, efficient web applications with MongoDB, Express, React, and Node.js.
-5.  API Development Expert: Creating robust APIs for seamless system integrations.
-6.  Performance Optimization Expert: Delivering high-speed web solutions through server-side and client-side optimizations.
+In today's fast-paced digital landscape, corporations require more than just code—they need robust architectural strategies that guarantee high availability and zero downtime. Operating under a Nearshore model from Mexico, I partner with companies worldwide to provide elite technical consulting:
 
-## Most Recent Key Achievements
-*   Architected and scaled the Metropolitan Water District of Southern California's website from Umbraco 7 to 10.
-*   Led a Drupal 10 multisite project for LACCD, developing custom cross-site content synchronization.
-*   Engineered a bespoke Drupal 10 solution for Curtiss Wright: Defense Solutions, migrating 20,000+ users.
+*   **Legacy Modernization:** Refactoring monolithic, outdated applications into modern, decoupled microservices built for scale.
+*   **Enterprise CMS Architecture:** Expert-level mastery of advanced Drupal and Umbraco deployments for massive content ecosystems undergoing digital transformation.
+*   **Cloud Infrastructure:** Designing automated, auto-scaling environments inside AWS (EC2, S3, Load Balancers) combined with CI/CD Docker pipelines to radically speed up deployment cycles and eliminate human error.
+*   **High-Performance APIs:** Building and integrating seamless, secure backend systems using PHP 8+ and the modern JS ecosystem.
 
-## Embracing the Future
-### I'm continuously expanding my DevOps expertise, focusing on:
-*   Docker containerization
-*   AWS Auto Scaling and Load Balancing
-*   CI/CD pipeline implementation
+## Proven Track Record
 
-My mission: Bridging development and operations to create more efficient, scalable, and reliable web solutions.
+I have successfully led specialized teams through intricate technological shifts, including massive database migrations and cross-system integrations for government entities and defense contractors. My engineering philosophy prioritizes security protocols, strict accessibility compliance (WCAG), and exceptional Core Web Vitals to maximize ROI.
 
-## Let's Collaborate
-Ready for a new challenge or have an exciting project? I'm here to help, whether you need:
+## Professional Resume
 
-*   Robust web application development
-*   CMS customization and optimization
-*   Cloud infrastructure guidance and implementation
+For a comprehensive chronological timeline of my professional roles, technical proficiencies, and formal certifications, you can review my formal Curriculum Vitae.
 
-[Connect with me](/contact)
+[Download CV (PDF)](/pdf/juan-gomez-cv.pdf)
 
-Let's transform your web development vision into reality!
+Let's discuss how we can re-engineer the future of your architectural platform. [Connect with me](/contact).

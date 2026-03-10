@@ -1,0 +1,40 @@
+{{ if .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "{{ .Site.BaseURL }}#person",
+      "name": "Juan José Gómez López",
+      "jobTitle": "Consultor Senior Full Stack & Arquitecto Drupal",
+      "url": "{{ .Site.BaseURL }}",
+      "sameAs": [
+        "https://linkedin.com/in/juaningdotdev",
+        "https://github.com/neurox"
+      ],
+      "knowsAbout": [
+        "Drupal", "AWS", "PHP", "JavaScript", "Docker", "DevOps", "Arquitectura Cloud"
+      ]
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "{{ .Site.BaseURL }}#service",
+      "name": "Juaning: Consultor Senior Drupal y Arquitecto Cloud AWS",
+      "description": "Servicios Nearshore de modernización de sistemas legacy, arquitecturas multi-tenant, y automatización de infraestructura en la nube.",
+      "provider": {
+        "@id": "{{ .Site.BaseURL }}#person"
+      },
+      "areaServed": "Worldwide",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cuernavaca",
+        "addressRegion": "Morelos",
+        "addressCountry": "MX"
+      },
+      "priceRange": "$$$$"
+    }
+  ]
+}
+</script>
+{{ end }}

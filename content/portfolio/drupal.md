@@ -10,20 +10,10 @@ noDate: true
 noRelated: true
 ---
 
-<div class="row">
-  <div class="col">
-    <div class="card">
-      <div class="title">Altamed</div>
-      <!-- <img class="thumbnail" src="/images/altamed_screenshot.png"> -->
-      <div class="info">
-        <p>Colaborated with development and creative teams as a fullstack web developer
-        in the redesign of pages structure and several components, views for search and integrated
-        third party services APIs.</p>
-        <p><strong>Technologies:</strong> Drupal, PHP, MariaDB, Solr, AWS, Cloudflare.</p>
-        <a class="button" href="https://www.altamed.org" target="_blank">
-          Check Site
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
+## Altamed
+
+Colaborated with development and creative teams as a fullstack web developer in the redesign of pages structure and several components, views for search and integrated third party services APIs.
+
+**Technologies:** Drupal, PHP, MariaDB, Solr, AWS, Cloudflare.
+
+[Check Site](https://www.altamed.org)

@@ -1,123 +1,95 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Juan Gómez | Sr Full Stack Developer &amp; DevOps | Cuernavaca, MX on JUANING.dev</title>
-    <link>https://www.juaning.dev/</link>
-    <description>JUANING.dev (Juan Gómez | Sr Full Stack Developer &amp; DevOps | Cuernavaca, MX)</description>
+    <title>Juan Gómez | Senior Full Stack Consultant &amp; Drupal Architecture on JUANING.dev</title>
+    <link>http://localhost:1313/</link>
+    <description>JUANING.dev (Juan Gómez | Senior Full Stack Consultant &amp; Drupal Architecture)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>JUANING</copyright>
     <lastBuildDate>Sat, 15 Feb 2025 00:00:00 +0000</lastBuildDate>
     
-    <atom:link href="https://www.juaning.dev/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Drupal Projects</title>
-      <link>https://www.juaning.dev/portfolio/drupal/</link>
+      <link>http://localhost:1313/portfolio/drupal/</link>
       <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://www.juaning.dev/portfolio/drupal/</guid>
-      <description>&lt;div class=&#34;row&#34;&gt;
-  &lt;div class=&#34;col&#34;&gt;
-    &lt;div class=&#34;card&#34;&gt;
-      &lt;div class=&#34;title&#34;&gt;Altamed&lt;/div&gt;
-      &lt;!-- &lt;img class=&#34;thumbnail&#34; src=&#34;https://www.juaning.dev/images/altamed_screenshot.png&#34;&gt; --&gt;
-      &lt;div class=&#34;info&#34;&gt;
-        &lt;p&gt;Colaborated with development and creative teams as a fullstack web developer
-        in the redesign of pages structure and several components, views for search and integrated
-        third party services APIs.&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;Technologies:&lt;/strong&gt; Drupal, PHP, MariaDB, Solr, AWS, Cloudflare.&lt;/p&gt;
-        &lt;a class=&#34;button&#34; href=&#34;https://www.altamed.org&#34; target=&#34;_blank&#34;&gt;
-          Check Site
-        &lt;/a&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+      <guid>http://localhost:1313/portfolio/drupal/</guid>
+      <description>&lt;h2 id=&#34;altamed&#34; &gt;Altamed
+&lt;span&gt;
+    &lt;a href=&#34;#altamed&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Colaborated with development and creative teams as a fullstack web developer in the redesign of pages structure and several components, views for search and integrated third party services APIs.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Technologies:&lt;/strong&gt; Drupal, PHP, MariaDB, Solr, AWS, Cloudflare.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.altamed.org&#34;&gt;Check Site&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Umbraco Projects</title>
-      <link>https://www.juaning.dev/portfolio/umbraco/</link>
+      <link>http://localhost:1313/portfolio/umbraco/</link>
       <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://www.juaning.dev/portfolio/umbraco/</guid>
-      <description>&lt;p&gt;This section is under construction.&lt;/p&gt;
+      <guid>http://localhost:1313/portfolio/umbraco/</guid>
+      <description>&lt;h2 id=&#34;coming-soon&#34; &gt;Coming Soon
+&lt;span&gt;
+    &lt;a href=&#34;#coming-soon&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;This section is currently under construction. Please check back later for updates on my Umbraco enterprise integrations.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Wordpress Projects</title>
-      <link>https://www.juaning.dev/portfolio/wordpress/</link>
+      <link>http://localhost:1313/portfolio/wordpress/</link>
       <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://www.juaning.dev/portfolio/wordpress/</guid>
-      <description>&lt;div class=&#34;row&#34;&gt;
-  &lt;div class=&#34;col&#34;&gt;
-    &lt;div class=&#34;card&#34;&gt;
-      &lt;div class=&#34;title&#34;&gt;SolveIQ&lt;/div&gt;
-      &lt;div class=&#34;info&#34;&gt;
-        &lt;p&gt;SolveIQ is part of Asurvio, a Windows PC Support company, I&#39;ve worked in the redesign
-        and the setup and configuration of the deployment process in WP Engine, ensuring that the
-        tree environments of the site worked seamlessly (development, staging, production).&lt;/p&gt;
-        &lt;p&gt;Several custom components were created with ACF and custom CSS to make them available as Gutemberg blocks,
-        also custom widgets were created for the search sections filters.&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;Technologies:&lt;/strong&gt; Wordpress, PHP, Javascript, CSS, MariaDB, Faceted Search,
-        CI/CD Pipelines, WP Engine.&lt;/p&gt;
-        &lt;a class=&#34;button&#34; href=&#34;https://www.solveiq.com&#34; target=&#34;_blank&#34;&gt;
-          Check SolveIQ Site
-        &lt;/a&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;row&#34;&gt;
-  &lt;div class=&#34;col&#34;&gt;
-    &lt;div class=&#34;card&#34;&gt;
-      &lt;div class=&#34;title&#34;&gt;Ocean Protection Council&lt;/div&gt;
-      &lt;div class=&#34;info&#34;&gt;
-        &lt;p&gt;The Ocean Protection Council of California is a state agency that works to protect California&#39;s
-        ocean and coast. The OPC was created in 2004 by the California Ocean Protection Act (COPA). 
-        I&#39;ve worked in the redesign of more than 20 components, we wheren&#39;t allowed to update directly the code
-        so we&#39;ve provided all the code and detailed instructions to update the components code in their environment.&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;Technologies:&lt;/strong&gt; Wordpress, PHP, Javascript, CSS.&lt;/p&gt;
-        &lt;a class=&#34;button&#34; href=&#34;https://opc.ca.gov&#34; target=&#34;_blank&#34;&gt;
-          Check OPC Site
-        &lt;/a&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;row&#34;&gt;
-  &lt;div class=&#34;col&#34;&gt;
-    &lt;div class=&#34;card&#34;&gt;
-      &lt;div class=&#34;title&#34;&gt;Dementia Care Aware&lt;/div&gt;
-      &lt;div class=&#34;info&#34;&gt;
-        &lt;p&gt;Dementia Care Aware is a California program that trains and supports primary care providers
-        in assessing and treating dementia. The program was launched in July 2022 by the California Department
-        of Health Care Services (DHCS). I&#39;ve worked in the redesign and migration of the content from the previous
-        platform to the new environment server with Wordpress hosted in AWS.&lt;/p&gt;
-        &lt;p&gt;All the components were created with Elementor in order to make them reusable and easier to manage
-        by a non technical user.&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;Technologies:&lt;/strong&gt; Wordpress, Elementor, PHP, Javascript, CSS, MariaDB, AWS.&lt;/p&gt;
-        &lt;a class=&#34;button&#34; href=&#34;https://www.dementiacareaware.org&#34; target=&#34;_blank&#34;&gt;
-          Check DCA Site
-        &lt;/a&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+      <guid>http://localhost:1313/portfolio/wordpress/</guid>
+      <description>&lt;h2 id=&#34;solveiq&#34; &gt;SolveIQ
+&lt;span&gt;
+    &lt;a href=&#34;#solveiq&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;SolveIQ is part of Asurvio, a Windows PC Support company, I&amp;rsquo;ve worked in the redesign and the setup and configuration of the deployment process in WP Engine, ensuring that the tree environments of the site worked seamlessly (development, staging, production).&lt;/p&gt;
+&lt;p&gt;Several custom components were created with ACF and custom CSS to make them available as Gutemberg blocks, also custom widgets were created for the search sections filters.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Technologies:&lt;/strong&gt; Wordpress, PHP, Javascript, CSS, MariaDB, Faceted Search, CI/CD Pipelines, WP Engine.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.solveiq.com&#34;&gt;Check SolveIQ Site&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ocean-protection-council&#34; &gt;Ocean Protection Council
+&lt;span&gt;
+    &lt;a href=&#34;#ocean-protection-council&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;The Ocean Protection Council of California is a state agency that works to protect California&amp;rsquo;s ocean and coast. The OPC was created in 2004 by the California Ocean Protection Act (COPA). I&amp;rsquo;ve worked in the redesign of more than 20 components, we wheren&amp;rsquo;t allowed to update directly the code so we&amp;rsquo;ve provided all the code and detailed instructions to update the components code in their environment.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Technologies:&lt;/strong&gt; Wordpress, PHP, Javascript, CSS.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://opc.ca.gov&#34;&gt;Check OPC Site&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;dementia-care-aware&#34; &gt;Dementia Care Aware
+&lt;span&gt;
+    &lt;a href=&#34;#dementia-care-aware&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Dementia Care Aware is a California program that trains and supports primary care providers in assessing and treating dementia. The program was launched in July 2022 by the California Department of Health Care Services (DHCS). I&amp;rsquo;ve worked in the redesign and migration of the content from the previous platform to the new environment server with Wordpress hosted in AWS.&lt;/p&gt;
+&lt;p&gt;All the components were created with Elementor in order to make them reusable and easier to manage by a non technical user.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Technologies:&lt;/strong&gt; Wordpress, Elementor, PHP, Javascript, CSS, MariaDB, AWS.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.dementiacareaware.org&#34;&gt;Check DCA Site&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>How to Install Solr 8 on macOS 13 Ventura for Drupal Compatibility.</title>
-      <link>https://www.juaning.dev/post/2023/2023-04-14-how-to-install-solr-8-on-macos-13-ventura-for-drupal-compatibility/</link>
+      <link>http://localhost:1313/post/2023/2023-04-14-how-to-install-solr-8-on-macos-13-ventura-for-drupal-compatibility/</link>
       <pubDate>Fri, 14 Apr 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://www.juaning.dev/post/2023/2023-04-14-how-to-install-solr-8-on-macos-13-ventura-for-drupal-compatibility/</guid>
+      <guid>http://localhost:1313/post/2023/2023-04-14-how-to-install-solr-8-on-macos-13-ventura-for-drupal-compatibility/</guid>
       <description>&lt;p&gt;You might have observed that the solr version included in the most recent homebrew package is 9.
 However, its schema is currently not compatible with Drupal. Therefore, I will guide you on how to obtain version 8 of solr,
 which is compatible with Drupal.&lt;/p&gt;
@@ -210,10 +182,10 @@ If you want to stop Solr from starting automatically, you can unload the plist f
     
     <item>
       <title>Install and enable FTP access on an AWS EC2 instance with Linux CentOS 7</title>
-      <link>https://www.juaning.dev/post/2022/2022-11-24-install-and-enable-ftp-access-in-aws-ec2-instance-with-linux-centos-7/</link>
+      <link>http://localhost:1313/post/2022/2022-11-24-install-and-enable-ftp-access-in-aws-ec2-instance-with-linux-centos-7/</link>
       <pubDate>Thu, 24 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://www.juaning.dev/post/2022/2022-11-24-install-and-enable-ftp-access-in-aws-ec2-instance-with-linux-centos-7/</guid>
+      <guid>http://localhost:1313/post/2022/2022-11-24-install-and-enable-ftp-access-in-aws-ec2-instance-with-linux-centos-7/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ll guide you through the quickest and easiest way to set up FTP
 access on an EC2 instance with CentOS 7 distribution on AWS (Amazon Web Services).
 We&amp;rsquo;re going to use VSFTPD (Very Secure FTP Daemon), so the first step is to install it.&lt;/p&gt;
@@ -315,103 +287,49 @@ Note: Some variables may not exist, just add them at the end of the file.
     
     <item>
       <title>Juan Gómez | Sr Full Stack Developer &amp; DevOps</title>
-      <link>https://www.juaning.dev/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Sat, 12 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://www.juaning.dev/about/</guid>
-      <description>&lt;p&gt;Welcome! I&amp;rsquo;m Juan Gómez, a Senior Full Stack Web Developer based in
-Cuernavaca, Morelos, Mexico. With over 8 years of experience, I specialize
-in crafting robust, scalable web solutions using cutting-edge technologies
-and platforms.&lt;/p&gt;
-&lt;h2 id=&#34;my-expertise&#34; &gt;My Expertise
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;p&gt;As a Senior Full Stack Consultant and Cloud Architect, I specialize in solving high-complexity engineering challenges for enterprise B2B clients. With over 9 years of hands-on experience, my focus lies in rescuing and modernizing legacy systems, engineering resilient Cloud infrastructures, and delivering scalable, multi-tenant web applications.&lt;/p&gt;
+&lt;h2 id=&#34;strategic-engineering--business-value&#34; &gt;Strategic Engineering &amp;amp; Business Value
 &lt;span&gt;
-    &lt;a href=&#34;#my-expertise&#34;&gt;
+    &lt;a href=&#34;#strategic-engineering--business-value&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h2&gt;&lt;h3 id=&#34;my-web-development-journey-has-equipped-me-with-proficiency-in&#34; &gt;My web development journey has equipped me with proficiency in:
-&lt;span&gt;
-    &lt;a href=&#34;#my-web-development-journey-has-equipped-me-with-proficiency-in&#34;&gt;
-        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
-    &lt;/a&gt;
-&lt;/span&gt;
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;CMS Development: Umbraco (versions 7-10 LTS), WordPress, Drupal&lt;/li&gt;
-&lt;li&gt;Programming Languages: PHP, C#, JavaScript&lt;/li&gt;
-&lt;li&gt;Web Technologies: HTML5, CSS3, SASS, LESS&lt;/li&gt;
-&lt;li&gt;Frameworks &amp;amp; Stacks: MERN (MongoDB, Express, React, Node.js)&lt;/li&gt;
-&lt;li&gt;Databases: MySQL, MSSQL, MongoDB&lt;/li&gt;
-&lt;li&gt;Cloud Services: AWS (EC2, Load Balancers, CDN, CloudSearch, S3), Cloudflare&lt;/li&gt;
-&lt;li&gt;Server Management: Linux, Windows Server&lt;/li&gt;
-&lt;li&gt;Version Control: Git&lt;/li&gt;
-&lt;li&gt;DevOps Tools: Docker, AWS Auto Scaling, Load Balancing&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;what-sets-me-apart&#34; &gt;What Sets Me Apart
-&lt;span&gt;
-    &lt;a href=&#34;#what-sets-me-apart&#34;&gt;
-        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
-    &lt;/a&gt;
-&lt;/span&gt;
-&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;CMS Mastery: Expert in Umbraco &amp;amp; Drupal, from custom implementations to major version upgrades.&lt;/li&gt;
-&lt;li&gt;Full Stack Proficiency: Comprehensive skills in both front-end and back-end development.&lt;/li&gt;
-&lt;li&gt;Cloud Infrastructure Specialist: 4+ years managing AWS EC2 instances, including advanced configurations.&lt;/li&gt;
-&lt;li&gt;MERN Stack Developer: Building modern, efficient web applications with MongoDB, Express, React, and Node.js.&lt;/li&gt;
-&lt;li&gt;API Development Expert: Creating robust APIs for seamless system integrations.&lt;/li&gt;
-&lt;li&gt;Performance Optimization Expert: Delivering high-speed web solutions through server-side and client-side optimizations.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;most-recent-key-achievements&#34; &gt;Most Recent Key Achievements
-&lt;span&gt;
-    &lt;a href=&#34;#most-recent-key-achievements&#34;&gt;
-        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
-    &lt;/a&gt;
-&lt;/span&gt;
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Architected and scaled the Metropolitan Water District of Southern California&amp;rsquo;s website from Umbraco 7 to 10.&lt;/li&gt;
-&lt;li&gt;Led a Drupal 10 multisite project for LACCD, developing custom cross-site content synchronization.&lt;/li&gt;
-&lt;li&gt;Engineered a bespoke Drupal 10 solution for Curtiss Wright: Defense Solutions, migrating 20,000+ users.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;embracing-the-future&#34; &gt;Embracing the Future
-&lt;span&gt;
-    &lt;a href=&#34;#embracing-the-future&#34;&gt;
-        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
-    &lt;/a&gt;
-&lt;/span&gt;
-&lt;/h2&gt;&lt;h3 id=&#34;im-continuously-expanding-my-devops-expertise-focusing-on&#34; &gt;I&amp;rsquo;m continuously expanding my DevOps expertise, focusing on:
-&lt;span&gt;
-    &lt;a href=&#34;#im-continuously-expanding-my-devops-expertise-focusing-on&#34;&gt;
-        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
-    &lt;/a&gt;
-&lt;/span&gt;
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;Docker containerization&lt;/li&gt;
-&lt;li&gt;AWS Auto Scaling and Load Balancing&lt;/li&gt;
-&lt;li&gt;CI/CD pipeline implementation&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;My mission: Bridging development and operations to create more efficient, scalable, and reliable web solutions.&lt;/p&gt;
-&lt;h2 id=&#34;lets-collaborate&#34; &gt;Let&amp;rsquo;s Collaborate
-&lt;span&gt;
-    &lt;a href=&#34;#lets-collaborate&#34;&gt;
-        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
-    &lt;/a&gt;
-&lt;/span&gt;
-&lt;/h2&gt;&lt;p&gt;Ready for a new challenge or have an exciting project? I&amp;rsquo;m here to help, whether you need:&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;In today&amp;rsquo;s fast-paced digital landscape, corporations require more than just code—they need robust architectural strategies that guarantee high availability and zero downtime. Operating under a Nearshore model from Mexico, I partner with companies worldwide to provide elite technical consulting:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Robust web application development&lt;/li&gt;
-&lt;li&gt;CMS customization and optimization&lt;/li&gt;
-&lt;li&gt;Cloud infrastructure guidance and implementation&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Legacy Modernization:&lt;/strong&gt; Refactoring monolithic, outdated applications into modern, decoupled microservices built for scale.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Enterprise CMS Architecture:&lt;/strong&gt; Expert-level mastery of advanced Drupal and Umbraco deployments for massive content ecosystems undergoing digital transformation.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cloud Infrastructure:&lt;/strong&gt; Designing automated, auto-scaling environments inside AWS (EC2, S3, Load Balancers) combined with CI/CD Docker pipelines to radically speed up deployment cycles and eliminate human error.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;High-Performance APIs:&lt;/strong&gt; Building and integrating seamless, secure backend systems using PHP 8+ and the modern JS ecosystem.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.juaning.dev/contact/&#34;&gt;Connect with me&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Let&amp;rsquo;s transform your web development vision into reality!&lt;/p&gt;
+&lt;h2 id=&#34;proven-track-record&#34; &gt;Proven Track Record
+&lt;span&gt;
+    &lt;a href=&#34;#proven-track-record&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;I have successfully led specialized teams through intricate technological shifts, including massive database migrations and cross-system integrations for government entities and defense contractors. My engineering philosophy prioritizes security protocols, strict accessibility compliance (WCAG), and exceptional Core Web Vitals to maximize ROI.&lt;/p&gt;
+&lt;h2 id=&#34;professional-resume&#34; &gt;Professional Resume
+&lt;span&gt;
+    &lt;a href=&#34;#professional-resume&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;For a comprehensive chronological timeline of my professional roles, technical proficiencies, and formal certifications, you can review my formal Curriculum Vitae.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/pdf/juan-gomez-cv.pdf&#34;&gt;Download CV (PDF)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s discuss how we can re-engineer the future of your architectural platform. &lt;a href=&#34;http://localhost:1313/contact/&#34;&gt;Connect with me&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Contact me</title>
-      <link>https://www.juaning.dev/contact/</link>
+      <link>http://localhost:1313/contact/</link>
       <pubDate>Fri, 11 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://www.juaning.dev/contact/</guid>
+      <guid>http://localhost:1313/contact/</guid>
       <description>&lt;p&gt;Hi, I&amp;rsquo;m &lt;strong&gt;Juan Gómez&lt;/strong&gt;, a Drupal specialized Senior Full Stack Web Developer located in Cuernavaca, Morelos, Mexico.&lt;/p&gt;
 &lt;p&gt;Feel free to contact me if you have any further questions, project offers, or if you need help fixing an issue with your site or server architecture. I&amp;rsquo;m open to work per hour.&lt;/p&gt;
 </description>
