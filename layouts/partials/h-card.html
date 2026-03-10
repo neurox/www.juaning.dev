@@ -1,6 +1,6 @@
 <p class="h-card vcard">
 
-    <a href={{ .Site.BaseURL }} class="p-name u-url url fn" rel="me">{{ .Site.Params.author }}</a> 
+    <a href="{{ "/" | relLangURL }}" class="p-name u-url url fn" rel="me">{{ .Site.Params.author }}</a> 
 
     {{ if .Site.Params.email }} 
         /
