@@ -17,5 +17,5 @@
 <!-- Functional Scripts -->
 {{ if (fileExists "assets/js/copy-code.js") }}
 {{ $copyJs := resources.Get "js/copy-code.js" | minify | fingerprint }}
-<script src="{{ $copyJs.Permalink }}" integrity="{{ $copyJs.Data.Integrity }}" defer></script>
+<script src="{{ $copyJs.RelPermalink }}" integrity="{{ $copyJs.Data.Integrity }}" defer></script>
 {{ end }}

@@ -3,15 +3,11 @@
   <channel>
     <title>Portafolio de Arquitectura Cloud &amp; Drupal on JUANING.dev</title>
     <link>http://localhost:1313/es/portfolio/</link>
-    <description>JUANING.dev (Portafolio de Arquitectura Cloud &amp; Drupal)</description>
+    <description>Recent content in Portafolio de Arquitectura Cloud &amp; Drupal on JUANING.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
     <copyright>JUANING</copyright>
-    <lastBuildDate>Sat, 15 Feb 2025 00:00:00 +0000</lastBuildDate>
-    
-    <atom:link href="http://localhost:1313/es/portfolio/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 15 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/es/portfolio/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Proyectos Drupal</title>
       <link>http://localhost:1313/es/portfolio/drupal/</link>
@@ -24,10 +20,7 @@
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h2&gt;&lt;p&gt;Colaboré internamente con equipos de desarrollo y creativos como Desarrollador Web Full Stack en el rediseño estructural de páginas y múltiples componentes, desarrollé vistas para el buscador principal e integré APIs de servicios de terceros para enriquecer la plataforma.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Tecnologías:&lt;/strong&gt; Drupal, PHP, MariaDB, Solr, AWS, Cloudflare.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.altamed.org&#34;&gt;Ver Sitio&lt;/a&gt;&lt;/p&gt;
-</description>
+&lt;/h2&gt;&lt;p&gt;Colaboré internamente con equipos de desarrollo y creativos como Desarrollador Web Full Stack en el rediseño estructural de páginas y múltiples componentes, desarrollé vistas para el buscador principal e integré APIs de servicios de terceros para enriquecer la plataforma.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -42,8 +35,7 @@
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h2&gt;&lt;p&gt;Esta sección del portafolio se encuentra actualmente en construcción. Por favor, regresa pronto para ver las actualizaciones y casos de uso de mis integraciones empresariales trabajando con Umbraco CMS.&lt;/p&gt;
-</description>
+&lt;/h2&gt;&lt;p&gt;Esta sección del portafolio se encuentra actualmente en construcción. Por favor, regresa pronto para ver las actualizaciones y casos de uso de mis integraciones empresariales trabajando con Umbraco CMS.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -58,30 +50,7 @@
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h2&gt;&lt;p&gt;SolveIQ es parte de Asurvio, una compañía de Soporte para PCs con Windows. Lideré los esfuerzos de rediseño, configuración y arquitectura del proceso de despliegue en WP Engine, garantizando que el ecosistema de múltiples entornos (desarrollo, staging y producción) funcionara de forma fluida y sin interrupciones.&lt;/p&gt;
-&lt;p&gt;Se construyeron múltiples componentes a la medida mediante ACF y CSS personalizado para estructurarlos modularmente como bloques nativos de Gutenberg, incluyendo el desarrollo de widgets personalizados para los filtros de las secciones de búsqueda compleja del sitio.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Tecnologías:&lt;/strong&gt; Wordpress, PHP, Javascript, CSS, MariaDB, Búsqueda Facetada, Pipelines CI/CD, WP Engine.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.solveiq.com&#34;&gt;Ver Sitio SolveIQ&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;ocean-protection-council&#34; &gt;Ocean Protection Council
-&lt;span&gt;
-    &lt;a href=&#34;#ocean-protection-council&#34;&gt;
-        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
-    &lt;/a&gt;
-&lt;/span&gt;
-&lt;/h2&gt;&lt;p&gt;El &amp;lsquo;Ocean Protection Council&amp;rsquo; de California es una agencia estatal dedicada a proteger los litorales y el océano californiano (creada en 2004 por el COPA). Trabajé en el rediseño estructural de más de 20 componentes interactivos. Dado que las políticas de seguridad nos impedían modificar directamente su código en producción, empaquetamos y entregamos todo el ecosistema de código junto a instrucciones extremadamente precisas para que su equipo interno ejecutara la actualización de los componentes en su propio entorno aislado.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Tecnologías:&lt;/strong&gt; Wordpress, PHP, Javascript, CSS.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://opc.ca.gov&#34;&gt;Ver Sitio OPC&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;dementia-care-aware&#34; &gt;Dementia Care Aware
-&lt;span&gt;
-    &lt;a href=&#34;#dementia-care-aware&#34;&gt;
-        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
-    &lt;/a&gt;
-&lt;/span&gt;
-&lt;/h2&gt;&lt;p&gt;Dementia Care Aware es un gran programa a nivel estado (California) lanzado por el Departamento de Servicios de Atención Médica (DHCS) en 2022 para capacitar a proveedores de atención médica primaria. Dirigí técnica y operativamente el proceso de rediseño y la migración granular de contenidos desde una infraestructura anterior, hacia un entorno de servidor estandarizado y resiliente alojado directamente en servidores cloud de AWS.&lt;/p&gt;
-&lt;p&gt;Para dotar al cliente de una autonomía técnica completa a futuro, todos los componentes fueron esquematizados como módulos reutilizables bajo Elementor, permitiendo que un panel administrativo no-técnico pudiera escalar la estructura fácilmente.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Tecnologías:&lt;/strong&gt; Wordpress, Elementor, PHP, Javascript, CSS, MariaDB, AWS.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.dementiacareaware.org&#34;&gt;Ver Sitio DCA&lt;/a&gt;&lt;/p&gt;
-</description>
+&lt;/h2&gt;&lt;p&gt;SolveIQ es parte de Asurvio, una compañía de Soporte para PCs con Windows. Lideré los esfuerzos de rediseño, configuración y arquitectura del proceso de despliegue en WP Engine, garantizando que el ecosistema de múltiples entornos (desarrollo, staging y producción) funcionara de forma fluida y sin interrupciones.&lt;/p&gt;</description>
     </item>
     
   </channel>

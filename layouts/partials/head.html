@@ -11,11 +11,11 @@
 
 <!-- Tailwind compiled via Hugo Pipes & PostCSS -->
 {{ $css := resources.Get "css/tailwind.css" | postCSS (dict "config" "postcss.config.js" "noMap" true "inlineImports" true "errors" true) | minify | fingerprint }}
-<link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}">
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
 
 <!-- Hugo Chroma Syntax Highlighting (Dracula Theme) -->
 {{ $syntax := resources.Get "css/syntax.css" | minify | fingerprint }}
-<link rel="stylesheet" href="{{ $syntax.Permalink }}" integrity="{{ $syntax.Data.Integrity }}">
+<link rel="stylesheet" href="{{ $syntax.RelPermalink }}" integrity="{{ $syntax.Data.Integrity }}">
 
 {{ partial "internal/seo_schema.html" . }}
 {{ partial "internal/opengraph.html" . }}

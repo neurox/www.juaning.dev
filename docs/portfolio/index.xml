@@ -3,15 +3,11 @@
   <channel>
     <title>Cloud Architecture &amp; Enterprise CMS Portfolio on JUANING.dev</title>
     <link>http://localhost:1313/portfolio/</link>
-    <description>JUANING.dev (Cloud Architecture &amp; Enterprise CMS Portfolio)</description>
+    <description>Recent content in Cloud Architecture &amp; Enterprise CMS Portfolio on JUANING.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>JUANING</copyright>
-    <lastBuildDate>Sat, 15 Feb 2025 00:00:00 +0000</lastBuildDate>
-    
-    <atom:link href="http://localhost:1313/portfolio/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 15 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/portfolio/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Drupal Projects</title>
       <link>http://localhost:1313/portfolio/drupal/</link>
@@ -25,9 +21,7 @@
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h2&gt;&lt;p&gt;Colaborated with development and creative teams as a fullstack web developer in the redesign of pages structure and several components, views for search and integrated third party services APIs.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Technologies:&lt;/strong&gt; Drupal, PHP, MariaDB, Solr, AWS, Cloudflare.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.altamed.org&#34;&gt;Check Site&lt;/a&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;strong&gt;Technologies:&lt;/strong&gt; Drupal, PHP, MariaDB, Solr, AWS, Cloudflare.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -42,8 +36,7 @@
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h2&gt;&lt;p&gt;This section is currently under construction. Please check back later for updates on my Umbraco enterprise integrations.&lt;/p&gt;
-</description>
+&lt;/h2&gt;&lt;p&gt;This section is currently under construction. Please check back later for updates on my Umbraco enterprise integrations.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -58,30 +51,7 @@
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h2&gt;&lt;p&gt;SolveIQ is part of Asurvio, a Windows PC Support company, I&amp;rsquo;ve worked in the redesign and the setup and configuration of the deployment process in WP Engine, ensuring that the tree environments of the site worked seamlessly (development, staging, production).&lt;/p&gt;
-&lt;p&gt;Several custom components were created with ACF and custom CSS to make them available as Gutemberg blocks, also custom widgets were created for the search sections filters.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Technologies:&lt;/strong&gt; Wordpress, PHP, Javascript, CSS, MariaDB, Faceted Search, CI/CD Pipelines, WP Engine.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.solveiq.com&#34;&gt;Check SolveIQ Site&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;ocean-protection-council&#34; &gt;Ocean Protection Council
-&lt;span&gt;
-    &lt;a href=&#34;#ocean-protection-council&#34;&gt;
-        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
-    &lt;/a&gt;
-&lt;/span&gt;
-&lt;/h2&gt;&lt;p&gt;The Ocean Protection Council of California is a state agency that works to protect California&amp;rsquo;s ocean and coast. The OPC was created in 2004 by the California Ocean Protection Act (COPA). I&amp;rsquo;ve worked in the redesign of more than 20 components, we wheren&amp;rsquo;t allowed to update directly the code so we&amp;rsquo;ve provided all the code and detailed instructions to update the components code in their environment.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Technologies:&lt;/strong&gt; Wordpress, PHP, Javascript, CSS.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://opc.ca.gov&#34;&gt;Check OPC Site&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;dementia-care-aware&#34; &gt;Dementia Care Aware
-&lt;span&gt;
-    &lt;a href=&#34;#dementia-care-aware&#34;&gt;
-        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
-    &lt;/a&gt;
-&lt;/span&gt;
-&lt;/h2&gt;&lt;p&gt;Dementia Care Aware is a California program that trains and supports primary care providers in assessing and treating dementia. The program was launched in July 2022 by the California Department of Health Care Services (DHCS). I&amp;rsquo;ve worked in the redesign and migration of the content from the previous platform to the new environment server with Wordpress hosted in AWS.&lt;/p&gt;
-&lt;p&gt;All the components were created with Elementor in order to make them reusable and easier to manage by a non technical user.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Technologies:&lt;/strong&gt; Wordpress, Elementor, PHP, Javascript, CSS, MariaDB, AWS.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.dementiacareaware.org&#34;&gt;Check DCA Site&lt;/a&gt;&lt;/p&gt;
-</description>
+&lt;/h2&gt;&lt;p&gt;SolveIQ is part of Asurvio, a Windows PC Support company, I&amp;rsquo;ve worked in the redesign and the setup and configuration of the deployment process in WP Engine, ensuring that the tree environments of the site worked seamlessly (development, staging, production).&lt;/p&gt;</description>
     </item>
     
   </channel>
