@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Create the button container
         const button = document.createElement('button');
-        button.className = 'copy-button absolute top-3 right-3 text-slate-500 hover:text-slate-300 transition-colors p-2 rounded-md hover:bg-slate-800/50 focus:outline-none flex items-center justify-center';
+        button.className = 'copy-button absolute top-2 right-2 text-slate-500 hover:text-slate-300 transition-colors p-2 rounded-md hover:bg-slate-800/50 focus:outline-none flex items-center justify-center';
         button.setAttribute('aria-label', 'Copy code to clipboard');
         button.title = 'Copy code';
 
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             try {
                 await navigator.clipboard.writeText(textToCopy);
-                
+
                 // Visual feedback
                 iconInfo.textContent = 'check';
                 iconInfo.classList.remove('text-slate-500');
