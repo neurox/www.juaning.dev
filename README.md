@@ -1,80 +1,96 @@
 # Juaning.dev — Senior Engineering Portfolio
 
-[cite_start]This repository contains the source code for **juaning.dev**, a professional portfolio engineered for credibility, clarity, and technical judgment[cite: 15, 16]. [cite_start]The site is built as a fast, secure static site using Hugo to prioritize performance and maintainability[cite: 111, 127].
-
-## 🛠 Tech Stack
-* **Framework:** [Hugo](https://gohugo.io/) (Static Site Generator).
-* **Build Version:** `hugo v0.125.2` (Verified stable build).
-* [cite_start]**Design System:** Professional, Minimal, and Discreet—avoiding "simplistic" or "empty" aesthetics[cite: 2, 17].
-* [cite_start]**Architecture:** Structured narrative designed for senior positioning and quick scanning by technical leaders[cite: 29].
+<div align="center">
+  <h3>⚡ Engineering Portfolio & Tech Blog</h3>
+  <p>A high-performance, bilingual static site architected for speed, maintainability, and clean design.</p>
+</div>
 
 ---
 
-## 🏗 Installation & Setup
+## 🎯 Architecture & Philosophy
 
-To ensure consistent builds, please use the Hugo version specified above.
+This repository contains the source code for my professional portfolio, [juaning.dev](https://www.juaning.dev). Built as a static site using **Hugo**, the architecture prioritizes performance, security, and a frictionless developer experience. 
+
+It is designed to reflect a "Quiet Confidence" visual language—focusing on engineering impact, typography, and content over unnecessary decoration.
+
+### Core Tech Stack
+- **Framework:** [Hugo](https://gohugo.io/) (Static Site Generator, utilizing `hugo-extended` for asset processing)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/) (Utility-first, responsive ecosystem)
+- **Deployment:** GitHub Pages (served directly from the `docs/` production directory)
+- **Content:** Markdown-first editorial workflow
+
+## ✨ Key Technical Features
+- **Bilingual i18n:** Full support for English (`/en/`) and Spanish (`/es/`) with synchronized sitemaps, RSS feeds, and seamless URL routing.
+- **Environment Isolation:** Strict separation between local development (`localhost:1313`) and production builds, ensuring no local artifacts pollute live deployments.
+- **Advanced Code Snippets:** Custom Javascript-injected "Copy Code" functionality, mathematically aligned to fluid padding boundaries for a pixel-perfect aesthetic across viewports.
+- **Responsive Dark/Light Modes:** Seamless OS `prefers-color-scheme` media query support with unified Tailwind container integration.
+- **SEO & OpenGraph:** Dynamically generated metadata, Twitter Cards, canonical URLs, and schema.
+
+---
+
+## 🏗️ Local Development
+
+### Prerequisites
+- [Hugo `extended`](https://gohugo.io/installation/) version (v0.125+ recommended for SCSS/Tailwind processing).
+- Node.js & npm (for Tailwind and PostCSS).
 
 ### 1. Clone the Repository
-Since this project uses Git submodules for the theme, clone the repository:
+Clone the project and navigate into the directory:
 
 ```bash
 git clone https://github.com/neurox/www.juaning.dev.git
+cd www.juaning.dev
 ```
 
-### 2. Submodule Management
-If you have already cloned the project without the theme or need to update it:
-
-Initialize and update the theme:
+### 2. Install Dependencies
+Install Tailwind CSS, Autoprefixer, and related Node libraries:
 
 ```bash
-git submodule init
+npm install
 ```
-Update the theme to the latest remote version:
+
+### 3. Start the Development Server
+Run the local Hugo server. This will watch for changes and provide live-reloading. The configuration will automatically default to the development environment.
 
 ```bash
-git submodule update
+npm run dev
+# OR run Hugo directly:
+hugo server -D
 ```
+The site will be available at `http://localhost:1313/`.
 
-### 3. Local Development
-Start the Hugo server to preview changes locally:
+---
+
+## 🚀 Build & Deployment
+
+This project uses an isolated configuration for production builds to ensure local URLs, Drafts, and LiveReload scripts are completely excluded from the public artifact.
+
+### Generating the Production Build
+To build the site for production:
 
 ```bash
-hugo server
+hugo --environment production --minify
 ```
-The site will be live at http://localhost:1313.
+*Note: The production environment configuration (`config/production/config.yaml`) explicitly directs the final artifact into the `docs/` folder.*
 
-### 4. Build
-Generate the static site, the output will be in the `docs` folder.
+### Deploying to GitHub Pages
+Because GitHub Pages is configured to serve from the `/docs` folder on the `main` branch, deployment is as simple as committing the newly generated files:
 
 ```bash
-hugo
+git add docs/
+git commit -m "chore: build production assets"
+git push origin main
 ```
 
-### 🎨 Design System (Blueprint v2)
-The site follows a "Quiet Confidence" visual language with a focus on engineering impact over decoration:
+---
 
-Colors: Deep Navy background (#0B0F1A), Soft White text (#E5E7EB), and Blue accents (#3B82F6).
+## 📂 Project Structure
 
-Typography: Inter (Sans-serif) using a 48-56px H1 for the hero and 16-18px for body text.
-
-Grid: 8px base unit with a generous 96px section separation for perceived quality.
-
-Constraints: Max content width of 1100-1200px with a preferred reading width of 60-65ch for case studies.
-
-### Content Structure
-
-Hero: Role positioning as Senior Full-Stack Engineer specialized in Drupal & Backend Architecture.
-
-Expertise: Focused on Backend (Multi-tenancy, RBAC), Platform Engineering (Drupal Modernization), and Cloud/DevOps (AWS, Docker).
-
-Selected Work: Single-column editorial case studies highlighting Problem, Solution, and Impact.
-
-How I Work: Engineering principles such as "Architecture before code" and "Maintainability over shortcuts".
-
-### 📂 Project Structure
-
-content/projects/: Markdown files for case studies following the editorial format.
-
-content/writing/: Technical notes regarding RBAC, queue-driven architectures, and migrations.
-
-assets/css/: Implementation of design tokens including colors, spacing, and typography.
+- `assets/css/` — Core CSS, Tailwind directives, and responsive utilities.
+- `assets/js/` — Client-side scripts (e.g., `copy-code.js`).
+- `config/` — Environment-specific configuration mappings (development vs. production).
+- `content/` — Markdown content files (`projects`, `writing`, and localized `.es.md` files).
+- `layouts/` — Custom HTML templates, SEO partials, SVG icons, and shortcodes.
+- `i18n/` — Translation dictionaries for English and Spanish strings.
+- `docs/` — **(Auto-generated)** Production-ready static output served by GitHub Pages.
+- `static/` — Static assets (images, fonts) copied directly to the output.

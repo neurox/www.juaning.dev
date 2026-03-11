@@ -2,73 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-    {
-        {
-        $light : =resources.Get "css/light.css"
-    }
-}
+{{ $light := resources.Get "css/light.css" }}
+{{ $dark := resources.Get "css/dark.css" }}
 
-    {
-        {
-        $dark : =resources.Get "css/dark.css"
-    }
-}
+{{ $light.Content }}
 
-    {
-        {
-        $light.Content
-    }
-}
-
-    {
-        {
-        if eq site.Params.style "dark-without-switcher"
-    }
-}
-
+{{ if eq site.Params.style "dark-without-switcher" }}
 :root {
-        {
-            {
-            $dark.Content
-        }
-    }
+    {{ $dark.Content }}
 }
-
-    {
-        {
-        else if eq site.Params.style "auto-without-switcher"
-    }
-}
-
+{{ else if eq site.Params.style "auto-without-switcher" }}
 @media (prefers-color-scheme: dark) {
     :root {
-            {
-                {
-                $dark.Content
-            }
-        }
+        {{ $dark.Content }}
     }
 }
-
-    {
-        {
-        else
-    }
-}
-
+{{ else }}
 [data-theme="dark"] {
-        {
-            {
-            $dark.Content
-        }
-    }
+    {{ $dark.Content }}
 }
-
-    {
-        {
-        end
-    }
-}
+{{ end }}
 
 /* Basic */
 html {
@@ -762,36 +715,12 @@ ul.footer-menu>li {
     }
 }
 
-    {
-        {
-        range site.Params.customCSS
-    }
-}
+{{ range site.Params.customCSS }}
+    {{ $custom := resources.Get . }}
+    {{ $custom.Content }}
+{{ end }}
 
-    {
-        {
-        $custom : =resources.Get .
-    }
-}
-
-    {
-        {
-        $custom.Content
-    }
-}
-
-    {
-        {
-        end
-    }
-}
-
-    {
-        {
-        if site.Params.isso.enabled
-    }
-}
-
+{{ if site.Params.isso.enabled }}
 #isso-thread .textarea {
     color: #000;
 }
@@ -800,9 +729,4 @@ ul.footer-menu>li {
     position: relative;
     z-index: 1;
 }
-
-    {
-        {
-        end
-    }
-}
+{{ end }}
