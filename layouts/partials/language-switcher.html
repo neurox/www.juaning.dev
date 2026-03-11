@@ -6,10 +6,10 @@
             <span class="text-slate-300 dark:text-slate-700 font-normal">|</span>
         {{ end }}
         
-        {{ $targetLink := $siteLang.Permalink }}
+        {{ $targetLink := $siteLang.RelPermalink }}
         {{ range $.Page.AllTranslations }}
             {{ if eq .Lang $siteLang.Lang }}
-                {{ $targetLink = .Permalink }}
+                {{ $targetLink = .RelPermalink }}
             {{ end }}
         {{ end }}
 

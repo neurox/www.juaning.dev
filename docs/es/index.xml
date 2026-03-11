@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Juan Gómez | Consultor Senior Full Stack &amp; Arquitectura Drupal on JUANING.dev</title>
-    <link>http://localhost:1313/es/</link>
+    <link>https://www.juaning.dev/es/</link>
     <description>Recent content in Juan Gómez | Consultor Senior Full Stack &amp; Arquitectura Drupal on JUANING.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
     <copyright>JUANING</copyright>
-    <lastBuildDate>Sat, 15 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/es/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 15 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.juaning.dev/es/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Proyectos Drupal</title>
-      <link>http://localhost:1313/es/portfolio/drupal/</link>
+      <link>https://www.juaning.dev/es/portfolio/drupal/</link>
       <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/es/portfolio/drupal/</guid>
+      <guid>https://www.juaning.dev/es/portfolio/drupal/</guid>
       <description>&lt;h2 id=&#34;altamed&#34; &gt;Altamed
 &lt;span&gt;
     &lt;a href=&#34;#altamed&#34;&gt;
@@ -25,10 +25,10 @@
     
     <item>
       <title>Proyectos Umbraco</title>
-      <link>http://localhost:1313/es/portfolio/umbraco/</link>
+      <link>https://www.juaning.dev/es/portfolio/umbraco/</link>
       <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/es/portfolio/umbraco/</guid>
+      <guid>https://www.juaning.dev/es/portfolio/umbraco/</guid>
       <description>&lt;h2 id=&#34;próximamente&#34; &gt;Próximamente
 &lt;span&gt;
     &lt;a href=&#34;#pr%c3%b3ximamente&#34;&gt;
@@ -40,10 +40,10 @@
     
     <item>
       <title>Proyectos Wordpress</title>
-      <link>http://localhost:1313/es/portfolio/wordpress/</link>
+      <link>https://www.juaning.dev/es/portfolio/wordpress/</link>
       <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/es/portfolio/wordpress/</guid>
+      <guid>https://www.juaning.dev/es/portfolio/wordpress/</guid>
       <description>&lt;h2 id=&#34;solveiq&#34; &gt;SolveIQ
 &lt;span&gt;
     &lt;a href=&#34;#solveiq&#34;&gt;
@@ -55,10 +55,10 @@
     
     <item>
       <title>Cómo instalar Solr 8 en macOS 13 Ventura para compatibilidad con Drupal.</title>
-      <link>http://localhost:1313/es/post/2023/como-instalar-solr-8-en-macos-13-ventura-para-compatibilidad-con-drupal/</link>
+      <link>https://www.juaning.dev/es/post/2023/como-instalar-solr-8-en-macos-13-ventura-para-compatibilidad-con-drupal/</link>
       <pubDate>Fri, 14 Apr 2023 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/es/post/2023/como-instalar-solr-8-en-macos-13-ventura-para-compatibilidad-con-drupal/</guid>
+      <guid>https://www.juaning.dev/es/post/2023/como-instalar-solr-8-en-macos-13-ventura-para-compatibilidad-con-drupal/</guid>
       <description>&lt;p&gt;Como quizás hayas notado, la versión de Solr incluida en la última versión de Homebrew es la 9 y
 su esquema aún no es compatible con Drupal. Te mostraré cómo obtener la versión 8 de Solr, que sí es
 compatible con Drupal.&lt;/p&gt;
@@ -74,10 +74,10 @@ Después de instalar Homebrew, abre la Terminal y ejecuta el siguiente comando p
     
     <item>
       <title>Instalar y habilitar acceso FTP en una instancia AWS EC2 con Linux Centos 7</title>
-      <link>http://localhost:1313/es/post/2022/instalar-y-habilitar-acceso-ftp-en-una-instancia-aws-ec2-con-linux-centos-7/</link>
+      <link>https://www.juaning.dev/es/post/2022/instalar-y-habilitar-acceso-ftp-en-una-instancia-aws-ec2-con-linux-centos-7/</link>
       <pubDate>Thu, 24 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/es/post/2022/instalar-y-habilitar-acceso-ftp-en-una-instancia-aws-ec2-con-linux-centos-7/</guid>
+      <guid>https://www.juaning.dev/es/post/2022/instalar-y-habilitar-acceso-ftp-en-una-instancia-aws-ec2-con-linux-centos-7/</guid>
       <description>&lt;p&gt;Te guiaré a través de la manera más rápida y fácil de configurar el acceso FTP
 a una instancia EC2 con la distribución Centos 7 en AWS (Amazon Web Services),
 vamos a usar VSFTPD (Very Secure FTP Daemon) así que el primer paso es instalarlo.&lt;/p&gt;
@@ -95,10 +95,10 @@ vamos a usar VSFTPD (Very Secure FTP Daemon) así que el primer paso es instalar
     
     <item>
       <title>Juan Gómez | Desarrollador Full Stack Sr &amp; DevOps</title>
-      <link>http://localhost:1313/es/acerca/</link>
+      <link>https://www.juaning.dev/es/acerca/</link>
       <pubDate>Sat, 12 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/es/acerca/</guid>
+      <guid>https://www.juaning.dev/es/acerca/</guid>
       <description>&lt;p&gt;Como Consultor Senior Full Stack y Arquitecto Cloud, me especializo en resolver desafíos de ingeniería de alta complejidad para clientes corporativos B2B. Con más de 9 años de experiencia práctica, mi enfoque radica en rescatar y modernizar sistemas legacy, diseñar infraestructuras Cloud resilientes y entregar aplicaciones empresariales escalables y multi-tenant.&lt;/p&gt;
 &lt;h2 id=&#34;ingeniería-estratégica-y-valor-de-negocio&#34; &gt;Ingeniería Estratégica y Valor de Negocio
 &lt;span&gt;
@@ -111,10 +111,10 @@ vamos a usar VSFTPD (Very Secure FTP Daemon) así que el primer paso es instalar
     
     <item>
       <title>Contáctame</title>
-      <link>http://localhost:1313/es/contacto/</link>
+      <link>https://www.juaning.dev/es/contacto/</link>
       <pubDate>Fri, 11 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/es/contacto/</guid>
+      <guid>https://www.juaning.dev/es/contacto/</guid>
       <description>&lt;p&gt;Hola, soy &lt;strong&gt;Juan Gómez&lt;/strong&gt;, Desarrollador Web Full Stack Senior especialista de Drupal en Cuernavaca, Morelos, Mexico.&lt;/p&gt;
 &lt;p&gt;No dudes en contactarme si tienes más preguntas, ofertas de proyectos, necesitas ayuda para resolver un problema con tu sitio o arquitectura de servidor. Estoy disponible para trabajar por hora.&lt;/p&gt;</description>
     </item>

@@ -4,7 +4,6 @@ baseURL: https://www.juaning.dev
 title: JUANING.dev
 pagerSize: 10
 copyright: JUANING
-publishDir: docs
 enableRobotsTXT: true
 
 services:
@@ -75,11 +74,6 @@ languages:
           title: Portafolio
           url: /portafolio/
           weight: 2
-        - identifier: contacto
-          name: Contacto
-          title: Contáctame
-          url: /contacto/
-          weight: 3
     params:
       description: 'Desarrollo Web Fullstack | SysOps | Electrónica | Videojuegos'
       locale: 'es-MX'

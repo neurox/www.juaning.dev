@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cloud Architecture &amp; Enterprise CMS Portfolio on JUANING.dev</title>
-    <link>http://localhost:1313/portfolio/</link>
+    <link>https://www.juaning.dev/portfolio/</link>
     <description>Recent content in Cloud Architecture &amp; Enterprise CMS Portfolio on JUANING.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>JUANING</copyright>
-    <lastBuildDate>Sat, 15 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/portfolio/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 15 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.juaning.dev/portfolio/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Drupal Projects</title>
-      <link>http://localhost:1313/portfolio/drupal/</link>
+      <link>https://www.juaning.dev/portfolio/drupal/</link>
       <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/portfolio/drupal/</guid>
+      <guid>https://www.juaning.dev/portfolio/drupal/</guid>
       <description>&lt;h2 id=&#34;altamed&#34; &gt;Altamed
 &lt;span&gt;
     &lt;a href=&#34;#altamed&#34;&gt;
@@ -26,10 +26,10 @@
     
     <item>
       <title>Umbraco Projects</title>
-      <link>http://localhost:1313/portfolio/umbraco/</link>
+      <link>https://www.juaning.dev/portfolio/umbraco/</link>
       <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/portfolio/umbraco/</guid>
+      <guid>https://www.juaning.dev/portfolio/umbraco/</guid>
       <description>&lt;h2 id=&#34;coming-soon&#34; &gt;Coming Soon
 &lt;span&gt;
     &lt;a href=&#34;#coming-soon&#34;&gt;
@@ -41,10 +41,10 @@
     
     <item>
       <title>Wordpress Projects</title>
-      <link>http://localhost:1313/portfolio/wordpress/</link>
+      <link>https://www.juaning.dev/portfolio/wordpress/</link>
       <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/portfolio/wordpress/</guid>
+      <guid>https://www.juaning.dev/portfolio/wordpress/</guid>
       <description>&lt;h2 id=&#34;solveiq&#34; &gt;SolveIQ
 &lt;span&gt;
     &lt;a href=&#34;#solveiq&#34;&gt;

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.155.2">
+
+
+
+<title>Install and enable FTP access on an AWS EC2 instance with Linux CentOS 7 | JUANING.dev</title>
+
+
+<meta name="description" content="I&#39;ll guide you through the quickest and easiest way to set up FTP access on an EC2 instance with CentOS 7 distribution on AWS (Amazon Web Services)">
+
+
+
+<link rel="stylesheet" href="/css/tailwind.min.f93de530afb8119c88da4b090ef173393378af5a8154c69ebd0d487e9ee62a3a.css" integrity="sha256-&#43;T3lMK&#43;4EZyI2ksJDvFzOTN4r1qBVMaevQ1Ifp7mKjo=">
+
+
+
+<link rel="stylesheet" href="/css/syntax.min.2faf3e5c7d9ee446d5d17cbe8082e9d49cee6f2f1a5729c458bcdb30524a8aee.css" integrity="sha256-L68&#43;XH2e5EbV0Xy&#43;gILp1Jzuby8aVynEWLzbMFJKiu4=">
+
+
+
+<meta property="og:title" content="Install and enable FTP access on an AWS EC2 instance with Linux CentOS 7" />
+<meta property="og:description" content="I&#39;ll guide you through the quickest and easiest way to set up FTP access on an EC2 instance with CentOS 7 distribution on AWS (Amazon Web Services)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/2022/2022-11-24-install-and-enable-ftp-access-in-aws-ec2-instance-with-linux-centos-7/" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Install and enable FTP access on an AWS EC2 instance with Linux CentOS 7"/>
+<meta name="twitter:description" content="I&#39;ll guide you through the quickest and easiest way to set up FTP access on an EC2 instance with CentOS 7 distribution on AWS (Amazon Web Services)"/>
+
+
+
+
+    
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col group/design-root overflow-x-hidden">
+    <div class="layout-container flex h-full grow flex-col w-full">
+        <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-5">
+            <div class="layout-content-container flex flex-col max-w-[1200px] w-full flex-1">
+                
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-4 md:px-10 py-4 mb-8">
+    <div class="flex items-center gap-4 text-primary">
+        <a href="/" class="flex items-center gap-4 text-primary hover:opacity-80 transition-opacity">
+            <span class="material-symbols-outlined text-3xl">code</span>
+            <h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight tracking-[-0.015em]">JUANING.dev</h2>
+        </a>
+    </div>
+    <div class="hidden md:flex flex-1 justify-end gap-8 items-center">
+        <nav class="flex items-center gap-9">
+            
+            
+                <a class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm font-medium leading-normal " href="/">
+                    Home
+                </a>
+            
+                <a class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm font-medium leading-normal " href="/about/">
+                    About
+                </a>
+            
+                <a class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm font-medium leading-normal " href="/portfolio/">
+                    Portfolio
+                </a>
+            
+        </nav>
+        
+        <div class="h-6 w-px bg-slate-200 dark:bg-slate-800 hidden md:block"></div>
+        <div class="flex items-center gap-2 text-sm font-bold uppercase tracking-wider">
+    
+    
+    
+        
+        
+        
+        
+            
+                
+            
+        
+            
+        
+
+        
+            <span class="text-primary">en</span>
+        
+    
+        
+            <span class="text-slate-300 dark:text-slate-700 font-normal">|</span>
+        
+        
+        
+        
+            
+        
+            
+                
+            
+        
+
+        
+            <a href="/es/post/2022/instalar-y-habilitar-acceso-ftp-en-una-instancia-aws-ec2-con-linux-centos-7/" class="text-slate-500 hover:text-primary transition-colors">
+                es
+            </a>
+        
+    
+</div>
+
+
+        <a class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary text-background-dark hover:bg-primary/90 transition-colors text-sm font-bold leading-normal tracking-[0.015em]" href="/contact">
+            <span class="truncate">Contact</span>
+        </a>
+    </div>
+    
+    <button class="md:hidden text-slate-900 dark:text-slate-100" id="mobile-menu-btn">
+        <span class="material-symbols-outlined">menu</span>
+    </button>
+</header>
+
+
+<div id="mobile-menu" class="hidden md:hidden flex-col gap-4 px-4 py-4 mb-4 border-b border-slate-200 dark:border-slate-800">
+    
+        <a class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-base font-medium" href="/">
+            Home
+        </a>
+    
+        <a class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-base font-medium" href="/about/">
+            About
+        </a>
+    
+        <a class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-base font-medium" href="/portfolio/">
+            Portfolio
+        </a>
+    
+    
+    <div class="flex items-center justify-between border-t border-slate-200 dark:border-slate-800 pt-4 mt-2">
+        <span class="text-sm text-slate-500 font-medium">Idioma / Language</span>
+        <div class="flex items-center gap-2 text-sm font-bold uppercase tracking-wider">
+    
+    
+    
+        
+        
+        
+        
+            
+                
+            
+        
+            
+        
+
+        
+            <span class="text-primary">en</span>
+        
+    
+        
+            <span class="text-slate-300 dark:text-slate-700 font-normal">|</span>
+        
+        
+        
+        
+            
+        
+            
+                
+            
+        
+
+        
+            <a href="/es/post/2022/instalar-y-habilitar-acceso-ftp-en-una-instancia-aws-ec2-con-linux-centos-7/" class="text-slate-500 hover:text-primary transition-colors">
+                es
+            </a>
+        
+    
+</div>
+
+    </div>
+
+    <a class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-primary text-background-dark font-bold mt-2" href="/contact">
+        Contact
+    </a>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    if(btn && menu) {
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+        });
+    }
+});
+</script>
+
+
+                <main class="w-full">
+                    
+<article class="@container flex flex-col w-full py-10 px-4 md:px-0">
+    <header class="flex flex-col gap-4 mb-10 pb-10 border-b border-slate-200 dark:border-slate-800">
+        <h1 class="text-slate-900 dark:text-white text-4xl @[480px]:text-5xl lg:text-6xl font-black leading-tight tracking-[-0.033em]">
+            Install and enable FTP access on an AWS EC2 instance with Linux CentOS 7
+        </h1>
+        
+        <div class="flex flex-wrap items-center gap-4 text-sm text-slate-500 dark:text-slate-400 font-medium">
+            <span class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-base">calendar_month</span>
+                November 24, 2022
+            </span>
+            
+        </div>
+        
+        
+        
+    </header>
+
+    <div class="prose prose-slate dark:prose-invert prose-lg lg:prose-xl max-w-3xl lg:max-w-4xl mx-auto w-full prose-headings:font-bold prose-headings:tracking-tight prose-a:text-primary hover:prose-a:text-primary/80 prose-img:rounded-xl prose-h2:text-3xl prose-h2:@[480px]:text-4xl prose-h2:leading-tight prose-h3:text-xl prose-h3:leading-tight">
+        <p>I&rsquo;ll guide you through the quickest and easiest way to set up FTP
+access on an EC2 instance with CentOS 7 distribution on AWS (Amazon Web Services).
+We&rsquo;re going to use VSFTPD (Very Secure FTP Daemon), so the first step is to install it.</p>
+<h2>VSFTPD Installation and Configuration</h2>
+<h3>Step 1: Install VSFTPD</h3>
+<ol>
+<li>
+<p>Update the package manager:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">sudo yum update</span></span></code></pre></div></p>
+</li>
+<li>
+<p>Install the VSFTP software:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">sudo yum install vsftpd</span></span></code></pre></div></p>
+</li>
+<li>
+<p>Start the service:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">sudo systemctl start vsftpd</span></span></code></pre></div></p>
+</li>
+<li>
+<p>Configure the service to start automatically when the server loads:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> vsftpd</span></span></code></pre></div></p>
+</li>
+</ol>
+<h2>User Creation and Permission Configuration</h2>
+<h3>Step 2: Create a new FTP user</h3>
+<ol>
+<li>
+<p>The following command creates the new user:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">sudo adduser ftpuser</span></span></code></pre></div></p>
+</li>
+<li>
+<p>Assign a password for the user:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">sudo passwd ftpuser</span></span></code></pre></div></p>
+</li>
+<li>
+<p>Add the new user to the VSFTP user list:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;ftpuser&#34;</span> <span class="p">|</span> sudo tee -a /etc/vsftpd/user_list</span></span></code></pre></div></p>
+</li>
+</ol>
+<h3>Step 3: Configure VSFTPD</h3>
+<ol>
+<li>
+<p>First, create a backup copy of the configuration file:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">sudo cp /etc/vsftpd/vsftpd.conf /etc/vsftpd/vsftpd.conf.default</span></span></code></pre></div></p>
+</li>
+<li>
+<p>Open the configuration file with vim:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">sudo vi /etc/vsftpd/vsftpd.conf</span></span></code></pre></div></p>
+</li>
+<li>
+<p>Look for the following variables in the file and update them as shown below:<br>
+Note: Some variables may not exist, just add them at the end of the file.
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl"><span class="nv">anonymous_enable</span><span class="o">=</span>NO
+</span></span><span class="line"><span class="cl"><span class="nv">local_enable</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="nv">write_enable</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="nv">chroot_local_user</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="nv">allow_writeable_chroot</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="nv">userlist_enable</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="nv">userlist_file</span><span class="o">=</span>/etc/vsftpd/user_list
+</span></span><span class="line"><span class="cl"><span class="nv">userlist_deny</span><span class="o">=</span>NO</span></span></code></pre></div></p>
+</li>
+<li>
+<p>Restart the service:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">sudo systemctl restart vsftpd</span></span></code></pre></div></p>
+</li>
+</ol>
+<h3>Step 4: Create a folder for the new user</h3>
+<ol>
+<li>
+<p>Create the folder within the user&rsquo;s root directory:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">sudo mkdir -p /home/ftpuser/ftp/upload</span></span></code></pre></div></p>
+</li>
+<li>
+<p>Set the access permissions as follows:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">sudo chmod -R <span class="m">755</span> /home/ftpuser/ftp
+</span></span><span class="line"><span class="cl">sudo chown -R ftpuser: /home/ftpuser/ftp</span></span></code></pre></div></p>
+</li>
+</ol>
+<h2>Enable Password Authentication for the FTP User</h2>
+<h3>Step 5: Enable Password Authentication in SSH for the FTP User</h3>
+<ol>
+<li>
+<p>Edit the sshd_config file:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">sudo vi /etc/ssh/sshd_config</span></span></code></pre></div></p>
+</li>
+<li>
+<p>Add the following lines at the end of the file:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">Match User ftpuser
+</span></span><span class="line"><span class="cl">  PasswordAuthentication yes
+</span></span><span class="line"><span class="cl">  ChrootDirectory /home/ftpuser/ftp</span></span></code></pre></div></p>
+</li>
+<li>
+<p>Restart the service:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">sudo service sshd restart</span></span></code></pre></div></p>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    <div class="mt-20 pt-10 border-t border-slate-200 dark:border-slate-800 max-w-3xl lg:max-w-4xl mx-auto w-full">
+        <h3 class="text-xl font-bold mb-8 text-slate-900 dark:text-white">Comments</h3>
+        
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "juaning" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    </div>
+    
+    
+</article>
+
+                </main>
+                
+            </div>
+        </div>
+        
+<footer class="w-full border-t border-slate-200 dark:border-slate-800 py-8 px-4 mt-auto">
+    <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-slate-500 dark:text-slate-400 text-sm">
+        <div class="flex items-center gap-2 font-medium text-slate-700 dark:text-slate-300">
+            <span class="material-symbols-outlined text-primary text-xl">code</span>
+            <span>JUANING.dev</span>
+        </div>
+        <p>&copy; 2026 Juan Gómez. All rights reserved.</p>
+        <div class="flex gap-6">
+            
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script src="/js/copy-code.min.ba632ab5df15ed7b5ab3fe0902e2cddc5c5fe5b487ba4c5221f7c5c6119febb5.js" integrity="sha256-umMqtd8V7Xtas/4JAuLN3Fxf5bSHukxSIffFxhGf67U=" defer></script>
+
+
+    </div>
+</body>
+</html>
