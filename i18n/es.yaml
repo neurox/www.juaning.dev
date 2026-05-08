@@ -47,13 +47,13 @@ readNext:
   other: "Leer el siguiente"
 
 hero_subtitle:
-  other: "Consultor Senior Web & Cloud"
+  other: "Ingeniero de Plataformas Web e Infraestructura"
 
 hero_title:
-  other: "Juan Gómez | Consultor Senior Full Stack & Arquitectura Drupal"
+  other: "Juan Gómez | Automatizaciones, Backend y DevOps"
 
 hero_description:
-  other: "Modernización de sistemas legacy, arquitecturas multi-tenant, y modelo Nearshore para soluciones empresariales de alta complejidad en la nube (AWS)."
+  other: "Experto en Drupal y WordPress enfocado en infraestructura escalable, ingeniería de plataformas y flujos de trabajo modernos en la nube."
 
 btn_view_portfolio:
   other: "Ver Portafolio"
@@ -66,3 +66,69 @@ section_expertise_desc:
 
 section_freelance_desc:
   other: "Actualmente disponible para proyectos independientes y consultoría. Si tienes requerimientos complejos para aplicaciones web o necesitas experiencia en Drupal, me encantaría escucharte."
+
+nav_contact:
+  other: "Contacto"
+
+exp_drupal_title:
+  other: "Arquitectura Drupal Enterprise"
+exp_drupal_desc:
+  other: "Diseño de ecosistemas CMS de alta disponibilidad, migraciones complejas (Drupal 7/8 a 10/11) y desarrollos headless."
+
+exp_cloud_title:
+  other: "Infraestructura Cloud (AWS)"
+exp_cloud_desc:
+  other: "Arquitecturas resilientes y multi-tenant. Despliegues estructurados mediante EC2, Load Balancers y S3."
+
+exp_devops_title:
+  other: "DevOps & Automatización"
+exp_devops_desc:
+  other: "Integración continua (CI/CD), contenerización con Docker y optimización radical de los flujos de despliegue."
+
+exp_modern_title:
+  other: "Modernización de Sistemas"
+exp_modern_desc:
+  other: "Refactorización de aplicaciones legacy empresariales con PHP 8+, integrando APIs B2B robustas sin downtime."
+
+articles_recent_title:
+  other: "Artículos Recientes"
+articles_recent_desc:
+  other: "Perspectivas sobre desarrollo, arquitectura y despliegue."
+articles_view_all:
+  other: "Ver todos"
+articles_none:
+  other: "¡No se encontraron artículos. Trabajando en contenido genial!"
+
+prev:
+  other: "Anterior"
+next:
+  other: "Siguiente"
+min_read:
+  other: "min de lectura"
+comments_title:
+  other: "Comentarios"
+copyright_reserved:
+  other: "Todos los derechos reservados."
+
+contact_form_title:
+  other: "Envíame un Mensaje"
+contact_form_name:
+  other: "Nombre"
+contact_form_email:
+  other: "Correo Electrónico"
+contact_form_subject:
+  other: "Asunto"
+contact_form_message:
+  other: "Mensaje"
+contact_form_submit:
+  other: "Enviar Mensaje"
+contact_form_recaptcha_err:
+  other: "Por favor completa el desafío reCAPTCHA."
+contact_form_success_title:
+  other: "¡Gracias por contactarme!"
+contact_form_success_text:
+  other: "Agradezco tu interés y me pondré en contacto contigo lo antes posible."
+contact_form_error_title:
+  other: "Oh no..."
+contact_form_error_text:
+  other: "Lo siento, parece que algo salió mal con el envío. Te sugiero que lo intentes de nuevo más tarde."

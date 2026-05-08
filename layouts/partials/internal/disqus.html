@@ -1,8 +1,16 @@
 {{ if site.Config.Services.Disqus.Shortname }}
+{{ $disqusID := .Params.disqus_identifier }}
+{{ if not $disqusID }}
+    {{ with .File }}
+        {{ $disqusID = printf "%s/%s" $.Type .TranslationBaseName }}
+    {{ else }}
+        {{ $disqusID = .TranslationKey | default .RelPermalink }}
+    {{ end }}
+{{ end }}
 <div id="disqus_thread"></div>
 <script>
     var disqus_config = function () {
-    {{ with .Params.disqus_identifier }}this.page.identifier = '{{ . }}';{{ end }}
+    {{ with $disqusID }}this.page.identifier = '{{ . }}';{{ end }}
     {{ with .Params.disqus_title }}this.page.title = '{{ . }}';{{ end }}
     {{ with .Params.disqus_url }}this.page.url = '{{ . | html }}';{{ end }}
     };

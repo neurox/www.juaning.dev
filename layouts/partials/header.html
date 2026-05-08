@@ -10,8 +10,13 @@
         <nav class="flex items-center gap-9">
             {{ $current := . }}
             {{ range .Site.Menus.main }}
-                <a class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm font-medium leading-normal {{ if $current.IsMenuCurrent "main" . }}text-primary{{ end }}" href="{{ .URL | relLangURL }}">
-                    {{ .Name }}
+                {{ $menuURL := .URL | relLangURL }}
+                {{ $isActive := or (eq $current.RelPermalink $menuURL) (and (ne $menuURL "/") (ne $menuURL "/es/") (hasPrefix $current.RelPermalink $menuURL)) }}
+                <a class="relative flex flex-col items-center group py-2" href="{{ $menuURL }}">
+                    <span class="text-sm font-medium transition-colors duration-300 {{ if $isActive }}text-primary font-bold{{ else }}text-slate-600 dark:text-slate-300 hover:text-primary{{ end }}">
+                        {{ .Name }}
+                    </span>
+                    <span class="absolute bottom-0 w-full h-0.5 bg-primary rounded-full transition-all duration-300 {{ if $isActive }}opacity-100 scale-x-100{{ else }}opacity-0 scale-x-0 group-hover:opacity-50 group-hover:scale-x-50{{ end }}"></span>
                 </a>
             {{ end }}
         </nav>
@@ -19,8 +24,8 @@
         <div class="h-6 w-px bg-slate-200 dark:bg-slate-800 hidden md:block"></div>
         {{ partial "language-switcher.html" . }}
 
-        <a class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary text-background-dark hover:bg-primary/90 transition-colors text-sm font-bold leading-normal tracking-[0.015em]" href="/contact">
-            <span class="truncate">Contact</span>
+        <a class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary text-background-dark hover:bg-primary/90 transition-colors text-sm font-bold leading-normal tracking-[0.015em]" href="{{ "/contact" | relLangURL }}">
+            <span class="truncate">{{ T "nav_contact" }}</span>
         </a>
     </div>
     
@@ -31,8 +36,11 @@
 
 <!-- Mobile Menu (Hidden by default) -->
 <div id="mobile-menu" class="hidden md:hidden flex-col gap-4 px-4 py-4 mb-4 border-b border-slate-200 dark:border-slate-800">
+    {{ $current := . }}
     {{ range .Site.Menus.main }}
-        <a class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-base font-medium" href="{{ .URL | relLangURL }}">
+        {{ $menuURL := .URL | relLangURL }}
+        {{ $isActive := or (eq $current.RelPermalink $menuURL) (and (ne $menuURL "/") (ne $menuURL "/es/") (hasPrefix $current.RelPermalink $menuURL)) }}
+        <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-colors {{ if $isActive }}bg-primary/10 text-primary font-bold border-l-4 border-primary{{ else }}text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800{{ end }}" href="{{ $menuURL }}">
             {{ .Name }}
         </a>
     {{ end }}
@@ -42,8 +50,8 @@
         {{ partial "language-switcher.html" . }}
     </div>
 
-    <a class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-primary text-background-dark font-bold mt-2" href="/contact">
-        Contact
+    <a class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-primary text-background-dark font-bold mt-2" href="{{ "/contact" | relLangURL }}">
+        {{ T "nav_contact" }}
     </a>
 </div>
 

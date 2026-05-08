@@ -5,14 +5,16 @@
     <link>https://www.juaning.dev/portfolio/</link>
     <description>Recent content in Cloud Architecture &amp; Enterprise CMS Portfolio on JUANING.dev</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>en-US</language>
+    <managingEditor>juanjose@ingomez.com (Juan Gómez)</managingEditor>
+    <webMaster>juanjose@ingomez.com (Juan Gómez)</webMaster>
     <copyright>JUANING</copyright>
     <lastBuildDate>Sat, 15 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.juaning.dev/portfolio/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Drupal Projects</title>
       <link>https://www.juaning.dev/portfolio/drupal/</link>
       <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
-      
+      <author>juanjose@ingomez.com (Juan Gómez)</author>
       <guid>https://www.juaning.dev/portfolio/drupal/</guid>
       <description>&lt;h2 id=&#34;altamed&#34; &gt;Altamed
 &lt;span&gt;
@@ -28,7 +30,7 @@
       <title>Umbraco Projects</title>
       <link>https://www.juaning.dev/portfolio/umbraco/</link>
       <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
-      
+      <author>juanjose@ingomez.com (Juan Gómez)</author>
       <guid>https://www.juaning.dev/portfolio/umbraco/</guid>
       <description>&lt;h2 id=&#34;coming-soon&#34; &gt;Coming Soon
 &lt;span&gt;
@@ -43,7 +45,7 @@
       <title>Wordpress Projects</title>
       <link>https://www.juaning.dev/portfolio/wordpress/</link>
       <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
-      
+      <author>juanjose@ingomez.com (Juan Gómez)</author>
       <guid>https://www.juaning.dev/portfolio/wordpress/</guid>
       <description>&lt;h2 id=&#34;solveiq&#34; &gt;SolveIQ
 &lt;span&gt;

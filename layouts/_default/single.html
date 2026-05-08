@@ -14,7 +14,7 @@
             <span>•</span>
             <span class="flex items-center gap-1">
                 <span class="material-symbols-outlined text-base">schedule</span>
-                {{ .Params.readingTime }} min read
+                {{ .Params.readingTime }} {{ T "min_read" }}
             </span>
             {{ end }}
         </div>
@@ -38,7 +38,7 @@
     {{ if eq .Type "post" }}
     {{ if site.Config.Services.Disqus.Shortname }}
     <div class="mt-20 pt-10 border-t border-slate-200 dark:border-slate-800 max-w-3xl lg:max-w-4xl mx-auto w-full">
-        <h3 class="text-xl font-bold mb-8 text-slate-900 dark:text-white">Comments</h3>
+        <h3 class="text-xl font-bold mb-8 text-slate-900 dark:text-white">{{ T "comments_title" }}</h3>
         {{ partial "internal/disqus.html" . }}
     </div>
     {{ end }}

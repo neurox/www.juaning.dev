@@ -1,4 +1,4 @@
 ---
-title: 'Juan Gómez | Senior Full Stack Consultant & Drupal Architecture'
-description: 'Senior Full Stack Consultant specializing in legacy architecture modernization with Drupal ecosystems and AWS Cloud for B2B enterprises under a Nearshore/Remote model.'
+title: 'Juan Gómez | Automations, Backend & DevOps'
+description: 'Web Platforms & Infrastructure Engineer specializing in scalable infrastructure, platform engineering, and modern cloud workflows for B2B enterprises.'
 ---

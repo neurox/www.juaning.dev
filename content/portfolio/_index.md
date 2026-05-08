@@ -6,4 +6,4 @@ type: portfolio
 
 ## High-Complexity Corporate Engineering
 
-As a Senior Full Stack Consultant, my core focus lies in engineering resilient architectures capable of sustaining massive-scale operations. Below is a curated selection of surgical architectural migrations, robust legacy CMS refactoring operations, and scalable Cloud infrastructure deployments.
+As a Web Platforms & Infrastructure Engineer, my core focus lies in engineering resilient architectures capable of sustaining massive-scale operations. Below is a curated selection of surgical architectural migrations, robust legacy CMS refactoring operations, and scalable Cloud infrastructure deployments.

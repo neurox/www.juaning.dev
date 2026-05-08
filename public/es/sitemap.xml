@@ -17,7 +17,7 @@
                 href="http://localhost:1313/es/"
                 />
   </url><url>
-    <loc>http://localhost:1313/es/portfolio/</loc>
+    <loc>http://localhost:1313/es/portafolio/</loc>
     <lastmod>2025-02-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -29,7 +29,7 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="http://localhost:1313/es/portfolio/"
+                href="http://localhost:1313/es/portafolio/"
                 />
   </url><url>
     <loc>http://localhost:1313/es/portfolio/drupal/</loc>

@@ -1,7 +1,7 @@
 ---
-seoTitle: Juan Gómez | Consultor Senior Full Stack & DevOps | Cuernavaca, MX
+seoTitle: Juan Gómez | Automatizaciones, Backend y DevOps | Cuernavaca, MX
 title: Proyectos Wordpress
-description: "Consultor Senior Full Stack con experiencia avanzada en modernización y despliegues de Wordpress Enterprise en ecosistemas Cloud y WP Engine."
+description: "Ingeniero de Plataformas Web e Infraestructura con experiencia avanzada en modernización y despliegues de plataformas empresariales en ecosistemas Cloud."
 date: "2025-02-15"
 noComment: true
 noDate: true

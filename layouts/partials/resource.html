@@ -15,15 +15,15 @@
     {{ $resource = $resource | resources.Fingerprint "sha256" }}
 
     {{ if eq .type "css" }}
-        <link rel="stylesheet" href="{{ $resource.Permalink }}" integrity="{{ $resource.Data.Integrity }}">
+        <link rel="stylesheet" href="{{ $resource.RelPermalink }}" integrity="{{ $resource.Data.Integrity }}">
     {{ else if eq .type "js" }}
-        <script src="{{ $resource.Permalink }}" type="text/javascript" charset="utf-8" integrity="{{ $resource.Data.Integrity }}"></script>
+        <script src="{{ $resource.RelPermalink }}" type="text/javascript" charset="utf-8" integrity="{{ $resource.Data.Integrity }}"></script>
     {{ end }}
 <!-- For backward compatibility -->
 {{ else }}
     {{ if eq .type "css" }}
-        <link rel="stylesheet" href="{{ .filename | absURL }}?rnd={{ now.Unix }}">
+        <link rel="stylesheet" href="{{ .filename | relURL }}?rnd={{ now.Unix }}">
     {{ else if eq .type "js" }}
-        <script src="{{ .filename | absURL }}?rnd={{ now.Unix }}" type="text/javascript" charset="utf-8"></script>
+        <script src="{{ .filename | relURL }}?rnd={{ now.Unix }}" type="text/javascript" charset="utf-8"></script>
     {{ end }}
 {{ end }}

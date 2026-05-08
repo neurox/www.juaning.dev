@@ -53,13 +53,13 @@ readNext:
   other: "Read next"
 
 hero_subtitle:
-  other: "Senior Web & Cloud Consultant"
+  other: "Web Platforms & Infrastructure Engineer"
 
 hero_title:
-  other: "Juan Gómez | Senior Full Stack Consultant & Drupal Architecture"
+  other: "Juan Gómez | Automations, Backend & DevOps"
 
 hero_description:
-  other: "Modernization of legacy systems, multi-tenant architectures, and Nearshore models for high-complexity enterprise cloud solutions (AWS)."
+  other: "Drupal & WordPress expert focused on scalable infrastructure, platform engineering, and modern cloud workflows."
 
 btn_view_portfolio:
   other: "View Portfolio"
@@ -72,3 +72,69 @@ section_expertise_desc:
 
 section_freelance_desc:
   other: "I'm currently available for freelance projects and consulting. If you have a complex web application requirement or need Drupal expertise, I'd love to hear from you."
+
+nav_contact:
+  other: "Contact"
+
+exp_drupal_title:
+  other: "Enterprise Drupal Architecture"
+exp_drupal_desc:
+  other: "High-availability CMS ecosystem design, complex migrations (Drupal 7/8 to 10/11), and headless developments."
+
+exp_cloud_title:
+  other: "Cloud Infrastructure (AWS)"
+exp_cloud_desc:
+  other: "Resilient and multi-tenant architectures. Structured deployments using EC2, Load Balancers, and S3."
+
+exp_devops_title:
+  other: "DevOps & Automation"
+exp_devops_desc:
+  other: "Continuous Integration (CI/CD), containerization with Docker, and radical optimization of deployment workflows."
+
+exp_modern_title:
+  other: "Systems Modernization"
+exp_modern_desc:
+  other: "Refactoring of enterprise legacy applications with PHP 8+, integrating robust B2B APIs without downtime."
+
+articles_recent_title:
+  other: "Recent Articles"
+articles_recent_desc:
+  other: "Insights on development, architecture, and deployment."
+articles_view_all:
+  other: "View all"
+articles_none:
+  other: "No articles found. Working on some great content!"
+
+prev:
+  other: "Prev"
+next:
+  other: "Next"
+min_read:
+  other: "min read"
+comments_title:
+  other: "Comments"
+copyright_reserved:
+  other: "All rights reserved."
+
+contact_form_title:
+  other: "Send Me a Message"
+contact_form_name:
+  other: "Name"
+contact_form_email:
+  other: "Email"
+contact_form_subject:
+  other: "Subject"
+contact_form_message:
+  other: "Message"
+contact_form_submit:
+  other: "Send Message"
+contact_form_recaptcha_err:
+  other: "Please complete the reCAPTCHA challenge."
+contact_form_success_title:
+  other: "Thank you for reaching out to me!"
+contact_form_success_text:
+  other: "I appreciate your interest and will personally get back to you as soon as possible."
+contact_form_error_title:
+  other: "Oh no..."
+contact_form_error_text:
+  other: "I apologize, but it seems that something went wrong with the submission. I suggest that you try again at a later time."

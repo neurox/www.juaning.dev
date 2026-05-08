@@ -17,7 +17,7 @@
                 href="https://www.juaning.dev/es/"
                 />
   </url><url>
-    <loc>https://www.juaning.dev/es/portfolio/</loc>
+    <loc>https://www.juaning.dev/es/portafolio/</loc>
     <lastmod>2025-02-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -29,7 +29,7 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://www.juaning.dev/es/portfolio/"
+                href="https://www.juaning.dev/es/portafolio/"
                 />
   </url><url>
     <loc>https://www.juaning.dev/es/portfolio/drupal/</loc>

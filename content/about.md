@@ -1,6 +1,6 @@
 ---
-seoTitle: Juan Gómez | Sr Full Stack Developer & DevOps | Cuernavaca, MX
-title: Juan Gómez | Sr Full Stack Developer & DevOps
+seoTitle: Juan Gómez | Automations, Backend & DevOps | Cuernavaca, MX
+title: Juan Gómez | Automations, Backend & DevOps
 description: "Senior Full Stack Developer with 8+ years experience in CMS, MERN
  stack, and DevOps. Specializing in scalable web solutions, API development,
  and cloud infrastructure. Let's build together!"
@@ -24,7 +24,7 @@ noDate: true
 #     weight: 10
 ---
 
-As a Senior Full Stack Consultant and Cloud Architect, I specialize in solving high-complexity engineering challenges for enterprise B2B clients. With over 9 years of hands-on experience, my focus lies in rescuing and modernizing legacy systems, engineering resilient Cloud infrastructures, and delivering scalable, multi-tenant web applications.
+As a Web Platforms & Infrastructure Engineer, I specialize in solving high-complexity engineering challenges for enterprise B2B clients. With over 9 years of hands-on experience, my focus lies in engineering resilient Cloud infrastructures, platform engineering, and delivering scalable, modern web applications.
 
 ## Strategic Engineering & Business Value
 

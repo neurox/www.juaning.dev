@@ -20,7 +20,7 @@
                         <span class="material-symbols-outlined">mail</span>
                     </div>
                     <div>
-                        <span class="block text-sm text-slate-500 font-medium">Email</span>
+                        <span class="block text-sm text-slate-500 font-medium">{{ T "contact_form_email" }}</span>
                         <span class="font-bold text-lg">{{ .Site.Params.email }}</span>
                     </div>
                 </a>
@@ -29,27 +29,27 @@
 
         <!-- Contact Form -->
         <div class="bg-white dark:bg-surface-dark border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 shadow-sm">
-            <h3 class="text-3xl @[480px]:text-4xl leading-tight font-bold text-slate-900 dark:text-white mb-6">Send Me a Message</h3>
+            <h3 class="text-3xl @[480px]:text-4xl leading-tight font-bold text-slate-900 dark:text-white mb-6">{{ T "contact_form_title" }}</h3>
             
             <form id="contact-form" method="post" class="flex flex-col gap-5">
                 
                 <div class="flex flex-col gap-1.5">
-                    <label for="name" class="text-sm font-semibold text-slate-700 dark:text-slate-300">Name <span class="text-red-500">*</span></label>
+                    <label for="name" class="text-sm font-semibold text-slate-700 dark:text-slate-300">{{ T "contact_form_name" }} <span class="text-red-500">*</span></label>
                     <input type="text" id="name" name="name" required class="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 px-4 py-3 text-slate-900 dark:text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-slate-400">
                 </div>
 
                 <div class="flex flex-col gap-1.5">
-                    <label for="email" class="text-sm font-semibold text-slate-700 dark:text-slate-300">Email <span class="text-red-500">*</span></label>
+                    <label for="email" class="text-sm font-semibold text-slate-700 dark:text-slate-300">{{ T "contact_form_email" }} <span class="text-red-500">*</span></label>
                     <input type="email" id="email" name="email" required class="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 px-4 py-3 text-slate-900 dark:text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-slate-400">
                 </div>
 
                 <div class="flex flex-col gap-1.5">
-                    <label for="subject" class="text-sm font-semibold text-slate-700 dark:text-slate-300">Subject <span class="text-red-500">*</span></label>
+                    <label for="subject" class="text-sm font-semibold text-slate-700 dark:text-slate-300">{{ T "contact_form_subject" }} <span class="text-red-500">*</span></label>
                     <input type="text" id="subject" name="subject" required class="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 px-4 py-3 text-slate-900 dark:text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-slate-400">
                 </div>
 
                 <div class="flex flex-col gap-1.5">
-                    <label for="message" class="text-sm font-semibold text-slate-700 dark:text-slate-300">Message <span class="text-red-500">*</span></label>
+                    <label for="message" class="text-sm font-semibold text-slate-700 dark:text-slate-300">{{ T "contact_form_message" }} <span class="text-red-500">*</span></label>
                     <textarea id="message" name="message" rows="5" required class="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 px-4 py-3 text-slate-900 dark:text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none placeholder:text-slate-400"></textarea>
                 </div>
 
@@ -58,7 +58,7 @@
                 </div>
 
                 <button type="submit" class="mt-4 flex w-full items-center justify-center rounded-lg bg-primary px-6 py-4 text-background-dark font-bold text-lg hover:bg-primary/90 transition-colors">
-                    Send Message
+                    {{ T "contact_form_submit" }}
                 </button>
             </form>
         </div>
@@ -90,8 +90,8 @@
     if (!recaptchaResponse) {
       Swal.fire({
         icon: 'error',
-        title: 'Oh no...',
-        text: 'Please complete the reCAPTCHA challenge.'
+        title: '{{ T "contact_form_error_title" }}',
+        text: '{{ T "contact_form_recaptcha_err" }}'
       });
       return;
     }
@@ -115,16 +115,16 @@
         if (xhr.status === 200) {
           Swal.fire({
             icon: 'success',
-            title: 'Thank you for reaching out to me!',
-            text: 'I appreciate your interest and will personally get back to you as soon as possible.'
+            title: '{{ T "contact_form_success_title" }}',
+            text: '{{ T "contact_form_success_text" }}'
           });
           document.getElementById('contact-form').reset();
           grecaptcha.reset();
         } else {
           Swal.fire({
             icon: 'error',
-            title: 'Oh no...',
-            text: 'I apologize, but it seems that something went wrong with the submission. I suggest that you try again at a later time.'
+            title: '{{ T "contact_form_error_title" }}',
+            text: '{{ T "contact_form_error_text" }}'
           });
         }
       }

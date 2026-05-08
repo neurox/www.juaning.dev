@@ -1,6 +1,6 @@
 ---
-seoTitle: Juan Gómez | Desarrollador Full Stack Sr & DevOps | Cuernavaca, MX
-title: Juan Gómez | Desarrollador Full Stack Sr & DevOps
+seoTitle: Juan Gómez | Automatizaciones, Backend y DevOps | Cuernavaca, MX
+title: Juan Gómez | Automatizaciones, Backend y DevOps
 description: "Desarrollador Full Stack con más de 8 años de experiencia
   en CMS, stack MERN y DevOps. Especializado en soluciones web escalables,
   desarrollo de APIs e infraestructura en la nube. ¡Construyamos juntos!"
@@ -25,7 +25,7 @@ noDate: true
 #     weight: 10
 ---
 
-Como Consultor Senior Full Stack y Arquitecto Cloud, me especializo en resolver desafíos de ingeniería de alta complejidad para clientes corporativos B2B. Con más de 9 años de experiencia práctica, mi enfoque radica en rescatar y modernizar sistemas legacy, diseñar infraestructuras Cloud resilientes y entregar aplicaciones empresariales escalables y multi-tenant.
+Como Ingeniero de Plataformas Web e Infraestructura, me especializo en resolver desafíos de ingeniería de alta complejidad para clientes corporativos B2B. Con más de 9 años de experiencia práctica, mi enfoque radica en diseñar infraestructuras Cloud resilientes, ingeniería de plataformas y entregar aplicaciones empresariales modernas y escalables.
 
 ## Ingeniería Estratégica y Valor de Negocio
 

@@ -13,7 +13,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         {{ range .Paginator.Pages }}
-        <article class="flex flex-col gap-4 group cursor-pointer" onclick="window.location.href='{{ .Permalink }}'">
+        <article class="flex flex-col gap-4 group cursor-pointer" onclick="window.location.href='{{ .RelPermalink }}'">
             <div class="w-full bg-slate-200 dark:bg-surface-dark aspect-video rounded-xl overflow-hidden relative">
                 <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-slate-900/40 flex items-center justify-center">
                     <span class="material-symbols-outlined text-6xl text-white/50 group-hover:scale-110 transition-transform duration-300">article</span>
@@ -39,7 +39,7 @@
     <nav class="flex justify-center mt-10">
         <ul class="flex items-center gap-2 text-slate-700 dark:text-slate-300">
             {{ if $paginator.HasPrev }}
-            <li><a href="{{ $paginator.Prev.URL }}" class="px-4 py-2 border border-slate-300 dark:border-slate-700 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Prev</a></li>
+            <li><a href="{{ $paginator.Prev.URL }}" class="px-4 py-2 border border-slate-300 dark:border-slate-700 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">{{ T "prev" }}</a></li>
             {{ end }}
             
             {{ range $paginator.Pagers }}
@@ -47,7 +47,7 @@
             {{ end }}
             
             {{ if $paginator.HasNext }}
-            <li><a href="{{ $paginator.Next.URL }}" class="px-4 py-2 border border-slate-300 dark:border-slate-700 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Next</a></li>
+            <li><a href="{{ $paginator.Next.URL }}" class="px-4 py-2 border border-slate-300 dark:border-slate-700 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">{{ T "next" }}</a></li>
             {{ end }}
         </ul>
     </nav>

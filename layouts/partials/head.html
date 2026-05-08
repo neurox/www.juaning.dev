@@ -10,8 +10,9 @@
 {{ if $desc }}<meta name="description" content="{{ $desc }}">{{ end }}
 
 <!-- Tailwind compiled via Hugo Pipes & PostCSS -->
-{{ $css := resources.Get "css/tailwind.css" | postCSS (dict "config" "postcss.config.js" "noMap" true "inlineImports" true "errors" true) | minify | fingerprint }}
-<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+{{- /* Tailwind compiled via Hugo Pipes & PostCSS */ -}}
+{{- $styles := resources.Get "css/tailwind.css" | postCSS | minify | fingerprint -}}
+<link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
 
 <!-- Hugo Chroma Syntax Highlighting (Dracula Theme) -->
 {{ $syntax := resources.Get "css/syntax.css" | minify | fingerprint }}

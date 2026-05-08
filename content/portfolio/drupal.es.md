@@ -1,7 +1,7 @@
 ---
-seoTitle: Juan Gómez | Consultor Senior Full Stack & DevOps | Cuernavaca, MX
+seoTitle: Juan Gómez | Automatizaciones, Backend y DevOps | Cuernavaca, MX
 title: Proyectos Drupal
-description: "Consultor Senior Full Stack especializado en ecosistemas corporativos Drupal. Soluciones escalables, integraciones de APIs y arquitectura cloud. ¡Construyamos juntos!"
+description: "Ingeniero de Plataformas Web e Infraestructura especializado en ecosistemas corporativos Drupal. Soluciones escalables, integraciones de APIs y arquitectura cloud. ¡Construyamos juntos!"
 date: "2025-02-15"
 noComment: true
 noDate: true

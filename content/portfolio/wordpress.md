@@ -1,5 +1,5 @@
 ---
-seoTitle: Juan Gómez | Sr Full Stack Developer & DevOps | Cuernavaca, MX
+seoTitle: Juan Gómez | Automations, Backend & DevOps | Cuernavaca, MX
 title: Wordpress Projects
 description: "Senior Full Stack Developer with 8+ years experience in CMS, MERN
  stack, and DevOps. Specializing in scalable web solutions, API development,
