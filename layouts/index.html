@@ -15,7 +15,7 @@
             </div>
             <div class="flex gap-4 mt-4">
                 <a class="flex min-w-[140px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-background-dark hover:bg-primary/90 transition-colors text-base font-bold leading-normal tracking-[0.015em]"
-                    href="{{ "/portfolio" | relLangURL }}">
+                    href="{{ (site.GetPage "/portfolio").RelPermalink }}">
                     <span class="truncate">{{ T "btn_view_portfolio" }}</span>
                 </a>
                 <a class="flex min-w-[140px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 border border-slate-300 dark:border-slate-700 hover:border-primary dark:hover:border-primary text-slate-900 dark:text-white transition-colors text-base font-bold leading-normal tracking-[0.015em]"

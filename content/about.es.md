@@ -46,4 +46,4 @@ Para obtener una línea de tiempo cronológica y detallada de mis roles corporat
 
 [Descargar CV en PDF](/pdf/juan-gomez-cv.pdf)
 
-Hablemos sobre cómo podemos rediseñar y asegurar el futuro de tu plataforma tecnológica. [Conéctate conmigo](/contact/es).
+Hablemos sobre cómo podemos rediseñar y asegurar el futuro de tu plataforma tecnológica. [Conéctate conmigo](/es/contacto/).

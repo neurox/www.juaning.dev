@@ -24,7 +24,7 @@
         <div class="h-6 w-px bg-slate-200 dark:bg-slate-800 hidden md:block"></div>
         {{ partial "language-switcher.html" . }}
 
-        <a class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary text-background-dark hover:bg-primary/90 transition-colors text-sm font-bold leading-normal tracking-[0.015em]" href="{{ "/contact" | relLangURL }}">
+        <a class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary text-background-dark hover:bg-primary/90 transition-colors text-sm font-bold leading-normal tracking-[0.015em]" href="{{ with site.GetPage "contact" }}{{ .RelPermalink }}{{ end }}">
             <span class="truncate">{{ T "nav_contact" }}</span>
         </a>
     </div>
@@ -50,7 +50,7 @@
         {{ partial "language-switcher.html" . }}
     </div>
 
-    <a class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-primary text-background-dark font-bold mt-2" href="{{ "/contact" | relLangURL }}">
+    <a class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-primary text-background-dark font-bold mt-2" href="{{ with site.GetPage "contact" }}{{ .RelPermalink }}{{ end }}">
         {{ T "nav_contact" }}
     </a>
 </div>
