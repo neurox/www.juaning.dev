@@ -1,53 +1,43 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on JUANING.dev</title>
+    <title>Bitácora on JUANING.dev</title>
     <link>https://www.juaning.dev/es/post/</link>
-    <description>Recent content in Posts on JUANING.dev</description>
+    <description>Recent content in Bitácora on JUANING.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
     <managingEditor>juanjose@ingomez.com (Juan Gómez)</managingEditor>
     <webMaster>juanjose@ingomez.com (Juan Gómez)</webMaster>
     <copyright>JUANING</copyright>
-    <lastBuildDate>Fri, 14 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.juaning.dev/es/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.juaning.dev/es/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Cómo instalar Solr 8 en macOS 13 Ventura para compatibilidad con Drupal.</title>
-      <link>https://www.juaning.dev/es/post/2023/como-instalar-solr-8-en-macos-13-ventura-para-compatibilidad-con-drupal/</link>
-      <pubDate>Fri, 14 Apr 2023 00:00:00 +0000</pubDate>
+      <title>Hoja de Ruta para la Migración a Drupal 11: Estrategias de Tiempo de Inactividad Cero</title>
+      <link>https://www.juaning.dev/es/post/2025/hoja-de-ruta-migracion-drupal-11/</link>
+      <pubDate>Sat, 10 May 2025 00:00:00 +0000</pubDate>
       <author>juanjose@ingomez.com (Juan Gómez)</author>
-      <guid>https://www.juaning.dev/es/post/2023/como-instalar-solr-8-en-macos-13-ventura-para-compatibilidad-con-drupal/</guid>
-      <description>&lt;p&gt;Como quizás hayas notado, la versión de Solr incluida en la última versión de Homebrew es la 9 y
-su esquema aún no es compatible con Drupal. Te mostraré cómo obtener la versión 8 de Solr, que sí es
-compatible con Drupal.&lt;/p&gt;
-&lt;h2&gt;Requisitos&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Homebrew&lt;/li&gt;
-&lt;li&gt;Java 8&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2&gt;Paso 1: Instalar Java 8 usando Homebrew&lt;/h2&gt;
-&lt;p&gt;Si aún no has instalado Homebrew, puedes encontrar las instrucciones de instalación en &lt;a href=&#34;https://brew.sh/&#34; target=&#34;_blank&#34;&gt;https://brew.sh/&lt;/a&gt;.
-Después de instalar Homebrew, abre la Terminal y ejecuta el siguiente comando para instalar Java 8:&lt;/p&gt;</description>
+      <guid>https://www.juaning.dev/es/post/2025/hoja-de-ruta-migracion-drupal-11/</guid>
+      <description>&lt;p&gt;El lanzamiento de &lt;strong&gt;Drupal 11&lt;/strong&gt; marca un hito significativo para la gestión de contenido empresarial. Para las organizaciones que ejecutan plataformas críticas en versiones heredadas (Drupal 7, 8 o 9), el camino de migración ya no es solo una actualización técnica: es una oportunidad estratégica para re-diseñar la &lt;strong&gt;alta disponibilidad, la seguridad y la escalabilidad nativa de la nube&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;En esta hoja de ruta, exploramos las estrategias arquitectónicas necesarias para ejecutar una migración compleja con &lt;strong&gt;tiempo de inactividad cero (zero-downtime)&lt;/strong&gt;, garantizando la continuidad del negocio mientras modernizas tu stack técnico.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Instalar y habilitar acceso FTP en una instancia AWS EC2 con Linux Centos 7</title>
-      <link>https://www.juaning.dev/es/post/2022/instalar-y-habilitar-acceso-ftp-en-una-instancia-aws-ec2-con-linux-centos-7/</link>
+      <title>Instalación de Solr 8 en macOS Ventura: Guía para Ingenieros Drupal</title>
+      <link>https://www.juaning.dev/es/post/2023/2023-04-14-how-to-install-solr-8-on-macos-13-ventura-for-drupal-compatibility/</link>
+      <pubDate>Fri, 14 Apr 2023 00:00:00 +0000</pubDate>
+      <author>juanjose@ingomez.com (Juan Gómez)</author>
+      <guid>https://www.juaning.dev/es/post/2023/2023-04-14-how-to-install-solr-8-on-macos-13-ventura-for-drupal-compatibility/</guid>
+      <description>&lt;p&gt;Al construir plataformas Drupal de nivel empresarial, mantener la paridad entre el desarrollo local y los entornos de producción es crítico. A menudo, las versiones más recientes disponibles a través de gestores de paquetes como Homebrew (como Solr 9) introducen cambios disruptivos o incompatibilidades de esquema con el ecosistema actual de &lt;strong&gt;Drupal Search API&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Para los desarrolladores que necesitan compatibilidad con &lt;strong&gt;Solr 8&lt;/strong&gt; en macOS 13 Ventura, esta guía proporciona un camino de instalación estructurado y profesional.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Configuración de Acceso FTP Seguro en AWS EC2 (CentOS 7)</title>
+      <link>https://www.juaning.dev/es/post/2022/2022-11-24-install-and-enable-ftp-access-in-aws-ec2-instance-with-linux-centos-7/</link>
       <pubDate>Thu, 24 Nov 2022 00:00:00 +0000</pubDate>
       <author>juanjose@ingomez.com (Juan Gómez)</author>
-      <guid>https://www.juaning.dev/es/post/2022/instalar-y-habilitar-acceso-ftp-en-una-instancia-aws-ec2-con-linux-centos-7/</guid>
-      <description>&lt;p&gt;Te guiaré a través de la manera más rápida y fácil de configurar el acceso FTP
-a una instancia EC2 con la distribución Centos 7 en AWS (Amazon Web Services),
-vamos a usar VSFTPD (Very Secure FTP Daemon) así que el primer paso es instalarlo.&lt;/p&gt;
-&lt;h2&gt;Instalación y configuración de VSFTPD&lt;/h2&gt;
-&lt;h3&gt;Paso 1: Instala VSFTPD&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Actualiza el administrador de paquetes:
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo yum update&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Instala el software VSFTP:
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo yum install vsftpd&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;</description>
+      <guid>https://www.juaning.dev/es/post/2022/2022-11-24-install-and-enable-ftp-access-in-aws-ec2-instance-with-linux-centos-7/</guid>
+      <description>&lt;p&gt;La gestión de infraestructuras en la nube heredadas a menudo requiere equilibrar los protocolos de seguridad modernos con las necesidades tradicionales de transferencia de datos. Si bien &lt;strong&gt;SFTP&lt;/strong&gt; (SSH File Transfer Protocol) es el estándar de la industria para transferencias seguras, ciertos flujos de trabajo empresariales o integraciones legacy aún requieren un entorno &lt;strong&gt;FTP&lt;/strong&gt; robusto.&lt;/p&gt;
+&lt;p&gt;Esta guía detalla el proceso de instalación y configuración de &lt;strong&gt;VSFTPD&lt;/strong&gt; (Very Secure FTP Daemon) en una instancia de AWS EC2 con Linux CentOS 7.&lt;/p&gt;</description>
     </item>
     
   </channel>

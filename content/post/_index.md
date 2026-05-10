@@ -1,0 +1,4 @@
+---
+title: "Logbook"
+icon: terminal
+---

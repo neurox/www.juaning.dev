@@ -1,37 +1,46 @@
 ---
-seoTitle: Juan Gómez | Automatizaciones, Backend y DevOps | Cuernavaca, MX
-title: Proyectos Wordpress
-description: "Ingeniero de Plataformas Web e Infraestructura con experiencia avanzada en modernización y despliegues de plataformas empresariales en ecosistemas Cloud."
+seoTitle: "Arquitectura WordPress Escalable y Flujos de Trabajo CI/CD | Juan Gómez"
+title: "Portafolio de WordPress"
+icon: "work"
+description: "Ingeniería avanzada en WordPress enfocada en arquitecturas de alto rendimiento, pipelines CI/CD automatizados y desarrollo de componentes personalizados."
 date: "2025-02-15"
 noComment: true
 noDate: true
 noRelated: true
 ---
 
-## SolveIQ
+## Ingeniería de WordPress Escalable para Empresas
 
-SolveIQ es parte de Asurvio, una compañía de Soporte para PCs con Windows. Lideré los esfuerzos de rediseño, configuración y arquitectura del proceso de despliegue en WP Engine, garantizando que el ecosistema de múltiples entornos (desarrollo, staging y producción) funcionara de forma fluida y sin interrupciones.
+Mi enfoque en WordPress va más allá de la construcción de sitios simples; me centro en diseñar plataformas performantes, seguras y fáciles de mantener que potencien a los equipos de marketing mientras satisfacen los requisitos técnicos más exigentes.
 
-Se construyeron múltiples componentes a la medida mediante ACF y CSS personalizado para estructurarlos modularmente como bloques nativos de Gutenberg, incluyendo el desarrollo de widgets personalizados para los filtros de las secciones de búsqueda compleja del sitio.
+### SolveIQ (Asurvio)
 
-**Tecnologías:** Wordpress, PHP, Javascript, CSS, MariaDB, Búsqueda Facetada, Pipelines CI/CD, WP Engine.
+Trabajando con una importante empresa de soporte técnico para Windows, diseñé un pipeline de entrega robusto para estabilizar su presencia digital.
 
-[Ver Sitio SolveIQ](https://www.solveiq.com)
+*   **Ingeniería:** Rediseñé componentes arquitectónicos clave y establecí una estrategia de despliegue multi-entorno (Desarrollo, Staging, Producción) a través de **WP Engine**.
+*   **Desarrollo Personalizado:** Construí una extensa librería de bloques Gutenberg utilizando **ACF** y CSS personalizado, junto con widgets de búsqueda especializada mediante **Faceted Search**.
+*   **Stack:** PHP, JavaScript, MariaDB, Pipelines CI/CD.
 
-## Ocean Protection Council
+### Ocean Protection Council (Agencia Estatal de California)
 
-El 'Ocean Protection Council' de California es una agencia estatal dedicada a proteger los litorales y el océano californiano (creada en 2004 por el COPA). Trabajé en el rediseño estructural de más de 20 componentes interactivos. Dado que las políticas de seguridad nos impedían modificar directamente su código en producción, empaquetamos y entregamos todo el ecosistema de código junto a instrucciones extremadamente precisas para que su equipo interno ejecutara la actualización de los componentes en su propio entorno aislado.
+Para esta entidad gubernamental, proporcioné consultoría técnica para una modernización de UI/UX a gran escala.
 
-**Tecnologías:** Wordpress, PHP, Javascript, CSS.
+*   **Contribución:** Diseñé más de 20 componentes de alta fidelidad bajo estrictos protocolos de despliegue, proporcionando documentación detallada y código fuente para la integración interna.
+*   **Enfoque:** Accesibilidad, rendimiento y mantenibilidad del código.
 
-[Ver Sitio OPC](https://opc.ca.gov)
+### Dementia Care Aware (UC San Francisco / DHCS)
 
-## Dementia Care Aware
+Lideré la migración y reingeniería de esta plataforma crítica de capacitación en salud.
 
-Dementia Care Aware es un gran programa a nivel estado (California) lanzado por el Departamento de Servicios de Atención Médica (DHCS) en 2022 para capacitar a proveedores de atención médica primaria. Dirigí técnica y operativamente el proceso de rediseño y la migración granular de contenidos desde una infraestructura anterior, hacia un entorno de servidor estandarizado y resiliente alojado directamente en servidores cloud de AWS.
+*   **Migración:** Gestioné la transición de una plataforma heredada a un entorno seguro y nativo de la nube alojado en **AWS**.
+*   **Capacitación:** Implementé un sistema de componentes modulares utilizando **Elementor** para permitir a usuarios no técnicos gestionar el contenido sin comprometer el rendimiento del sitio.
 
-Para dotar al cliente de una autonomía técnica completa a futuro, todos los componentes fueron esquematizados como módulos reutilizables bajo Elementor, permitiendo que un panel administrativo no-técnico pudiera escalar la estructura fácilmente.
+---
 
-**Tecnologías:** Wordpress, Elementor, PHP, Javascript, CSS, MariaDB, AWS.
+### Recursos de Ingeniería
 
-[Ver Sitio DCA](https://www.dementiacareaware.org)
+Utilizo herramientas modernas para asegurar que los despliegues de WordPress sean rápidos, seguros y reproducibles:
+
+*   **Estrategia WordPress:** Enfoque en integraciones headless, caché avanzada y escalado automatizado en infraestructura cloud.
+
+> **¿Necesitas escalar tu infraestructura de WordPress?** [Hablemos](https://juaning.dev/es/contacto/).

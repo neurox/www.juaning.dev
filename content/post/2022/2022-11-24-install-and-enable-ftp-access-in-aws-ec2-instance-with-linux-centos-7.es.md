@@ -1,73 +1,54 @@
 ---
-title: Instalar y habilitar acceso FTP en una instancia AWS EC2 con Linux Centos 7
-description: "Te guiaré a través de la manera más rápida y fácil de configurar el acceso FTP
-a una instancia EC2 con la distribución Centos 7 en AWS (Amazon Web Services)"
-slug: "instalar-y-habilitar-acceso-ftp-en-una-instancia-aws-ec2-con-linux-centos-7"
+title: "Configuración de Acceso FTP Seguro en AWS EC2 (CentOS 7)"
+seoTitle: "Configurar VSFTPD en AWS EC2 CentOS 7 | Juan Gómez"
+description: "Una guía profesional para instalar y endurecer VSFTPD en instancias de AWS EC2 con CentOS 7 para transferencias de datos controladas en infraestructuras heredadas."
 date: 2022-11-24
+categories: ["DevOps", "Cloud"]
+tags: ["AWS", "EC2", "CentOS", "VSFTPD", "Infraestructura"]
+icon: "terminal"
 ---
 
-Te guiaré a través de la manera más rápida y fácil de configurar el acceso FTP
-a una instancia EC2 con la distribución Centos 7 en AWS (Amazon Web Services),
-vamos a usar VSFTPD (Very Secure FTP Daemon) así que el primer paso es instalarlo.
+La gestión de infraestructuras en la nube heredadas a menudo requiere equilibrar los protocolos de seguridad modernos con las necesidades tradicionales de transferencia de datos. Si bien **SFTP** (SSH File Transfer Protocol) es el estándar de la industria para transferencias seguras, ciertos flujos de trabajo empresariales o integraciones legacy aún requieren un entorno **FTP** robusto.
 
-<h2>Instalación y configuración de VSFTPD</h2>
+Esta guía detalla el proceso de instalación y configuración de **VSFTPD** (Very Secure FTP Daemon) en una instancia de AWS EC2 con Linux CentOS 7.
 
-<h3>Paso 1: Instala VSFTPD</h3>
+> **⚠️ Nota de Seguridad:** El protocolo FTP estándar transmite datos en texto plano. Para entornos de producción, recomiendo encarecidamente utilizar **SFTP** o configurar **FTPS** (FTP sobre SSL). Esta guía se centra en la configuración base para entornos controlados.
 
-1. Actualiza el administrador de paquetes:
-{{< highlight zsh >}}
-sudo yum update
-{{< /highlight >}}
+---
 
-2. Instala el software VSFTP:
-{{< highlight zsh >}}
-sudo yum install vsftpd
-{{< /highlight >}}
+## 1. Instalación de VSFTPD
 
-3. Iniciar el servicio:
-{{< highlight zsh >}}
+El primer paso es instalar el demonio y asegurar que se inicialice correctamente dentro del gestor de servicios del sistema.
+
+```zsh
+# Actualizar el gestor de paquetes e instalar vsftpd
+sudo yum update -y
+sudo yum install vsftpd -y
+
+# Habilitar e iniciar el servicio
 sudo systemctl start vsftpd
-{{< /highlight >}}
-
-4. Configura el servicio inicie automáticamente cuando cargue el servidor:
-{{< highlight zsh >}}
 sudo systemctl enable vsftpd
-{{< /highlight >}}
+```
 
-<h2>Creación de usuarios y configuración de permisos</h2>
+## 2. Gestión de Usuarios y Seguridad
 
-<h3>Paso 2: Crea un nuevo usuario FTP</h3>
+Crear un usuario dedicado y restringido es esencial para mantener el principio de menor privilegio.
 
-1. El siguiente comando crea el nuevo usuario:
-{{< highlight zsh >}}
+```zsh
+# Crear un usuario FTP dedicado
 sudo adduser ftpuser
-{{< /highlight >}}
-
-2. Asigna un password para el usuario:
-{{< highlight zsh >}}
 sudo passwd ftpuser
-{{< /highlight >}}
 
-3. Agrega el nuevo usuario la lista de usuarios de VSFTP:
-{{< highlight zsh >}}
+# Añadir a la lista de usuarios permitidos
 echo "ftpuser" | sudo tee -a /etc/vsftpd/user_list
-{{< /highlight >}}
+```
 
-<h3>Paso 3: Configura VSFTPD</h3>
+## 3. Ajuste de Configuración
 
-1. Primero, crea una copia de respaldo del archivo de configuración:
-{{< highlight zsh >}}
-sudo cp /etc/vsftpd/vsftpd.conf /etc/vsftpd/vsftpd.conf.default
-{{< /highlight >}}
+Debemos modificar el archivo `vsftpd.conf` para imponer reglas de acceso estrictas, incluyendo "jaulas" `chroot` para evitar que los usuarios naveguen fuera de sus directorios de inicio.
 
-2. Abre el archivo de configuración con vim:
-{{< highlight zsh >}}
-sudo vi /etc/vsftpd/vsftpd.conf
-{{< /highlight >}}
-
-3. Busca las siguientes variables en el archivo y actualízalas como se muestra a continuación:<br>
-Nota: Es probable que algunas de las variables no existan, solo agrégalas al final de archivo.
-{{< highlight zsh >}}
+```zsh
+# Editar /etc/vsftpd/vsftpd.conf y actualizar lo siguiente:
 anonymous_enable=NO
 local_enable=YES
 write_enable=YES
@@ -76,43 +57,44 @@ allow_writeable_chroot=YES
 userlist_enable=YES
 userlist_file=/etc/vsftpd/user_list
 userlist_deny=NO
-{{< /highlight >}}
+```
 
-4. Reiniciar el servicio:
-{{< highlight zsh >}}
+Después de modificar la configuración, reinicia el servicio:
+```zsh
 sudo systemctl restart vsftpd
-{{< /highlight >}}
+```
 
-<h3>Paso 4: Crea una carpeta para el nuevo usuario</h3>
+## 4. Estructura de Directorios y Permisos
 
-1. Crea la carpeta dentro del directorio raíz del usuario:
-{{< highlight zsh >}}
+Establece un entorno de carga estructurado para el usuario:
+
+```zsh
 sudo mkdir -p /home/ftpuser/ftp/upload
-{{< /highlight >}}
-
-2. Asigna los permisos de acceso de la siguiente manera:
-{{< highlight zsh >}}
 sudo chmod -R 755 /home/ftpuser/ftp
 sudo chown -R ftpuser: /home/ftpuser/ftp
-{{< /highlight >}}
+```
 
-<h2>Habilitar la autenticación por contraseña para el usuario FTP</h2>
+## 5. Habilitar Autenticación por Contraseña vía SSH
 
-<h3>Paso 5: Habilitar la autenticación por contraseña en SSH para el usuario FTP</h3>
+En las instancias estándar de AWS EC2, la autenticación por contraseña suele estar deshabilitada en favor de las llaves SSH. Si tu flujo de trabajo FTP requiere acceso basado en contraseña, debes configurar una regla específica en `sshd_config`.
 
-1. Edita el archivo sshd_config:
-{{< highlight zsh >}}
-sudo vi /etc/ssh/sshd_config
-{{< /highlight >}}
-
-2. Agrega las siguientes líneas al final del archivo:
-{{< highlight zsh >}}
+```ssh
+# Añadir al final de /etc/ssh/sshd_config
 Match User ftpuser
   PasswordAuthentication yes
   ChrootDirectory /home/ftpuser/ftp
-{{< /highlight >}}
+```
 
-3. Reiniciar el servicio:
-{{< highlight zsh >}}
+Reinicia el servicio SSH para aplicar los cambios:
+```zsh
 sudo service sshd restart
-{{< /highlight >}}
+```
+
+---
+
+## Conclusión
+
+Al seguir estos pasos, has establecido una puerta de enlace FTP funcional en tu infraestructura de AWS. Para una seguridad de nivel empresarial, considera complementar esto con reglas de Grupos de Seguridad de AWS para restringir el acceso a rangos de IP específicos.
+
+> **¿Necesitas modernizar tu infraestructura en la nube?**
+> Como especialista en DevOps, ayudo a las empresas a transicionar de protocolos de transferencia heredados a una automatización segura y nativa de la nube. [Conectemos](https://juaning.dev/es/contacto/) para blindar tu entorno AWS.

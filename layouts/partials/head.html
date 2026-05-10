@@ -7,21 +7,64 @@
 <title>{{ $title }}</title>
 
 {{ $desc := .Description | default .Site.Params.description }}
-{{ if $desc }}<meta name="description" content="{{ $desc }}">{{ end }}
+{{ if $desc }}
+<meta name="description" content={{ $desc }}>{{ end }}
+
+<!-- Preconnect and Load Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=block" rel="stylesheet">
+
 
 <!-- Tailwind compiled via Hugo Pipes & PostCSS -->
 {{- /* Tailwind compiled via Hugo Pipes & PostCSS */ -}}
 {{- $styles := resources.Get "css/tailwind.css" | postCSS | minify | fingerprint -}}
-<link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
+<link rel="stylesheet" href={{ $styles.RelPermalink }} integrity={{ $styles.Data.Integrity }}>
+
+<style>
+  /* Atomic guard to block all animations until the page is stable and user interacts */
+  html.no-transitions *,
+  html.no-transitions *:before,
+  html.no-transitions *:after {
+    transition: none !important;
+    animation: none !important;
+  }
+</style>
+<script>
+  (function() {
+    const doc = document.documentElement;
+    doc.classList.add('no-transitions');
+    
+    const unlock = () => {
+      if (!doc.classList.contains('no-transitions')) return;
+      // Final paint check
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          doc.classList.remove('no-transitions');
+        }, 300); // Smooth hand-off
+      });
+      // Cleanup
+      ['mousedown', 'mousemove', 'keydown', 'scroll', 'touchstart'].forEach(e => 
+        window.removeEventListener(e, unlock));
+    };
+
+    // Unlock on first human interaction
+    ['mousedown', 'mousemove', 'keydown', 'scroll', 'touchstart'].forEach(e => 
+      window.addEventListener(e, unlock, { once: true, passive: true }));
+
+    // Absolute safety fallback
+    window.addEventListener('load', () => setTimeout(unlock, 5000));
+  })();
+</script>
 
 <!-- Hugo Chroma Syntax Highlighting (Dracula Theme) -->
 {{ $syntax := resources.Get "css/syntax.css" | minify | fingerprint }}
-<link rel="stylesheet" href="{{ $syntax.RelPermalink }}" integrity="{{ $syntax.Data.Integrity }}">
+<link rel="stylesheet" href={{ $syntax.RelPermalink }} integrity={{ $syntax.Data.Integrity }}>
 
 {{ partial "internal/seo_schema.html" . }}
 {{ partial "internal/opengraph.html" . }}
 {{ partial "internal/twitter_cards.html" . }}
 
 {{ if and (site.Config.Services.GoogleAnalytics.ID) (hugo.IsProduction) }}
-    {{ partial "internal/google_analytics.html" . }}
+{{ partial "internal/google_analytics.html" . }}
 {{ end }}

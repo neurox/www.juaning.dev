@@ -1,49 +1,56 @@
 ---
-seoTitle: Juan Gómez | Automatizaciones, Backend y DevOps | Cuernavaca, MX
-title: Juan Gómez | Automatizaciones, Backend y DevOps
-description: "Desarrollador Full Stack con más de 8 años de experiencia
-  en CMS, stack MERN y DevOps. Especializado en soluciones web escalables,
-  desarrollo de APIs e infraestructura en la nube. ¡Construyamos juntos!"
+seoTitle: "Juan Gómez · Ingeniero de Software Senior y Arquitecto de Backend | Cuernavaca, MX"
+title: "Sobre Mí"
+icon: "account_circle"
+description: "Ingeniero de Software Senior y Arquitecto de Backend especializado en sistemas de alta disponibilidad, Drupal 11, WordPress y DevOps. Más de 9 años de experiencia construyendo infraestructuras escalables."
 date: "2022-11-12"
-slug: "acerca"
 noComment: true
 noDate: true
-# menu:
-#   subpage:
-#     identifier: about-subpage
-#     parent: about
-#     name: About Subpage
-#     title: About Subpage
-#     url: /about/subpage/
-#     weight: 1
-#   subpage2:
-#     identifier: about-subpage2
-#     parent: about
-#     name: Second About Subpage
-#     title: Second About Subpage
-#     url: /about/subpage2/
-#     weight: 10
+url: "/es/acerca/"
+aliases: [/about/]
 ---
 
-Como Ingeniero de Plataformas Web e Infraestructura, me especializo en resolver desafíos de ingeniería de alta complejidad para clientes corporativos B2B. Con más de 9 años de experiencia práctica, mi enfoque radica en diseñar infraestructuras Cloud resilientes, ingeniería de plataformas y entregar aplicaciones empresariales modernas y escalables.
+## Ingeniero de Software Senior | Arquitecto de Backend | DevOps e Ingeniería de Plataformas | Experto en Drupal y WordPress
 
-## Ingeniería Estratégica y Valor de Negocio
+Hola, soy **Juan José Gómez López**. Soy un Ingeniero de Software Senior y Arquitecto de Backend con sede en **Cuernavaca, México**, dedicado a diseñar, escalar y optimizar plataformas web empresariales complejas para organizaciones globales.
 
-En el acelerado ecosistema digital actual, las corporaciones requieren más que solo código: necesitan estrategias arquitectónicas robustas que garanticen alta disponibilidad y cero tiempos de inactividad (zero downtime). Operando bajo un modelo Nearshore desde México, me asocio con empresas de clase mundial para brindar consultoría técnica y arquitectónica de élite:
+Bienvenidos a mi rincón personal en la web (que, para mantener las cosas rápidas y ligeras, está construido de forma estática con [Hugo](https://gohugo.io/)).
 
-*   **Modernización de Sistemas Legacy:** Refactorización de aplicaciones monolíticas y obsoletas hacia arquitecturas basadas en microservicios, preparadas para escalar.
-*   **Arquitectura CMS Empresarial:** Dominio experto de implementaciones avanzadas en Drupal y Umbraco para ecosistemas de contenido masivos bajo transformación digital.
-*   **Infraestructura Cloud:** Diseño de entornos automatizados y de auto-escalado dentro de AWS (EC2, S3, Load Balancers) integrados de forma nativa con pipelines CI/CD en Docker para acelerar la cadencia de los despliegues y aislar el error humano.
-*   **APIs de Alto Rendimiento:** Construcción e integración de sistemas backend robustos y altamente seguros utilizando PHP 8+ y el ecosistema moderno de JS.
+### Construyendo para la Escalabilidad y la Resiliencia
 
-## Historial y Ejecución
+Con más de **9 años de experiencia en desarrollo full-stack**, mi carrera se ha definido por convertir requisitos de negocio intrincados en infraestructuras digitales de alta disponibilidad. Me especializo profundamente en el ecosistema PHP, particularmente en la arquitectura de soluciones empresariales utilizando **Drupal (versiones 7 a 11)** y **WordPress**.
 
-He liderado exitosamente equipos técnicos especializados a través de intrincados cambios sistémicos, incluyendo migraciones masivas de bases de datos y sincronizaciones cross-system para entidades gubernamentales y contratistas de defensa de primer nivel. Mi filosofía de ingeniería prioriza los protocolos de seguridad estricta, la accesibilidad impecable (WCAG) y métricas de Core Web Vitals excepcionales para maximizar el retorno de inversión (ROI) tecnológico.
+Cuento con una trayectoria comprobada en el diseño de arquitecturas multisitio y sistemas de alta disponibilidad. Ya sea ejecutando **migraciones sin tiempo de inactividad** para decenas de miles de usuarios, o construyendo sistemas de sincronización complejos que procesan colas transaccionales masivas, mi objetivo siempre es entregar plataformas seguras, escalables y resilientes.
 
-## Currículum Vitae 
+### Filosofía de Ingeniería: De Entornos Empresariales a Micro-Frameworks
 
-Para obtener una línea de tiempo cronológica y detallada de mis roles corporativos, competencias técnicas específicas y certificaciones formales, puedes revisar mi Currículum Vitae íntegro.
+Mi formación en electrónica me inculcó un aprecio fundamental por cómo funcionan las cosas "bajo el capó". Esto impulsa mi enfoque hacia la arquitectura de software: **elegir la herramienta adecuada para el trabajo**.
 
-[Descargar CV en PDF](/pdf/juan-gomez-cv.pdf)
+Si bien mi día a día suele involucrar entornos empresariales pesados e infraestructuras en la nube (AWS, Acquia, Pantheon), me apasiona igualmente el minimalismo en el código. Cuando el proyecto lo requiere, me encanta construir con herramientas ligeras como **FlightPHP** y **SQLite** para crear software altamente eficiente y consciente de los recursos.
 
-Hablemos sobre cómo podemos rediseñar y asegurar el futuro de tu plataforma tecnológica. [Conéctate conmigo](/es/contacto/).
+### DevOps, Automatización y el Futuro
+
+Una aplicación es tan buena como la infraestructura sobre la que se ejecuta. Una parte significativa de mi enfoque está en la **ingeniería de plataformas, la integración de sistemas y DevOps**. Estoy modernizando continuamente los flujos de trabajo de despliegue heredados, aprovechando **Docker** y transitando hacia plataformas de despliegue modernas auto-alojadas como **Dokploy** para establecer una verdadera infraestructura nativa de la nube.
+
+Más allá de la arquitectura web tradicional, exploro activamente la intersección entre la ingeniería de backend y la **IA**. Utilizo regularmente librerías de aprendizaje automático como **MLX** y ejecuto modelos como **LLaMA** y **Qwen** localmente para automatizar tareas y acelerar mis flujos de trabajo de desarrollo.
+
+### Conectemos
+
+Siempre estoy buscando el próximo desafío arquitectónico y prefiero colaborar con equipos internacionales en entornos remotos.
+
+Ya sea que quieras discutir sobre arquitectura de CMS empresariales, los matices del despliegue local de LLMs, o simplemente compartir una excelente taza de café (preferiblemente un espresso con microespuma de textura perfecta), me encantaría saber de ti.
+
+*   **Correo electrónico:** [juanjose@ingomez.com](mailto:juanjose@ingomez.com)
+*   **LinkedIn:** [linkedin.com/in/juaningdotdev](https://www.linkedin.com/in/juaningdotdev)
+*   **GitHub:** [github.com/neurox](https://github.com/neurox)
+
+---
+
+### Currículum Profesional
+
+Para una cronología detallada de mis roles profesionales, competencias técnicas y certificaciones formales, puedes revisar mi Curriculum Vitae oficial.
+
+<a href="/pdf/juan-gomez-cv.pdf" class="flex items-center gap-2 text-hud-cyan hover:text-cyan-400 transition-colors font-bold no-underline group" target="_blank">
+  <span class="material-symbols-outlined">description</span>
+  <span class="group-hover:underline">Descargar CV (PDF)</span>
+</a>

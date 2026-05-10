@@ -1,2 +1,41 @@
-{{ $img := resources.Get (printf "images/%s" .) }}
-<img src="{{ $img.RelPermalink }}" alt="{{ . }}">
+{{ $src := .Get 0 }}
+{{ $alt := .Get 1 | default (.Get 0) }}
+{{ $caption := .Get 2 }}
+
+{{ $image := resources.Get (printf "images/%s" $src) }}
+
+{{ if $image }}
+  {{ $webp := "" }}
+  {{ $mobile := "" }}
+  
+  {{ if ne $image.MediaType.SubType "svg" }}
+    {{ $webp = $image.Resize "1200x webp" }}
+    {{ $mobile = $image.Resize "600x webp" }}
+  {{ end }}
+  
+  <figure class="my-8">
+    <div class="relative overflow-hidden rounded-xl border border-white/10 glass-card">
+      {{ if eq $image.MediaType.SubType "svg" }}
+        <img src="{{ $image.RelPermalink }}" alt="{{ $alt }}" loading="lazy" class="w-full h-auto block">
+      {{ else }}
+        <img 
+          src="{{ $webp.RelPermalink }}" 
+          srcset="{{ $mobile.RelPermalink }} 600w, {{ $webp.RelPermalink }} 1200w"
+          sizes="(max-width: 600px) 100vw, (max-width: 1200px) 100vw, 1200px"
+          alt="{{ $alt }}" 
+          loading="lazy" 
+          class="w-full h-auto block"
+        >
+      {{ end }}
+    </div>
+    {{ if $caption }}
+      <figcaption class="text-center text-sm text-slate-500 mt-3 font-mono">
+        <span class="text-hud-cyan mr-1">></span> {{ $caption }}
+      </figcaption>
+    {{ end }}
+  </figure>
+{{ else }}
+  <div class="p-4 border border-red-500/50 bg-red-500/10 text-red-400 rounded-lg font-mono text-sm">
+    [!] ERROR: Image asset not found at assets/images/{{ $src }}
+  </div>
+{{ end }}

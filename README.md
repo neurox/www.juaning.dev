@@ -1,5 +1,8 @@
 # Juaning.dev — Senior Engineering Portfolio
 
+> **Maintained by [Juan Gómez](https://juaning.dev)**  
+> *Senior Software Engineer & Backend Architect specialized in high-performance CMS ecosystems and DevOps.*
+
 <div align="center">
   <h3>⚡ Engineering Portfolio & Tech Blog</h3>
   <p>A high-performance, bilingual static site architected for speed, maintainability, and clean design.</p>
@@ -94,3 +97,14 @@ git push origin main
 - `i18n/` — Translation dictionaries for English and Spanish strings.
 - `docs/` — **(Auto-generated)** Production-ready static output served by GitHub Pages.
 - `static/` — Static assets (images, fonts) copied directly to the output.
+
+---
+
+## 🤝 Let's Connect
+
+I am always looking for the next architectural challenge. If you're looking for expert consulting in **Drupal**, **WordPress**, or **Cloud Infrastructure**, feel free to reach out:
+
+- **Portfolio:** [juaning.dev](https://juaning.dev)
+- **LinkedIn:** [linkedin.com/in/juaningdotdev](https://www.linkedin.com/in/juaningdotdev)
+- **Contact:** [juanjose@ingomez.com](mailto:juanjose@ingomez.com)
+

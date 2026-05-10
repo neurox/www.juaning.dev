@@ -1,68 +1,100 @@
 {{ define "main" }}
-<div class="@container flex flex-col w-full py-10 px-4 md:px-0">
-    <header class="flex flex-col gap-4 mb-10 pb-10 border-b border-slate-200 dark:border-slate-800">
-        <h1 class="text-slate-900 dark:text-white text-4xl @[480px]:text-5xl lg:text-6xl font-black leading-tight tracking-[-0.033em]">
-            {{ .Title }}
-        </h1>
-    </header>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 max-w-6xl">
-        
-        <!-- Contact Information & Intro -->
-        <div class="flex flex-col gap-6">
-            <div class="prose prose-slate dark:prose-invert prose-lg max-w-none prose-headings:font-bold prose-h2:text-3xl prose-h2:@[480px]:text-4xl prose-h2:leading-tight">
-                {{ .Content }}
-            </div>
-            
-            <div class="mt-8 flex flex-col gap-4">
-                <a class="flex items-center gap-3 text-slate-700 dark:text-slate-300 hover:text-primary transition-colors" href="mailto:{{ .Site.Params.email }}">
-                    <div class="flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary">
-                        <span class="material-symbols-outlined">mail</span>
-                    </div>
-                    <div>
-                        <span class="block text-sm text-slate-500 font-medium">{{ T "contact_form_email" }}</span>
-                        <span class="font-bold text-lg">{{ .Site.Params.email }}</span>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <!-- Contact Form -->
-        <div class="bg-white dark:bg-surface-dark border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 shadow-sm">
-            <h3 class="text-3xl @[480px]:text-4xl leading-tight font-bold text-slate-900 dark:text-white mb-6">{{ T "contact_form_title" }}</h3>
-            
-            <form id="contact-form" method="post" class="flex flex-col gap-5">
-                
-                <div class="flex flex-col gap-1.5">
-                    <label for="name" class="text-sm font-semibold text-slate-700 dark:text-slate-300">{{ T "contact_form_name" }} <span class="text-red-500">*</span></label>
-                    <input type="text" id="name" name="name" required class="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 px-4 py-3 text-slate-900 dark:text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-slate-400">
-                </div>
-
-                <div class="flex flex-col gap-1.5">
-                    <label for="email" class="text-sm font-semibold text-slate-700 dark:text-slate-300">{{ T "contact_form_email" }} <span class="text-red-500">*</span></label>
-                    <input type="email" id="email" name="email" required class="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 px-4 py-3 text-slate-900 dark:text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-slate-400">
-                </div>
-
-                <div class="flex flex-col gap-1.5">
-                    <label for="subject" class="text-sm font-semibold text-slate-700 dark:text-slate-300">{{ T "contact_form_subject" }} <span class="text-red-500">*</span></label>
-                    <input type="text" id="subject" name="subject" required class="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 px-4 py-3 text-slate-900 dark:text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-slate-400">
-                </div>
-
-                <div class="flex flex-col gap-1.5">
-                    <label for="message" class="text-sm font-semibold text-slate-700 dark:text-slate-300">{{ T "contact_form_message" }} <span class="text-red-500">*</span></label>
-                    <textarea id="message" name="message" rows="5" required class="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 px-4 py-3 text-slate-900 dark:text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none placeholder:text-slate-400"></textarea>
-                </div>
-
-                <div class="mt-2">
-                    <div class="g-recaptcha" data-sitekey="6LfH2-oiAAAAAO8yeRMVEugLESUVWaUe8qUtTNCn" aria-label="Please complete the reCAPTCHA to verify that you are not a robot."></div>
-                </div>
-
-                <button type="submit" class="mt-4 flex w-full items-center justify-center rounded-lg bg-primary px-6 py-4 text-background-dark font-bold text-lg hover:bg-primary/90 transition-colors">
-                    {{ T "contact_form_submit" }}
-                </button>
-            </form>
-        </div>
+<div class="flex flex-col gap-8 md:gap-10">
+  <header class="glass-card rounded-xl p-8 border-l-[3px] border-l-hud-cyan relative overflow-hidden group">
+    <div class="absolute -top-10 -right-10 p-4 opacity-[0.03] pointer-events-none">
+      <span class="material-symbols-outlined text-[200px] text-hud-cyan">contact_mail</span>
     </div>
+    <h1
+      class="font-display text-3xl md:text-4xl font-bold leading-tight tracking-tight text-slate-100 relative z-10 flex items-center gap-4">
+      <div
+        class="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-lg bg-hud-cyan/10 border border-hud-cyan/20 text-hud-cyan shrink-0">
+        <span class="material-symbols-outlined text-3xl md:text-4xl">{{ .Params.icon | default "mail" }}</span>
+      </div>
+      {{ .Title }}
+    </h1>
+  </header>
+
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10">
+
+    <!-- Contact Information & Intro -->
+    <div
+      class="lg:col-span-5 flex flex-col gap-6 glass-card rounded-xl p-8 relative overflow-hidden group border-t-[3px] border-t-hud-purple accent-purple">
+      <div
+        class="prose prose-slate prose-invert prose-lg max-w-none prose-headings:font-display prose-headings:tracking-tight text-slate-300">
+        {{ .Content }}
+      </div>
+
+      <div class="mt-4 flex flex-col gap-4">
+        <a class="flex items-center gap-4 p-4 rounded-lg bg-slate-800/40 border border-white/5 hover:border-hud-cyan/50 hover:bg-slate-800/80 transition-colors transition-opacity transition-transform group/email"
+          href="mailto:{{ .Site.Params.email }}">
+          <div
+            class="flex items-center justify-center w-12 h-12 rounded bg-hud-cyan/10 text-hud-cyan group-hover/email:bg-hud-cyan group-hover/email:text-slate-900 transition-colors transition-opacity transition-transform">
+            <span class="material-symbols-outlined">alternate_email</span>
+          </div>
+          <div>
+            <span class="block text-xs font-mono text-slate-500 mb-1 uppercase tracking-wider">{{ T "contact_form_email"
+              }}</span>
+            <span
+              class="font-bold text-slate-200 group-hover/email:text-hud-cyan transition-colors transition-opacity transition-transform">{{
+              .Site.Params.email }}</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="lg:col-span-7 glass-card rounded-xl p-8 md:p-10">
+      <h3 class="text-2xl md:text-3xl font-display font-bold text-slate-100 mb-8 flex items-center gap-3">
+        <span class="material-symbols-outlined text-hud-cyan">send</span>
+        {{ T "contact_form_title" }}
+      </h3>
+
+      <form id="contact-form" method="post" class="flex flex-col gap-6">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="flex flex-col gap-2">
+            <label for="name" class="font-mono text-xs text-slate-400 tracking-wider uppercase">{{ T "contact_form_name"
+              }} <span class="text-hud-cyan">*</span></label>
+            <input type="text" id="name" name="name" required
+              class="w-full rounded bg-slate-900/80 border border-white/10 px-4 py-3 text-slate-200 focus:border-hud-cyan focus:ring-1 focus:ring-hud-cyan outline-none transition-colors transition-opacity transition-transform placeholder:text-slate-600 font-sans"
+              placeholder="John Doe">
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <label for="email" class="font-mono text-xs text-slate-400 tracking-wider uppercase">{{ T
+              "contact_form_email" }} <span class="text-hud-cyan">*</span></label>
+            <input type="email" id="email" name="email" required
+              class="w-full rounded bg-slate-900/80 border border-white/10 px-4 py-3 text-slate-200 focus:border-hud-cyan focus:ring-1 focus:ring-hud-cyan outline-none transition-colors transition-opacity transition-transform placeholder:text-slate-600 font-sans"
+              placeholder="john@example.com">
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <label for="subject" class="font-mono text-xs text-slate-400 tracking-wider uppercase">{{ T
+            "contact_form_subject" }} <span class="text-hud-cyan">*</span></label>
+          <input type="text" id="subject" name="subject" required
+            class="w-full rounded bg-slate-900/80 border border-white/10 px-4 py-3 text-slate-200 focus:border-hud-cyan focus:ring-1 focus:ring-hud-cyan outline-none transition-colors transition-opacity transition-transform placeholder:text-slate-600 font-sans">
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <label for="message" class="font-mono text-xs text-slate-400 tracking-wider uppercase">{{ T
+            "contact_form_message" }} <span class="text-hud-cyan">*</span></label>
+          <textarea id="message" name="message" rows="5" required
+            class="w-full rounded bg-slate-900/80 border border-white/10 px-4 py-3 text-slate-200 focus:border-hud-cyan focus:ring-1 focus:ring-hud-cyan outline-none transition-colors transition-opacity transition-transform resize-none placeholder:text-slate-600 font-sans"></textarea>
+        </div>
+
+        <div class="mt-2 opacity-90 transition-colors transition-opacity transition-transform">
+          <div class="g-recaptcha" data-sitekey="6LfH2-oiAAAAAO8yeRMVEugLESUVWaUe8qUtTNCn" data-theme="dark"
+            aria-label="Please complete the reCAPTCHA to verify that you are not a robot."></div>
+        </div>
+
+        <button type="submit"
+          class="mt-2 flex w-full items-center justify-center rounded bg-hud-cyan px-6 py-4 text-slate-950 font-bold text-lg hover:bg-[#38bdf8] transition-colors hover:shadow-[0_0_15px_rgba(14,165,233,0.4)] active:scale-[0.98]">
+          {{ T "contact_form_submit" }}
+        </button>
+      </form>
+    </div>
+  </div>
 </div>
 
 <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
@@ -76,7 +108,7 @@
 
   // Add event listener to contact form
   var form = document.getElementById('contact-form');
-  form.addEventListener('submit', function(event) {
+  form.addEventListener('submit', function (event) {
     event.preventDefault();
 
     // Get form data
@@ -110,7 +142,7 @@
     xhr.open('POST', 'https://formsubmit.co/ajax/contact@juaning.dev');
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.setRequestHeader('Accept', 'application/json');
-    xhr.onreadystatechange = function() {
+    xhr.onreadystatechange = function () {
       if (xhr.readyState === XMLHttpRequest.DONE) {
         if (xhr.status === 200) {
           Swal.fire({

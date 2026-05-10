@@ -8,25 +8,32 @@
     <language>en-US</language>
     <managingEditor>juanjose@ingomez.com (Juan Gómez)</managingEditor>
     <webMaster>juanjose@ingomez.com (Juan Gómez)</webMaster>
-    <copyright>JUANING</copyright><atom:link href="http://localhost:1313/portfolio/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>JUANING</copyright>
+    <lastBuildDate>Sat, 15 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/portfolio/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Drupal Projects</title>
+      <title>Drupal Portfolio</title>
       <link>http://localhost:1313/portfolio/drupal/</link>
       <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
       <author>juanjose@ingomez.com (Juan Gómez)</author>
       <guid>http://localhost:1313/portfolio/drupal/</guid>
-      <description>&lt;h2 id=&#34;altamed&#34; &gt;Altamed
+      <description>&lt;h2 id=&#34;high-complexity-drupal-engineering&#34; &gt;High-Complexity Drupal Engineering
 &lt;span&gt;
-    &lt;a href=&#34;#altamed&#34;&gt;
+    &lt;a href=&#34;#high-complexity-drupal-engineering&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h2&gt;&lt;p&gt;Colaborated with development and creative teams as a fullstack web developer in the redesign of pages structure and several components, views for search and integrated third party services APIs.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Technologies:&lt;/strong&gt; Drupal, PHP, MariaDB, Solr, AWS, Cloudflare.&lt;/p&gt;</description>
+&lt;/h2&gt;&lt;p&gt;My expertise in Drupal focuses on delivering robust, multisite architectures and executing seamless migrations for massive content ecosystems. I specialize in bridging the gap between creative design and resilient backend engineering.&lt;/p&gt;
+&lt;h3 id=&#34;featured-project-altamed-health-services&#34; &gt;Featured Project: Altamed Health Services
+&lt;span&gt;
+    &lt;a href=&#34;#featured-project-altamed-health-services&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;As a Senior Full Stack Developer, I collaborated with multidisciplinary teams to execute a comprehensive architectural redesign.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Umbraco Projects</title>
+      <title>Umbraco Portfolio</title>
       <link>http://localhost:1313/portfolio/umbraco/</link>
       <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
       <author>juanjose@ingomez.com (Juan Gómez)</author>
@@ -41,18 +48,25 @@
     </item>
     
     <item>
-      <title>Wordpress Projects</title>
+      <title>WordPress Portfolio</title>
       <link>http://localhost:1313/portfolio/wordpress/</link>
       <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
       <author>juanjose@ingomez.com (Juan Gómez)</author>
       <guid>http://localhost:1313/portfolio/wordpress/</guid>
-      <description>&lt;h2 id=&#34;solveiq&#34; &gt;SolveIQ
+      <description>&lt;h2 id=&#34;scalable-wordpress-engineering-for-enterprise&#34; &gt;Scalable WordPress Engineering for Enterprise
 &lt;span&gt;
-    &lt;a href=&#34;#solveiq&#34;&gt;
+    &lt;a href=&#34;#scalable-wordpress-engineering-for-enterprise&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h2&gt;&lt;p&gt;SolveIQ is part of Asurvio, a Windows PC Support company, I&amp;rsquo;ve worked in the redesign and the setup and configuration of the deployment process in WP Engine, ensuring that the tree environments of the site worked seamlessly (development, staging, production).&lt;/p&gt;</description>
+&lt;/h2&gt;&lt;p&gt;My approach to WordPress goes beyond simple site building; I focus on engineering performant, secure, and easily maintainable platforms that empower marketing teams while satisfying technical stakeholders.&lt;/p&gt;
+&lt;h3 id=&#34;solveiq-asurvio&#34; &gt;SolveIQ (Asurvio)
+&lt;span&gt;
+    &lt;a href=&#34;#solveiq-asurvio&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Working with a major Windows PC Support company, I engineered a robust delivery pipeline to stabilize their digital presence.&lt;/p&gt;</description>
     </item>
     
   </channel>

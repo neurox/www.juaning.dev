@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on JUANING.dev</title>
+    <title>Logbook on JUANING.dev</title>
     <link>http://localhost:1313/post/</link>
-    <description>Recent content in Posts on JUANING.dev</description>
+    <description>Recent content in Logbook on JUANING.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <managingEditor>juanjose@ingomez.com (Juan Gómez)</managingEditor>

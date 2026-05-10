@@ -1,101 +1,82 @@
 ---
-title: Cómo instalar Solr 8 en macOS 13 Ventura para compatibilidad con Drupal.
-description: "Si estás usando Drupal y necesitas instalar Solr para la funcionalidad de búsqueda,
-puedes encontrar problemas de compatibilidad con la última versión de Solr disponible a través de Homebrew.
-El esquema de Solr 9 aún no es compatible con Drupal, por lo que necesitarás instalar Solr 8 en su lugar. En esta guía,
-te guiaré a través del proceso de instalación de Solr 8 en macOS 13 Ventura."
-slug: "como-instalar-solr-8-en-macos-13-ventura-para-compatibilidad-con-drupal"
+title: "Instalación de Solr 8 en macOS Ventura: Guía para Ingenieros Drupal"
+seoTitle: "Instalar Solr 8 en macOS Ventura para Compatibilidad con Drupal | Juan Gómez"
+description: "Resuelve problemas de compatibilidad de esquemas entre Drupal y Solr 9 instalando Solr 8 en macOS Ventura. Una guía profesional para la paridad en entornos de desarrollo."
 date: 2023-04-14
+categories: ["Drupal", "Desarrollo"]
+tags: ["Solr", "macOS", "Search API", "Drupal 10"]
+icon: "terminal"
 ---
 
-<p>Como quizás hayas notado, la versión de Solr incluida en la última versión de Homebrew es la 9 y
-su esquema aún no es compatible con Drupal. Te mostraré cómo obtener la versión 8 de Solr, que sí es
-compatible con Drupal.</p>
+Al construir plataformas Drupal de nivel empresarial, mantener la paridad entre el desarrollo local y los entornos de producción es crítico. A menudo, las versiones más recientes disponibles a través de gestores de paquetes como Homebrew (como Solr 9) introducen cambios disruptivos o incompatibilidades de esquema con el ecosistema actual de **Drupal Search API**.
 
-<h2>Requisitos</h2>
+Para los desarrolladores que necesitan compatibilidad con **Solr 8** en macOS 13 Ventura, esta guía proporciona un camino de instalación estructurado y profesional.
 
-1. Homebrew
-2. Java 8
+## El Desafío de Compatibilidad
 
-<h2>Paso 1: Instalar Java 8 usando Homebrew</h2>
-<p>Si aún no has instalado Homebrew, puedes encontrar las instrucciones de instalación en <a href="https://brew.sh/" target="_blank">https://brew.sh/</a>.
-Después de instalar Homebrew, abre la Terminal y ejecuta el siguiente comando para instalar Java 8:</p>
-{{< highlight zsh >}}
+A partir de macOS Ventura, el paquete por defecto de Homebrew para Solr se ha movido a la versión 9.x. Sin embargo, muchos despliegues empresariales de Drupal todavía dependen del esquema de Solr 8.x para su estabilidad. Ejecutar versiones desajustadas puede provocar errores de indexación y resultados de búsqueda inconsistentes.
+
+---
+
+## Requisitos Previos
+
+Antes de comenzar, asegúrate de tener instalado:
+1.  **Homebrew** (El gestor de paquetes de macOS).
+2.  **Java 8** (Requerido para la estabilidad de Solr 8).
+
+## Paso 1: Instalar Java 8 vía Homebrew
+
+Solr 8 tiene una fuerte dependencia de Java 8. Para evitar conflictos de versiones, utilizamos el tap de `adoptopenjdk`:
+
+```zsh
 brew install --cask adoptopenjdk/openjdk/adoptopenjdk8
-{{< /highlight >}}
+```
 
-<h2>Paso 2: Encuentra la ruta de instalación de Java 8</h2>
-<p>Para encontrar la ruta del Java 8 instalado, ejecuta este comando en la Terminal:</p>
-{{< highlight zsh >}}
+## Paso 2: Configurar JAVA_HOME
+
+Para asegurar que Solr utilice la JVM correcta, debemos encontrar y exportar la ruta de `JAVA_HOME`.
+
+Verifica la ruta de instalación:
+```zsh
 /usr/libexec/java_home -v 1.8
-{{< /highlight >}}
+```
 
-<p>Toma nota de la salida, que debería ser algo como /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home.</p>
-<h2>Paso 3: Establecer la variable de entorno JAVA_HOME</h2>
-<p>Para establecer la variable de entorno JAVA_HOME, abre tu archivo de perfil de shell (p. ej., ~/.bash_profile, ~/.bashrc o ~/.zshrc)
-en un editor de texto y agrega la siguiente línea, reemplazando /ruta/al/java8 con la ruta que encontraste en el paso 2:</p>
-{{< highlight zsh >}}
-export JAVA_HOME="/ruta/al/java8"
-{{< /highlight >}}
-
-<p>Por ejemplo, si la ruta del paso 2 fue /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home,
-la línea que debes agregar a tu perfil de shell es:</p>
-{{< highlight zsh >}}
+Añade lo siguiente a tu perfil de shell (`.zshrc` o `.bash_profile`):
+```zsh
+# Reemplaza con la ruta encontrada arriba
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home"
-{{< /highlight >}}
-
-<p>Guarda el archivo y cierra el editor de texto.</p>
-<h2>Paso 4: Aplicar cambios</h2>
-<p>Ejecuta el siguiente comando para aplicar los cambios en la sesión actual:</p>
-{{< highlight zsh >}}
 source ~/.zshrc
-{{< /highlight >}}
+```
 
-<h2>Paso 5: Verificar la versión de Java</h2>
-<p>Verifica que estés usando la versión correcta de Java ejecutando:</p>
-{{< highlight zsh >}}
-java -version
-{{< /highlight >}}
+## Paso 3: Instalación Manual de Solr 8
 
-<h2>Paso 6: Descargar Solr 8</h2>
-<p>Dirígete al <a href="https://archive.apache.org/dist/lucene/solr/8.9.0/" target="_blank">archivo de Apache Solr 8</a>
-y descarga el archivo .tgz para esa versión.</p>
-<p>Extrae el archivo descargado:
-Abre la Terminal y navega hasta el directorio donde se encuentra el archivo .tgz descargado. Extrae el contenido usando el siguiente comando:</p>
-{{< highlight zsh >}}
-tar xzf solr-8.9.0.tgz
-{{< /highlight >}}
+Dado que Homebrew prioriza la versión 9, realizaremos una instalación manual en un directorio `/opt` dedicado para un mejor control.
 
-<p>Reemplaza solr-8.9.0.tgz con el nombre del archivo .tgz descargado.</p>
-<p>Mueve el directorio extraído a la ubicación deseada: Puedes mover el directorio extraído a la ubicación que prefieras.
-Por ejemplo, puedes moverlo al directorio /opt:</p>
-{{< highlight zsh >}}
-sudo mv solr-8.9.0 /opt/solr
-{{< /highlight >}}
+1.  **Descarga:** Obtén los binarios heredados del [Archivo de Apache Solr 8](https://archive.apache.org/dist/lucene/solr/8.9.0/).
+2.  **Extraer y Mover:**
+    ```zsh
+    tar xzf solr-8.9.0.tgz
+    sudo mv solr-8.9.0 /opt/solr
+    ```
 
-<h2>Paso 7: Configurar variables de entorno</h2>
-<p>Agrega el binario de Solr a la ruta PATH de tu sistema agregando la siguiente línea a tu perfil de shell (p. ej., ~/.bash_profile, ~/.bashrc o ~/.zshrc):</p>
-{{< highlight zsh >}}
+## Paso 4: Integración en el Path del Sistema
+
+Añade el binario de Solr al PATH de tu sistema para permitir el acceso global a los comandos:
+
+```zsh
 export PATH=$PATH:/opt/solr/bin
-{{< /highlight >}}
+source ~/.zshrc
+```
 
-<p>Guarda el archivo y luego ejecuta source ~/.bash_profile, source ~/.bashrc o source ~/.zshrc (dependiendo de cuál archivo editaste) para aplicar los cambios inmediatamente.
-<h2>Paso 8: Iniciar Solr</h2>
-<p>Ejecuta el siguiente comando en la Terminal para iniciar Solr:</p>
-{{< highlight zsh >}}
-solr start
-{{< /highlight >}}
+## Paso 5: Automatización con un Launch Daemon
 
-<h2>Paso 9: Verificar la instalación de Solr</h2>
-<p>Comprueba que Solr esté ejecutándose abriendo un navegador web y navegando a <a href="http://localhost:8983/solr/" target="_blank">http://localhost:8983/solr/</a>.
-Deberías ver el panel de administración de Solr.</p>
-<h2>Paso 10: Crear un Launch Daemon</h2>
-<p>Ahora que Solr está instalado, tendrás que iniciarlo cada vez que reinicies el ordenador. Para evitar eso, vamos a crear
-un Launch Daemon que lanzará el servicio Solr automáticamente.</p>
-<h3>Crear un archivo plist</h3>
-<p>Crea un nuevo archivo llamado org.apache.solr.plist utilizando un editor de texto como nano o vim, y agrega el siguiente contenido:</p>
+Para una configuración local profesional, Solr debería ejecutarse como un servicio en segundo plano que persista tras los reinicios. Logramos esto usando una configuración `plist` de macOS.
 
-{{< highlight xml >}}
+### Crear el LaunchAgent
+
+Crea el archivo `~/Library/LaunchAgents/org.apache.solr.plist` con la siguiente definición:
+
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -119,22 +100,19 @@ un Launch Daemon que lanzará el servicio Solr automáticamente.</p>
     <string>/opt/solr</string>
 </dict>
 </plist>
-{{< /highlight >}}
+```
 
-<h3>Mover el archivo plist a la carpeta LaunchAgents</h3>
-<p>Copia el archivo org.apache.solr.plist en la carpeta ~/Library/LaunchAgents/:</p>
-{{< highlight zsh >}}
-cp org.apache.solr.plist ~/Library/LaunchAgents/
-{{< /highlight >}}
+### Cargar el Servicio
 
-<h3>Cargar el agente de lanzamiento</h3>
-<p>Carga el archivo plist en launchd:</p>
-{{< highlight zsh >}}
+```zsh
 launchctl load ~/Library/LaunchAgents/org.apache.solr.plist
-{{< /highlight >}}
+```
 
-<p>Ahora, Solr debería iniciarse automáticamente cada vez que inicies sesión en tu cuenta de usuario.
-Si deseas detener Solr de iniciarse automáticamente, puedes deshabilitar el archivo plist:</p>
-{{< highlight zsh >}}
-launchctl unload ~/Library/LaunchAgents/org.apache.solr.plist
-{{< /highlight >}}
+---
+
+## Verificación
+
+Navega a [http://localhost:8983/solr/](http://localhost:8983/solr/) para acceder al Panel de Administración de Solr. Ahora tienes un entorno estable y automatizado de Solr 8 listo para el desarrollo empresarial con Drupal.
+
+> **¿Tienes problemas de rendimiento en tus búsquedas?**
+> La optimización de núcleos de Solr y esquemas de búsqueda es una parte crítica de mis servicios de arquitectura de backend. [Conectemos](https://juaning.dev/es/contacto/) para ajustar tu infraestructura de búsqueda empresarial.

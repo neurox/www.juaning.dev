@@ -1,19 +1,33 @@
 ---
-seoTitle: Juan Gómez | Automations, Backend & DevOps | Cuernavaca, MX
-title: Drupal Projects
-description: "Senior Full Stack Developer with 8+ years experience in CMS, MERN
- stack, and DevOps. Specializing in scalable web solutions, API development,
- and cloud infrastructure. Let's build together!"
+seoTitle: "Enterprise Drupal Architecture & Legacy Migrations | Juan Gómez"
+title: "Drupal Portfolio"
+icon: "work"
+description: "High-availability Drupal ecosystem design, complex migrations (D7/8 to 10/11), and enterprise-grade infrastructure strategies for corporate clients."
 date: "2025-02-15"
 noComment: true
 noDate: true
 noRelated: true
 ---
 
-## Altamed
+## High-Complexity Drupal Engineering
 
-Colaborated with development and creative teams as a fullstack web developer in the redesign of pages structure and several components, views for search and integrated third party services APIs.
+My expertise in Drupal focuses on delivering robust, multisite architectures and executing seamless migrations for massive content ecosystems. I specialize in bridging the gap between creative design and resilient backend engineering.
 
-**Technologies:** Drupal, PHP, MariaDB, Solr, AWS, Cloudflare.
+### Featured Project: Altamed Health Services
 
-[Check Site](https://www.altamed.org)
+As a Senior Full Stack Developer, I collaborated with multidisciplinary teams to execute a comprehensive architectural redesign. 
+
+*   **Scope:** Refactoring page structures and component libraries for improved scalability.
+*   **Engineering:** Developed advanced search views using **Apache Solr** and integrated complex third-party service APIs to streamline patient data delivery.
+*   **Infrastructure:** Deployed on **AWS** with high-performance caching layers via **Cloudflare**.
+
+---
+
+### Technical Spotlight: Reference Infrastructure
+
+To ensure consistency across enterprise deployments, I maintain a high-performance **Drupal Dockerized Base** for modern CI/CD workflows:
+
+*   **Architecture Reference:** [Dokerized Drupal with Dokploy support](https://github.com/neurox/dokerized-drupal)
+*   **Key Features:** Automated Nginx/Apache switching, MariaDB 10.11 optimization, and zero-downtime deployment strategies.
+
+> **Need expert Drupal consulting?** [Let's discuss your project](https://juaning.dev/contact).

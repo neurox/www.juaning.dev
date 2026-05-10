@@ -9,18 +9,25 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#13b6ec',
+        primary: '#0ea5e9', // Updated to match HUD cyan for legacy compatibility
         background: {
           light: '#f6f8f8',
-          dark: '#101d22',
+          dark: '#0b0f15', // Updated to match HUD bg
         },
         surface: {
           light: '#e2e8f0',
           dark: '#1e293b',
         },
+        hud: {
+          bg: '#0b0f15',
+          cyan: '#0ea5e9',
+          purple: '#8a2be2'
+        }
       },
       fontFamily: {
-        display: ["Inter", "sans-serif"],
+        sans: ['Inter', 'sans-serif'],
+        display: ['Geist', 'sans-serif'],
+        mono: ['JetBrains Mono', 'monospace'],
       },
     },
   },

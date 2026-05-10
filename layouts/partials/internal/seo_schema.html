@@ -1,40 +1,72 @@
-{{ if .IsHome }}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Person",
-      "@id": "{{ .RelPermalink | absURL }}#person",
+      "@id": "{{ " /" | absURL }}#person",
       "name": "Juan José Gómez López",
-      "jobTitle": "Consultor Senior Full Stack & Arquitecto Drupal",
-      "url": "{{ .RelPermalink | absURL }}",
+      "url": "{{ " /" | absURL }}",
+      "jobTitle": "Senior Software Engineer & Backend Architect",
+      "image": "{{ " samurai-logo.svg" | absURL }}",
+      "description": "Senior Software Engineer and Backend Architect specializing in Drupal 11, high-availability infrastructures, and DevOps automation.",
       "sameAs": [
         "https://linkedin.com/in/juaningdotdev",
         "https://github.com/neurox"
       ],
       "knowsAbout": [
-        "Drupal", "AWS", "PHP", "JavaScript", "Docker", "DevOps", "Arquitectura Cloud"
+        "Drupal 11", "WordPress", "PHP 8.x", "AWS", "Docker", "Platform Engineering", "Dokploy", "High Availability Systems", "Legacy Modernization"
       ]
     },
     {
-      "@type": "ProfessionalService",
-      "@id": "{{ .RelPermalink | absURL }}#service",
-      "name": "Juaning: Consultor Senior Drupal y Arquitecto Cloud AWS",
-      "description": "Servicios Nearshore de modernización de sistemas legacy, arquitecturas multi-tenant, y automatización de infraestructura en la nube.",
-      "provider": {
-        "@id": "{{ .RelPermalink | absURL }}#person"
+      "@type": "WebSite",
+      "@id": "{{ " /" | absURL }}#website",
+      "url": "{{ " /" | absURL }}",
+      "name": "JUANING.dev",
+      "description": "Technical consulting and engineering logs by Juan Gómez.",
+      "publisher": {
+        "@id": "{{ " /" | absURL }}#person"
       },
-      "areaServed": "Worldwide",
+      "inLanguage": "{{ .Language.Lang }}"
+    }
+    {{ if .IsHome }}
+    ,{
+      "@type": "ProfessionalService",
+      "@id": "{{ " /" | absURL }}#service",
+      "name": "Juaning: Enterprise Technical Consulting",
+      "description": "Senior-level technical consulting for enterprise web platforms, legacy refactoring, and cloud-native infrastructure automation.",
+      "url": "{{ " /" | absURL }}",
+      "priceRange": "$$$",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Cuernavaca",
         "addressRegion": "Morelos",
         "addressCountry": "MX"
       },
-      "priceRange": "$$$$"
+      "provider": {
+        "@id": "{{ " /" | absURL }}#person"
+      }
     }
+    {{ end }}
+    {{ if and .IsPage (eq .Type "post") }}
+    ,{
+      "@type": "TechArticle",
+      "headline": "{{ .Title }}",
+      "description": "{{ .Description | default .Summary | plainify }}",
+      "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+      "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
+      "author": {
+        "@id": "{{ " /" | absURL }}#person"
+      },
+      "publisher": {
+        "@id": "{{ " /" | absURL }}#person"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ .Permalink }}"
+      }
+    }
+    {{ end }}
   ]
 }
 </script>
-{{ end }}

@@ -4,12 +4,12 @@
     <div class="pagination">
         <div class="left pagination-item {{ if not .Paginator.HasPrev }}disabled{{ end }}">
             {{ if .Paginator.HasPrev }}
-                <a href="{{ .Paginator.Prev.URL }}">{{ $toNewPostsMessage }}</a>
+                <a href={{ .Paginator.Prev.URL }}>{{ $toNewPostsMessage }}</a>
             {{ end }}
         </div>
         <div class="right pagination-item {{ if not .Paginator.HasNext }}disabled{{ end }}">
             {{ if .Paginator.HasNext }}
-                <a href="{{ .Paginator.Next.URL }}">{{ $toOldPostsMessage }}</a>
+                <a href={{ .Paginator.Next.URL }}>{{ $toOldPostsMessage }}</a>
             {{ end }}
         </div>
     </div>

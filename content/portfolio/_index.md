@@ -2,6 +2,7 @@
 title: "Cloud Architecture & Enterprise CMS Portfolio"
 description: "Juaning's selected case studies featuring legacy system modernization, complex AWS infrastructure strategies, and advanced full stack enterprise web development."
 type: portfolio
+icon: work
 ---
 
 ## High-Complexity Corporate Engineering

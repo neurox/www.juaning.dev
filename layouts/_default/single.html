@@ -1,47 +1,58 @@
 {{ define "main" }}
-<article class="@container flex flex-col w-full py-10 px-4 md:px-0">
-    <header class="flex flex-col gap-4 mb-10 pb-10 border-b border-slate-200 dark:border-slate-800">
-        <h1 class="text-slate-900 dark:text-white text-4xl @[480px]:text-5xl lg:text-6xl font-black leading-tight tracking-[-0.033em]">
-            {{ .Title }}
-        </h1>
-        {{ if eq .Type "post" }}
-        <div class="flex flex-wrap items-center gap-4 text-sm text-slate-500 dark:text-slate-400 font-medium">
-            <span class="flex items-center gap-1">
-                <span class="material-symbols-outlined text-base">calendar_month</span>
-                {{ .Date.Format "January 2, 2006" }}
-            </span>
-            {{ if .Params.readingTime }}
-            <span>•</span>
-            <span class="flex items-center gap-1">
-                <span class="material-symbols-outlined text-base">schedule</span>
-                {{ .Params.readingTime }} {{ T "min_read" }}
-            </span>
-            {{ end }}
-        </div>
-        {{ end }}
-        
-        {{ with .Params.tags }}
-        <div class="flex flex-wrap gap-2 mt-2">
-            {{ range . }}
-            <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="inline-block px-3 py-1 bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors rounded-full text-xs font-bold uppercase tracking-wider">
-                {{ . }}
-            </a>
-            {{ end }}
-        </div>
-        {{ end }}
-    </header>
-
-    <div class="prose prose-slate dark:prose-invert prose-lg lg:prose-xl max-w-3xl lg:max-w-4xl mx-auto w-full prose-headings:font-bold prose-headings:tracking-tight prose-a:text-primary hover:prose-a:text-primary/80 prose-img:rounded-xl prose-h2:text-3xl prose-h2:@[480px]:text-4xl prose-h2:leading-tight prose-h3:text-xl prose-h3:leading-tight">
-        {{ .Content }}
-    </div>
-
+<article class="flex flex-col w-full gap-8 md:gap-10">
+  <header class="glass-card rounded-xl p-8 border-b-[3px] border-b-hud-cyan relative overflow-hidden group">
+    <h1
+      class="font-display text-slate-100 text-3xl md:text-4xl font-bold leading-tight tracking-tight mb-4 flex items-center gap-4">
+      {{ if .Params.icon }}
+      <div class="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-lg bg-hud-cyan/10 border border-hud-cyan/20 text-hud-cyan shrink-0">
+        <span class="material-symbols-outlined text-3xl md:text-4xl">{{ .Params.icon }}</span>
+      </div>
+      {{ end }}
+      {{ .Title }}
+    </h1>
     {{ if eq .Type "post" }}
-    {{ if site.Config.Services.Disqus.Shortname }}
-    <div class="mt-20 pt-10 border-t border-slate-200 dark:border-slate-800 max-w-3xl lg:max-w-4xl mx-auto w-full">
-        <h3 class="text-xl font-bold mb-8 text-slate-900 dark:text-white">{{ T "comments_title" }}</h3>
-        {{ partial "internal/disqus.html" . }}
+    <div class="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-400 uppercase tracking-wider">
+      <span class="flex items-center gap-1">
+        <span class="material-symbols-outlined text-sm">calendar_month</span>
+        SYS.LOG // {{ .Date.Format "2006.01.02" }}
+      </span>
+      {{ if .Params.readingTime }}
+      <span>|</span>
+      <span class="flex items-center gap-1">
+        <span class="material-symbols-outlined text-sm">schedule</span>
+        {{ .Params.readingTime }} {{ T "min_read" }}
+      </span>
+      {{ end }}
     </div>
     {{ end }}
+
+    {{ with .Params.tags }}
+    <div class="flex flex-wrap gap-2 mt-6">
+      {{ range . }}
+      <a href={{ "/tags/" | relLangURL }}{{ . | urlize }}
+        class="inline-block px-3 py-1 bg-slate-800/60 text-slate-300 hover:text-hud-cyan border border-white/5 hover:border-hud-cyan/50 transition-colors rounded text-xs font-mono uppercase tracking-wider">
+        <span class="text-hud-cyan mr-1">#</span>{{ . }}
+      </a>
+      {{ end }}
+    </div>
     {{ end }}
+  </header>
+
+  <div
+    class="glass-card rounded-xl p-8 md:p-12 prose prose-slate prose-invert max-w-none w-full prose-headings:font-display prose-headings:tracking-tight prose-a:text-hud-cyan hover:prose-a:text-cyan-400 prose-img:rounded-xl prose-h2:text-3xl prose-h2:md:text-4xl prose-h2:leading-tight prose-h3:text-xl prose-h3:leading-tight">
+    {{ .Content }}
+  </div>
+
+  {{ if eq .Type "post" }}
+  {{ if site.Config.Services.Disqus.Shortname }}
+  <div class="glass-card rounded-xl p-8 w-full">
+    <h3 class="text-xl font-display font-bold mb-8 text-slate-100 flex items-center gap-2">
+      <span class="material-symbols-outlined text-hud-cyan">forum</span>
+      {{ T "comments_title" }}
+    </h3>
+    {{ partial "internal/disqus.html" . }}
+  </div>
+  {{ end }}
+  {{ end }}
 </article>
 {{ end }}

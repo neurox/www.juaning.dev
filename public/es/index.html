@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es" class="dark">
+
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,17 +8,59 @@
 
 
 
-<title>Juan Gómez | Automatizaciones, Backend y DevOps</title>
-
-
-<meta name="description" content="Ingeniero de Plataformas Web e Infraestructura especializado en infraestructura escalable, ingeniería de plataformas y flujos de trabajo modernos en la nube para empresas B2B.">
-
-<link rel="stylesheet" href="/css/tailwind.min.72878975c601d2926c3df6095a5b54f0594d52a0745b98fe6b968c5b0ea9cfab.css" integrity="sha256-coeJdcYB0pJsPfYJWltU8FlNUqB0W5j&#43;a5aMWw6pz6s=">
+<title>Juan Gómez • Automatizaciones, Backend y DevOps</title>
 
 
 
-<link rel="stylesheet" href="/css/syntax.min.2faf3e5c7d9ee446d5d17cbe8082e9d49cee6f2f1a5729c458bcdb30524a8aee.css" integrity="sha256-L68&#43;XH2e5EbV0Xy&#43;gILp1Jzuby8aVynEWLzbMFJKiu4=">
+<meta name="description" content=Ingeniero&#32;de&#32;Plataformas&#32;Web&#32;e&#32;Infraestructura&#32;especializado&#32;en&#32;infraestructura&#32;escalable,&#32;ingeniería&#32;de&#32;plataformas&#32;y&#32;flujos&#32;de&#32;trabajo&#32;modernos&#32;en&#32;la&#32;nube&#32;para&#32;empresas&#32;B2B.>
 
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=block" rel="stylesheet">
+
+
+<link rel="stylesheet" href=/css/tailwind.min.ed298db517860ac10c95998fc60025742a9329d6814aa36968aab2df0f7ab3a6.css integrity=sha256-7SmNtReGCsEMlZmPxgAldCqTKdaBSqNpaKqy3w96s6Y&#61;>
+
+<style>
+   
+  html.no-transitions *,
+  html.no-transitions *:before,
+  html.no-transitions *:after {
+    transition: none !important;
+    animation: none !important;
+  }
+</style>
+<script>
+  (function() {
+    const doc = document.documentElement;
+    doc.classList.add('no-transitions');
+    
+    const unlock = () => {
+      if (!doc.classList.contains('no-transitions')) return;
+      
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          doc.classList.remove('no-transitions');
+        }, 300); 
+      });
+      
+      ['mousedown', 'mousemove', 'keydown', 'scroll', 'touchstart'].forEach(e => 
+        window.removeEventListener(e, unlock));
+    };
+
+    
+    ['mousedown', 'mousemove', 'keydown', 'scroll', 'touchstart'].forEach(e => 
+      window.addEventListener(e, unlock, { once: true, passive: true }));
+
+    
+    window.addEventListener('load', () => setTimeout(unlock, 5000));
+  })();
+</script>
+
+
+
+<link rel="stylesheet" href=/css/syntax.min.2faf3e5c7d9ee446d5d17cbe8082e9d49cee6f2f1a5729c458bcdb30524a8aee.css integrity=sha256-L68&#43;XH2e5EbV0Xy&#43;gILp1Jzuby8aVynEWLzbMFJKiu4&#61;>
 
 <script type="application/ld+json">
 {
@@ -25,540 +68,531 @@
   "@graph": [
     {
       "@type": "Person",
-      "@id": "http:\/\/localhost:1313\/es\/#person",
+      "@id": "http:\/\/localhost:1313\/%20\/#person",
       "name": "Juan José Gómez López",
-      "jobTitle": "Consultor Senior Full Stack & Arquitecto Drupal",
-      "url": "http:\/\/localhost:1313\/es\/",
+      "url": "http:\/\/localhost:1313\/%20\/",
+      "jobTitle": "Senior Software Engineer & Backend Architect",
+      "image": "http:\/\/localhost:1313\/%20samurai-logo.svg",
+      "description": "Senior Software Engineer and Backend Architect specializing in Drupal 11, high-availability infrastructures, and DevOps automation.",
       "sameAs": [
         "https://linkedin.com/in/juaningdotdev",
         "https://github.com/neurox"
       ],
       "knowsAbout": [
-        "Drupal", "AWS", "PHP", "JavaScript", "Docker", "DevOps", "Arquitectura Cloud"
+        "Drupal 11", "WordPress", "PHP 8.x", "AWS", "Docker", "Platform Engineering", "Dokploy", "High Availability Systems", "Legacy Modernization"
       ]
     },
     {
-      "@type": "ProfessionalService",
-      "@id": "http:\/\/localhost:1313\/es\/#service",
-      "name": "Juaning: Consultor Senior Drupal y Arquitecto Cloud AWS",
-      "description": "Servicios Nearshore de modernización de sistemas legacy, arquitecturas multi-tenant, y automatización de infraestructura en la nube.",
-      "provider": {
-        "@id": "http:\/\/localhost:1313\/es\/#person"
+      "@type": "WebSite",
+      "@id": "http:\/\/localhost:1313\/%20\/#website",
+      "url": "http:\/\/localhost:1313\/%20\/",
+      "name": "JUANING.dev",
+      "description": "Technical consulting and engineering logs by Juan Gómez.",
+      "publisher": {
+        "@id": "http:\/\/localhost:1313\/%20\/#person"
       },
-      "areaServed": "Worldwide",
+      "inLanguage": "es"
+    }
+    
+    ,{
+      "@type": "ProfessionalService",
+      "@id": "http:\/\/localhost:1313\/%20\/#service",
+      "name": "Juaning: Enterprise Technical Consulting",
+      "description": "Senior-level technical consulting for enterprise web platforms, legacy refactoring, and cloud-native infrastructure automation.",
+      "url": "http:\/\/localhost:1313\/%20\/",
+      "priceRange": "$$$",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Cuernavaca",
         "addressRegion": "Morelos",
         "addressCountry": "MX"
       },
-      "priceRange": "$$$$"
+      "provider": {
+        "@id": "http:\/\/localhost:1313\/%20\/#person"
+      }
     }
+    
+    
   ]
 }
 </script>
 
-
-<meta property="og:title" content="Juan Gómez | Automatizaciones, Backend y DevOps" />
-<meta property="og:description" content="Ingeniero de Plataformas Web e Infraestructura especializado en infraestructura escalable, ingeniería de plataformas y flujos de trabajo modernos en la nube para empresas B2B." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="http://localhost:1313/es/" />
+<meta property="og:title" content=Juan&#32;Gómez&#32;•&#32;Automatizaciones,&#32;Backend&#32;y&#32;DevOps />
+<meta property="og:description" content=Ingeniero&#32;de&#32;Plataformas&#32;Web&#32;e&#32;Infraestructura&#32;especializado&#32;en&#32;infraestructura&#32;escalable,&#32;ingeniería&#32;de&#32;plataformas&#32;y&#32;flujos&#32;de&#32;trabajo&#32;modernos&#32;en&#32;la&#32;nube&#32;para&#32;empresas&#32;B2B. />
+<meta property="og:type" content=website />
+<meta property="og:url" content=http://localhost:1313/es/ />
 
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Juan Gómez | Automatizaciones, Backend y DevOps"/>
-<meta name="twitter:description" content="Ingeniero de Plataformas Web e Infraestructura especializado en infraestructura escalable, ingeniería de plataformas y flujos de trabajo modernos en la nube para empresas B2B."/>
-
+<meta name="twitter:title" content=Juan&#32;Gómez&#32;•&#32;Automatizaciones,&#32;Backend&#32;y&#32;DevOps/>
+<meta name="twitter:description" content=Ingeniero&#32;de&#32;Plataformas&#32;Web&#32;e&#32;Infraestructura&#32;especializado&#32;en&#32;infraestructura&#32;escalable,&#32;ingeniería&#32;de&#32;plataformas&#32;y&#32;flujos&#32;de&#32;trabajo&#32;modernos&#32;en&#32;la&#32;nube&#32;para&#32;empresas&#32;B2B./>
 
 
 
     
 </head>
-<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col group/design-root overflow-x-hidden">
-    <div class="layout-container flex h-full grow flex-col w-full">
-        <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-5">
-            <div class="layout-content-container flex flex-col max-w-[1200px] w-full flex-1">
-                
-<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-4 md:px-10 py-4 mb-8">
-    <div class="flex items-center gap-4 text-primary">
-        <a href="/es/" class="flex items-center gap-4 text-primary hover:opacity-80 transition-opacity">
-            <span class="material-symbols-outlined text-3xl">code</span>
-            <h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight tracking-[-0.015em]">JUANING.dev</h2>
-        </a>
-    </div>
-    <div class="hidden md:flex flex-1 justify-end gap-8 items-center">
-        <nav class="flex items-center gap-9">
-            
-            
-                
-                
-                <a class="relative flex flex-col items-center group py-2" href="/es/">
-                    <span class="text-sm font-medium transition-colors duration-300 text-primary font-bold">
-                        Inicio
-                    </span>
-                    <span class="absolute bottom-0 w-full h-0.5 bg-primary rounded-full transition-all duration-300 opacity-100 scale-x-100"></span>
-                </a>
-            
-                
-                
-                <a class="relative flex flex-col items-center group py-2" href="/es/acerca/">
-                    <span class="text-sm font-medium transition-colors duration-300 text-slate-600 dark:text-slate-300 hover:text-primary">
-                        Acerca
-                    </span>
-                    <span class="absolute bottom-0 w-full h-0.5 bg-primary rounded-full transition-all duration-300 opacity-0 scale-x-0 group-hover:opacity-50 group-hover:scale-x-50"></span>
-                </a>
-            
-                
-                
-                <a class="relative flex flex-col items-center group py-2" href="/es/portafolio/">
-                    <span class="text-sm font-medium transition-colors duration-300 text-slate-600 dark:text-slate-300 hover:text-primary">
-                        Portafolio
-                    </span>
-                    <span class="absolute bottom-0 w-full h-0.5 bg-primary rounded-full transition-all duration-300 opacity-0 scale-x-0 group-hover:opacity-50 group-hover:scale-x-50"></span>
-                </a>
-            
-        </nav>
-        
-        <div class="h-6 w-px bg-slate-200 dark:bg-slate-800 hidden md:block"></div>
-        <div class="flex items-center gap-2 text-sm font-bold uppercase tracking-wider">
-    
-    
-    
-        
-        
-        
-        
-            
-                
-            
-        
-            
-        
 
-        
-            <a href="/" class="text-slate-500 hover:text-primary transition-colors">
-                en
-            </a>
-        
+<body class="min-h-screen font-sans selection:bg-cyan-500/30 selection:text-cyan-200 bg-hud-bg">
     
-        
-            <span class="text-slate-300 dark:text-slate-700 font-normal">|</span>
-        
-        
-        
-        
-            
-        
-            
-                
-            
-        
+<nav
+  class="fixed top-0 w-full z-50 bg-[#0b0f15]/80 backdrop-blur-xl border-b border-white/5 transition-colors duration-300 h-[73px] overflow-hidden">
+  <div class="flex justify-between items-center px-6 md:px-8 h-full max-w-7xl mx-auto">
 
-        
-            <span class="text-primary">es</span>
-        
     
-</div>
-
-
-        <a class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary text-background-dark hover:bg-primary/90 transition-colors text-sm font-bold leading-normal tracking-[0.015em]" href="/es/contacto/">
-            <span class="truncate">Contacto</span>
-        </a>
-    </div>
-    
-    <button class="md:hidden text-slate-900 dark:text-slate-100" id="mobile-menu-btn">
-        <span class="material-symbols-outlined">menu</span>
-    </button>
-</header>
-
-
-<div id="mobile-menu" class="hidden md:hidden flex-col gap-4 px-4 py-4 mb-4 border-b border-slate-200 dark:border-slate-800">
-    
-    
-        
-        
-        <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-colors bg-primary/10 text-primary font-bold border-l-4 border-primary" href="/es/">
-            Inicio
-        </a>
-    
-        
-        
-        <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-colors text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800" href="/es/acerca/">
-            Acerca
-        </a>
-    
-        
-        
-        <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-colors text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800" href="/es/portafolio/">
-            Portafolio
-        </a>
-    
-    
-    <div class="flex items-center justify-between border-t border-slate-200 dark:border-slate-800 pt-4 mt-2">
-        <span class="text-sm text-slate-500 font-medium">Idioma / Language</span>
-        <div class="flex items-center gap-2 text-sm font-bold uppercase tracking-wider">
-    
-    
-    
-        
-        
-        
-        
-            
-                
-            
-        
-            
-        
-
-        
-            <a href="/" class="text-slate-500 hover:text-primary transition-colors">
-                en
-            </a>
-        
-    
-        
-            <span class="text-slate-300 dark:text-slate-700 font-normal">|</span>
-        
-        
-        
-        
-            
-        
-            
-                
-            
-        
-
-        
-            <span class="text-primary">es</span>
-        
-    
-</div>
-
-    </div>
-
-    <a class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-primary text-background-dark font-bold mt-2" href="/es/contacto/">
-        Contacto
+    <a href=/es/
+      class="text-xl md:text-2xl font-display font-bold tracking-tight text-slate-100 hover:opacity-80 transition-opacity">
+      JUANING<span class="text-hud-cyan">.dev</span>
     </a>
+
+    
+    <div class="hidden md:flex items-center gap-8 -ml-12">
+      
+      
+      
+      
+      <a href=/es/
+        class="text-sm font-medium transition-colors duration-200 text-hud-cyan border-b-2 border-hud-cyan pb-1">
+        Inicio
+      </a>
+      
+      
+      
+      <a href=/es/acerca/
+        class="text-sm font-medium transition-colors duration-200 text-slate-400 hover:text-hud-cyan">
+        Acerca
+      </a>
+      
+      
+      
+      <a href=/es/portafolio/
+        class="text-sm font-medium transition-colors duration-200 text-slate-400 hover:text-hud-cyan">
+        Portafolio
+      </a>
+      
+    </div>
+
+    
+    <div class="flex items-center gap-4 md:gap-6">
+      <div class="hidden sm:block">
+        <div class="flex items-center gap-2 text-sm font-mono uppercase tracking-wider">
+    
+    
+    
+        
+        
+        
+        
+            
+                
+            
+        
+            
+        
+
+        
+            <a href=/ class="text-slate-500 hover:text-hud-cyan transition-colors">
+                en
+            </a>
+        
+    
+        
+            <span class="text-slate-300 dark:text-slate-700 font-normal">|</span>
+        
+        
+        
+        
+            
+        
+            
+                
+            
+        
+
+        
+            <span class="text-slate-200">es</span>
+        
+    
 </div>
+
+      </div>
+
+      <a href=/es/contacto/
+        class="bg-hud-cyan text-slate-950 px-5 py-2.5 rounded text-sm font-semibold hover:bg-[#38bdf8] transition-colors transition-opacity transition-transform hover:shadow-[0_0_15px_rgba(14,165,233,0.4)] active:scale-95 flex items-center justify-center">
+        Contacto
+      </a>
+
+      
+      <button class="md:hidden text-slate-300 hover:text-white" id="mobile-menu-btn">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+
+<div id="mobile-menu"
+  class="fixed top-[73px] left-0 w-full h-[calc(100vh-73px)] bg-[#0b0f15]/95 backdrop-blur-xl z-40 hidden flex-col px-6 py-8 border-t border-white/5 md:hidden">
+  
+  <div class="flex flex-col gap-6">
+    
+    
+    
+    <a class="text-xl font-medium transition-colors text-hud-cyan"
+      href=/es/>
+      Inicio
+    </a>
+    
+    
+    
+    <a class="text-xl font-medium transition-colors text-slate-300 hover:text-white"
+      href=/es/acerca/>
+      Acerca
+    </a>
+    
+    
+    
+    <a class="text-xl font-medium transition-colors text-slate-300 hover:text-white"
+      href=/es/portafolio/>
+      Portafolio
+    </a>
+    
+  </div>
+
+  <div class="mt-auto border-t border-white/10 pt-6">
+    <span class="text-sm text-slate-500 font-mono mb-4 block">SISTEMA.SELECCIÓN_IDIOMA</span>
+    <div class="flex items-center gap-2 text-sm font-mono uppercase tracking-wider">
+    
+    
+    
+        
+        
+        
+        
+            
+                
+            
+        
+            
+        
+
+        
+            <a href=/ class="text-slate-500 hover:text-hud-cyan transition-colors">
+                en
+            </a>
+        
+    
+        
+            <span class="text-slate-300 dark:text-slate-700 font-normal">|</span>
+        
+        
+        
+        
+            
+        
+            
+                
+            
+        
+
+        
+            <span class="text-slate-200">es</span>
+        
+    
+</div>
+
+  </div>
+</div>
+
+
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
+  
+  document.addEventListener('DOMContentLoaded', () => {
     const btn = document.getElementById('mobile-menu-btn');
     const menu = document.getElementById('mobile-menu');
-    if(btn && menu) {
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-            menu.classList.toggle('flex');
-        });
+    const icon = btn.querySelector('span');
+
+    if (btn && menu && icon) {
+      btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+        menu.classList.toggle('flex');
+
+        if (menu.classList.contains('hidden')) {
+          icon.textContent = 'menu';
+          document.body.style.overflow = 'auto';
+        } else {
+          icon.textContent = 'close';
+          document.body.style.overflow = 'hidden';
+        }
+      });
     }
-});
+  });
 </script>
 
-
-                <main class="w-full">
-                    
-
-<header class="@container">
-    <div class="flex flex-col gap-10 px-4 py-10 @[864px]:flex-row @[864px]:items-center min-h-[500px]">
-        <div class="flex flex-col gap-6 flex-1 @[864px]:pr-10">
-            <div class="flex flex-col gap-4 text-left">
-                <span class="text-primary font-semibold tracking-wide uppercase text-sm">Ingeniero de Plataformas Web e Infraestructura</span>
-                <h1
-                    class="text-slate-900 dark:text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl lg:text-6xl">
-                    Juan Gómez | Automatizaciones, Backend y DevOps
-                </h1>
-                <h2 class="text-slate-600 dark:text-slate-300 text-lg font-normal leading-relaxed mt-2 max-w-2xl">
-                    Experto en Drupal y WordPress enfocado en infraestructura escalable, ingeniería de plataformas y flujos de trabajo modernos en la nube.
-                </h2>
-            </div>
-            <div class="flex gap-4 mt-4">
-                <a class="flex min-w-[140px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-background-dark hover:bg-primary/90 transition-colors text-base font-bold leading-normal tracking-[0.015em]"
-                    href="/es/portafolio/">
-                    <span class="truncate">Ver Portafolio</span>
-                </a>
-                <a class="flex min-w-[140px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 border border-slate-300 dark:border-slate-700 hover:border-primary dark:hover:border-primary text-slate-900 dark:text-white transition-colors text-base font-bold leading-normal tracking-[0.015em]"
-                    target="_blank" href="https://github.com/neurox">
-                    <span class="truncate">GitHub</span>
-                </a>
-            </div>
-        </div>
-        <div class="w-full flex-1 relative hidden @[480px]:block">
-            <div
-                class="w-full aspect-square max-w-[500px] ml-auto bg-gradient-to-tr from-primary/20 to-primary/5 rounded-full overflow-hidden relative">
-                <div class="absolute inset-0 flex items-center justify-center">
-                    <span class="material-symbols-outlined text-[200px] text-primary/30">developer_mode</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-
-
-<section class="flex flex-col gap-10 px-4 py-20 mt-10 border-t border-slate-200 dark:border-slate-800 @container"
-    id="skills">
-    <div class="flex flex-col gap-4 text-center items-center">
-        <h2 class="text-slate-900 dark:text-white text-3xl font-bold leading-tight @[480px]:text-4xl">
-            Experiencia Técnica Principal
-        </h2>
-        <p class="text-slate-600 dark:text-slate-400 text-lg font-normal leading-normal max-w-[720px]">
-            Construyendo soluciones modernas y escalables con tecnologías estándar de la industria.
-        </p>
-    </div>
-    <div class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-6 p-0 mt-8">
-
-        <div
-            class="flex flex-col gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-surface-dark p-6 hover:border-primary/50 transition-colors group shadow-sm">
-            <div
-                class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-background-dark transition-colors">
-                <span class="material-symbols-outlined text-2xl">water_drop</span>
-            </div>
-            <div class="flex flex-col gap-2">
-                <h3 class="text-slate-900 dark:text-white text-xl font-bold leading-tight">Arquitectura Drupal Enterprise</h3>
-                <p class="text-slate-600 dark:text-slate-400 text-base font-normal leading-relaxed">
-                    Diseño de ecosistemas CMS de alta disponibilidad, migraciones complejas (Drupal 7/8 a 10/11) y desarrollos headless.
-                </p>
-            </div>
-        </div>
-
-        <div
-            class="flex flex-col gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-surface-dark p-6 hover:border-primary/50 transition-colors group shadow-sm">
-            <div
-                class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-background-dark transition-colors">
-                <span class="material-symbols-outlined text-2xl">cloud</span>
-            </div>
-            <div class="flex flex-col gap-2">
-                <h3 class="text-slate-900 dark:text-white text-xl font-bold leading-tight">Infraestructura Cloud (AWS)</h3>
-                <p class="text-slate-600 dark:text-slate-400 text-base font-normal leading-relaxed">
-                    Arquitecturas resilientes y multi-tenant. Despliegues estructurados mediante EC2, Load Balancers y S3.
-                </p>
-            </div>
-        </div>
-
-        <div
-            class="flex flex-col gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-surface-dark p-6 hover:border-primary/50 transition-colors group shadow-sm">
-            <div
-                class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-background-dark transition-colors">
-                <span class="material-symbols-outlined text-2xl">rocket_launch</span>
-            </div>
-            <div class="flex flex-col gap-2">
-                <h3 class="text-slate-900 dark:text-white text-xl font-bold leading-tight">DevOps &amp; Automatización</h3>
-                <p class="text-slate-600 dark:text-slate-400 text-base font-normal leading-relaxed">
-                    Integración continua (CI/CD), contenerización con Docker y optimización radical de los flujos de despliegue.
-                </p>
-            </div>
-        </div>
-
-        <div
-            class="flex flex-col gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-surface-dark p-6 hover:border-primary/50 transition-colors group shadow-sm">
-            <div
-                class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-background-dark transition-colors">
-                <span class="material-symbols-outlined text-2xl">architecture</span>
-            </div>
-            <div class="flex flex-col gap-2">
-                <h3 class="text-slate-900 dark:text-white text-xl font-bold leading-tight">Modernización de Sistemas</h3>
-                <p class="text-slate-600 dark:text-slate-400 text-base font-normal leading-relaxed">
-                    Refactorización de aplicaciones legacy empresariales con PHP 8&#43;, integrando APIs B2B robustas sin downtime.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<section class="flex flex-col gap-10 px-4 py-20 border-t border-slate-200 dark:border-slate-800" id="articles">
-    <div class="flex items-end justify-between mb-4">
-        <div class="flex flex-col gap-2">
-            <h2 class="text-slate-900 dark:text-white text-3xl font-bold leading-tight">Artículos Recientes</h2>
-            <p class="text-slate-600 dark:text-slate-400 text-base">Perspectivas sobre desarrollo, arquitectura y despliegue.</p>
-        </div>
-        <a class="hidden sm:flex text-primary hover:text-primary/80 font-medium items-center gap-1" href="/es/post">
-            Ver todos <span class="material-symbols-outlined text-sm">arrow_forward</span>
-        </a>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <main class="w-full max-w-7xl mx-auto px-6 md:px-8 pt-[105px] pb-0 md:pt-[121px] md:pb-0 flex flex-col gap-8 md:gap-12">
         
-        
-        
-        <article class="flex flex-col gap-4 group cursor-pointer" onclick="window.location.href='\/es\/post\/2023\/como-instalar-solr-8-en-macos-13-ventura-para-compatibilidad-con-drupal\/'">
-            <div class="w-full bg-slate-200 dark:bg-surface-dark aspect-video rounded-xl overflow-hidden relative">
-                <div
-                    class="absolute inset-0 bg-gradient-to-br from-primary/20 to-slate-900/40 flex items-center justify-center">
-                    <span
-                        class="material-symbols-outlined text-6xl text-white/50 group-hover:scale-110 transition-transform duration-300">article</span>
-                </div>
-            </div>
-            <div class="flex flex-col gap-2 px-2">
-                <div class="flex gap-3 text-sm text-slate-500 dark:text-slate-400 font-medium">
-                    <span>14 Apr, 2023</span>
-                    
-                </div>
-                <h3
-                    class="text-slate-900 dark:text-white text-xl font-bold leading-tight group-hover:text-primary transition-colors">
-                    Cómo instalar Solr 8 en macOS 13 Ventura para compatibilidad con Drupal.
-                </h3>
-                <div class="prose prose-sm prose-slate dark:prose-invert line-clamp-3 text-slate-600 dark:text-slate-400 leading-relaxed">
-                    <p>Como quizás hayas notado, la versión de Solr incluida en la última versión de Homebrew es la 9 y
-su esquema aún no es compatible con Drupal. Te mostraré cómo obtener la versión 8 de Solr, que sí es
-compatible con Drupal.</p>
-<h2>Requisitos</h2>
-<ol>
-<li>Homebrew</li>
-<li>Java 8</li>
-</ol>
-<h2>Paso 1: Instalar Java 8 usando Homebrew</h2>
-<p>Si aún no has instalado Homebrew, puedes encontrar las instrucciones de instalación en <a href="https://brew.sh/" target="_blank">https://brew.sh/</a>.
-Después de instalar Homebrew, abre la Terminal y ejecuta el siguiente comando para instalar Java 8:</p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="flex flex-col gap-4 group cursor-pointer" onclick="window.location.href='\/es\/post\/2022\/instalar-y-habilitar-acceso-ftp-en-una-instancia-aws-ec2-con-linux-centos-7\/'">
-            <div class="w-full bg-slate-200 dark:bg-surface-dark aspect-video rounded-xl overflow-hidden relative">
-                <div
-                    class="absolute inset-0 bg-gradient-to-br from-primary/20 to-slate-900/40 flex items-center justify-center">
-                    <span
-                        class="material-symbols-outlined text-6xl text-white/50 group-hover:scale-110 transition-transform duration-300">article</span>
-                </div>
-            </div>
-            <div class="flex flex-col gap-2 px-2">
-                <div class="flex gap-3 text-sm text-slate-500 dark:text-slate-400 font-medium">
-                    <span>24 Nov, 2022</span>
-                    
-                </div>
-                <h3
-                    class="text-slate-900 dark:text-white text-xl font-bold leading-tight group-hover:text-primary transition-colors">
-                    Instalar y habilitar acceso FTP en una instancia AWS EC2 con Linux Centos 7
-                </h3>
-                <div class="prose prose-sm prose-slate dark:prose-invert line-clamp-3 text-slate-600 dark:text-slate-400 leading-relaxed">
-                    <p>Te guiaré a través de la manera más rápida y fácil de configurar el acceso FTP
-a una instancia EC2 con la distribución Centos 7 en AWS (Amazon Web Services),
-vamos a usar VSFTPD (Very Secure FTP Daemon) así que el primer paso es instalarlo.</p>
-<h2>Instalación y configuración de VSFTPD</h2>
-<h3>Paso 1: Instala VSFTPD</h3>
-<ol>
-<li>
-<p>Actualiza el administrador de paquetes:
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">sudo yum update</span></span></code></pre></div></p>
-</li>
-<li>
-<p>Instala el software VSFTP:
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">sudo yum install vsftpd</span></span></code></pre></div></p>
-                </div>
-            </div>
-        </article>
-        
-        
-    </div>
 
-    <a class="sm:hidden flex text-primary hover:text-primary/80 font-medium items-center justify-center gap-1 mt-4"
-        href="/es/post">
-        Ver todos <span class="material-symbols-outlined text-sm">arrow_forward</span>
-    </a>
-</section>
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-8 md:gap-10">
 
-
-<section class="px-4 py-20 border-t border-slate-200 dark:border-slate-800" id="about">
+  
+  <section
+    class="lg:col-span-12 xl:col-span-7 glass-card rounded-xl p-6 md:p-8 flex flex-col gap-6 relative overflow-hidden group">
+    
     <div
-        class="bg-white dark:bg-surface-dark rounded-2xl p-8 md:p-12 border border-slate-200 dark:border-slate-800 flex flex-col md:flex-row gap-10 items-center justify-between">
-        <div class="flex flex-col gap-4 max-w-xl">
-            <h2 class="text-slate-900 dark:text-white text-3xl font-bold leading-tight @[480px]:text-4xl">
-                
-            </h2>
-            <p class="text-slate-600 dark:text-slate-400 text-lg">
-                Actualmente disponible para proyectos independientes y consultoría. Si tienes requerimientos complejos para aplicaciones web o necesitas experiencia en Drupal, me encantaría escucharte.
-            </p>
-            <div class="flex gap-4 mt-4">
-                
-
- 
-
-
-<span id="obfuscated-email-178423965">
-  <noscript>
-    <span class="text-slate-500 text-sm italic">
-      [JavaScript required to view email address]
-    </span>
-  </noscript>
-</span>
-
-<script>
-  (function() {
-    
-    var encoded = "anVhbmpvc2VAaW5nb21lei5jb20=";
-    
-    var decoded = atob(encoded);
-    
-    
-    var link = document.createElement("a");
-    link.href = "mailto:" + decoded;
-    link.className = "flex items-center gap-2 text-slate-700 dark:text-slate-300 hover:text-primary transition-colors";
-    
-    
-    var icon = document.createElement("span");
-    icon.className = "material-symbols-outlined";
-    icon.textContent = "mail";
-    
-    
-    var text = document.createElement("span");
-    text.className = "font-medium";
-    text.textContent = decoded;
-    
-    
-    link.appendChild(icon);
-    link.appendChild(text);
-    
-    
-    var container = document.getElementById("obfuscated-email-178423965");
-    if (container) {
-      container.innerHTML = ""; 
-      container.appendChild(link);
-    }
-  })();
-</script>
-
-            </div>
-        </div>
-        <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
-            <a class="flex min-w-[140px] cursor-pointer items-center justify-center gap-2 rounded-lg h-12 px-6 bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:opacity-90 transition-opacity text-base font-bold"
-                target="_blank" href="https://github.com/neurox">
-                <span class="material-symbols-outlined text-lg">code</span>
-                <span>GitHub</span>
-            </a>
-            <a class="flex min-w-[140px] cursor-pointer items-center justify-center gap-2 rounded-lg h-12 px-6 bg-[#0a66c2] text-white hover:bg-[#084e96] transition-colors text-base font-bold"
-                target="_blank" href="https://www.linkedin.com/in/juaningdotdev">
-                <span class="material-symbols-outlined text-lg">work</span>
-                <span>LinkedIn</span>
-            </a>
-        </div>
+      class="absolute -top-10 -right-10 p-4 opacity-[0.03] group-hover:opacity-[0.05] transition-opacity duration-700 pointer-events-none">
+      <span class="material-symbols-outlined text-[200px] text-hud-cyan">developer_mode</span>
     </div>
+
+    <header class="flex items-center justify-between border-b border-white/10 pb-4 relative z-10">
+      <h2 class="text-xl md:text-2xl font-semibold flex items-center gap-3">
+        <span class="material-symbols-outlined text-hud-cyan">dns</span>
+        Resumen del Sistema
+      </h2>
+      <span
+        class="font-mono text-xs md:text-sm text-hud-cyan bg-hud-cyan/10 px-3 py-1.5 rounded border border-hud-cyan/20">
+        ESTADO: EN LÍNEA
+      </span>
+    </header>
+
+    <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start mt-2 relative z-10">
+      
+      <div class="relative group/avatar cursor-pointer shrink-0">
+        <div
+          class="absolute inset-0 bg-hud-cyan/20 blur-xl rounded-full opacity-0 group-hover/avatar:opacity-100 transition-opacity duration-500">
+        </div>
+        <div
+          class="w-28 h-28 md:w-36 md:h-36 rounded-lg bg-[#0b0f15] border border-white/10 overflow-hidden relative z-10 hud-glow transition-colors transition-opacity transition-transform duration-300 flex items-center justify-center">
+          <span
+            class="material-symbols-outlined text-6xl text-slate-500 group-hover/avatar:text-hud-cyan transition-colors">account_circle</span>
+        </div>
+      </div>
+
+      
+      <div class="flex-grow">
+        <h1 class="text-3xl md:text-4xl font-display font-bold mb-2 tracking-tight">Juan Gómez · Automatizaciones, Backend &amp; DevOps</h1>
+        <p class="font-mono text-hud-cyan text-sm md:text-base mb-4 flex items-center gap-2">
+          <span class="material-symbols-outlined text-sm">terminal</span> >Ingeniero de Plataformas Web e Infraestructura_
+        </p>
+        <p class="text-slate-400 leading-relaxed mb-6 max-w-2xl text-sm md:text-base">
+          Experto en Drupal y WordPress enfocado en infraestructura escalable, ingeniería de plataformas y flujos de trabajo modernos en la nube.
+        </p>
+
+        
+        <div class="flex flex-wrap gap-2.5">
+          <span
+            class="font-mono text-xs bg-slate-800/60 text-slate-300 px-2.5 py-1.5 rounded border border-white/5 flex items-center gap-2 hover:border-slate-500 transition-colors">
+            <span class="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(255,255,255,0.3)]"></span> Kubernetes
+          </span>
+          <span
+            class="font-mono text-xs bg-slate-800/60 text-slate-300 px-2.5 py-1.5 rounded border border-white/5 flex items-center gap-2 hover:border-slate-500 transition-colors">
+            <span class="w-2 h-2 rounded-full bg-orange-500 shadow-[0_0_8px_rgba(255,255,255,0.3)]"></span> AWS
+          </span>
+          <span
+            class="font-mono text-xs bg-slate-800/60 text-slate-300 px-2.5 py-1.5 rounded border border-white/5 flex items-center gap-2 hover:border-slate-500 transition-colors">
+            <span class="w-2 h-2 rounded-full bg-hud-cyan shadow-[0_0_8px_rgba(255,255,255,0.3)]"></span> Docker
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="lg:col-span-12 xl:col-span-5 glass-card rounded-xl p-6 md:p-8 flex flex-col gap-6 h-full">
+    <header class="flex items-center justify-between border-b border-white/10 pb-4">
+      <h2 class="text-xl md:text-2xl font-semibold flex items-center gap-3">
+        <span class="material-symbols-outlined text-hud-cyan">monitoring</span>
+        Bitácora
+      </h2>
+      <a href=/es/post
+        class="font-mono text-sm text-hud-cyan hover:text-cyan-300 transition-colors flex items-center gap-1 group">
+        VER TODOS <span
+          class="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-colors transition-opacity transition-transform duration-300">&rarr;</span>
+      </a>
+    </header>
+
+    <div class="flex flex-col gap-4 overflow-y-auto flex-grow scrollbar-hide py-1">
+      
+      
+      
+      <article onclick="window.location.href='\/es\/post\/2025\/hoja-de-ruta-migracion-drupal-11\/'"
+        class="p-4 md:p-5 bg-slate-800/40 border border-white/5 rounded-lg hover:border-cyan-500/40 hover:bg-slate-800/80 transition-colors transition-opacity transition-transform duration-300 group cursor-pointer">
+        <div class="font-mono text-xs text-slate-500 mb-2 flex justify-between items-center">
+          <span>SYS.LOG // 2025.05.10</span>
+          <span
+            class="text-hud-cyan opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-colors transition-opacity transition-transform duration-300 font-bold tracking-wider">&lt;leer&gt;</span>
+        </div>
+        <h4
+          class="text-lg font-semibold text-slate-200 group-hover:text-cyan-400 transition-colors mb-2 leading-tight flex items-start gap-2">
+          <span class="material-symbols-outlined text-lg opacity-40 shrink-0 mt-0.5">code</span>
+          Hoja de Ruta para la Migración a Drupal 11: Estrategias de Tiempo de Inactividad Cero
+        </h4>
+        <div class="text-sm text-slate-400 line-clamp-2 ml-7">
+          <p>El lanzamiento de <strong>Drupal 11</strong> marca un hito significativo para la gestión de contenido empresarial. Para las organizaciones que ejecutan plataformas críticas en versiones heredadas (Drupal 7, 8 o 9), el camino de migración ya no es solo una actualización técnica: es una oportunidad estratégica para re-diseñar la <strong>alta disponibilidad, la seguridad y la escalabilidad nativa de la nube</strong>.</p>
+<p>En esta hoja de ruta, exploramos las estrategias arquitectónicas necesarias para ejecutar una migración compleja con <strong>tiempo de inactividad cero (zero-downtime)</strong>, garantizando la continuidad del negocio mientras modernizas tu stack técnico.</p>
+        </div>
+      </article>
+      
+      <article onclick="window.location.href='\/es\/post\/2023\/2023-04-14-how-to-install-solr-8-on-macos-13-ventura-for-drupal-compatibility\/'"
+        class="p-4 md:p-5 bg-slate-800/40 border border-white/5 rounded-lg hover:border-cyan-500/40 hover:bg-slate-800/80 transition-colors transition-opacity transition-transform duration-300 group cursor-pointer">
+        <div class="font-mono text-xs text-slate-500 mb-2 flex justify-between items-center">
+          <span>SYS.LOG // 2023.04.14</span>
+          <span
+            class="text-hud-cyan opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-colors transition-opacity transition-transform duration-300 font-bold tracking-wider">&lt;leer&gt;</span>
+        </div>
+        <h4
+          class="text-lg font-semibold text-slate-200 group-hover:text-cyan-400 transition-colors mb-2 leading-tight flex items-start gap-2">
+          <span class="material-symbols-outlined text-lg opacity-40 shrink-0 mt-0.5">code</span>
+          Instalación de Solr 8 en macOS Ventura: Guía para Ingenieros Drupal
+        </h4>
+        <div class="text-sm text-slate-400 line-clamp-2 ml-7">
+          <p>Al construir plataformas Drupal de nivel empresarial, mantener la paridad entre el desarrollo local y los entornos de producción es crítico. A menudo, las versiones más recientes disponibles a través de gestores de paquetes como Homebrew (como Solr 9) introducen cambios disruptivos o incompatibilidades de esquema con el ecosistema actual de <strong>Drupal Search API</strong>.</p>
+<p>Para los desarrolladores que necesitan compatibilidad con <strong>Solr 8</strong> en macOS 13 Ventura, esta guía proporciona un camino de instalación estructurado y profesional.</p>
+        </div>
+      </article>
+      
+      <article onclick="window.location.href='\/es\/post\/2022\/2022-11-24-install-and-enable-ftp-access-in-aws-ec2-instance-with-linux-centos-7\/'"
+        class="p-4 md:p-5 bg-slate-800/40 border border-white/5 rounded-lg hover:border-cyan-500/40 hover:bg-slate-800/80 transition-colors transition-opacity transition-transform duration-300 group cursor-pointer">
+        <div class="font-mono text-xs text-slate-500 mb-2 flex justify-between items-center">
+          <span>SYS.LOG // 2022.11.24</span>
+          <span
+            class="text-hud-cyan opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-colors transition-opacity transition-transform duration-300 font-bold tracking-wider">&lt;leer&gt;</span>
+        </div>
+        <h4
+          class="text-lg font-semibold text-slate-200 group-hover:text-cyan-400 transition-colors mb-2 leading-tight flex items-start gap-2">
+          <span class="material-symbols-outlined text-lg opacity-40 shrink-0 mt-0.5">code</span>
+          Configuración de Acceso FTP Seguro en AWS EC2 (CentOS 7)
+        </h4>
+        <div class="text-sm text-slate-400 line-clamp-2 ml-7">
+          <p>La gestión de infraestructuras en la nube heredadas a menudo requiere equilibrar los protocolos de seguridad modernos con las necesidades tradicionales de transferencia de datos. Si bien <strong>SFTP</strong> (SSH File Transfer Protocol) es el estándar de la industria para transferencias seguras, ciertos flujos de trabajo empresariales o integraciones legacy aún requieren un entorno <strong>FTP</strong> robusto.</p>
+<p>Esta guía detalla el proceso de instalación y configuración de <strong>VSFTPD</strong> (Very Secure FTP Daemon) en una instancia de AWS EC2 con Linux CentOS 7.</p>
+        </div>
+      </article>
+      
+      
+    </div>
+  </section>
+
+</div>
+
+
+<section class="glass-card rounded-xl p-6 md:p-8 flex flex-col gap-6">
+  <header class="flex items-center justify-between border-b border-white/10 pb-4">
+    <h2 class="text-xl md:text-2xl font-semibold flex items-center gap-3">
+      <span class="material-symbols-outlined text-hud-cyan">hub</span>
+      Experiencia Técnica Principal
+    </h2>
+    <a href=ZgotmplZ
+      class="font-mono text-sm text-hud-cyan hover:text-cyan-300 transition-colors flex items-center gap-1 group">
+      VER PORTAFOLIO <span
+        class="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-colors transition-opacity transition-transform duration-300">&rarr;</span>
+    </a>
+  </header>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+    
+    <div
+      class="bg-slate-800/20 border border-white/5 rounded-xl p-6 relative group hover:-translate-y-1.5 transition-colors transition-opacity transition-transform duration-300 cursor-pointer flex flex-col h-full border-t-[3px] border-t-transparent hover:border-slate-500/50">
+      <div class="absolute top-5 right-5 flex items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span>
+        <span class="font-mono text-[10px] sm:text-xs tracking-wider text-slate-500">ESTABLE</span>
+      </div>
+      <span
+        class="material-symbols-outlined text-4xl mb-4 text-slate-500 group-hover:text-hud-cyan transition-colors">water_drop</span>
+      <h3 class="text-lg font-semibold text-slate-100 mb-2">Arquitectura Drupal Enterprise</h3>
+      <p class="text-sm text-slate-400 mb-4 line-clamp-3">Diseño de ecosistemas CMS de alta disponibilidad, migraciones complejas (Drupal 7/8 a 10/11) y desarrollos headless.</p>
+    </div>
+
+    
+    <div
+      class="bg-slate-800/20 border border-white/5 rounded-xl p-6 relative group hover:-translate-y-1.5 transition-colors transition-opacity transition-transform duration-300 cursor-pointer flex flex-col h-full border-t-[3px] border-t-transparent hover:border-slate-500/50">
+      <div class="absolute top-5 right-5 flex items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-orange-500"></span>
+        <span class="font-mono text-[10px] sm:text-xs tracking-wider text-slate-500">ACTIVO</span>
+      </div>
+      <span
+        class="material-symbols-outlined text-4xl mb-4 text-slate-500 group-hover:text-hud-cyan transition-colors">cloud</span>
+      <h3 class="text-lg font-semibold text-slate-100 mb-2">Infraestructura Cloud (AWS)</h3>
+      <p class="text-sm text-slate-400 mb-4 line-clamp-3">Arquitecturas resilientes y multi-tenant. Despliegues estructurados mediante EC2, Load Balancers y S3.</p>
+    </div>
+
+    
+    <div
+      class="bg-slate-800/20 border border-white/5 rounded-xl p-6 relative group hover:-translate-y-1.5 transition-colors transition-opacity transition-transform duration-300 cursor-pointer flex flex-col h-full border-t-[3px] border-t-[#8a2be2] accent-purple">
+      <div class="absolute top-5 right-5 flex items-center gap-2">
+        <span class="relative flex h-2.5 w-2.5">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#8a2be2] opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#8a2be2]"></span>
+        </span>
+        <span class="font-mono text-[10px] sm:text-xs tracking-wider text-[#8a2be2]">DESPLEGANDO</span>
+      </div>
+      <span
+        class="material-symbols-outlined text-4xl mb-4 text-[#8a2be2] opacity-90 group-hover:opacity-100 transition-opacity">rocket_launch</span>
+      <h3 class="text-lg font-semibold text-slate-100 mb-2">DevOps &amp; Automatización</h3>
+      <p class="text-sm text-slate-400 mb-4 line-clamp-3">Integración continua (CI/CD), contenerización con Docker y optimización radical de los flujos de despliegue.</p>
+    </div>
+
+    
+    <div
+      class="bg-slate-800/20 border border-white/5 rounded-xl p-6 relative group hover:-translate-y-1.5 transition-colors transition-opacity transition-transform duration-300 cursor-pointer flex flex-col h-full border-t-[3px] border-t-transparent hover:border-slate-500/50">
+      <div class="absolute top-5 right-5 flex items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-slate-500"></span>
+        <span class="font-mono text-[10px] sm:text-xs tracking-wider text-slate-500">PLANEANDO</span>
+      </div>
+      <span
+        class="material-symbols-outlined text-4xl mb-4 text-slate-500 group-hover:text-hud-cyan transition-colors">architecture</span>
+      <h3 class="text-lg font-semibold text-slate-100 mb-2">Modernización de Sistemas</h3>
+      <p class="text-sm text-slate-400 mb-4 line-clamp-3">Refactorización de aplicaciones legacy empresariales con PHP 8&#43;, integrando APIs B2B robustas sin downtime.</p>
+    </div>
+
+  </div>
 </section>
 
-                </main>
-                
-            </div>
-        </div>
-        
-<footer class="w-full border-t border-slate-200 dark:border-slate-800 py-8 px-4 mt-auto">
-    <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-slate-500 dark:text-slate-400 text-sm">
-        <div class="flex items-center gap-2 font-medium text-slate-700 dark:text-slate-300">
-            <span class="material-symbols-outlined text-primary text-xl">code</span>
-            <span>JUANING.dev</span>
-        </div>
-        <p>&copy; 2026 Juan Gómez. Todos los derechos reservados.</p>
-        <div class="flex gap-6">
-            
-        </div>
+    </main>
+
+    
+<footer class="w-full py-8 md:py-12 bg-hud-bg border-t border-white/5 mt-8 md:mt-12">
+  <div class="flex flex-col md:flex-row justify-between items-center px-6 md:px-8 max-w-7xl mx-auto gap-6 md:gap-8">
+
+    <div class="text-xl font-display font-bold tracking-tight text-slate-300">
+      JUANING<span class="text-hud-cyan/70">.dev</span>
     </div>
+
+    <div class="flex space-x-6">
+      <a href="https://github.com/"
+        class="text-slate-500 hover:text-hud-cyan transition-colors flex items-center gap-2 group" target="_blank"
+        rel="noopener">
+        <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"
+          aria-hidden="true">
+          <path fill-rule="evenodd"
+            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+            clip-rule="evenodd"></path>
+        </svg>
+        <span class="hidden sm:inline-block text-sm font-mono">GitHub</span>
+      </a>
+      <a href=ZgotmplZ
+        class="text-slate-500 hover:text-hud-cyan transition-colors flex items-center gap-2 group" target="_blank"
+        rel="noopener">
+        <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"
+          aria-hidden="true">
+          <path
+            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+        </svg>
+        <span class="hidden sm:inline-block text-sm font-mono">LinkedIn</span>
+      </a>
+    </div>
+
+    <div class="text-slate-600 text-sm flex items-center gap-2 font-mono">
+      &copy; 2026 Juan Gómez.
+      <span class="hidden sm:inline">Todos los derechos reservados.</span>
+    </div>
+  </div>
 </footer>
 
 
 
 
-<script src="/js/copy-code.min.1244fd3bf209c4373c42fccb80459b455b69f0a8109e44fc7e232bdbd1a9662b.js" integrity="sha256-EkT9O/IJxDc8QvzLgEWbRVtp8KgQnkT8fiMr29GpZis=" defer></script>
+<script src=/js/copy-code.min.1244fd3bf209c4373c42fccb80459b455b69f0a8109e44fc7e232bdbd1a9662b.js integrity=sha256-EkT9O/IJxDc8QvzLgEWbRVtp8KgQnkT8fiMr29GpZis&#61; defer></script>
 
-
-    </div>
 </body>
+
 </html>

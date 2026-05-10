@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
+
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,292 +8,457 @@
 
 
 
-<title>How to Install Solr 8 on macOS 13 Ventura for Drupal Compatibility. | JUANING.dev</title>
-
-
-<meta name="description" content="If you&#39;re using Drupal and need to install Solr for search functionality, you might encounter compatibility issues with the latest Solr version available through Homebrew. Solr 9&#39;s schema is not yet compatible with Drupal, so you&#39;ll need to install Solr 8 instead. In this guide, I&#39;ll walk you through the process of installing Solr 8 on macOS 13 Ventura.">
-
-<link rel="stylesheet" href="/css/tailwind.min.72878975c601d2926c3df6095a5b54f0594d52a0745b98fe6b968c5b0ea9cfab.css" integrity="sha256-coeJdcYB0pJsPfYJWltU8FlNUqB0W5j&#43;a5aMWw6pz6s=">
+<title>Installing Solr 8 on macOS Ventura: A Guide for Drupal Engineers | JUANING.dev</title>
 
 
 
-<link rel="stylesheet" href="/css/syntax.min.2faf3e5c7d9ee446d5d17cbe8082e9d49cee6f2f1a5729c458bcdb30524a8aee.css" integrity="sha256-L68&#43;XH2e5EbV0Xy&#43;gILp1Jzuby8aVynEWLzbMFJKiu4=">
+<meta name="description" content=Resolve&#32;schema&#32;compatibility&#32;issues&#32;between&#32;Drupal&#32;and&#32;Solr&#32;9&#32;by&#32;installing&#32;Solr&#32;8&#32;on&#32;macOS&#32;Ventura.&#32;A&#32;professional&#32;guide&#32;for&#32;local&#32;development&#32;parity.>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=block" rel="stylesheet">
+
+
+<link rel="stylesheet" href=/css/tailwind.min.ed298db517860ac10c95998fc60025742a9329d6814aa36968aab2df0f7ab3a6.css integrity=sha256-7SmNtReGCsEMlZmPxgAldCqTKdaBSqNpaKqy3w96s6Y&#61;>
+
+<style>
+   
+  html.no-transitions *,
+  html.no-transitions *:before,
+  html.no-transitions *:after {
+    transition: none !important;
+    animation: none !important;
+  }
+</style>
+<script>
+  (function() {
+    const doc = document.documentElement;
+    doc.classList.add('no-transitions');
+    
+    const unlock = () => {
+      if (!doc.classList.contains('no-transitions')) return;
+      
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          doc.classList.remove('no-transitions');
+        }, 300); 
+      });
+      
+      ['mousedown', 'mousemove', 'keydown', 'scroll', 'touchstart'].forEach(e => 
+        window.removeEventListener(e, unlock));
+    };
+
+    
+    ['mousedown', 'mousemove', 'keydown', 'scroll', 'touchstart'].forEach(e => 
+      window.addEventListener(e, unlock, { once: true, passive: true }));
+
+    
+    window.addEventListener('load', () => setTimeout(unlock, 5000));
+  })();
+</script>
 
 
 
-<meta property="og:title" content="How to Install Solr 8 on macOS 13 Ventura for Drupal Compatibility." />
-<meta property="og:description" content="If you&#39;re using Drupal and need to install Solr for search functionality, you might encounter compatibility issues with the latest Solr version available through Homebrew. Solr 9&#39;s schema is not yet compatible with Drupal, so you&#39;ll need to install Solr 8 instead. In this guide, I&#39;ll walk you through the process of installing Solr 8 on macOS 13 Ventura." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/2023/2023-04-14-how-to-install-solr-8-on-macos-13-ventura-for-drupal-compatibility/" />
+<link rel="stylesheet" href=/css/syntax.min.2faf3e5c7d9ee446d5d17cbe8082e9d49cee6f2f1a5729c458bcdb30524a8aee.css integrity=sha256-L68&#43;XH2e5EbV0Xy&#43;gILp1Jzuby8aVynEWLzbMFJKiu4&#61;>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "http:\/\/localhost:1313\/%20\/#person",
+      "name": "Juan José Gómez López",
+      "url": "http:\/\/localhost:1313\/%20\/",
+      "jobTitle": "Senior Software Engineer & Backend Architect",
+      "image": "http:\/\/localhost:1313\/%20samurai-logo.svg",
+      "description": "Senior Software Engineer and Backend Architect specializing in Drupal 11, high-availability infrastructures, and DevOps automation.",
+      "sameAs": [
+        "https://linkedin.com/in/juaningdotdev",
+        "https://github.com/neurox"
+      ],
+      "knowsAbout": [
+        "Drupal 11", "WordPress", "PHP 8.x", "AWS", "Docker", "Platform Engineering", "Dokploy", "High Availability Systems", "Legacy Modernization"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "http:\/\/localhost:1313\/%20\/#website",
+      "url": "http:\/\/localhost:1313\/%20\/",
+      "name": "JUANING.dev",
+      "description": "Technical consulting and engineering logs by Juan Gómez.",
+      "publisher": {
+        "@id": "http:\/\/localhost:1313\/%20\/#person"
+      },
+      "inLanguage": "en"
+    }
+    
+    
+    ,{
+      "@type": "TechArticle",
+      "headline": "Installing Solr 8 on macOS Ventura: A Guide for Drupal Engineers",
+      "description": "Resolve schema compatibility issues between Drupal and Solr 9 by installing Solr 8 on macOS Ventura. A professional guide for local development parity.",
+      "datePublished": "2023-04-14T00:00:00Z",
+      "dateModified": "2023-04-14T00:00:00Z",
+      "author": {
+        "@id": "http:\/\/localhost:1313\/%20\/#person"
+      },
+      "publisher": {
+        "@id": "http:\/\/localhost:1313\/%20\/#person"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http:\/\/localhost:1313\/post\/2023\/2023-04-14-how-to-install-solr-8-on-macos-13-ventura-for-drupal-compatibility\/"
+      }
+    }
+    
+  ]
+}
+</script>
+
+<meta property="og:title" content=Installing&#32;Solr&#32;8&#32;on&#32;macOS&#32;Ventura:&#32;A&#32;Guide&#32;for&#32;Drupal&#32;Engineers />
+<meta property="og:description" content=Resolve&#32;schema&#32;compatibility&#32;issues&#32;between&#32;Drupal&#32;and&#32;Solr&#32;9&#32;by&#32;installing&#32;Solr&#32;8&#32;on&#32;macOS&#32;Ventura.&#32;A&#32;professional&#32;guide&#32;for&#32;local&#32;development&#32;parity. />
+<meta property="og:type" content=article />
+<meta property="og:url" content=http://localhost:1313/post/2023/2023-04-14-how-to-install-solr-8-on-macos-13-ventura-for-drupal-compatibility/ />
 
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="How to Install Solr 8 on macOS 13 Ventura for Drupal Compatibility."/>
-<meta name="twitter:description" content="If you&#39;re using Drupal and need to install Solr for search functionality, you might encounter compatibility issues with the latest Solr version available through Homebrew. Solr 9&#39;s schema is not yet compatible with Drupal, so you&#39;ll need to install Solr 8 instead. In this guide, I&#39;ll walk you through the process of installing Solr 8 on macOS 13 Ventura."/>
-
+<meta name="twitter:title" content=Installing&#32;Solr&#32;8&#32;on&#32;macOS&#32;Ventura:&#32;A&#32;Guide&#32;for&#32;Drupal&#32;Engineers/>
+<meta name="twitter:description" content=Resolve&#32;schema&#32;compatibility&#32;issues&#32;between&#32;Drupal&#32;and&#32;Solr&#32;9&#32;by&#32;installing&#32;Solr&#32;8&#32;on&#32;macOS&#32;Ventura.&#32;A&#32;professional&#32;guide&#32;for&#32;local&#32;development&#32;parity./>
 
 
 
     
 </head>
-<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col group/design-root overflow-x-hidden">
-    <div class="layout-container flex h-full grow flex-col w-full">
-        <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-5">
-            <div class="layout-content-container flex flex-col max-w-[1200px] w-full flex-1">
-                
-<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-4 md:px-10 py-4 mb-8">
-    <div class="flex items-center gap-4 text-primary">
-        <a href="/" class="flex items-center gap-4 text-primary hover:opacity-80 transition-opacity">
-            <span class="material-symbols-outlined text-3xl">code</span>
-            <h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight tracking-[-0.015em]">JUANING.dev</h2>
-        </a>
-    </div>
-    <div class="hidden md:flex flex-1 justify-end gap-8 items-center">
-        <nav class="flex items-center gap-9">
-            
-            
-                
-                
-                <a class="relative flex flex-col items-center group py-2" href="/">
-                    <span class="text-sm font-medium transition-colors duration-300 text-slate-600 dark:text-slate-300 hover:text-primary">
-                        Home
-                    </span>
-                    <span class="absolute bottom-0 w-full h-0.5 bg-primary rounded-full transition-all duration-300 opacity-0 scale-x-0 group-hover:opacity-50 group-hover:scale-x-50"></span>
-                </a>
-            
-                
-                
-                <a class="relative flex flex-col items-center group py-2" href="/about/">
-                    <span class="text-sm font-medium transition-colors duration-300 text-slate-600 dark:text-slate-300 hover:text-primary">
-                        About
-                    </span>
-                    <span class="absolute bottom-0 w-full h-0.5 bg-primary rounded-full transition-all duration-300 opacity-0 scale-x-0 group-hover:opacity-50 group-hover:scale-x-50"></span>
-                </a>
-            
-                
-                
-                <a class="relative flex flex-col items-center group py-2" href="/portfolio/">
-                    <span class="text-sm font-medium transition-colors duration-300 text-slate-600 dark:text-slate-300 hover:text-primary">
-                        Portfolio
-                    </span>
-                    <span class="absolute bottom-0 w-full h-0.5 bg-primary rounded-full transition-all duration-300 opacity-0 scale-x-0 group-hover:opacity-50 group-hover:scale-x-50"></span>
-                </a>
-            
-        </nav>
-        
-        <div class="h-6 w-px bg-slate-200 dark:bg-slate-800 hidden md:block"></div>
-        <div class="flex items-center gap-2 text-sm font-bold uppercase tracking-wider">
-    
-    
-    
-        
-        
-        
-        
-            
-                
-            
-        
-            
-        
 
-        
-            <span class="text-primary">en</span>
-        
+<body class="min-h-screen font-sans selection:bg-cyan-500/30 selection:text-cyan-200 bg-hud-bg">
     
-        
-            <span class="text-slate-300 dark:text-slate-700 font-normal">|</span>
-        
-        
-        
-        
-            
-        
-            
-                
-            
-        
+<nav
+  class="fixed top-0 w-full z-50 bg-[#0b0f15]/80 backdrop-blur-xl border-b border-white/5 transition-colors duration-300 h-[73px] overflow-hidden">
+  <div class="flex justify-between items-center px-6 md:px-8 h-full max-w-7xl mx-auto">
 
-        
-            <a href="/es/post/2023/como-instalar-solr-8-en-macos-13-ventura-para-compatibilidad-con-drupal/" class="text-slate-500 hover:text-primary transition-colors">
-                es
-            </a>
-        
     
-</div>
-
-
-        <a class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary text-background-dark hover:bg-primary/90 transition-colors text-sm font-bold leading-normal tracking-[0.015em]" href="/contact/">
-            <span class="truncate">Contact</span>
-        </a>
-    </div>
-    
-    <button class="md:hidden text-slate-900 dark:text-slate-100" id="mobile-menu-btn">
-        <span class="material-symbols-outlined">menu</span>
-    </button>
-</header>
-
-
-<div id="mobile-menu" class="hidden md:hidden flex-col gap-4 px-4 py-4 mb-4 border-b border-slate-200 dark:border-slate-800">
-    
-    
-        
-        
-        <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-colors text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800" href="/">
-            Home
-        </a>
-    
-        
-        
-        <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-colors text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800" href="/about/">
-            About
-        </a>
-    
-        
-        
-        <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-colors text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800" href="/portfolio/">
-            Portfolio
-        </a>
-    
-    
-    <div class="flex items-center justify-between border-t border-slate-200 dark:border-slate-800 pt-4 mt-2">
-        <span class="text-sm text-slate-500 font-medium">Idioma / Language</span>
-        <div class="flex items-center gap-2 text-sm font-bold uppercase tracking-wider">
-    
-    
-    
-        
-        
-        
-        
-            
-                
-            
-        
-            
-        
-
-        
-            <span class="text-primary">en</span>
-        
-    
-        
-            <span class="text-slate-300 dark:text-slate-700 font-normal">|</span>
-        
-        
-        
-        
-            
-        
-            
-                
-            
-        
-
-        
-            <a href="/es/post/2023/como-instalar-solr-8-en-macos-13-ventura-para-compatibilidad-con-drupal/" class="text-slate-500 hover:text-primary transition-colors">
-                es
-            </a>
-        
-    
-</div>
-
-    </div>
-
-    <a class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-primary text-background-dark font-bold mt-2" href="/contact/">
-        Contact
+    <a href=/
+      class="text-xl md:text-2xl font-display font-bold tracking-tight text-slate-100 hover:opacity-80 transition-opacity">
+      JUANING<span class="text-hud-cyan">.dev</span>
     </a>
+
+    
+    <div class="hidden md:flex items-center gap-8 -ml-12">
+      
+      
+      
+      
+      <a href=/
+        class="text-sm font-medium transition-colors duration-200 text-slate-400 hover:text-hud-cyan">
+        Home
+      </a>
+      
+      
+      
+      <a href=/about/
+        class="text-sm font-medium transition-colors duration-200 text-slate-400 hover:text-hud-cyan">
+        About
+      </a>
+      
+      
+      
+      <a href=/portfolio/
+        class="text-sm font-medium transition-colors duration-200 text-slate-400 hover:text-hud-cyan">
+        Portfolio
+      </a>
+      
+    </div>
+
+    
+    <div class="flex items-center gap-4 md:gap-6">
+      <div class="hidden sm:block">
+        <div class="flex items-center gap-2 text-sm font-mono uppercase tracking-wider">
+    
+    
+    
+        
+        
+        
+        
+            
+                
+            
+        
+            
+        
+
+        
+            <span class="text-slate-200">en</span>
+        
+    
+        
+            <span class="text-slate-300 dark:text-slate-700 font-normal">|</span>
+        
+        
+        
+        
+            
+        
+            
+                
+            
+        
+
+        
+            <a href=/es/post/2023/2023-04-14-how-to-install-solr-8-on-macos-13-ventura-for-drupal-compatibility/ class="text-slate-500 hover:text-hud-cyan transition-colors">
+                es
+            </a>
+        
+    
 </div>
+
+      </div>
+
+      <a href=/contact/
+        class="bg-hud-cyan text-slate-950 px-5 py-2.5 rounded text-sm font-semibold hover:bg-[#38bdf8] transition-colors transition-opacity transition-transform hover:shadow-[0_0_15px_rgba(14,165,233,0.4)] active:scale-95 flex items-center justify-center">
+        Contact
+      </a>
+
+      
+      <button class="md:hidden text-slate-300 hover:text-white" id="mobile-menu-btn">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+
+<div id="mobile-menu"
+  class="fixed top-[73px] left-0 w-full h-[calc(100vh-73px)] bg-[#0b0f15]/95 backdrop-blur-xl z-40 hidden flex-col px-6 py-8 border-t border-white/5 md:hidden">
+  
+  <div class="flex flex-col gap-6">
+    
+    
+    
+    <a class="text-xl font-medium transition-colors text-slate-300 hover:text-white"
+      href=/>
+      Home
+    </a>
+    
+    
+    
+    <a class="text-xl font-medium transition-colors text-slate-300 hover:text-white"
+      href=/about/>
+      About
+    </a>
+    
+    
+    
+    <a class="text-xl font-medium transition-colors text-slate-300 hover:text-white"
+      href=/portfolio/>
+      Portfolio
+    </a>
+    
+  </div>
+
+  <div class="mt-auto border-t border-white/10 pt-6">
+    <span class="text-sm text-slate-500 font-mono mb-4 block">SYS.LANG_SELECT</span>
+    <div class="flex items-center gap-2 text-sm font-mono uppercase tracking-wider">
+    
+    
+    
+        
+        
+        
+        
+            
+                
+            
+        
+            
+        
+
+        
+            <span class="text-slate-200">en</span>
+        
+    
+        
+            <span class="text-slate-300 dark:text-slate-700 font-normal">|</span>
+        
+        
+        
+        
+            
+        
+            
+                
+            
+        
+
+        
+            <a href=/es/post/2023/2023-04-14-how-to-install-solr-8-on-macos-13-ventura-for-drupal-compatibility/ class="text-slate-500 hover:text-hud-cyan transition-colors">
+                es
+            </a>
+        
+    
+</div>
+
+  </div>
+</div>
+
+
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
+  
+  document.addEventListener('DOMContentLoaded', () => {
     const btn = document.getElementById('mobile-menu-btn');
     const menu = document.getElementById('mobile-menu');
-    if(btn && menu) {
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-            menu.classList.toggle('flex');
-        });
+    const icon = btn.querySelector('span');
+
+    if (btn && menu && icon) {
+      btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+        menu.classList.toggle('flex');
+
+        if (menu.classList.contains('hidden')) {
+          icon.textContent = 'menu';
+          document.body.style.overflow = 'auto';
+        } else {
+          icon.textContent = 'close';
+          document.body.style.overflow = 'hidden';
+        }
+      });
     }
-});
+  });
 </script>
 
+    <main class="w-full max-w-7xl mx-auto px-6 md:px-8 pt-[105px] pb-0 md:pt-[121px] md:pb-0 flex flex-col gap-8 md:gap-12">
+        
+<article class="flex flex-col w-full gap-8 md:gap-10">
+  <header class="glass-card rounded-xl p-8 border-b-[3px] border-b-hud-cyan relative overflow-hidden group">
+    <h1
+      class="font-display text-slate-100 text-3xl md:text-4xl font-bold leading-tight tracking-tight mb-4 flex items-center gap-4">
+      
+      <div class="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-lg bg-hud-cyan/10 border border-hud-cyan/20 text-hud-cyan shrink-0">
+        <span class="material-symbols-outlined text-3xl md:text-4xl">terminal</span>
+      </div>
+      
+      Installing Solr 8 on macOS Ventura: A Guide for Drupal Engineers
+    </h1>
+    
+    <div class="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-400 uppercase tracking-wider">
+      <span class="flex items-center gap-1">
+        <span class="material-symbols-outlined text-sm">calendar_month</span>
+        SYS.LOG // 2023.04.14
+      </span>
+      
+    </div>
+    
 
-                <main class="w-full">
-                    
-<article class="@container flex flex-col w-full py-10 px-4 md:px-0">
-    <header class="flex flex-col gap-4 mb-10 pb-10 border-b border-slate-200 dark:border-slate-800">
-        <h1 class="text-slate-900 dark:text-white text-4xl @[480px]:text-5xl lg:text-6xl font-black leading-tight tracking-[-0.033em]">
-            How to Install Solr 8 on macOS 13 Ventura for Drupal Compatibility.
-        </h1>
-        
-        <div class="flex flex-wrap items-center gap-4 text-sm text-slate-500 dark:text-slate-400 font-medium">
-            <span class="flex items-center gap-1">
-                <span class="material-symbols-outlined text-base">calendar_month</span>
-                April 14, 2023
-            </span>
-            
-        </div>
-        
-        
-        
-    </header>
+    
+    <div class="flex flex-wrap gap-2 mt-6">
+      
+      <a href=/tags/solr
+        class="inline-block px-3 py-1 bg-slate-800/60 text-slate-300 hover:text-hud-cyan border border-white/5 hover:border-hud-cyan/50 transition-colors rounded text-xs font-mono uppercase tracking-wider">
+        <span class="text-hud-cyan mr-1">#</span>Solr
+      </a>
+      
+      <a href=/tags/macos
+        class="inline-block px-3 py-1 bg-slate-800/60 text-slate-300 hover:text-hud-cyan border border-white/5 hover:border-hud-cyan/50 transition-colors rounded text-xs font-mono uppercase tracking-wider">
+        <span class="text-hud-cyan mr-1">#</span>macOS
+      </a>
+      
+      <a href=/tags/search-api
+        class="inline-block px-3 py-1 bg-slate-800/60 text-slate-300 hover:text-hud-cyan border border-white/5 hover:border-hud-cyan/50 transition-colors rounded text-xs font-mono uppercase tracking-wider">
+        <span class="text-hud-cyan mr-1">#</span>Search API
+      </a>
+      
+      <a href=/tags/drupal-10
+        class="inline-block px-3 py-1 bg-slate-800/60 text-slate-300 hover:text-hud-cyan border border-white/5 hover:border-hud-cyan/50 transition-colors rounded text-xs font-mono uppercase tracking-wider">
+        <span class="text-hud-cyan mr-1">#</span>Drupal 10
+      </a>
+      
+    </div>
+    
+  </header>
 
-    <div class="prose prose-slate dark:prose-invert prose-lg lg:prose-xl max-w-3xl lg:max-w-4xl mx-auto w-full prose-headings:font-bold prose-headings:tracking-tight prose-a:text-primary hover:prose-a:text-primary/80 prose-img:rounded-xl prose-h2:text-3xl prose-h2:@[480px]:text-4xl prose-h2:leading-tight prose-h3:text-xl prose-h3:leading-tight">
-        <p>You might have observed that the solr version included in the most recent homebrew package is 9.
-However, its schema is currently not compatible with Drupal. Therefore, I will guide you on how to obtain version 8 of solr,
-which is compatible with Drupal.</p>
-<h2>Requirements</h2>
+  <div
+    class="glass-card rounded-xl p-8 md:p-12 prose prose-slate prose-invert max-w-none w-full prose-headings:font-display prose-headings:tracking-tight prose-a:text-hud-cyan hover:prose-a:text-cyan-400 prose-img:rounded-xl prose-h2:text-3xl prose-h2:md:text-4xl prose-h2:leading-tight prose-h3:text-xl prose-h3:leading-tight">
+    <p>When building enterprise Drupal platforms, maintaining parity between local development and production environments is critical. Often, the latest versions available via package managers like Homebrew (such as Solr 9) introduce breaking changes or schema incompatibilities with the current <strong>Drupal Search API</strong> ecosystem.</p>
+<p>For developers needing <strong>Solr 8</strong> compatibility on macOS 13 Ventura, this guide provides a structured, professional installation path.</p>
+<h2 id="the-compatibility-challenge" >The Compatibility Challenge
+<span>
+    <a href="#the-compatibility-challenge">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>As of macOS Ventura, the default Homebrew package for Solr has moved to version 9.x. However, many enterprise Drupal deployments still rely on the Solr 8.x schema for stability. Running mismatched versions can lead to indexing errors and inconsistent search results.</p>
+<hr>
+<h2 id="prerequisites" >Prerequisites
+<span>
+    <a href="#prerequisites">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>Before starting, ensure you have the following installed:</p>
 <ol>
-<li>Homebrew</li>
-<li>Java 8</li>
+<li><strong>Homebrew</strong> (The macOS package manager).</li>
+<li><strong>Java 8</strong> (Required for Solr 8 stability).</li>
 </ol>
-<h2>Step 1: Install Java 8 using Homebrew</h2>
-<p>If you haven't installed Homebrew, you can find the installation instructions at <a href="https://brew.sh/" target="_blank">https://brew.sh/</a>.
-After installing Homebrew, open Terminal and run the following command to install Java 8:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">brew install --cask adoptopenjdk/openjdk/adoptopenjdk8</span></span></code></pre></div>
-<h2>Step 2: Find the Java 8 installation path</h2>
-<p>To find the path of the installed Java 8, run this command in Terminal:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">/usr/libexec/java_home -v 1.8</span></span></code></pre></div>
-<p>Take note of the output, which should be something like /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home.</p>
-<h2>Step 3: Set JAVA_HOME environment variable</h2>
-<p>To set the JAVA_HOME environment variable, open your shell profile file (e.g., ~/.bash_profile, ~/.bashrc, or ~/.zshrc)
-in a text editor and add the following line, replacing /path/to/java8 with the path you found in step 2:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">JAVA_HOME</span><span class="o">=</span><span class="s2">&#34;/path/to/java8&#34;</span></span></span></code></pre></div>
-<p>For example, if the path from step 2 was /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home,
-the line you should add to your shell profile is:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">JAVA_HOME</span><span class="o">=</span><span class="s2">&#34;/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home&#34;</span></span></span></code></pre></div>
-<p>Save the file and close the text editor.</p>
-<h2>Step 4: Apply changes</h2>
-<p>Run the following command to apply the changes to the current session:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl"><span class="nb">source</span> ~/.zshrc</span></span></code></pre></div>
-<h2>Step 5: Verify Java version</h2>
-<p>Verify that you're using the correct Java version by running:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">java -version</span></span></code></pre></div>
-<h2>Step 6: Download solr 8</h2>
-<p>Go to the <a href="https://archive.apache.org/dist/lucene/solr/8.9.0/" target="_blank">Apache Solr 8 archive</a>
-and download the .tgz file for that version.</p>
-<p>Extract the downloaded archive:
-Open Terminal and navigate to the directory where the downloaded .tgz file is located. Extract the contents using the following command:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">tar xzf solr-8.9.0.tgz</span></span></code></pre></div>
-<p>Replace solr-8.9.0.tgz with the name of the downloaded .tgz file.</p>
-<p>Move the extracted directory to a desired location: You can move the extracted directory to a location of your choice.
-For instance, you can move it to the /opt directory:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">sudo mv solr-8.9.0 /opt/solr</span></span></code></pre></div>
-<h2>Step 7: Set up environment variables</h2>
-<p>Add the Solr binary to your system's PATH by adding the following line to your shell profile (e.g., ~/.bash_profile, ~/.bashrc, or ~/.zshrc):</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/opt/solr/bin</span></span></code></pre></div>
-<p>Save the file, and then run source ~/.bash_profile, source ~/.bashrc, or source ~/.zshrc (depending on which file you edited) to apply the changes immediately.<p>
-<h2>Step 8: Start Solr</h2>
-<p>Run the following command in Terminal to start Solr:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">solr start</span></span></code></pre></div>
-<h2>Step 9: Verify Solr installation</h2>
-<p>Check that Solr is running by opening a web browser and navigating to <a href="http://localhost:8983/solr/" target="_blank">http://localhost:8983/solr/</a>.
-You should see the Solr admin dashboard.</p>
-<h2>Step 10: Create Launch Daemon</h2>
-<p>Now that solr is installed, you will have to start it everytime you restart the computer, to prevent that, we are going to create
-a Launch Daemon that will launch the solr service automatically.</p>
-<h3>Create a plist file</h3>
-<p>Create a new file called org.apache.solr.plist using a text editor like nano or vim, and add the following content:</p>
+<h2 id="step-1-install-java-8-via-homebrew" >Step 1: Install Java 8 via Homebrew
+<span>
+    <a href="#step-1-install-java-8-via-homebrew">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>Solr 8 has a strong dependency on Java 8. To avoid version conflicts, we use the <code>adoptopenjdk</code> tap:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">brew install --cask adoptopenjdk/openjdk/adoptopenjdk8
+</span></span></code></pre></div><h2 id="step-2-configure-java_home" >Step 2: Configure JAVA_HOME
+<span>
+    <a href="#step-2-configure-java_home">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>To ensure Solr uses the correct JVM, we must find and export the <code>JAVA_HOME</code> path.</p>
+<p>Check the installation path:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">/usr/libexec/java_home -v 1.8
+</span></span></code></pre></div><p>Add the following to your shell profile (<code>.zshrc</code> or <code>.bash_profile</code>):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl"><span class="c1"># Replace with the path found above</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">JAVA_HOME</span><span class="o">=</span><span class="s2">&#34;/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> ~/.zshrc
+</span></span></code></pre></div><h2 id="step-3-manual-installation-of-solr-8" >Step 3: Manual Installation of Solr 8
+<span>
+    <a href="#step-3-manual-installation-of-solr-8">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>Since Homebrew prioritizes version 9, we will perform a manual installation to a dedicated <code>/opt</code> directory for better control.</p>
+<ol>
+<li><strong>Download:</strong> Fetch the legacy binaries from the <a href="https://archive.apache.org/dist/lucene/solr/8.9.0/">Apache Solr 8 Archive</a>.</li>
+<li><strong>Extract and Move:</strong>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">tar xzf solr-8.9.0.tgz
+</span></span><span class="line"><span class="cl">sudo mv solr-8.9.0 /opt/solr
+</span></span></code></pre></div></li>
+</ol>
+<h2 id="step-4-environment-path-integration" >Step 4: Environment Path Integration
+<span>
+    <a href="#step-4-environment-path-integration">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>Add the Solr binary to your system&rsquo;s PATH to allow global command access:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/opt/solr/bin
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> ~/.zshrc
+</span></span></code></pre></div><h2 id="step-5-automating-with-a-launch-daemon" >Step 5: Automating with a Launch Daemon
+<span>
+    <a href="#step-5-automating-with-a-launch-daemon">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>For a professional local setup, Solr should run as a background service that persists across reboots. We achieve this using a macOS <code>plist</code> configuration.</p>
+<h3 id="create-the-launchagent" >Create the LaunchAgent
+<span>
+    <a href="#create-the-launchagent">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Create <code>~/Library/LaunchAgents/org.apache.solr.plist</code> with the following definition:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE plist PUBLIC &#34;-//Apple//DTD PLIST 1.0//EN&#34; &#34;http://www.apple.com/DTDs/PropertyList-1.0.dtd&#34;&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="nt">&lt;plist</span> <span class="na">version=</span><span class="s">&#34;1.0&#34;</span><span class="nt">&gt;</span>
@@ -315,24 +481,37 @@ a Launch Daemon that will launch the solr service automatically.</p>
 </span></span><span class="line"><span class="cl">    <span class="nt">&lt;key&gt;</span>WorkingDirectory<span class="nt">&lt;/key&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&lt;string&gt;</span>/opt/solr<span class="nt">&lt;/string&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="nt">&lt;/dict&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;/plist&gt;</span></span></span></code></pre></div>
-<h3>Move the plist file to the LaunchAgents folder</h3>
-<p>Copy the org.apache.solr.plist file to the ~/Library/LaunchAgents/ folder:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">cp org.apache.solr.plist ~/Library/LaunchAgents/</span></span></code></pre></div>
-<h3>Load the launch agent</h3>
-<p>Load the plist file to launchd:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">launchctl load ~/Library/LaunchAgents/org.apache.solr.plist</span></span></code></pre></div>
-<p>Now, Solr should start automatically whenever you log in to your user account.
-If you want to stop Solr from starting automatically, you can unload the plist file:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">launchctl unload ~/Library/LaunchAgents/org.apache.solr.plist</span></span></code></pre></div>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/plist&gt;</span>
+</span></span></code></pre></div><h3 id="load-the-service" >Load the Service
+<span>
+    <a href="#load-the-service">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">launchctl load ~/Library/LaunchAgents/org.apache.solr.plist
+</span></span></code></pre></div><hr>
+<h2 id="verification" >Verification
+<span>
+    <a href="#verification">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>Navigate to <a href="http://localhost:8983/solr/">http://localhost:8983/solr/</a> to access the Solr Admin Dashboard. You now have a stable, automated Solr 8 environment ready for enterprise Drupal development.</p>
+<blockquote>
+<p><strong>Facing search performance issues?</strong>
+Optimization of Solr cores and search schemas is a critical part of my backend architecture services. <a href="https://juaning.dev/contact">Let&rsquo;s connect</a> to fine-tune your enterprise search infrastructure.</p>
+</blockquote>
 
-    </div>
+  </div>
 
+  
+  
+  <div class="glass-card rounded-xl p-8 w-full">
+    <h3 class="text-xl font-display font-bold mb-8 text-slate-100 flex items-center gap-2">
+      <span class="material-symbols-outlined text-hud-cyan">forum</span>
+      Comments
+    </h3>
     
-    
-    <div class="mt-20 pt-10 border-t border-slate-200 dark:border-slate-800 max-w-3xl lg:max-w-4xl mx-auto w-full">
-        <h3 class="text-xl font-bold mb-8 text-slate-900 dark:text-white">Comments</h3>
-        
 
 
     
@@ -360,35 +539,57 @@ If you want to stop Solr from starting automatically, you can unload the plist f
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
-    </div>
-    
-    
+  </div>
+  
+  
 </article>
 
-                </main>
-                
-            </div>
-        </div>
-        
-<footer class="w-full border-t border-slate-200 dark:border-slate-800 py-8 px-4 mt-auto">
-    <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-slate-500 dark:text-slate-400 text-sm">
-        <div class="flex items-center gap-2 font-medium text-slate-700 dark:text-slate-300">
-            <span class="material-symbols-outlined text-primary text-xl">code</span>
-            <span>JUANING.dev</span>
-        </div>
-        <p>&copy; 2026 Juan Gómez. All rights reserved.</p>
-        <div class="flex gap-6">
-            
-        </div>
+    </main>
+
+    
+<footer class="w-full py-8 md:py-12 bg-hud-bg border-t border-white/5 mt-8 md:mt-12">
+  <div class="flex flex-col md:flex-row justify-between items-center px-6 md:px-8 max-w-7xl mx-auto gap-6 md:gap-8">
+
+    <div class="text-xl font-display font-bold tracking-tight text-slate-300">
+      JUANING<span class="text-hud-cyan/70">.dev</span>
     </div>
+
+    <div class="flex space-x-6">
+      <a href="https://github.com/"
+        class="text-slate-500 hover:text-hud-cyan transition-colors flex items-center gap-2 group" target="_blank"
+        rel="noopener">
+        <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"
+          aria-hidden="true">
+          <path fill-rule="evenodd"
+            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+            clip-rule="evenodd"></path>
+        </svg>
+        <span class="hidden sm:inline-block text-sm font-mono">GitHub</span>
+      </a>
+      <a href=ZgotmplZ
+        class="text-slate-500 hover:text-hud-cyan transition-colors flex items-center gap-2 group" target="_blank"
+        rel="noopener">
+        <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"
+          aria-hidden="true">
+          <path
+            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+        </svg>
+        <span class="hidden sm:inline-block text-sm font-mono">LinkedIn</span>
+      </a>
+    </div>
+
+    <div class="text-slate-600 text-sm flex items-center gap-2 font-mono">
+      &copy; 2026 Juan Gómez.
+      <span class="hidden sm:inline">All rights reserved.</span>
+    </div>
+  </div>
 </footer>
 
 
 
 
-<script src="/js/copy-code.min.1244fd3bf209c4373c42fccb80459b455b69f0a8109e44fc7e232bdbd1a9662b.js" integrity="sha256-EkT9O/IJxDc8QvzLgEWbRVtp8KgQnkT8fiMr29GpZis=" defer></script>
+<script src=/js/copy-code.min.1244fd3bf209c4373c42fccb80459b455b69f0a8109e44fc7e232bdbd1a9662b.js integrity=sha256-EkT9O/IJxDc8QvzLgEWbRVtp8KgQnkT8fiMr29GpZis&#61; defer></script>
 
-
-    </div>
 </body>
+
 </html>

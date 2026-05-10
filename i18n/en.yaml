@@ -56,7 +56,7 @@ hero_subtitle:
   other: "Web Platforms & Infrastructure Engineer"
 
 hero_title:
-  other: "Juan Gómez | Automations, Backend & DevOps"
+  other: "Juan Gómez · Automations, Backend & DevOps"
 
 hero_description:
   other: "Drupal & WordPress expert focused on scalable infrastructure, platform engineering, and modern cloud workflows."
@@ -138,3 +138,33 @@ contact_form_error_title:
   other: "Oh no..."
 contact_form_error_text:
   other: "I apologize, but it seems that something went wrong with the submission. I suggest that you try again at a later time."
+
+section_overview_title:
+  other: "System Overview"
+
+status_online:
+  other: "STATUS: ONLINE"
+
+section_logbook_title:
+  other: "Logbook"
+
+read_status:
+  other: "read"
+
+no_logs_found:
+  other: "NO LOGS FOUND."
+
+badge_stable:
+  other: "STABLE"
+
+badge_active:
+  other: "ACTIVE"
+
+badge_deploying:
+  other: "DEPLOYING"
+
+badge_planning:
+  other: "PLANNING"
+
+sys_lang_select:
+  other: "SYS.LANG_SELECT"

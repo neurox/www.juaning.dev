@@ -1,6 +1,7 @@
 ---
-seoTitle: Juan Gómez | Automatizaciones, Backend y DevOps | Cuernavaca, MX
-title: Proyectos Umbraco
+seoTitle: "Soluciones Umbraco Enterprise e Integraciones .NET | Juan Gómez"
+title: "Portafolio de Umbraco"
+icon: "work"
 description: "Ingeniero de Plataformas Web e Infraestructura con experiencia operativa en migraciones complejas sobre plataformas .NET y ecosistemas headless Umbraco."
 date: "2025-02-15"
 noComment: true

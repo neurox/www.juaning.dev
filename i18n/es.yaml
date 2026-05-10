@@ -50,7 +50,7 @@ hero_subtitle:
   other: "Ingeniero de Plataformas Web e Infraestructura"
 
 hero_title:
-  other: "Juan Gómez | Automatizaciones, Backend y DevOps"
+  other: "Juan Gómez · Automatizaciones, Backend & DevOps"
 
 hero_description:
   other: "Experto en Drupal y WordPress enfocado en infraestructura escalable, ingeniería de plataformas y flujos de trabajo modernos en la nube."
@@ -132,3 +132,33 @@ contact_form_error_title:
   other: "Oh no..."
 contact_form_error_text:
   other: "Lo siento, parece que algo salió mal con el envío. Te sugiero que lo intentes de nuevo más tarde."
+
+section_overview_title:
+  other: "Resumen del Sistema"
+
+status_online:
+  other: "ESTADO: EN LÍNEA"
+
+section_logbook_title:
+  other: "Bitácora"
+
+read_status:
+  other: "leer"
+
+no_logs_found:
+  other: "NO SE ENCONTRARON REGISTROS."
+
+badge_stable:
+  other: "ESTABLE"
+
+badge_active:
+  other: "ACTIVO"
+
+badge_deploying:
+  other: "DESPLEGANDO"
+
+badge_planning:
+  other: "PLANEANDO"
+
+sys_lang_select:
+  other: "SISTEMA.SELECCIÓN_IDIOMA"

@@ -1,69 +1,91 @@
 <!-- Header -->
-<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-4 md:px-10 py-4 mb-8">
-    <div class="flex items-center gap-4 text-primary">
-        <a href="{{ "/" | relLangURL }}" class="flex items-center gap-4 text-primary hover:opacity-80 transition-opacity">
-            <span class="material-symbols-outlined text-3xl">code</span>
-            <h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight tracking-[-0.015em]">{{ .Site.Title }}</h2>
-        </a>
-    </div>
-    <div class="hidden md:flex flex-1 justify-end gap-8 items-center">
-        <nav class="flex items-center gap-9">
-            {{ $current := . }}
-            {{ range .Site.Menus.main }}
-                {{ $menuURL := .URL | relLangURL }}
-                {{ $isActive := or (eq $current.RelPermalink $menuURL) (and (ne $menuURL "/") (ne $menuURL "/es/") (hasPrefix $current.RelPermalink $menuURL)) }}
-                <a class="relative flex flex-col items-center group py-2" href="{{ $menuURL }}">
-                    <span class="text-sm font-medium transition-colors duration-300 {{ if $isActive }}text-primary font-bold{{ else }}text-slate-600 dark:text-slate-300 hover:text-primary{{ end }}">
-                        {{ .Name }}
-                    </span>
-                    <span class="absolute bottom-0 w-full h-0.5 bg-primary rounded-full transition-all duration-300 {{ if $isActive }}opacity-100 scale-x-100{{ else }}opacity-0 scale-x-0 group-hover:opacity-50 group-hover:scale-x-50{{ end }}"></span>
-                </a>
-            {{ end }}
-        </nav>
-        
-        <div class="h-6 w-px bg-slate-200 dark:bg-slate-800 hidden md:block"></div>
-        {{ partial "language-switcher.html" . }}
+<nav
+  class="fixed top-0 w-full z-50 bg-[#0b0f15]/80 backdrop-blur-xl border-b border-white/5 transition-colors duration-300 h-[73px] overflow-hidden">
+  <div class="flex justify-between items-center px-6 md:px-8 h-full max-w-7xl mx-auto">
 
-        <a class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary text-background-dark hover:bg-primary/90 transition-colors text-sm font-bold leading-normal tracking-[0.015em]" href="{{ with site.GetPage "contact" }}{{ .RelPermalink }}{{ end }}">
-            <span class="truncate">{{ T "nav_contact" }}</span>
-        </a>
+    <!-- Brand -->
+    <a href={{ "/" | relLangURL }}
+      class="text-xl md:text-2xl font-display font-bold tracking-tight text-slate-100 hover:opacity-80 transition-opacity">
+      JUANING<span class="text-hud-cyan">.dev</span>
+    </a>
+
+    <!-- Desktop Links -->
+    <div class="hidden md:flex items-center gap-8 -ml-12">
+      {{ $current := . }}
+      {{ range .Site.Menus.main }}
+      {{ $menuURL := .URL | relLangURL }}
+      {{ $isActive := or (eq $current.RelPermalink $menuURL) (and (ne $menuURL "/") (ne $menuURL "/es/") (hasPrefix
+      $current.RelPermalink $menuURL)) }}
+      <a href={{ $menuURL }}
+        class="text-sm font-medium transition-colors duration-200 {{ if $isActive }}text-hud-cyan border-b-2 border-hud-cyan pb-1{{ else }}text-slate-400 hover:text-hud-cyan{{ end }}">
+        {{ .Name }}
+      </a>
+      {{ end }}
     </div>
-    
-    <button class="md:hidden text-slate-900 dark:text-slate-100" id="mobile-menu-btn">
+
+    <!-- Actions -->
+    <div class="flex items-center gap-4 md:gap-6">
+      <div class="hidden sm:block">
+        {{ partial "language-switcher.html" . }}
+      </div>
+
+      <a href={{ with site.GetPage "contact" }}{{ .RelPermalink }}{{ end }}
+        class="bg-hud-cyan text-slate-950 px-5 py-2.5 rounded text-sm font-semibold hover:bg-[#38bdf8] transition-colors transition-opacity transition-transform hover:shadow-[0_0_15px_rgba(14,165,233,0.4)] active:scale-95 flex items-center justify-center">
+        {{ T "nav_contact" }}
+      </a>
+
+      <!-- Mobile Menu Toggle -->
+      <button class="md:hidden text-slate-300 hover:text-white" id="mobile-menu-btn">
         <span class="material-symbols-outlined">menu</span>
-    </button>
-</header>
+      </button>
+    </div>
+  </div>
+</nav>
 
 <!-- Mobile Menu (Hidden by default) -->
-<div id="mobile-menu" class="hidden md:hidden flex-col gap-4 px-4 py-4 mb-4 border-b border-slate-200 dark:border-slate-800">
-    {{ $current := . }}
+<div id="mobile-menu"
+  class="fixed top-[73px] left-0 w-full h-[calc(100vh-73px)] bg-[#0b0f15]/95 backdrop-blur-xl z-40 hidden flex-col px-6 py-8 border-t border-white/5 md:hidden">
+  {{ $current := . }}
+  <div class="flex flex-col gap-6">
     {{ range .Site.Menus.main }}
-        {{ $menuURL := .URL | relLangURL }}
-        {{ $isActive := or (eq $current.RelPermalink $menuURL) (and (ne $menuURL "/") (ne $menuURL "/es/") (hasPrefix $current.RelPermalink $menuURL)) }}
-        <a class="flex items-center gap-3 px-3 py-2 rounded-lg transition-colors {{ if $isActive }}bg-primary/10 text-primary font-bold border-l-4 border-primary{{ else }}text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800{{ end }}" href="{{ $menuURL }}">
-            {{ .Name }}
-        </a>
-    {{ end }}
-    
-    <div class="flex items-center justify-between border-t border-slate-200 dark:border-slate-800 pt-4 mt-2">
-        <span class="text-sm text-slate-500 font-medium">Idioma / Language</span>
-        {{ partial "language-switcher.html" . }}
-    </div>
-
-    <a class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-primary text-background-dark font-bold mt-2" href="{{ with site.GetPage "contact" }}{{ .RelPermalink }}{{ end }}">
-        {{ T "nav_contact" }}
+    {{ $menuURL := .URL | relLangURL }}
+    {{ $isActive := or (eq $current.RelPermalink $menuURL) (and (ne $menuURL "/") (ne $menuURL "/es/") (hasPrefix
+    $current.RelPermalink $menuURL)) }}
+    <a class="text-xl font-medium transition-colors {{ if $isActive }}text-hud-cyan{{ else }}text-slate-300 hover:text-white{{ end }}"
+      href={{ $menuURL }}>
+      {{ .Name }}
     </a>
+    {{ end }}
+  </div>
+
+  <div class="mt-auto border-t border-white/10 pt-6">
+    <span class="text-sm text-slate-500 font-mono mb-4 block">{{ T "sys_lang_select" }}</span>
+    {{ partial "language-switcher.html" . }}
+  </div>
 </div>
 
+<!-- No spacer here, handled via padding on main in baseof.html -->
+
 <script>
-document.addEventListener('DOMContentLoaded', () => {
+  // Mobile menu script
+  document.addEventListener('DOMContentLoaded', () => {
     const btn = document.getElementById('mobile-menu-btn');
     const menu = document.getElementById('mobile-menu');
-    if(btn && menu) {
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-            menu.classList.toggle('flex');
-        });
+    const icon = btn.querySelector('span');
+
+    if (btn && menu && icon) {
+      btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+        menu.classList.toggle('flex');
+
+        if (menu.classList.contains('hidden')) {
+          icon.textContent = 'menu';
+          document.body.style.overflow = 'auto';
+        } else {
+          icon.textContent = 'close';
+          document.body.style.overflow = 'hidden';
+        }
+      });
     }
-});
+  });
 </script>

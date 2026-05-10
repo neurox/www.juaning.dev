@@ -1,39 +1,46 @@
 ---
-seoTitle: Juan Gómez | Automations, Backend & DevOps | Cuernavaca, MX
-title: Wordpress Projects
-description: "Senior Full Stack Developer with 8+ years experience in CMS, MERN
- stack, and DevOps. Specializing in scalable web solutions, API development,
- and cloud infrastructure. Let's build together!"
+seoTitle: "Scalable WordPress Architecture & CI/CD Workflows | Juan Gómez"
+title: "WordPress Portfolio"
+icon: "work"
+description: "Expert WordPress engineering focused on high-performance architectures, automated CI/CD pipelines (WP Engine/AWS), and advanced custom component development."
 date: "2025-02-15"
 noComment: true
 noDate: true
 noRelated: true
 ---
 
-## SolveIQ
+## Scalable WordPress Engineering for Enterprise
 
-SolveIQ is part of Asurvio, a Windows PC Support company, I've worked in the redesign and the setup and configuration of the deployment process in WP Engine, ensuring that the tree environments of the site worked seamlessly (development, staging, production).
+My approach to WordPress goes beyond simple site building; I focus on engineering performant, secure, and easily maintainable platforms that empower marketing teams while satisfying technical stakeholders.
 
-Several custom components were created with ACF and custom CSS to make them available as Gutemberg blocks, also custom widgets were created for the search sections filters.
+### SolveIQ (Asurvio)
 
-**Technologies:** Wordpress, PHP, Javascript, CSS, MariaDB, Faceted Search, CI/CD Pipelines, WP Engine.
+Working with a major Windows PC Support company, I engineered a robust delivery pipeline to stabilize their digital presence.
 
-[Check SolveIQ Site](https://www.solveiq.com)
+*   **Engineering:** Redesigned core architectural components and established a multi-environment deployment strategy (Development, Staging, Production) via **WP Engine**.
+*   **Custom Development:** Built an extensive library of Gutenberg blocks using **ACF** and custom CSS, along with specialized search widgets using **Faceted Search**.
+*   **Tech Stack:** PHP, JavaScript, MariaDB, CI/CD Pipelines.
 
-## Ocean Protection Council
+### Ocean Protection Council (California State Agency)
 
-The Ocean Protection Council of California is a state agency that works to protect California's ocean and coast. The OPC was created in 2004 by the California Ocean Protection Act (COPA). I've worked in the redesign of more than 20 components, we wheren't allowed to update directly the code so we've provided all the code and detailed instructions to update the components code in their environment.
+For this government entity, I provided technical consulting for a large-scale UI/UX modernization.
 
-**Technologies:** Wordpress, PHP, Javascript, CSS.
+*   **Contribution:** Engineered over 20 high-fidelity components under strict deployment protocols, providing detailed documentation and source code for internal integration.
+*   **Focus:** Accessibility, performance, and code maintainability.
 
-[Check OPC Site](https://opc.ca.gov)
+### Dementia Care Aware (UC San Francisco / DHCS)
 
-## Dementia Care Aware
+Led the migration and re-engineering of this critical healthcare training platform.
 
-Dementia Care Aware is a California program that trains and supports primary care providers in assessing and treating dementia. The program was launched in July 2022 by the California Department of Health Care Services (DHCS). I've worked in the redesign and migration of the content from the previous platform to the new environment server with Wordpress hosted in AWS.
+*   **Migration:** Managed the transition from a legacy platform to a secure, cloud-native environment hosted on **AWS**.
+*   **Enablement:** Implemented a modular component system using **Elementor** to empower non-technical users to manage content without compromising site performance.
 
-All the components were created with Elementor in order to make them reusable and easier to manage by a non technical user.
+---
 
-**Technologies:** Wordpress, Elementor, PHP, Javascript, CSS, MariaDB, AWS.
+### Engineering Resources
 
-[Check DCA Site](https://www.dementiacareaware.org)
+I leverage modern tooling to ensure WordPress deployments are fast, secure, and reproducible:
+
+*   **WordPress Strategy:** Focusing on headless integrations, advanced caching, and automated scaling on cloud infrastructure.
+
+> **Need to scale your WordPress infrastructure?** [Let's connect](https://juaning.dev/contact).
