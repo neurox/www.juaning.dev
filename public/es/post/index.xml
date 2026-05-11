@@ -31,24 +31,13 @@
     </item>
     
     <item>
-      <title>Instalar y habilitar acceso FTP en una instancia AWS EC2 con Linux Centos 7</title>
-      <link>http://localhost:1313/es/post/2022/instalar-y-habilitar-acceso-ftp-en-una-instancia-aws-ec2-con-linux-centos-7/</link>
+      <title>Configuración de Acceso FTP Seguro en AWS EC2 (CentOS 7)</title>
+      <link>http://localhost:1313/es/post/2022/2022-11-24-install-and-enable-ftp-access-in-aws-ec2-instance-with-linux-centos-7/</link>
       <pubDate>Thu, 24 Nov 2022 00:00:00 +0000</pubDate>
       <author>juanjose@ingomez.com (Juan Gómez)</author>
-      <guid>http://localhost:1313/es/post/2022/instalar-y-habilitar-acceso-ftp-en-una-instancia-aws-ec2-con-linux-centos-7/</guid>
-      <description>&lt;p&gt;Te guiaré a través de la manera más rápida y fácil de configurar el acceso FTP
-a una instancia EC2 con la distribución Centos 7 en AWS (Amazon Web Services),
-vamos a usar VSFTPD (Very Secure FTP Daemon) así que el primer paso es instalarlo.&lt;/p&gt;
-&lt;h2&gt;Instalación y configuración de VSFTPD&lt;/h2&gt;
-&lt;h3&gt;Paso 1: Instala VSFTPD&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Actualiza el administrador de paquetes:
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo yum update&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Instala el software VSFTP:
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo yum install vsftpd&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;</description>
+      <guid>http://localhost:1313/es/post/2022/2022-11-24-install-and-enable-ftp-access-in-aws-ec2-instance-with-linux-centos-7/</guid>
+      <description>&lt;p&gt;La gestión de infraestructuras en la nube heredadas a menudo requiere equilibrar los protocolos de seguridad modernos con las necesidades tradicionales de transferencia de datos. Si bien &lt;strong&gt;SFTP&lt;/strong&gt; (SSH File Transfer Protocol) es el estándar de la industria para transferencias seguras, ciertos flujos de trabajo empresariales o integraciones legacy aún requieren un entorno &lt;strong&gt;FTP&lt;/strong&gt; robusto.&lt;/p&gt;
+&lt;p&gt;Esta guía detalla el proceso de instalación y configuración de &lt;strong&gt;VSFTPD&lt;/strong&gt; (Very Secure FTP Daemon) en una instancia de AWS EC2 con Linux CentOS 7.&lt;/p&gt;</description>
     </item>
     
   </channel>
