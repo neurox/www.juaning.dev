@@ -25,9 +25,9 @@ module.exports = {
         }
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        display: ['Geist', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
+        sans: ['Inter', 'Inter-Fallback', 'sans-serif'],
+        display: ['Geist', 'Geist-Fallback', 'sans-serif'],
+        mono: ['JetBrains Mono', 'JetBrainsMono-Fallback', 'monospace'],
       },
     },
   },

@@ -37,8 +37,8 @@
   </div>
 </footer>
 
-<!-- Functional Scripts -->
+<!-- Functional Scripts Inlined for Performance -->
 {{ if (fileExists "assets/js/copy-code.js") }}
-{{ $copyJs := resources.Get "js/copy-code.js" | minify | fingerprint }}
-<script src={{ $copyJs.RelPermalink }} integrity={{ $copyJs.Data.Integrity }} defer></script>
+{{ $copyJs := resources.Get "js/copy-code.js" | minify }}
+<script>{{ $copyJs.Content | safeJS }}</script>
 {{ end }}

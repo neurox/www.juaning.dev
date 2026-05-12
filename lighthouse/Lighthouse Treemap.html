@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <title>Lighthouse Treemap</title>
+  <link rel="icon" href="data:image/svg+xml;utf8,&lt;svg fill=&quot;none&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 48 48&quot;&gt;&lt;path d=&quot;m14 7 10-7 10 7v10h5v7h-5l5 24H9l5-24H9v-7h5V7Z&quot; fill=&quot;%23F63&quot;/&gt;&lt;path d=&quot;M31.561 24H14l-1.689 8.105L31.561 24ZM18.983 48H9l1.022-4.907L35.723 32.27l1.663 7.98L18.983 48Z&quot; fill=&quot;%23FFA385&quot;/&gt;&lt;path fill=&quot;%23FF3&quot; d=&quot;M20.5 10h7v7h-7z&quot;/&gt;&lt;/svg&gt;">
+  <meta name="theme-color" content="#304ffe">
+  <link rel="stylesheet" href="./Lighthouse Treemap_files/bundled.css">
+  <link rel="canonical" href="https://googlechrome.github.io/lighthouse/treemap/">
+<script class="lh-injectedoptions">
+    window.__treemapOptions = {"lhr":{"mainDocumentUrl":"http://localhost:1313/","finalUrl":"http://localhost:1313/","finalDisplayedUrl":"http://localhost:1313/","audits":{"script-treemap-data":{"id":"script-treemap-data","title":"Script Treemap Data","description":"Used for treemap app","score":1,"scoreDisplayMode":"informative","details":{"type":"treemap-data","nodes":[{"name":"/ (inline)","resourceBytes":2485,"encodedBytes":2485,"unusedBytes":1711,"children":[{"name":"(inline) document.addEve…","resourceBytes":1106,"unusedBytes":1005,"size":1106},{"name":"(inline) (function() {\n …","resourceBytes":728,"unusedBytes":359,"size":728},{"name":"(inline) document.addEve…","resourceBytes":651,"unusedBytes":347,"size":651}],"size":2485},{"name":"/livereload.js?mindelay=10&v=2&port=1313&path=livereload","resourceBytes":80069,"encodedBytes":80083,"unusedBytes":30951,"size":80083,"dom":{}}]}}},"configSettings":{"locale":"en-US"}}};
+  </script></head>
+
+<body class="vars">
+  <div class="drop_zone"></div>
+
+  <div class="treemap-placeholder hidden">
+    <div class="treemap-placeholder-inner">
+      <div>
+        <img src="./Lighthouse Treemap_files/lighthouse-logo.svg" class="treemap-placeholder-logo" alt="Lighthouse logo">
+      </div>
+      <div>
+        <h1 class="treemap-placeholder__heading">Lighthouse Treemap</h1>
+        <div class="treemap-placeholder__help">To view a treemap: Paste the Lighthouse result json or a Gist URL.<br>
+          You can also drag 'n drop the file or click here to select it.<br><br>
+        </div>
+        <input type="url" class="treemap-placeholder__url js-gist-url" placeholder="Enter or paste Gist URL">
+      </div>
+    </div>
+  </div>
+
+  <style>
+      #lh-log {
+        position: fixed;
+        background-color: #323232;
+        color: #fff;
+        min-height: 48px;
+        min-width: 288px;
+        padding: 16px 24px;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+        border-radius: 2px;
+        margin: 12px;
+        font-size: 14px;
+        cursor: default;
+        transition: transform 0.3s, opacity 0.3s;
+        transform: translateY(100px);
+        opacity: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 3;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      #lh-log.lh-show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style><div id="lh-log"></div>
+
+  <input id="hidden-file-input" type="file" hidden="" accept="application/json">
+
+  <main class="lh-main lh-main--show-table">
+    <header class="lh-header">
+      <div class="lh-header__logotitle">
+        <!-- Lighthouse logo. Stolen from templates.html -->
+        <svg role="img" class="lh-topbar__logo" title="Lighthouse logo" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+          <path d="m14 7 10-7 10 7v10h5v7h-5l5 24H9l5-24H9v-7h5V7Z" fill="#F63"></path>
+          <path d="M31.561 24H14l-1.689 8.105L31.561 24ZM18.983 48H9l1.022-4.907L35.723 32.27l1.663 7.98L18.983 48Z" fill="#FFA385"></path>
+          <path fill="#FF3" d="M20.5 10h7v7h-7z"></path>
+        </svg>
+
+        <span class="lh-header--title lh-text-bold">Lighthouse Treemap</span>
+      </div>
+
+      <div class="lh-header__url">
+        <span class="lh-header--url-and-size">
+          <a href="http://localhost:1313/" class="lh-header--url" target="_blank" rel="noopener">http://localhost:1313/</a> <span class="lh-header--url-bytes lh-text-dim" title="Transfer bytes">80.6&nbsp;KiB</span></span>
+        
+      </div>
+
+      <div class="lh-header__inputs">
+        <select class="view-mode-selector"><option value="0">All (80.6&nbsp;KiB)</option><option value="1">Unused bytes (31.9&nbsp;KiB)</option><option value="2" disabled="">Duplicate modules (N/A)</option></select>
+        <select class="bundle-selector"><option value="0">All scripts</option><option value="1">/ (inline)</option></select>
+        <button data-i18n="toggleTableButtonLabel" class="lh-button lh-button--toggle-table lh-button--active">Toggle table</button>
+      </div>
+    </header>
+
+    <div class="lh-treemap lh-treemap--view-mode--all"><div class="webtreemap-node webtreemap-node--root" role="tree" tabindex="0" aria-labelledby="_wtm-cap-" style="width: 1292px; height: 921px; background-color: white;"><div class="webtreemap-node webtreemap-node--hover" role="treeitem" tabindex="-1" aria-level="1" aria-labelledby="_wtm-cap-0" style="left: 2px; width: 1286px; top: 15px; height: 902px; background-color: rgb(189, 193, 219); z-index: 1;"><div class="webtreemap-caption" id="_wtm-cap-0"><span class="lh-text-bold">/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload</span><span class="lh-text-dim">78.2&nbsp;KiB (97%)</span></div></div></div></div>
+
+    <div class="lh-table"><div class="lh-table-header"><div>Name</div><div>Transfer bytes</div></div><div class="lh-table-row"><div title="">/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload</div><div title="80,083 bytes">78.2&nbsp;KiB</div></div><div class="lh-table-separator"></div><div class="lh-table-row"><div title="/ (inline) (inline) document.addEve…">(inline) document.addEve…</div><div title="1,106 bytes">1.1&nbsp;KiB</div></div><div class="lh-table-separator"></div><div class="lh-table-row"><div title="/ (inline) (inline) (function() {
+ …">(inline) (function() {
+ …</div><div title="728 bytes">728.0B</div></div><div class="lh-table-separator"></div><div class="lh-table-row"><div title="/ (inline) (inline) document.addEve…">(inline) document.addEve…</div><div title="651 bytes">651.0B</div></div><div class="lh-table-separator"></div></div>
+  </main>
+
+  <script src="./Lighthouse Treemap_files/bundled.js"></script>
+
+  <script>
+    // b/298230436
+    window.__hash = window.location.hash;
+    window.location.hash = '';
+  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="./Lighthouse Treemap_files/js"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-16X003MB7V');
+  </script>
+
+
+
+</body></html>

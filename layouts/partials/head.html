@@ -10,16 +10,16 @@
 {{ if $desc }}
 <meta name="description" content={{ $desc }}>{{ end }}
 
-<!-- Preconnect and Load Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=block" rel="stylesheet">
+<!-- Critical CSS Inlined (Tailwind) -->
+{{- $styles := resources.Get "css/tailwind.css" | postCSS | minify -}}
+<style>{{ $styles.Content | safeCSS }}</style>
+
+<!-- Local Fonts Preload (High Priority) -->
+<link rel="preload" href="/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/JetBrainsMono-Variable.woff2" as="font" type="font/woff2" crossorigin>
 
 
-<!-- Tailwind compiled via Hugo Pipes & PostCSS -->
-{{- /* Tailwind compiled via Hugo Pipes & PostCSS */ -}}
-{{- $styles := resources.Get "css/tailwind.css" | postCSS | minify | fingerprint -}}
-<link rel="stylesheet" href={{ $styles.RelPermalink }} integrity={{ $styles.Data.Integrity }}>
 
 <style>
   /* Atomic guard to block all animations until the page is stable and user interacts */
@@ -57,9 +57,11 @@
   })();
 </script>
 
-<!-- Hugo Chroma Syntax Highlighting (Dracula Theme) -->
-{{ $syntax := resources.Get "css/syntax.css" | minify | fingerprint }}
-<link rel="stylesheet" href={{ $syntax.RelPermalink }} integrity={{ $syntax.Data.Integrity }}>
+<!-- Hugo Chroma Syntax Highlighting (Inlined Conditionally) -->
+{{ if or .IsPage (eq .Section "post") }}
+  {{ $syntax := resources.Get "css/syntax.css" | minify }}
+  <style>{{ $syntax.Content | safeCSS }}</style>
+{{ end }}
 
 {{ partial "internal/seo_schema.html" . }}
 {{ partial "internal/opengraph.html" . }}
