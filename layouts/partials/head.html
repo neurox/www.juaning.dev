@@ -12,50 +12,29 @@
 
 <!-- Critical CSS Inlined (Tailwind) -->
 {{- $styles := resources.Get "css/tailwind.css" | postCSS | minify -}}
-<style>{{ $styles.Content | safeCSS }}</style>
+<style>
+  {
+      {
+      $styles.Content | safeCSS
+    }
+  }
+</style>
 
 <!-- Local Fonts Preload (High Priority) -->
 <link rel="preload" href="/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/JetBrainsMono-Variable.woff2" as="font" type="font/woff2" crossorigin>
 
-<style>
-  /* Atomic guard to block all animations until the page is stable and user interacts */
-  html.no-transitions *,
-  html.no-transitions *:before,
-  html.no-transitions *:after {
-    transition: none !important;
-    animation: none !important;
-  }
-</style>
-<script>
-  (function() {
-    const doc = document.documentElement;
-    doc.classList.add('no-transitions');
-    
-    const unlock = () => {
-      if (!doc.classList.contains('no-transitions')) return;
-      requestAnimationFrame(() => {
-        setTimeout(() => {
-          doc.classList.remove('no-transitions');
-        }, 150); // Fast hand-off
-      });
-      ['mousedown', 'mousemove', 'keydown', 'scroll', 'touchstart'].forEach(e => 
-        window.removeEventListener(e, unlock));
-    };
-
-    ['mousedown', 'mousemove', 'keydown', 'scroll', 'touchstart'].forEach(e => 
-      window.addEventListener(e, unlock, { once: true, passive: true }));
-
-    // Safety fallback reduced to 800ms to avoid PageSpeed penalization
-    window.addEventListener('load', () => setTimeout(unlock, 800));
-  })();
-</script>
-
 <!-- Hugo Chroma Syntax Highlighting (Inlined Conditionally) -->
 {{ if or .IsPage (eq .Section "post") }}
-  {{ $syntax := resources.Get "css/syntax.css" | minify }}
-  <style>{{ $syntax.Content | safeCSS }}</style>
+{{ $syntax := resources.Get "css/syntax.css" | minify }}
+<style>
+  {
+      {
+      $syntax.Content | safeCSS
+    }
+  }
+</style>
 {{ end }}
 
 {{ partial "internal/seo_schema.html" . }}
