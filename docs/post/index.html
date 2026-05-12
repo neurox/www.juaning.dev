@@ -21,8 +21,6 @@
 <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/JetBrainsMono-Variable.woff2" as="font" type="font/woff2" crossorigin>
 
-
-
 <style>
    
   html.no-transitions *,
@@ -39,23 +37,20 @@
     
     const unlock = () => {
       if (!doc.classList.contains('no-transitions')) return;
-      
       requestAnimationFrame(() => {
         setTimeout(() => {
           doc.classList.remove('no-transitions');
-        }, 300); 
+        }, 150); 
       });
-      
       ['mousedown', 'mousemove', 'keydown', 'scroll', 'touchstart'].forEach(e => 
         window.removeEventListener(e, unlock));
     };
 
-    
     ['mousedown', 'mousemove', 'keydown', 'scroll', 'touchstart'].forEach(e => 
       window.addEventListener(e, unlock, { once: true, passive: true }));
 
     
-    window.addEventListener('load', () => setTimeout(unlock, 5000));
+    window.addEventListener('load', () => setTimeout(unlock, 800));
   })();
 </script>
 

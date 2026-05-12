@@ -19,8 +19,6 @@
 <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/JetBrainsMono-Variable.woff2" as="font" type="font/woff2" crossorigin>
 
-
-
 <style>
   /* Atomic guard to block all animations until the page is stable and user interacts */
   html.no-transitions *,
@@ -37,23 +35,20 @@
     
     const unlock = () => {
       if (!doc.classList.contains('no-transitions')) return;
-      // Final paint check
       requestAnimationFrame(() => {
         setTimeout(() => {
           doc.classList.remove('no-transitions');
-        }, 300); // Smooth hand-off
+        }, 150); // Fast hand-off
       });
-      // Cleanup
       ['mousedown', 'mousemove', 'keydown', 'scroll', 'touchstart'].forEach(e => 
         window.removeEventListener(e, unlock));
     };
 
-    // Unlock on first human interaction
     ['mousedown', 'mousemove', 'keydown', 'scroll', 'touchstart'].forEach(e => 
       window.addEventListener(e, unlock, { once: true, passive: true }));
 
-    // Absolute safety fallback
-    window.addEventListener('load', () => setTimeout(unlock, 5000));
+    // Safety fallback reduced to 800ms to avoid PageSpeed penalization
+    window.addEventListener('load', () => setTimeout(unlock, 800));
   })();
 </script>
 
