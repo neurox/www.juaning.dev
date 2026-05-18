@@ -1,0 +1,4 @@
+{{- $name := .name -}}
+{{- $class := .class | default "" -}}
+{{- $codepoint := index hugo.Data.material_icons $name | default "e159" -}}
+<span class="material-symbols-outlined{{ with $class }} {{ . }}{{ end }}">&#x{{ $codepoint }};</span>

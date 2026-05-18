@@ -50,6 +50,6 @@ Whether you want to discuss enterprise CMS architecture, the nuances of local LL
 For a comprehensive chronological timeline of my professional roles, technical proficiencies, and formal certifications, you can review my formal Curriculum Vitae.
 
 <a href="/pdf/juan-gomez-cv.pdf" class="flex items-center gap-2 text-hud-cyan hover:text-cyan-400 transition-colors font-bold no-underline group" target="_blank">
-  <span class="material-symbols-outlined">description</span>
+  <span class="material-symbols-outlined">&#xe873;</span>
   <span class="group-hover:underline">Download CV (PDF)</span>
 </a>

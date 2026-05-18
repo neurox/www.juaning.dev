@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Set inside icon using Material Symbols
         const iconInfo = document.createElement('span');
         iconInfo.className = 'material-symbols-outlined text-lg pointer-events-none';
-        iconInfo.textContent = 'content_copy';
+        iconInfo.innerHTML = '&#xe14d;';
         button.appendChild(iconInfo);
 
         highlight.appendChild(button);
@@ -28,18 +28,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 await navigator.clipboard.writeText(textToCopy);
 
                 // Visual feedback
-                iconInfo.textContent = 'check';
+                iconInfo.innerHTML = '&#xe5ca;';
                 iconInfo.classList.remove('text-slate-500');
                 iconInfo.classList.add('text-green-500');
 
                 setTimeout(() => {
-                    iconInfo.textContent = 'content_copy';
+                    iconInfo.innerHTML = '&#xe14d;';
                     iconInfo.classList.add('text-slate-500');
                     iconInfo.classList.remove('text-green-500');
                 }, 2000);
             } catch (err) {
                 console.error('Failed to copy text: ', err);
-                iconInfo.textContent = 'error';
+                iconInfo.innerHTML = '&#xf8b6;';
                 iconInfo.classList.add('text-red-500');
             }
         });

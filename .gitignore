@@ -1,5 +1,23 @@
+# OS files
 .DS_Store
 *-bak
 
+# Dependencies
 node_modules
+
+# Hugo build artifacts
+.hugo_build.lock
+public/
+resources/
+
+# Generated audit reports
+lighthouse/
+
+# GitHub Pages pagination (not served properly)
 docs/page
+
+# npm lockfile (project uses pnpm)
+package-lock.json
+
+# Font backup from subsetting
+static/fonts/*.bak

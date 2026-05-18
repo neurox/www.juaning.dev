@@ -51,6 +51,6 @@ Ya sea que quieras discutir sobre arquitectura de CMS empresariales, los matices
 Para una cronología detallada de mis roles profesionales, competencias técnicas y certificaciones formales, puedes revisar mi Curriculum Vitae oficial.
 
 <a href="/pdf/juan-gomez-cv.pdf" class="flex items-center gap-2 text-hud-cyan hover:text-cyan-400 transition-colors font-bold no-underline group" target="_blank">
-  <span class="material-symbols-outlined">description</span>
+  <span class="material-symbols-outlined">&#xe873;</span>
   <span class="group-hover:underline">Descargar CV (PDF)</span>
 </a>

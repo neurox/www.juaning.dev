@@ -2,13 +2,13 @@
 <div class="flex flex-col gap-8 md:gap-10">
   <header class="glass-card rounded-xl p-8 border-l-[3px] border-l-hud-cyan relative overflow-hidden group">
     <div class="absolute -top-10 -right-10 p-4 opacity-[0.03] pointer-events-none">
-      <span class="material-symbols-outlined text-[200px] text-hud-cyan">contact_mail</span>
+      <span class="material-symbols-outlined text-[200px] text-hud-cyan">&#xe0d0;</span>
     </div>
     <h1
       class="font-display text-3xl md:text-4xl font-bold leading-tight tracking-tight text-slate-100 relative z-10 flex items-center gap-4">
       <div
         class="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-lg bg-hud-cyan/10 border border-hud-cyan/20 text-hud-cyan shrink-0">
-        <span class="material-symbols-outlined text-3xl md:text-4xl">{{ .Params.icon | default "mail" }}</span>
+        {{ partial "icon" (dict "name" (.Params.icon | default "mail") "class" "text-3xl md:text-4xl") }}
       </div>
       {{ .Title }}
     </h1>
@@ -29,7 +29,7 @@
           href="mailto:{{ .Site.Params.email }}">
           <div
             class="flex items-center justify-center w-12 h-12 rounded bg-hud-cyan/10 text-hud-cyan group-hover/email:bg-hud-cyan group-hover/email:text-slate-900 transition-colors transition-opacity transition-transform">
-            <span class="material-symbols-outlined">alternate_email</span>
+            <span class="material-symbols-outlined">&#xe0e6;</span>
           </div>
           <div>
             <span class="block text-xs font-mono text-slate-500 mb-1 uppercase tracking-wider">{{ T "contact_form_email"
@@ -45,7 +45,7 @@
     <!-- Contact Form -->
     <div class="lg:col-span-7 glass-card rounded-xl p-8 md:p-10">
       <h3 class="text-2xl md:text-3xl font-display font-bold text-slate-100 mb-8 flex items-center gap-3">
-        <span class="material-symbols-outlined text-hud-cyan">send</span>
+        <span class="material-symbols-outlined text-hud-cyan">&#xe163;</span>
         {{ T "contact_form_title" }}
       </h3>
 
@@ -153,7 +153,7 @@
     // UI Feedback: Loading state
     const originalBtnText = submitBtn.innerHTML;
     submitBtn.disabled = true;
-    submitBtn.innerHTML = '<span class="material-symbols-outlined animate-spin mr-2">sync</span> SENDING...';
+    submitBtn.innerHTML = '<span class="material-symbols-outlined animate-spin mr-2">&#xe627;</span> SENDING...';
 
     const recaptchaResponse = grecaptcha.getResponse();
 

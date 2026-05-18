@@ -5,7 +5,7 @@
       class="font-display text-slate-100 text-3xl md:text-4xl font-bold leading-tight tracking-tight mb-4 flex items-center gap-4">
       {{ if .Params.icon }}
       <div class="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-lg bg-hud-cyan/10 border border-hud-cyan/20 text-hud-cyan shrink-0">
-        <span class="material-symbols-outlined text-3xl md:text-4xl">{{ .Params.icon }}</span>
+        {{ partial "icon" (dict "name" (.Params.icon | default "description") "class" "text-3xl md:text-4xl") }}
       </div>
       {{ end }}
       {{ .Title }}
@@ -13,13 +13,13 @@
     {{ if eq .Type "post" }}
     <div class="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-400 uppercase tracking-wider">
       <span class="flex items-center gap-1">
-        <span class="material-symbols-outlined text-sm">calendar_month</span>
+        <span class="material-symbols-outlined text-sm">&#xebcc;</span>
         SYS.LOG // {{ .Date.Format "2006.01.02" }}
       </span>
       {{ if .Params.readingTime }}
       <span>|</span>
       <span class="flex items-center gap-1">
-        <span class="material-symbols-outlined text-sm">schedule</span>
+        <span class="material-symbols-outlined text-sm">&#xefd6;</span>
         {{ .Params.readingTime }} {{ T "min_read" }}
       </span>
       {{ end }}
@@ -47,7 +47,7 @@
   {{ if site.Config.Services.Disqus.Shortname }}
   <div class="glass-card rounded-xl p-8 w-full">
     <h3 class="text-xl font-display font-bold mb-8 text-slate-100 flex items-center gap-2">
-      <span class="material-symbols-outlined text-hud-cyan">forum</span>
+      <span class="material-symbols-outlined text-hud-cyan">&#xe8af;</span>
       {{ T "comments_title" }}
     </h3>
     {{ partial "internal/disqus.html" . }}

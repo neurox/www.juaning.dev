@@ -10,19 +10,47 @@
 {{ if $desc }}
 <meta name="description" content={{ $desc }}>{{ end }}
 
-<!-- Critical CSS Inlined (Tailwind) -->
-{{- $styles := resources.Get "css/tailwind.css" | postCSS | minify -}}
-<style>{{ $styles.Content | safeCSS }}</style>
+<!-- Canonical URL -->
+<link rel="canonical" href="{{ .Permalink }}">
+{{ range .Translations }}
+<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
+{{ end }}
+<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
+
+<!-- Favicon & PWA -->
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0b0f15">
+<meta name="msapplication-TileColor" content="#0b0f15">
+<meta name="msapplication-config" content="/browserconfig.xml">
+
+<!-- Open Graph image -->
+<meta property="og:image" content="{{ "images/profile.jpg" | absURL }}">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="2048">
+
+<!-- External Stylesheet (Cacheable) -->
+{{- $styles := resources.Get "css/tailwind.css" | postCSS | minify | fingerprint -}}
+<link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
 
 <!-- Local Fonts Preload (High Priority) -->
 <link rel="preload" href="/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/JetBrainsMono-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/MaterialSymbolsOutlined.woff2" as="font" type="font/woff2" crossorigin>
 
-<!-- Hugo Chroma Syntax Highlighting (Inlined Conditionally) -->
+<!-- Hugo Chroma Syntax Highlighting -->
 {{ if or .IsPage (eq .Section "post") }}
-{{ $syntax := resources.Get "css/syntax.css" | minify }}
-<style>{{ $syntax.Content | safeCSS }}</style>
+{{ $syntax := resources.Get "css/syntax.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $syntax.RelPermalink }}" integrity="{{ $syntax.Data.Integrity }}">
+{{ end }}
+
+<!-- Preconnect for Google Analytics -->
+{{ if and (site.Config.Services.GoogleAnalytics.ID) (hugo.IsProduction) }}
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="preconnect" href="https://www.google-analytics.com">
 {{ end }}
 
 {{ partial "internal/seo_schema.html" . }}

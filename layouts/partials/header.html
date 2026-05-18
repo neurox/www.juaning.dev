@@ -36,7 +36,7 @@
 
       <!-- Mobile Menu Toggle -->
       <button class="md:hidden text-slate-300 hover:text-white" id="mobile-menu-btn">
-        <span class="material-symbols-outlined">menu</span>
+        <span class="material-symbols-outlined">&#xe5d2;</span>
       </button>
     </div>
   </div>
@@ -82,10 +82,10 @@
         menu.classList.toggle('flex');
 
         if (menu.classList.contains('hidden')) {
-          icon.textContent = 'menu';
+          icon.innerHTML = '&#xe5d2;';
           document.body.style.overflow = 'auto';
         } else {
-          icon.textContent = 'close';
+          icon.innerHTML = '&#xe5cd;';
           document.body.style.overflow = 'hidden';
         }
       });

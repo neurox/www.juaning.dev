@@ -8,12 +8,12 @@
     <!-- Icon decoration (using Material Symbols) -->
     <div
       class="absolute -top-10 -right-10 p-4 opacity-[0.03] group-hover:opacity-[0.05] transition-opacity duration-700 pointer-events-none">
-      <span class="material-symbols-outlined text-[200px] text-hud-cyan">developer_mode</span>
+      <span class="material-symbols-outlined text-[200px] text-hud-cyan">&#xf2e2;</span>
     </div>
 
     <header class="flex items-center justify-between border-b border-white/10 pb-4 relative z-10">
       <h2 class="text-xl md:text-2xl font-semibold flex items-center gap-3">
-        <span class="material-symbols-outlined text-hud-cyan">dns</span>
+        <span class="material-symbols-outlined text-hud-cyan">&#xe875;</span>
         {{ T "section_overview_title" }}
       </h2>
       <span
@@ -34,9 +34,10 @@
           {{ if $profile }}
             {{ $opt := $profile.Fill "256x256 webp q85 center" }}
             <img src="{{ $opt.RelPermalink }}" alt="Juan Gómez - Senior Software Engineer"
+              width="256" height="256" fetchpriority="high"
               class="w-full h-full object-cover opacity-90 group-hover/avatar:opacity-100 transition-opacity duration-500">
           {{ else }}
-            <span class="material-symbols-outlined text-6xl text-slate-500 group-hover/avatar:text-hud-cyan transition-colors">account_circle</span>
+            <span class="material-symbols-outlined text-6xl text-slate-500 group-hover/avatar:text-hud-cyan transition-colors">&#xf20b;</span>
           {{ end }}
         </div>
       </div>
@@ -45,7 +46,7 @@
       <div class="flex-grow">
         <h1 class="text-3xl md:text-4xl font-display font-bold mb-2 tracking-tight">{{ T "hero_title" }}</h1>
         <p class="font-mono text-hud-cyan text-sm md:text-base mb-4 flex items-center gap-2">
-          <span class="material-symbols-outlined text-sm">terminal</span> >{{ T "hero_subtitle" }}_
+          <span class="material-symbols-outlined text-sm">&#xeb8e;</span> >{{ T "hero_subtitle" }}_
         </p>
         <p class="text-slate-400 leading-relaxed mb-6 max-w-2xl text-sm md:text-base">
           {{ T "hero_description" }}
@@ -74,7 +75,7 @@
   <section class="lg:col-span-12 xl:col-span-5 glass-card rounded-xl p-6 md:p-8 flex flex-col gap-6 h-full">
     <header class="flex items-center justify-between border-b border-white/10 pb-4">
       <h2 class="text-xl md:text-2xl font-semibold flex items-center gap-3">
-        <span class="material-symbols-outlined text-hud-cyan">monitoring</span>
+        <span class="material-symbols-outlined text-hud-cyan">&#xf190;</span>
         {{ T "section_logbook_title" }}
       </h2>
       <a href={{ "/post" | relLangURL }}
@@ -98,7 +99,7 @@
         </div>
         <h4
           class="text-lg font-semibold text-slate-200 group-hover:text-cyan-400 transition-colors mb-2 leading-tight flex items-start gap-2">
-          <span class="material-symbols-outlined text-lg opacity-40 shrink-0 mt-0.5">code</span>
+          <span class="material-symbols-outlined text-lg opacity-40 shrink-0 mt-0.5">&#xe86f;</span>
           {{ .Title }}
         </h4>
         <div class="text-sm text-slate-400 line-clamp-2 ml-7">
@@ -118,7 +119,7 @@
 <section class="glass-card rounded-xl p-6 md:p-8 flex flex-col gap-6">
   <header class="flex items-center justify-between border-b border-white/10 pb-4">
     <h2 class="text-xl md:text-2xl font-semibold flex items-center gap-3">
-      <span class="material-symbols-outlined text-hud-cyan">hub</span>
+      <span class="material-symbols-outlined text-hud-cyan">&#xe9f4;</span>
       {{ T "section_expertise_title" }}
     </h2>
     <a href={{ (site.GetPage " /portfolio" ).RelPermalink }}
@@ -138,7 +139,7 @@
         <span class="font-mono text-[10px] sm:text-xs tracking-wider text-slate-500">{{ T "badge_stable" }}</span>
       </div>
       <span
-        class="material-symbols-outlined text-4xl mb-4 text-slate-500 group-hover:text-hud-cyan transition-colors">water_drop</span>
+        class="material-symbols-outlined text-4xl mb-4 text-slate-500 group-hover:text-hud-cyan transition-colors">&#xe798;</span>
       <h3 class="text-lg font-semibold text-slate-100 mb-2">{{ T "exp_drupal_title" }}</h3>
       <p class="text-sm text-slate-400 mb-4 line-clamp-3">{{ T "exp_drupal_desc" }}</p>
     </div>
@@ -151,7 +152,7 @@
         <span class="font-mono text-[10px] sm:text-xs tracking-wider text-slate-500">{{ T "badge_active" }}</span>
       </div>
       <span
-        class="material-symbols-outlined text-4xl mb-4 text-slate-500 group-hover:text-hud-cyan transition-colors">cloud</span>
+        class="material-symbols-outlined text-4xl mb-4 text-slate-500 group-hover:text-hud-cyan transition-colors">&#xf15c;</span>
       <h3 class="text-lg font-semibold text-slate-100 mb-2">{{ T "exp_cloud_title" }}</h3>
       <p class="text-sm text-slate-400 mb-4 line-clamp-3">{{ T "exp_cloud_desc" }}</p>
     </div>
@@ -167,7 +168,7 @@
         <span class="font-mono text-[10px] sm:text-xs tracking-wider text-[#8a2be2]">{{ T "badge_deploying" }}</span>
       </div>
       <span
-        class="material-symbols-outlined text-4xl mb-4 text-[#8a2be2] opacity-90 group-hover:opacity-100 transition-opacity">rocket_launch</span>
+        class="material-symbols-outlined text-4xl mb-4 text-[#8a2be2] opacity-90 group-hover:opacity-100 transition-opacity">&#xeb9b;</span>
       <h3 class="text-lg font-semibold text-slate-100 mb-2">{{ T "exp_devops_title" }}</h3>
       <p class="text-sm text-slate-400 mb-4 line-clamp-3">{{ T "exp_devops_desc" }}</p>
     </div>
@@ -180,7 +181,7 @@
         <span class="font-mono text-[10px] sm:text-xs tracking-wider text-slate-500">{{ T "badge_planning" }}</span>
       </div>
       <span
-        class="material-symbols-outlined text-4xl mb-4 text-slate-500 group-hover:text-hud-cyan transition-colors">architecture</span>
+        class="material-symbols-outlined text-4xl mb-4 text-slate-500 group-hover:text-hud-cyan transition-colors">&#xea3b;</span>
       <h3 class="text-lg font-semibold text-slate-100 mb-2">{{ T "exp_modern_title" }}</h3>
       <p class="text-sm text-slate-400 mb-4 line-clamp-3">{{ T "exp_modern_desc" }}</p>
     </div>

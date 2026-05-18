@@ -1,0 +1,30 @@
+# Material Symbols codepoint lookup
+# Maps icon names to their PUA codepoints
+menu: e5d2
+close: e5cd
+folder_open: e2c8
+folder: e2c7
+calendar_month: ebcc
+schedule: efd6
+forum: e8af
+developer_mode: f2e2
+dns: e875
+account_circle: f20b
+terminal: eb8e
+monitoring: f190
+code: e86f
+hub: e9f4
+water_drop: e798
+cloud: f15c
+rocket_launch: eb9b
+architecture: ea3b
+contact_mail: e0d0
+mail: e159
+alternate_email: e0e6
+send: e163
+sync: e627
+work: e943
+description: e873
+content_copy: e14d
+check: e5ca
+error: f8b6
