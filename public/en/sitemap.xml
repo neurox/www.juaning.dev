@@ -2,8 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/post/2026/2026-05-18-drupal-11-recipes-replace-installation-profiles/</loc>
+    <lastmod>2026-05-18T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="http://localhost:1313/es/post/2026/recetas-drupal-11-reemplazan-perfiles-instalacion/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/post/2026/2026-05-18-drupal-11-recipes-replace-installation-profiles/"
+                />
+  </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-05-10T00:00:00+00:00</lastmod>
+    <lastmod>2026-05-18T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -18,7 +33,7 @@
                 />
   </url><url>
     <loc>http://localhost:1313/post/</loc>
-    <lastmod>2025-05-10T00:00:00+00:00</lastmod>
+    <lastmod>2026-05-18T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link

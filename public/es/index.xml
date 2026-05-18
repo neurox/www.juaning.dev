@@ -9,7 +9,16 @@
     <managingEditor>juanjose@ingomez.com (Juan Gómez)</managingEditor>
     <webMaster>juanjose@ingomez.com (Juan Gómez)</webMaster>
     <copyright>JUANING</copyright>
-    <lastBuildDate>Sat, 10 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/es/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 May 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/es/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cambio Arquitectónico: Reemplazando Perfiles de Instalación con Recetas en Drupal 11</title>
+      <link>http://localhost:1313/es/post/2026/recetas-drupal-11-reemplazan-perfiles-instalacion/</link>
+      <pubDate>Mon, 18 May 2026 00:00:00 +0000</pubDate>
+      <author>juanjose@ingomez.com (Juan Gómez)</author>
+      <guid>http://localhost:1313/es/post/2026/recetas-drupal-11-reemplazan-perfiles-instalacion/</guid>
+      <description>&lt;p&gt;Durante años, los equipos empresariales de Drupal han enfrentado una disyuntiva incómoda. Los &lt;strong&gt;Perfiles de Instalación&lt;/strong&gt; &amp;ndash; esos archivos &lt;code&gt;*.profile&lt;/code&gt; monolíticos empaquetados con módulos personalizados, configuración hardcodeada y lógica de instalador &amp;ndash; eran la única forma confiable de estandarizar una plataforma en docenas de sitios. Funcionaban, pero se fosilizaban. Cada ajuste por división significaba un fork. Cada fork significaba una carga de mantenimiento que crecía cuadráticamente con el número de inquilinos.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Hoja de Ruta para la Migración a Drupal 11: Estrategias de Tiempo de Inactividad Cero</title>
       <link>http://localhost:1313/es/post/2025/hoja-de-ruta-migracion-drupal-11/</link>

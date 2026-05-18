@@ -9,7 +9,17 @@
     <managingEditor>juanjose@ingomez.com (Juan Gómez)</managingEditor>
     <webMaster>juanjose@ingomez.com (Juan Gómez)</webMaster>
     <copyright>JUANING</copyright>
-    <lastBuildDate>Sat, 10 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 May 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Architectural Shifts: Replacing Installation Profiles with Drupal 11 Recipes</title>
+      <link>http://localhost:1313/post/2026/2026-05-18-drupal-11-recipes-replace-installation-profiles/</link>
+      <pubDate>Mon, 18 May 2026 00:00:00 +0000</pubDate>
+      <author>juanjose@ingomez.com (Juan Gómez)</author>
+      <guid>http://localhost:1313/post/2026/2026-05-18-drupal-11-recipes-replace-installation-profiles/</guid>
+      <description>&lt;p&gt;For years, enterprise Drupal shops have faced an uncomfortable trade-off. &lt;strong&gt;Installation Profiles&lt;/strong&gt; &amp;ndash; those monolithic &lt;code&gt;*.profile&lt;/code&gt; files bundled with custom modules, hard-coded configuration, and installer logic &amp;ndash; were the only reliable way to standardize a platform across dozens of sites. They worked, but they ossified. Every division-specific tweak meant a fork. Every fork meant a maintenance burden that grew quadratically with the number of tenants.&lt;/p&gt;
+&lt;p&gt;Drupal 11 changes this equation. With &lt;strong&gt;Recipes&lt;/strong&gt; stabilized in core as of the 11.x release cycle, we now have a composable alternative that fundamentally shifts how we provision and scale enterprise platforms. This post explores the architectural implications for large-scale multisite ecosystems running dozens of divisions.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>The Drupal 11 Migration Roadmap: Zero-Downtime Strategies for Enterprise</title>
       <link>http://localhost:1313/post/2025/2025-05-10-drupal-11-migration-roadmap/</link>

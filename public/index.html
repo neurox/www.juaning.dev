@@ -382,6 +382,24 @@
       
       
       
+      <article onclick="window.location.href='\/post\/2026\/2026-05-18-drupal-11-recipes-replace-installation-profiles\/'"
+        class="p-4 md:p-5 bg-slate-800/40 border border-white/5 rounded-lg hover:border-cyan-500/40 hover:bg-slate-800/80 transition-colors transition-opacity transition-transform duration-300 group cursor-pointer">
+        <div class="font-mono text-xs text-slate-500 mb-2 flex justify-between items-center">
+          <span>SYS.LOG // 2026.05.18</span>
+          <span
+            class="text-hud-cyan opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-colors transition-opacity transition-transform duration-300 font-bold tracking-wider">&lt;read&gt;</span>
+        </div>
+        <h4
+          class="text-lg font-semibold text-slate-200 group-hover:text-cyan-400 transition-colors mb-2 leading-tight flex items-start gap-2">
+          <span class="material-symbols-outlined text-lg opacity-40 shrink-0 mt-0.5">code</span>
+          Architectural Shifts: Replacing Installation Profiles with Drupal 11 Recipes
+        </h4>
+        <div class="text-sm text-slate-400 line-clamp-2 ml-7">
+          <p>For years, enterprise Drupal shops have faced an uncomfortable trade-off. <strong>Installation Profiles</strong> &ndash; those monolithic <code>*.profile</code> files bundled with custom modules, hard-coded configuration, and installer logic &ndash; were the only reliable way to standardize a platform across dozens of sites. They worked, but they ossified. Every division-specific tweak meant a fork. Every fork meant a maintenance burden that grew quadratically with the number of tenants.</p>
+<p>Drupal 11 changes this equation. With <strong>Recipes</strong> stabilized in core as of the 11.x release cycle, we now have a composable alternative that fundamentally shifts how we provision and scale enterprise platforms. This post explores the architectural implications for large-scale multisite ecosystems running dozens of divisions.</p>
+        </div>
+      </article>
+      
       <article onclick="window.location.href='\/post\/2025\/2025-05-10-drupal-11-migration-roadmap\/'"
         class="p-4 md:p-5 bg-slate-800/40 border border-white/5 rounded-lg hover:border-cyan-500/40 hover:bg-slate-800/80 transition-colors transition-opacity transition-transform duration-300 group cursor-pointer">
         <div class="font-mono text-xs text-slate-500 mb-2 flex justify-between items-center">
@@ -422,26 +440,6 @@
     </a>
 </span>
 </h2><p>As of macOS Ventura, the default Homebrew package for Solr has moved to version 9.x. However, many enterprise Drupal deployments still rely on the Solr 8.x schema for stability. Running mismatched versions can lead to indexing errors and inconsistent search results.</p>
-        </div>
-      </article>
-      
-      <article onclick="window.location.href='\/post\/2022\/2022-11-24-install-and-enable-ftp-access-in-aws-ec2-instance-with-linux-centos-7\/'"
-        class="p-4 md:p-5 bg-slate-800/40 border border-white/5 rounded-lg hover:border-cyan-500/40 hover:bg-slate-800/80 transition-colors transition-opacity transition-transform duration-300 group cursor-pointer">
-        <div class="font-mono text-xs text-slate-500 mb-2 flex justify-between items-center">
-          <span>SYS.LOG // 2022.11.24</span>
-          <span
-            class="text-hud-cyan opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-colors transition-opacity transition-transform duration-300 font-bold tracking-wider">&lt;read&gt;</span>
-        </div>
-        <h4
-          class="text-lg font-semibold text-slate-200 group-hover:text-cyan-400 transition-colors mb-2 leading-tight flex items-start gap-2">
-          <span class="material-symbols-outlined text-lg opacity-40 shrink-0 mt-0.5">code</span>
-          Configuring Secure FTP Access on AWS EC2 (CentOS 7)
-        </h4>
-        <div class="text-sm text-slate-400 line-clamp-2 ml-7">
-          <p>Managing legacy cloud infrastructure often requires balancing modern security protocols with traditional data transfer needs. While <strong>SFTP</strong> (SSH File Transfer Protocol) is the industry standard for secure transfers, certain enterprise workflows or legacy integrations still necessitate a hardened <strong>FTP</strong> environment.</p>
-<p>This guide details the process of installing and configuring <strong>VSFTPD</strong> (Very Secure FTP Daemon) on an AWS EC2 instance running Linux CentOS 7.</p>
-<blockquote>
-<p><strong>⚠️ Security Note:</strong> Standard FTP transmits data in plain text. For production environments, I strongly recommend utilizing <strong>SFTP</strong> or configuring <strong>FTPS</strong> (FTP over SSL). This guide focuses on the base configuration for controlled environments.</p>
         </div>
       </article>
       

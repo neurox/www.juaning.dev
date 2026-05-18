@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/es/post/</loc>
-    <lastmod>2025-05-10T00:00:00+00:00</lastmod>
+    <lastmod>2026-05-18T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -15,6 +15,36 @@
                 rel="alternate"
                 hreflang="es"
                 href="http://localhost:1313/es/post/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/es/post/2026/recetas-drupal-11-reemplazan-perfiles-instalacion/</loc>
+    <lastmod>2026-05-18T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/post/2026/2026-05-18-drupal-11-recipes-replace-installation-profiles/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="http://localhost:1313/es/post/2026/recetas-drupal-11-reemplazan-perfiles-instalacion/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/es/</loc>
+    <lastmod>2026-05-18T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="http://localhost:1313/es/"
                 />
   </url><url>
     <loc>http://localhost:1313/es/post/2025/hoja-de-ruta-migracion-drupal-11/</loc>
@@ -30,21 +60,6 @@
                 rel="alternate"
                 hreflang="es"
                 href="http://localhost:1313/es/post/2025/hoja-de-ruta-migracion-drupal-11/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/es/</loc>
-    <lastmod>2025-05-10T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="http://localhost:1313/es/"
                 />
   </url><url>
     <loc>http://localhost:1313/es/portafolio/</loc>
