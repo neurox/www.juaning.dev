@@ -31,9 +31,19 @@
 <meta property="og:image:width" content="2048">
 <meta property="og:image:height" content="2048">
 
-<!-- External Stylesheet (Cacheable) -->
+<!-- Critical inline CSS (above-the-fold) -->
+<style>
+  html.dark,html.dark body{margin:0;padding:0}
+  html.dark body{background-color:#0b0f15;color:#cbd5e1;overflow-x:hidden;overflow-y:scroll;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+  html.dark .material-symbols-outlined{font-weight:400;font-style:normal;font-size:24px;line-height:1;display:inline-flex;justify-content:center;align-items:center;width:1em;height:1em;overflow:hidden;white-space:nowrap;direction:ltr;-webkit-font-smoothing:antialiased;vertical-align:middle}
+  html.dark nav{position:fixed;top:0;width:100%;z-index:50;background:rgba(11,15,21,.8);-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px);border-bottom:1px solid rgba(255,255,255,.05);height:73px}
+  html.dark main{margin:0 auto;width:100%;max-width:1280px;padding:105px 24px 0}@media(min-width:768px){html.dark main{padding-top:121px;padding-left:32px;padding-right:32px}}
+</style>
+
+<!-- Async full stylesheet (non-blocking) -->
 {{- $styles := resources.Get "css/tailwind.css" | postCSS | minify | fingerprint -}}
-<link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
+<link rel="preload" href="{{ $styles.RelPermalink }}" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="{{ $styles.Data.Integrity }}">
+<noscript><link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}"></noscript>
 
 <!-- Local Fonts Preload (High Priority) -->
 <link rel="preload" href="/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin>
@@ -41,10 +51,11 @@
 <link rel="preload" href="/fonts/JetBrainsMono-Variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/MaterialSymbolsOutlined.woff2" as="font" type="font/woff2" crossorigin>
 
-<!-- Hugo Chroma Syntax Highlighting -->
+<!-- Async syntax highlighting (non-blocking, only on content pages) -->
 {{ if or .IsPage (eq .Section "post") }}
 {{ $syntax := resources.Get "css/syntax.css" | minify | fingerprint }}
-<link rel="stylesheet" href="{{ $syntax.RelPermalink }}" integrity="{{ $syntax.Data.Integrity }}">
+<link rel="preload" href="{{ $syntax.RelPermalink }}" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="{{ $syntax.Data.Integrity }}">
+<noscript><link rel="stylesheet" href="{{ $syntax.RelPermalink }}" integrity="{{ $syntax.Data.Integrity }}"></noscript>
 {{ end }}
 
 <!-- Preconnect for Google Analytics -->
