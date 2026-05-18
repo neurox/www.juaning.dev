@@ -35,7 +35,7 @@ It is designed to reflect a "Quiet Confidence" visual language—focusing on eng
 
 ### Prerequisites
 - [Hugo `extended`](https://gohugo.io/installation/) version (v0.125+ recommended for SCSS/Tailwind processing).
-- Node.js & npm (for Tailwind and PostCSS).
+- Node.js & pnpm (for Tailwind and PostCSS).
 
 ### 1. Clone the Repository
 Clone the project and navigate into the directory:
@@ -49,14 +49,14 @@ cd www.juaning.dev
 Install Tailwind CSS, Autoprefixer, and related Node libraries:
 
 ```bash
-npm install
+pnpm install
 ```
 
 ### 3. Start the Development Server
 Run the local Hugo server. This will watch for changes and provide live-reloading. The configuration will automatically default to the development environment.
 
 ```bash
-npm run dev
+pnpm run dev
 # OR run Hugo directly:
 hugo server -D
 ```
