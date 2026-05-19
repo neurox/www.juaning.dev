@@ -8,6 +8,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "node -e \"var fs=require('fs'),p='node_modules/.bin/postcss';fs.writeFileSync(p,'#!/usr/bin/env node\\nrequire(\\'postcss-cli\\');\\n');fs.chmodSync(p,0o755)\"",
     "dev": "hugo server",
     "build": "hugo --gc --minify"
   },
