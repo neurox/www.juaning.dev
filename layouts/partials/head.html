@@ -40,10 +40,8 @@
   html.dark main{margin:0 auto;width:100%;max-width:1280px;padding:105px 24px 0}@media(min-width:768px){html.dark main{padding-top:121px;padding-left:32px;padding-right:32px}}
 </style>
 
-<!-- Async full stylesheet (non-blocking) -->
 {{- $styles := resources.Get "css/tailwind.css" | postCSS | minify | fingerprint -}}
-<link rel="preload" href="{{ $styles.RelPermalink }}" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="{{ $styles.Data.Integrity }}">
-<noscript><link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}"></noscript>
+<link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
 
 <!-- Local Fonts Preload (High Priority) -->
 <link rel="preload" href="/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin>
