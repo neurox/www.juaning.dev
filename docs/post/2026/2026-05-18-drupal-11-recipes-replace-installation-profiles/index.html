@@ -1,691 +1,130 @@
-<!DOCTYPE html>
-<html lang="en" class="dark">
-
-<head>
-    <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.161.1">
-
-
-
-<title>Architectural Shifts: Replacing Installation Profiles with Drupal 11 Recipes | JUANING.dev</title>
-
-
-
-<meta name="description" content=How&#32;Drupal&#32;11&#32;Recipes&#32;are&#32;replacing&#32;monolithic&#32;installation&#32;profiles&#32;for&#32;composable,&#32;standardized&#32;feature&#32;rollout&#32;across&#32;enterprise&#32;multisite&#32;ecosystems.>
-
-
-<link rel="canonical" href="https://www.juaning.dev/post/2026/2026-05-18-drupal-11-recipes-replace-installation-profiles/">
-
-<link rel="alternate" hreflang="es" href="https://www.juaning.dev/es/post/2026/recetas-drupal-11-reemplazan-perfiles-instalacion/">
-
-<link rel="alternate" hreflang="en" href="https://www.juaning.dev/post/2026/2026-05-18-drupal-11-recipes-replace-installation-profiles/">
-
-
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
-<meta name="theme-color" content="#0b0f15">
-<meta name="msapplication-TileColor" content="#0b0f15">
-<meta name="msapplication-config" content="/browserconfig.xml">
-
-
-<meta property="og:image" content="https://www.juaning.dev/images/profile.jpg">
-<meta property="og:image:width" content="2048">
-<meta property="og:image:height" content="2048">
-
-
-<style>
-  html.dark,html.dark body{margin:0;padding:0}
-  html.dark body{background-color:#0b0f15;color:#cbd5e1;overflow-x:hidden;overflow-y:scroll;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-  html.dark .material-symbols-outlined{font-family:"Material Symbols Outlined";font-weight:400;font-style:normal;font-size:24px;line-height:1;display:inline-flex;justify-content:center;align-items:center;width:1em;height:1em;overflow:hidden;white-space:nowrap;direction:ltr;-webkit-font-smoothing:antialiased;vertical-align:middle}
-  html.dark nav{position:fixed;top:0;width:100%;z-index:50;background:rgba(11,15,21,.8);-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px);border-bottom:1px solid rgba(255,255,255,.05);height:73px}
-  html.dark main{margin:0 auto;width:100%;max-width:1280px;padding:105px 24px 0}@media(min-width:768px){html.dark main{padding-top:121px;padding-left:32px;padding-right:32px}}
-</style><link rel="stylesheet" href="/css/tailwind.min.babfec9cec11f3da876b206856f9f8698c308cd426f4754491e693cf9b9ad7b4.css" integrity="sha256-ur/snOwR89qHayBoVvn4aYwwjNQm9HVEkeaTz5ua17Q=">
-
-
-<link rel="preload" href="/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/JetBrainsMono-Variable.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/MaterialSymbolsOutlined.woff2" as="font" type="font/woff2" crossorigin>
-
-
-
-
-<link rel="preload" href="/css/syntax.min.2faf3e5c7d9ee446d5d17cbe8082e9d49cee6f2f1a5729c458bcdb30524a8aee.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha256-L68&#43;XH2e5EbV0Xy&#43;gILp1Jzuby8aVynEWLzbMFJKiu4=">
-<noscript><link rel="stylesheet" href="/css/syntax.min.2faf3e5c7d9ee446d5d17cbe8082e9d49cee6f2f1a5729c458bcdb30524a8aee.css" integrity="sha256-L68&#43;XH2e5EbV0Xy&#43;gILp1Jzuby8aVynEWLzbMFJKiu4="></noscript>
-
-
-
-
-<link rel="preconnect" href="https://www.googletagmanager.com">
-<link rel="preconnect" href="https://www.google-analytics.com">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Person",
-      "@id": "https:\/\/www.juaning.dev\/%20\/#person",
-      "name": "Juan José Gómez López",
-      "url": "https:\/\/www.juaning.dev\/%20\/",
-      "jobTitle": "Senior Software Engineer & Backend Architect",
-      "image": "https:\/\/www.juaning.dev\/%20images\/profile.png",
-      "description": "Senior Software Engineer and Backend Architect specializing in Drupal 11, high-availability infrastructures, and DevOps automation.",
-      "sameAs": [
-        "https://linkedin.com/in/juaningdotdev",
-        "https://github.com/neurox"
-      ],
-      "knowsAbout": [
-        "Drupal 11", "WordPress", "PHP 8.x", "AWS", "Docker", "Platform Engineering", "Dokploy", "High Availability Systems", "Legacy Modernization"
-      ]
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https:\/\/www.juaning.dev\/%20\/#website",
-      "url": "https:\/\/www.juaning.dev\/%20\/",
-      "name": "JUANING.dev",
-      "description": "Technical consulting and engineering logs by Juan Gómez.",
-      "publisher": {
-        "@id": "https:\/\/www.juaning.dev\/%20\/#person"
-      },
-      "inLanguage": "en"
-    }
-    
-    
-    ,{
-      "@type": "TechArticle",
-      "headline": "Architectural Shifts: Replacing Installation Profiles with Drupal 11 Recipes",
-      "description": "How Drupal 11 Recipes are replacing monolithic installation profiles for composable, standardized feature rollout across enterprise multisite ecosystems.",
-      "datePublished": "2026-05-18T00:00:00Z",
-      "dateModified": "2026-05-18T00:00:00Z",
-      "author": {
-        "@id": "https:\/\/www.juaning.dev\/%20\/#person"
-      },
-      "publisher": {
-        "@id": "https:\/\/www.juaning.dev\/%20\/#person"
-      },
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https:\/\/www.juaning.dev\/post\/2026\/2026-05-18-drupal-11-recipes-replace-installation-profiles\/"
-      }
-    }
-    
-  ]
-}
-</script>
-
-<meta property="og:title" content=Architectural&#32;Shifts:&#32;Replacing&#32;Installation&#32;Profiles&#32;with&#32;Drupal&#32;11&#32;Recipes />
-<meta property="og:description" content=How&#32;Drupal&#32;11&#32;Recipes&#32;are&#32;replacing&#32;monolithic&#32;installation&#32;profiles&#32;for&#32;composable,&#32;standardized&#32;feature&#32;rollout&#32;across&#32;enterprise&#32;multisite&#32;ecosystems. />
-<meta property="og:type" content=article />
-<meta property="og:url" content=https://www.juaning.dev/post/2026/2026-05-18-drupal-11-recipes-replace-installation-profiles/ />
-
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content=Architectural&#32;Shifts:&#32;Replacing&#32;Installation&#32;Profiles&#32;with&#32;Drupal&#32;11&#32;Recipes/>
-<meta name="twitter:description" content=How&#32;Drupal&#32;11&#32;Recipes&#32;are&#32;replacing&#32;monolithic&#32;installation&#32;profiles&#32;for&#32;composable,&#32;standardized&#32;feature&#32;rollout&#32;across&#32;enterprise&#32;multisite&#32;ecosystems./>
-
-
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZSRN0E5HWF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-ZSRN0E5HWF');
-</script>
-
-
-    
-</head>
-
-<body class="min-h-screen font-sans selection:bg-cyan-500/30 selection:text-cyan-200 bg-hud-bg">
-    
-<nav
-  class="fixed top-0 w-full z-50 bg-[#0b0f15]/80 backdrop-blur-xl border-b border-white/5 transition-colors duration-300 h-[73px] overflow-hidden">
-  <div class="flex justify-between items-center px-6 md:px-8 h-full max-w-7xl mx-auto">
-
-    
-    <a href=/
-      class="text-xl md:text-2xl font-display font-bold tracking-tight text-slate-100 hover:opacity-80 transition-opacity">
-      JUANING<span class="text-hud-cyan">.dev</span>
-    </a>
-
-    
-    <div class="hidden md:flex items-center gap-8 -ml-12">
-      
-      
-      
-      
-      <a href=/
-        class="text-sm font-medium transition-colors duration-200 text-slate-400 hover:text-hud-cyan">
-        Home
-      </a>
-      
-      
-      
-      <a href=/about/
-        class="text-sm font-medium transition-colors duration-200 text-slate-400 hover:text-hud-cyan">
-        About
-      </a>
-      
-      
-      
-      <a href=/portfolio/
-        class="text-sm font-medium transition-colors duration-200 text-slate-400 hover:text-hud-cyan">
-        Portfolio
-      </a>
-      
-    </div>
-
-    
-    <div class="flex items-center gap-4 md:gap-6">
-      <div class="hidden sm:block">
-        <div class="flex items-center gap-2 text-sm font-mono uppercase tracking-wider">
-    
-    
-    
-        
-        
-        
-        
-            
-                
-            
-        
-            
-        
-
-        
-            <span class="text-slate-200">en</span>
-        
-    
-        
-            <span class="text-slate-300 dark:text-slate-700 font-normal">|</span>
-        
-        
-        
-        
-            
-        
-            
-                
-            
-        
-
-        
-            <a href=/es/post/2026/recetas-drupal-11-reemplazan-perfiles-instalacion/ class="text-slate-500 hover:text-hud-cyan transition-colors">
-                es
-            </a>
-        
-    
-</div>
-
-      </div>
-
-      <a href=/contact/
-        class="bg-hud-cyan text-slate-950 px-5 py-2.5 rounded text-sm font-semibold hover:bg-[#38bdf8] transition-colors transition-opacity transition-transform hover:shadow-[0_0_15px_rgba(14,165,233,0.4)] active:scale-95 flex items-center justify-center">
-        Contact
-      </a>
-
-      
-      <button class="md:hidden text-slate-300 hover:text-white" id="mobile-menu-btn">
-        <span class="material-symbols-outlined">&#xe5d2;</span>
-      </button>
-    </div>
-  </div>
-</nav>
-
-
-<div id="mobile-menu"
-  class="fixed top-[73px] left-0 w-full h-[calc(100vh-73px)] bg-[#0b0f15]/95 backdrop-blur-xl z-40 hidden flex-col px-6 py-8 border-t border-white/5 md:hidden">
-  
-  <div class="flex flex-col gap-6">
-    
-    
-    
-    <a class="text-xl font-medium transition-colors text-slate-300 hover:text-white"
-      href=/>
-      Home
-    </a>
-    
-    
-    
-    <a class="text-xl font-medium transition-colors text-slate-300 hover:text-white"
-      href=/about/>
-      About
-    </a>
-    
-    
-    
-    <a class="text-xl font-medium transition-colors text-slate-300 hover:text-white"
-      href=/portfolio/>
-      Portfolio
-    </a>
-    
-    
-    
-    <div class="pt-6 border-t border-white/10">
-      <span class="text-[10px] text-slate-500 font-mono uppercase tracking-[0.2em] mb-4 block">SYS.LANG_SELECT</span>
-      <div class="flex gap-4">
-        <div class="flex items-center gap-2 text-sm font-mono uppercase tracking-wider">
-    
-    
-    
-        
-        
-        
-        
-            
-                
-            
-        
-            
-        
-
-        
-            <span class="text-slate-200">en</span>
-        
-    
-        
-            <span class="text-slate-300 dark:text-slate-700 font-normal">|</span>
-        
-        
-        
-        
-            
-        
-            
-                
-            
-        
-
-        
-            <a href=/es/post/2026/recetas-drupal-11-reemplazan-perfiles-instalacion/ class="text-slate-500 hover:text-hud-cyan transition-colors">
-                es
-            </a>
-        
-    
-</div>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-<script>
-  
-  document.addEventListener('DOMContentLoaded', () => {
-    const btn = document.getElementById('mobile-menu-btn');
-    const menu = document.getElementById('mobile-menu');
-    const icon = btn.querySelector('span');
-
-    if (btn && menu && icon) {
-      btn.addEventListener('click', () => {
-        menu.classList.toggle('hidden');
-        menu.classList.toggle('flex');
-
-        if (menu.classList.contains('hidden')) {
-          icon.innerHTML = '&#xe5d2;';
-          document.body.style.overflow = 'auto';
-        } else {
-          icon.innerHTML = '&#xe5cd;';
-          document.body.style.overflow = 'hidden';
-        }
-      });
-    }
-  });
-</script>
-
-    <main class="w-full max-w-7xl mx-auto px-6 md:px-8 pt-[105px] pb-0 md:pt-[121px] md:pb-0 flex flex-col gap-8 md:gap-12">
-        
-<article class="flex flex-col w-full gap-8 md:gap-10">
-  <header class="glass-card rounded-xl p-8 border-b-[3px] border-b-hud-cyan relative overflow-hidden group">
-    <h1
-      class="font-display text-slate-100 text-3xl md:text-4xl font-bold leading-tight tracking-tight mb-4 flex items-center gap-4">
-      
-      <div class="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-lg bg-hud-cyan/10 border border-hud-cyan/20 text-hud-cyan shrink-0">
-        <span class="material-symbols-outlined text-3xl md:text-4xl">&#xe159;</span>
-      </div>
-      
-      Architectural Shifts: Replacing Installation Profiles with Drupal 11 Recipes
-    </h1>
-    
-    <div class="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-400 uppercase tracking-wider">
-      <span class="flex items-center gap-1">
-        <span class="material-symbols-outlined text-sm">&#xebcc;</span>
-        SYS.LOG // 2026.05.18
-      </span>
-      
-    </div>
-    
-
-    
-    <div class="flex flex-wrap gap-2 mt-6">
-      
-      <a href=/tags/drupal-11
-        class="inline-block px-3 py-1 bg-slate-800/60 text-slate-300 hover:text-hud-cyan border border-white/5 hover:border-hud-cyan/50 transition-colors rounded text-xs font-mono uppercase tracking-wider">
-        <span class="text-hud-cyan mr-1">#</span>Drupal 11
-      </a>
-      
-      <a href=/tags/recipes
-        class="inline-block px-3 py-1 bg-slate-800/60 text-slate-300 hover:text-hud-cyan border border-white/5 hover:border-hud-cyan/50 transition-colors rounded text-xs font-mono uppercase tracking-wider">
-        <span class="text-hud-cyan mr-1">#</span>Recipes
-      </a>
-      
-      <a href=/tags/installation-profiles
-        class="inline-block px-3 py-1 bg-slate-800/60 text-slate-300 hover:text-hud-cyan border border-white/5 hover:border-hud-cyan/50 transition-colors rounded text-xs font-mono uppercase tracking-wider">
-        <span class="text-hud-cyan mr-1">#</span>Installation Profiles
-      </a>
-      
-      <a href=/tags/multisite
-        class="inline-block px-3 py-1 bg-slate-800/60 text-slate-300 hover:text-hud-cyan border border-white/5 hover:border-hud-cyan/50 transition-colors rounded text-xs font-mono uppercase tracking-wider">
-        <span class="text-hud-cyan mr-1">#</span>Multisite
-      </a>
-      
-      <a href=/tags/composer
-        class="inline-block px-3 py-1 bg-slate-800/60 text-slate-300 hover:text-hud-cyan border border-white/5 hover:border-hud-cyan/50 transition-colors rounded text-xs font-mono uppercase tracking-wider">
-        <span class="text-hud-cyan mr-1">#</span>Composer
-      </a>
-      
-    </div>
-    
-  </header>
-
-  <div
-    class="glass-card rounded-xl p-8 md:p-12 prose prose-slate prose-invert max-w-none w-full prose-headings:font-display prose-headings:tracking-tight prose-a:text-hud-cyan hover:prose-a:text-cyan-400 prose-img:rounded-xl prose-h2:text-3xl prose-h2:md:text-4xl prose-h2:leading-tight prose-h3:text-xl prose-h3:leading-tight">
-    <p>For years, enterprise Drupal shops have faced an uncomfortable trade-off. <strong>Installation Profiles</strong> &ndash; those monolithic <code>*.profile</code> files bundled with custom modules, hard-coded configuration, and installer logic &ndash; were the only reliable way to standardize a platform across dozens of sites. They worked, but they ossified. Every division-specific tweak meant a fork. Every fork meant a maintenance burden that grew quadratically with the number of tenants.</p>
-<p>Drupal 11 changes this equation. With <strong>Recipes</strong> stabilized in core as of the 11.x release cycle, we now have a composable alternative that fundamentally shifts how we provision and scale enterprise platforms. This post explores the architectural implications for large-scale multisite ecosystems running dozens of divisions.</p>
-<h2 id="the-problem-with-monolithic-installation-profiles" >The Problem with Monolithic Installation Profiles
-<span>
-    <a href="#the-problem-with-monolithic-installation-profiles">
-        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
-    </a>
-</span>
-</h2><p>Consider a typical enterprise scenario: a holding company with 15 operating divisions, each requiring a Drupal site with shared baseline functionality (SSO, content governance, media management) plus division-specific feature sets (custom workflows, domain-specific content models, integrated line-of-business systems).</p>
-<p>With Installation Profiles, the architecture typically collapses into one of two equally painful patterns:</p>
-<p><strong>Pattern A: The Kitchen-Sink Distribution</strong>
-A single profile containing every possible feature, gated by permissions and configuration. Simple to deploy &ndash; one profile to rule them all &ndash; but every site pays the performance and complexity tax for features it does not use. Updates require coordinated regression testing across all divisions.</p>
-<p><strong>Pattern B: Forked Distributions</strong>
-Each division maintains its own profile inheriting from a base. Flexible, but the inheritance chain quickly becomes a dependency nightmare. A security update to the base profile must be propagated to 15 forks, each with its own conflicts and overrides. Drush PM and Composer struggle to resolve these nested dependency graphs.</p>
-<p>Both patterns share a root cause: <strong>Installation Profiles are all-or-nothing artifacts.</strong> They bundle modules, configuration, and installation logic into a single atomic unit that cannot be easily composed, reordered, or selectively applied after initial site installation.</p>
-<h2 id="drupal-11-recipes-a-composable-alternative" >Drupal 11 Recipes: A Composable Alternative
-<span>
-    <a href="#drupal-11-recipes-a-composable-alternative">
-        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
-    </a>
-</span>
-</h2><p>Recipes solve this by decoupling the concerns that Installation Profiles forced together. A Recipe is a reusable, declarative package that can:</p>
-<ul>
-<li>Install modules and themes</li>
-<li>Import configuration</li>
-<li>Execute arbitrary PHP during application</li>
-<li>Declare dependencies on other Recipes</li>
-<li>Be applied to an existing site &ndash; not just during installation</li>
-</ul>
-<p>This last point is transformative for enterprise workflows. You are no longer locked into decisions made at <code>drush site:install</code> time. A Recipe can be applied incrementally as business requirements evolve, enabling a genuinely iterative approach to platform standardization.</p>
-<p>Let us look at a concrete example for our holding company scenario.</p>
-<h3 id="base-infrastructure-recipe" >Base Infrastructure Recipe
-<span>
-    <a href="#base-infrastructure-recipe">
-        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
-    </a>
-</span>
-</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c"># recipes/base-infrastructure/recipe.yml</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Base Infrastructure&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Core SSO, audit logging, and media management for all divisions&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">Recipe</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="nt">install</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">acquia_connector</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">samlauth</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">automated_cron</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">media</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">media_library</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="nt">config</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">actions</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">system.site</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">simpleConfig</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">page.front</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/node/1&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">samlauth.settings</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">simpleConfig</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">sp_entity_id</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;https://sso.internal.example.com&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">idp_url</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;https://idp.example.com/saml2&#34;</span><span class="w">
-</span></span></span></code></pre></div><h3 id="division-specific-workflow-recipe" >Division-Specific Workflow Recipe
-<span>
-    <a href="#division-specific-workflow-recipe">
-        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
-    </a>
-</span>
-</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c"># recipes/division-hr-workflows/recipe.yml</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;HR Division Workflows&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Custom content workflows and integration for HR division&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">Recipe</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="nt">dependencies</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">recipes/base-infrastructure</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="nt">install</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">workflows</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">content_moderation</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">views_bulk_operations</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="nt">config</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">actions</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">workflows.workflow.editorial</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">create</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l">editorial</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;HR Editorial&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">content_moderation</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">type_settings</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">states</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">draft</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l">Draft</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">review</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l">In Review</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">published</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="l">Published</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">transitions</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">submit_for_review</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">from</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="l">draft]</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">to</span><span class="p">:</span><span class="w"> </span><span class="l">review</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">approve</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">from</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="l">review]</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">to</span><span class="p">:</span><span class="w"> </span><span class="l">published</span><span class="w">
-</span></span></span></code></pre></div><p>Each Recipe declares its dependencies explicitly. When applied, Drupal resolves the dependency graph and applies Recipes in topological order, ensuring base infrastructure is in place before division-specific workflows are layered on top.</p>
-<h2 id="provisioning-at-scale-a-multisite-workflow" >Provisioning at Scale: A Multisite Workflow
-<span>
-    <a href="#provisioning-at-scale-a-multisite-workflow">
-        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
-    </a>
-</span>
-</h2><p>For an enterprise platform, the provisioning workflow shifts from &ldquo;clone an installation profile and customize&rdquo; to &ldquo;apply a curated set of Recipes.&rdquo; Here is how this plays out in practice:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Step 1: Install a minimal Drupal 11 instance</span>
-</span></span><span class="line"><span class="cl">composer create-project drupal/recommended-project divisions-platform
-</span></span><span class="line"><span class="cl"><span class="nb">cd</span> divisions-platform
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Step 2: Add your Recipe repository</span>
-</span></span><span class="line"><span class="cl">composer config repositories.recipes vcs https://github.com/example/recipes.git
-</span></span><span class="line"><span class="cl">composer require example/recipes:^1.0
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Step 3: Provision each division site</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># Division A -- standard setup</span>
-</span></span><span class="line"><span class="cl">drush site:install minimal --yes
-</span></span><span class="line"><span class="cl">drush recipe recipes/base-infrastructure
-</span></span><span class="line"><span class="cl">drush recipe recipes/division-content-publishing
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Division B -- HR, with additional workflow recipes</span>
-</span></span><span class="line"><span class="cl">drush site:install minimal --yes
-</span></span><span class="line"><span class="cl">drush recipe recipes/base-infrastructure
-</span></span><span class="line"><span class="cl">drush recipe recipes/division-hr-workflows
-</span></span><span class="line"><span class="cl">drush recipe recipes/division-hiring-portal
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Division C -- minimal footprint (public-facing microsite)</span>
-</span></span><span class="line"><span class="cl">drush site:install minimal --yes
-</span></span><span class="line"><span class="cl">drush recipe recipes/base-infrastructure
-</span></span><span class="line"><span class="cl">drush recipe recipes/public-microsite
-</span></span></code></pre></div><p>Notice what is absent: there is no monolithic distribution fork, no fragile inheritance chain, and no up-front commitment to every feature a division might eventually need. Each division starts from the same minimal base and layers on exactly the Recipes it requires.</p>
-<h2 id="cicd-integration" >CI/CD Integration
-<span>
-    <a href="#cicd-integration">
-        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
-    </a>
-</span>
-</h2><p>In a GitOps workflow, Recipes integrate naturally with your deployment pipeline. Consider a GitHub Actions matrix build that validates every Recipe combination in use across your ecosystem:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">jobs</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">recipe-validation</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">strategy</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">matrix</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">recipe-set</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">          </span>- <span class="s2">&#34;base-infrastructure division-content-publishing&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">          </span>- <span class="s2">&#34;base-infrastructure division-hr-workflows division-hiring-portal&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">          </span>- <span class="s2">&#34;base-infrastructure public-microsite&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">actions/checkout@v4</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Validate recipe composition</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
-</span></span></span><span class="line"><span class="cl"><span class="sd">          ddev drush site:install minimal --yes
-</span></span></span><span class="line"><span class="cl"><span class="sd">          for recipe in ${{ matrix.recipe-set }}; do
-</span></span></span><span class="line"><span class="cl"><span class="sd">            ddev drush recipe recipes/$recipe
-</span></span></span><span class="line"><span class="cl"><span class="sd">          done
-</span></span></span><span class="line"><span class="cl"><span class="sd">          ddev drush core:status</span><span class="w">
-</span></span></span></code></pre></div><p>Each cell in the matrix validates that the Recipe composition installs cleanly, configuration imports without errors, and no dependency conflicts surface. Failed compositions block the pipeline before they ever reach production.</p>
-<h2 id="operational-advantages" >Operational Advantages
-<span>
-    <a href="#operational-advantages">
-        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
-    </a>
-</span>
-</h2><p>The shift from Installation Profiles to Recipes yields measurable operational benefits for enterprise teams:</p>
-<p><strong>Independent Lifecycles.</strong> Base infrastructure modules can be updated independently of division-specific features. A patch to the SAML authentication module does not require revalidating HR workflows or the hiring portal.</p>
-<p><strong>Gradual Adoption.</strong> Recipes can be applied to existing production sites. You can migrate a legacy installation profile site piece by piece, extracting functionality into Recipes incrementally, rather than planning a risky big-bang cutover.</p>
-<p><strong>Testing Surface Reduction.</strong> Each Recipe can be tested in isolation and in known compositions. The testing matrix is combinatorial across your active compositions rather than exponential across all possible feature interactions.</p>
-<p><strong>Role Specialization.</strong> A platform team owns the base infrastructure Recipe. Division teams own their domain-specific Recipes. The dependency graph provides a clear contract between teams, eliminating the coordination overhead of a shared monolithic profile.</p>
-<h2 id="migration-strategy-for-existing-installation-profiles" >Migration Strategy for Existing Installation Profiles
-<span>
-    <a href="#migration-strategy-for-existing-installation-profiles">
-        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
-    </a>
-</span>
-</h2><p>If you are managing a legacy Drupal 7 or 10 platform with a custom installation profile today, the migration path to Recipes is deliberate but achievable:</p>
-<ol>
-<li><strong>Audit your profile.</strong> Decompose it into logical feature boundaries. Each boundary becomes a candidate Recipe.</li>
-<li><strong>Identify shared infrastructure.</strong> SSO, media, analytics, and governance should become your base Recipe.</li>
-<li><strong>Extract incrementally.</strong> Build each Recipe against a fresh <code>minimal</code> Drupal 11 install. Validate that it works in isolation.</li>
-<li><strong>Compose in staging.</strong> Apply Recipes in groups matching your current multisite configuration. Compare the resulting configuration against your legacy sites.</li>
-<li><strong>Roll out gradually.</strong> Apply the base Recipe first across all sites, then layer division-specific Recipes. The ability to apply Recipes to running sites means you can iterate without maintenance windows.</li>
-</ol>
-<h2 id="when-installation-profiles-still-make-sense" >When Installation Profiles Still Make Sense
-<span>
-    <a href="#when-installation-profiles-still-make-sense">
-        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
-    </a>
-</span>
-</h2><p>To be precise: Recipes do not obsolete Installation Profiles entirely. If you are distributing a standalone product &ndash; say, a Drupal distribution for universities or non-profits &ndash; a well-crafted installation profile still provides a single-package experience that is simpler for end users. Recipes excel in environments where you control the deployment pipeline and need composability over packaging simplicity.</p>
-<h2 id="the-architectural-takeaway" >The Architectural Takeaway
-<span>
-    <a href="#the-architectural-takeaway">
-        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
-    </a>
-</span>
-</h2><p>The stabilization of Drupal Recipes in 2026 is not merely a new feature &ndash; it is an architectural shift in how we think about platform provisioning. Installation Profiles optimized for the <strong>packaging</strong> problem: how to ship a complete Drupal experience in one artifact. Recipes optimize for the <strong>composition</strong> problem: how to assemble standardized, testable, independently maintained feature sets across a heterogeneous ecosystem.</p>
-<p>For enterprise teams managing multisite platforms at scale, the choice is clear. Recipes reduce the coordination tax, eliminate the fork-maintenance cycle, and bring the same composability principles that transformed microservices architecture to the world of Drupal site provisioning.</p>
-
-  </div>
-
-  
-  
-  <div class="glass-card rounded-xl p-8 w-full">
-    <h3 class="text-xl font-display font-bold mb-8 text-slate-100 flex items-center gap-2">
-      <span class="material-symbols-outlined text-hud-cyan">&#xe8af;</span>
-      Comments
-    </h3>
-    
-
-
-    
-        
-    
-
-<div id="disqus_thread"></div>
-<script>
-    var disqus_config = function () {
-    this.page.identifier = 'post\/2026-05-18-drupal-11-recipes-replace-installation-profiles';
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "juaning" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-
-  </div>
-  
-  
-</article>
-
-    </main>
-
-    
-<footer class="w-full py-8 md:py-12 bg-hud-bg border-t border-white/5 mt-8 md:mt-12">
-  <div class="flex flex-col md:flex-row justify-between items-center px-6 md:px-8 max-w-7xl mx-auto gap-6 md:gap-8">
-
-    <div class="text-xl font-display font-bold tracking-tight text-slate-300">
-      JUANING<span class="text-hud-cyan/70">.dev</span>
-    </div>
-
-    <div class="flex space-x-6">
-      <a href="https://github.com/"
-        class="text-slate-500 hover:text-hud-cyan transition-colors flex items-center gap-2 group" target="_blank"
-        rel="noopener">
-        <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"
-          aria-hidden="true">
-          <path fill-rule="evenodd"
-            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-            clip-rule="evenodd"></path>
-        </svg>
-        <span class="hidden sm:inline-block text-sm font-mono">GitHub</span>
-      </a>
-      <a href=ZgotmplZ
-        class="text-slate-500 hover:text-hud-cyan transition-colors flex items-center gap-2 group" target="_blank"
-        rel="noopener">
-        <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"
-          aria-hidden="true">
-          <path
-            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-        </svg>
-        <span class="hidden sm:inline-block text-sm font-mono">LinkedIn</span>
-      </a>
-    </div>
-
-    <div class="text-slate-600 text-sm flex items-center gap-2 font-mono">
-      &copy; 2026 Juan Gómez.
-      <span class="hidden sm:inline">All rights reserved.</span>
-    </div>
-  </div>
-</footer>
-
-
-
-
-<script>document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll(".highlight").forEach(e=>{if(e.querySelector(".copy-button"))return;const n=document.createElement("button");n.className="copy-button absolute top-2 right-2 text-slate-500 hover:text-slate-300 transition-colors p-2 rounded-md hover:bg-slate-800/50 focus:outline-none flex items-center justify-center",n.setAttribute("aria-label","Copy code to clipboard"),n.title="Copy code";const t=document.createElement("span");t.className="material-symbols-outlined text-lg pointer-events-none",t.innerHTML="&#xe14d;",n.appendChild(t),e.appendChild(n),n.addEventListener("click",async()=>{const n=e.querySelector("code");if(!n)return;const s=n.innerText||n.textContent;try{await navigator.clipboard.writeText(s),t.innerHTML="&#xe5ca;",t.classList.remove("text-slate-500"),t.classList.add("text-green-500"),setTimeout(()=>{t.innerHTML="&#xe14d;",t.classList.add("text-slate-500"),t.classList.remove("text-green-500")},2e3)}catch(e){console.error("Failed to copy text: ",e),t.innerHTML="&#xf8b6;",t.classList.add("text-red-500")}})})})</script>
-
-</body>
-
-</html>
+<!doctype html><html lang=en class=dark><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=generator content="Hugo 0.161.1"><title>Architectural Shifts: Replacing Installation Profiles with Drupal 11 Recipes | JUANING.dev</title><meta name=description content="How Drupal 11 Recipes are replacing monolithic installation profiles for composable, standardized feature rollout across enterprise multisite ecosystems."><link rel=canonical href=https://www.juaning.dev/post/2026/2026-05-18-drupal-11-recipes-replace-installation-profiles/><link rel=alternate hreflang=es href=https://www.juaning.dev/es/post/2026/recetas-drupal-11-reemplazan-perfiles-instalacion/><link rel=alternate hreflang=en href=https://www.juaning.dev/post/2026/2026-05-18-drupal-11-recipes-replace-installation-profiles/><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><meta name=theme-color content="#0b0f15"><meta name=msapplication-TileColor content="#0b0f15"><meta name=msapplication-config content="/browserconfig.xml"><meta property="og:image" content="https://www.juaning.dev/images/profile.jpg"><meta property="og:image:width" content="2048"><meta property="og:image:height" content="2048"><style>html.dark,html.dark body{margin:0;padding:0}html.dark body{background-color:#0b0f15;color:#cbd5e1;overflow-x:hidden;overflow-y:scroll;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}html.dark .material-symbols-outlined{font-family:material symbols outlined;font-weight:400;font-style:normal;font-size:24px;line-height:1;display:inline-flex;justify-content:center;align-items:center;width:1em;height:1em;overflow:hidden;white-space:nowrap;direction:ltr;-webkit-font-smoothing:antialiased;vertical-align:middle}html.dark nav{position:fixed;top:0;width:100%;z-index:50;background:rgba(11,15,21,.8);-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px);border-bottom:1px solid rgba(255,255,255,5%);height:73px}html.dark main{margin:0 auto;width:100%;max-width:1280px;padding:105px 24px 0}@media(min-width:768px){html.dark main{padding-top:121px;padding-left:32px;padding-right:32px}}</style><link rel=stylesheet href=/css/tailwind.min.babfec9cec11f3da876b206856f9f8698c308cd426f4754491e693cf9b9ad7b4.css integrity="sha256-ur/snOwR89qHayBoVvn4aYwwjNQm9HVEkeaTz5ua17Q="><link rel=preload href=/fonts/Geist-Variable.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=/fonts/Inter-Variable.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=/fonts/JetBrainsMono-Variable.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=/fonts/MaterialSymbolsOutlined.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=/css/syntax.min.2faf3e5c7d9ee446d5d17cbe8082e9d49cee6f2f1a5729c458bcdb30524a8aee.css as=style onload='this.onload=null,this.rel="stylesheet"' integrity="sha256-L68+XH2e5EbV0Xy+gILp1Jzuby8aVynEWLzbMFJKiu4="><noscript><link rel=stylesheet href=/css/syntax.min.2faf3e5c7d9ee446d5d17cbe8082e9d49cee6f2f1a5729c458bcdb30524a8aee.css integrity="sha256-L68+XH2e5EbV0Xy+gILp1Jzuby8aVynEWLzbMFJKiu4="></noscript><link rel=preconnect href=https://www.googletagmanager.com><link rel=preconnect href=https://www.google-analytics.com><script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https:\/\/www.juaning.dev\/%20\/#person","name":"Juan José Gómez López","url":"https:\/\/www.juaning.dev\/%20\/","jobTitle":"Senior Software Engineer & Backend Architect","image":"https:\/\/www.juaning.dev\/%20images\/profile.png","description":"Senior Software Engineer and Backend Architect specializing in Drupal 11, high-availability infrastructures, and DevOps automation.","sameAs":["https://linkedin.com/in/juaningdotdev","https://github.com/neurox"],"knowsAbout":["Drupal 11","WordPress","PHP 8.x","AWS","Docker","Platform Engineering","Dokploy","High Availability Systems","Legacy Modernization"]},{"@type":"WebSite","@id":"https:\/\/www.juaning.dev\/%20\/#website","url":"https:\/\/www.juaning.dev\/%20\/","name":"JUANING.dev","description":"Technical consulting and engineering logs by Juan Gómez.","publisher":{"@id":"https:\/\/www.juaning.dev\/%20\/#person"},"inLanguage":"en"},{"@type":"TechArticle","headline":"Architectural Shifts: Replacing Installation Profiles with Drupal 11 Recipes","description":"How Drupal 11 Recipes are replacing monolithic installation profiles for composable, standardized feature rollout across enterprise multisite ecosystems.","datePublished":"2026-05-18T00:00:00Z","dateModified":"2026-05-18T00:00:00Z","author":{"@id":"https:\/\/www.juaning.dev\/%20\/#person"},"publisher":{"@id":"https:\/\/www.juaning.dev\/%20\/#person"},"mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.juaning.dev\/post\/2026\/2026-05-18-drupal-11-recipes-replace-installation-profiles\/"}}]}</script><meta property="og:title" content="Architectural Shifts: Replacing Installation Profiles with Drupal 11 Recipes"><meta property="og:description" content="How Drupal 11 Recipes are replacing monolithic installation profiles for composable, standardized feature rollout across enterprise multisite ecosystems."><meta property="og:type" content=article><meta property="og:url" content=https://www.juaning.dev/post/2026/2026-05-18-drupal-11-recipes-replace-installation-profiles/><meta name=twitter:card content="summary_large_image"><meta name=twitter:title content="Architectural Shifts: Replacing Installation Profiles with Drupal 11 Recipes/"><meta name=twitter:description content="How Drupal 11 Recipes are replacing monolithic installation profiles for composable, standardized feature rollout across enterprise multisite ecosystems./"><script async src="https://www.googletagmanager.com/gtag/js?id=G-ZSRN0E5HWF"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-ZSRN0E5HWF")</script></head><body class="min-h-screen font-sans selection:bg-cyan-500/30 selection:text-cyan-200 bg-hud-bg"><nav class="fixed top-0 w-full z-50 bg-[#0b0f15]/80 backdrop-blur-xl border-b border-white/5 transition-colors duration-300 h-[73px] overflow-hidden"><div class="flex justify-between items-center px-6 md:px-8 h-full max-w-7xl mx-auto"><a href=/ class="text-xl md:text-2xl font-display font-bold tracking-tight text-slate-100 hover:opacity-80 transition-opacity">JUANING<span class=text-hud-cyan>.dev</span></a><div class="hidden md:flex items-center gap-8 -ml-12"><a href=/ class="text-sm font-medium transition-colors duration-200 text-slate-400 hover:text-hud-cyan">Home
+</a><a href=/about/ class="text-sm font-medium transition-colors duration-200 text-slate-400 hover:text-hud-cyan">About
+</a><a href=/portfolio/ class="text-sm font-medium transition-colors duration-200 text-slate-400 hover:text-hud-cyan">Portfolio</a></div><div class="flex items-center gap-4 md:gap-6"><div class="hidden sm:block"><div class="flex items-center gap-2 text-sm font-mono uppercase tracking-wider"><span class=text-slate-200>en</span>
+<span class="text-slate-300 dark:text-slate-700 font-normal">|</span>
+<a href=/es/post/2026/recetas-drupal-11-reemplazan-perfiles-instalacion/ class="text-slate-500 hover:text-hud-cyan transition-colors">es</a></div></div><a href=/contact/ class="bg-hud-cyan text-slate-950 px-5 py-2.5 rounded text-sm font-semibold hover:bg-[#38bdf8] transition-colors transition-opacity transition-transform hover:shadow-[0_0_15px_rgba(14,165,233,0.4)] active:scale-95 flex items-center justify-center">Contact
+</a><button class="md:hidden text-slate-300 hover:text-white" id=mobile-menu-btn>
+<span class=material-symbols-outlined>&#xe5d2;</span></button></div></div></nav><div id=mobile-menu class="fixed top-[73px] left-0 w-full h-[calc(100vh-73px)] bg-[#0b0f15]/95 backdrop-blur-xl z-40 hidden flex-col px-6 py-8 border-t border-white/5 md:hidden"><div class="flex flex-col gap-6"><a class="text-xl font-medium transition-colors text-slate-300 hover:text-white" href=/>Home
+</a><a class="text-xl font-medium transition-colors text-slate-300 hover:text-white" href=/about/>About
+</a><a class="text-xl font-medium transition-colors text-slate-300 hover:text-white" href=/portfolio/>Portfolio</a><div class="pt-6 border-t border-white/10"><span class="text-[10px] text-slate-500 font-mono uppercase tracking-[0.2em] mb-4 block">SYS.LANG_SELECT</span><div class="flex gap-4"><div class="flex items-center gap-2 text-sm font-mono uppercase tracking-wider"><span class=text-slate-200>en</span>
+<span class="text-slate-300 dark:text-slate-700 font-normal">|</span>
+<a href=/es/post/2026/recetas-drupal-11-reemplazan-perfiles-instalacion/ class="text-slate-500 hover:text-hud-cyan transition-colors">es</a></div></div></div></div></div><script>document.addEventListener("DOMContentLoaded",()=>{const t=document.getElementById("mobile-menu-btn"),e=document.getElementById("mobile-menu"),n=t.querySelector("span");t&&e&&n&&t.addEventListener("click",()=>{e.classList.toggle("hidden"),e.classList.toggle("flex"),e.classList.contains("hidden")?(n.innerHTML="&#xe5d2;",document.body.style.overflow="auto"):(n.innerHTML="&#xe5cd;",document.body.style.overflow="hidden")})})</script><main class="w-full max-w-7xl mx-auto px-6 md:px-8 pt-[105px] pb-0 md:pt-[121px] md:pb-0 flex flex-col gap-8 md:gap-12"><article class="flex flex-col w-full gap-8 md:gap-10"><header class="glass-card rounded-xl p-8 border-b-[3px] border-b-hud-cyan relative overflow-hidden group"><h1 class="font-display text-slate-100 text-3xl md:text-4xl font-bold leading-tight tracking-tight mb-4 flex items-center gap-4"><div class="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-lg bg-hud-cyan/10 border border-hud-cyan/20 text-hud-cyan shrink-0"><span class="material-symbols-outlined text-3xl md:text-4xl">&#xe159;</span></div>Architectural Shifts: Replacing Installation Profiles with Drupal 11 Recipes</h1><div class="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-400 uppercase tracking-wider"><span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">&#xebcc;</span>
+SYS.LOG // 2026.05.18</span></div><div class="flex flex-wrap gap-2 mt-6"><a href=/tags/drupal-11 class="inline-block px-3 py-1 bg-slate-800/60 text-slate-300 hover:text-hud-cyan border border-white/5 hover:border-hud-cyan/50 transition-colors rounded text-xs font-mono uppercase tracking-wider"><span class="text-hud-cyan mr-1">#</span>Drupal 11
+</a><a href=/tags/recipes class="inline-block px-3 py-1 bg-slate-800/60 text-slate-300 hover:text-hud-cyan border border-white/5 hover:border-hud-cyan/50 transition-colors rounded text-xs font-mono uppercase tracking-wider"><span class="text-hud-cyan mr-1">#</span>Recipes
+</a><a href=/tags/installation-profiles class="inline-block px-3 py-1 bg-slate-800/60 text-slate-300 hover:text-hud-cyan border border-white/5 hover:border-hud-cyan/50 transition-colors rounded text-xs font-mono uppercase tracking-wider"><span class="text-hud-cyan mr-1">#</span>Installation Profiles
+</a><a href=/tags/multisite class="inline-block px-3 py-1 bg-slate-800/60 text-slate-300 hover:text-hud-cyan border border-white/5 hover:border-hud-cyan/50 transition-colors rounded text-xs font-mono uppercase tracking-wider"><span class="text-hud-cyan mr-1">#</span>Multisite
+</a><a href=/tags/composer class="inline-block px-3 py-1 bg-slate-800/60 text-slate-300 hover:text-hud-cyan border border-white/5 hover:border-hud-cyan/50 transition-colors rounded text-xs font-mono uppercase tracking-wider"><span class="text-hud-cyan mr-1">#</span>Composer</a></div></header><div class="glass-card rounded-xl p-8 md:p-12 prose prose-slate prose-invert max-w-none w-full prose-headings:font-display prose-headings:tracking-tight prose-a:text-hud-cyan hover:prose-a:text-cyan-400 prose-img:rounded-xl prose-h2:text-3xl prose-h2:md:text-4xl prose-h2:leading-tight prose-h3:text-xl prose-h3:leading-tight"><p>For years, enterprise Drupal shops have faced an uncomfortable trade-off. <strong>Installation Profiles</strong> &ndash; those monolithic <code>*.profile</code> files bundled with custom modules, hard-coded configuration, and installer logic &ndash; were the only reliable way to standardize a platform across dozens of sites. They worked, but they ossified. Every division-specific tweak meant a fork. Every fork meant a maintenance burden that grew quadratically with the number of tenants.</p><p>Drupal 11 changes this equation. With <strong>Recipes</strong> stabilized in core as of the 11.x release cycle, we now have a composable alternative that fundamentally shifts how we provision and scale enterprise platforms. This post explores the architectural implications for large-scale multisite ecosystems running dozens of divisions.</p><h2 id=the-problem-with-monolithic-installation-profiles>The Problem with Monolithic Installation Profiles
+<span><a href=#the-problem-with-monolithic-installation-profiles><svg viewBox="0 0 28 23" height="100%" width="19"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h2><p>Consider a typical enterprise scenario: a holding company with 15 operating divisions, each requiring a Drupal site with shared baseline functionality (SSO, content governance, media management) plus division-specific feature sets (custom workflows, domain-specific content models, integrated line-of-business systems).</p><p>With Installation Profiles, the architecture typically collapses into one of two equally painful patterns:</p><p><strong>Pattern A: The Kitchen-Sink Distribution</strong>
+A single profile containing every possible feature, gated by permissions and configuration. Simple to deploy &ndash; one profile to rule them all &ndash; but every site pays the performance and complexity tax for features it does not use. Updates require coordinated regression testing across all divisions.</p><p><strong>Pattern B: Forked Distributions</strong>
+Each division maintains its own profile inheriting from a base. Flexible, but the inheritance chain quickly becomes a dependency nightmare. A security update to the base profile must be propagated to 15 forks, each with its own conflicts and overrides. Drush PM and Composer struggle to resolve these nested dependency graphs.</p><p>Both patterns share a root cause: <strong>Installation Profiles are all-or-nothing artifacts.</strong> They bundle modules, configuration, and installation logic into a single atomic unit that cannot be easily composed, reordered, or selectively applied after initial site installation.</p><h2 id=drupal-11-recipes-a-composable-alternative>Drupal 11 Recipes: A Composable Alternative
+<span><a href=#drupal-11-recipes-a-composable-alternative><svg viewBox="0 0 28 23" height="100%" width="19"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h2><p>Recipes solve this by decoupling the concerns that Installation Profiles forced together. A Recipe is a reusable, declarative package that can:</p><ul><li>Install modules and themes</li><li>Import configuration</li><li>Execute arbitrary PHP during application</li><li>Declare dependencies on other Recipes</li><li>Be applied to an existing site &ndash; not just during installation</li></ul><p>This last point is transformative for enterprise workflows. You are no longer locked into decisions made at <code>drush site:install</code> time. A Recipe can be applied incrementally as business requirements evolve, enabling a genuinely iterative approach to platform standardization.</p><p>Let us look at a concrete example for our holding company scenario.</p><h3 id=base-infrastructure-recipe>Base Infrastructure Recipe
+<span><a href=#base-infrastructure-recipe><svg viewBox="0 0 28 23" height="100%" width="19"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=c># recipes/base-infrastructure/recipe.yml</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;Base Infrastructure&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=nt>description</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;Core SSO, audit logging, and media management for all divisions&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=nt>type</span><span class=p>:</span><span class=w> </span><span class=l>Recipe</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=nt>install</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span>- <span class=l>acquia_connector</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span>- <span class=l>samlauth</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span>- <span class=l>automated_cron</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span>- <span class=l>media</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span>- <span class=l>media_library</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=nt>config</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>actions</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>system.site</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>simpleConfig</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>page.front</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;/node/1&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>samlauth.settings</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>simpleConfig</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>sp_entity_id</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;https://sso.internal.example.com&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>idp_url</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;https://idp.example.com/saml2&#34;</span><span class=w>
+</span></span></span></code></pre></div><h3 id=division-specific-workflow-recipe>Division-Specific Workflow Recipe
+<span><a href=#division-specific-workflow-recipe><svg viewBox="0 0 28 23" height="100%" width="19"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=c># recipes/division-hr-workflows/recipe.yml</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;HR Division Workflows&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=nt>description</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;Custom content workflows and integration for HR division&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=nt>type</span><span class=p>:</span><span class=w> </span><span class=l>Recipe</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=nt>dependencies</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span>- <span class=l>recipes/base-infrastructure</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=nt>install</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span>- <span class=l>workflows</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span>- <span class=l>content_moderation</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span>- <span class=l>views_bulk_operations</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=nt>config</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>actions</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>workflows.workflow.editorial</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>create</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>id</span><span class=p>:</span><span class=w> </span><span class=l>editorial</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>label</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;HR Editorial&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>type</span><span class=p>:</span><span class=w> </span><span class=l>content_moderation</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>type_settings</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>states</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=nt>draft</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>              </span><span class=nt>label</span><span class=p>:</span><span class=w> </span><span class=l>Draft</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=nt>review</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>              </span><span class=nt>label</span><span class=p>:</span><span class=w> </span><span class=l>In Review</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=nt>published</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>              </span><span class=nt>label</span><span class=p>:</span><span class=w> </span><span class=l>Published</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>transitions</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=nt>submit_for_review</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>              </span><span class=nt>from</span><span class=p>:</span><span class=w> </span><span class=p>[</span><span class=l>draft]</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>              </span><span class=nt>to</span><span class=p>:</span><span class=w> </span><span class=l>review</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=nt>approve</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>              </span><span class=nt>from</span><span class=p>:</span><span class=w> </span><span class=p>[</span><span class=l>review]</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>              </span><span class=nt>to</span><span class=p>:</span><span class=w> </span><span class=l>published</span><span class=w>
+</span></span></span></code></pre></div><p>Each Recipe declares its dependencies explicitly. When applied, Drupal resolves the dependency graph and applies Recipes in topological order, ensuring base infrastructure is in place before division-specific workflows are layered on top.</p><h2 id=provisioning-at-scale-a-multisite-workflow>Provisioning at Scale: A Multisite Workflow
+<span><a href=#provisioning-at-scale-a-multisite-workflow><svg viewBox="0 0 28 23" height="100%" width="19"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h2><p>For an enterprise platform, the provisioning workflow shifts from &ldquo;clone an installation profile and customize&rdquo; to &ldquo;apply a curated set of Recipes.&rdquo; Here is how this plays out in practice:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># Step 1: Install a minimal Drupal 11 instance</span>
+</span></span><span class=line><span class=cl>composer create-project drupal/recommended-project divisions-platform
+</span></span><span class=line><span class=cl><span class=nb>cd</span> divisions-platform
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Step 2: Add your Recipe repository</span>
+</span></span><span class=line><span class=cl>composer config repositories.recipes vcs https://github.com/example/recipes.git
+</span></span><span class=line><span class=cl>composer require example/recipes:^1.0
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Step 3: Provision each division site</span>
+</span></span><span class=line><span class=cl><span class=c1># Division A -- standard setup</span>
+</span></span><span class=line><span class=cl>drush site:install minimal --yes
+</span></span><span class=line><span class=cl>drush recipe recipes/base-infrastructure
+</span></span><span class=line><span class=cl>drush recipe recipes/division-content-publishing
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Division B -- HR, with additional workflow recipes</span>
+</span></span><span class=line><span class=cl>drush site:install minimal --yes
+</span></span><span class=line><span class=cl>drush recipe recipes/base-infrastructure
+</span></span><span class=line><span class=cl>drush recipe recipes/division-hr-workflows
+</span></span><span class=line><span class=cl>drush recipe recipes/division-hiring-portal
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Division C -- minimal footprint (public-facing microsite)</span>
+</span></span><span class=line><span class=cl>drush site:install minimal --yes
+</span></span><span class=line><span class=cl>drush recipe recipes/base-infrastructure
+</span></span><span class=line><span class=cl>drush recipe recipes/public-microsite
+</span></span></code></pre></div><p>Notice what is absent: there is no monolithic distribution fork, no fragile inheritance chain, and no up-front commitment to every feature a division might eventually need. Each division starts from the same minimal base and layers on exactly the Recipes it requires.</p><h2 id=cicd-integration>CI/CD Integration
+<span><a href=#cicd-integration><svg viewBox="0 0 28 23" height="100%" width="19"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h2><p>In a GitOps workflow, Recipes integrate naturally with your deployment pipeline. Consider a GitHub Actions matrix build that validates every Recipe combination in use across your ecosystem:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=nt>jobs</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>recipe-validation</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>strategy</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>matrix</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>recipe-set</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span>- <span class=s2>&#34;base-infrastructure division-content-publishing&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span>- <span class=s2>&#34;base-infrastructure division-hr-workflows division-hiring-portal&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span>- <span class=s2>&#34;base-infrastructure public-microsite&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>actions/checkout@v4</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Validate recipe composition</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=p>|</span><span class=sd>
+</span></span></span><span class=line><span class=cl><span class=sd>          ddev drush site:install minimal --yes
+</span></span></span><span class=line><span class=cl><span class=sd>          for recipe in ${{ matrix.recipe-set }}; do
+</span></span></span><span class=line><span class=cl><span class=sd>            ddev drush recipe recipes/$recipe
+</span></span></span><span class=line><span class=cl><span class=sd>          done
+</span></span></span><span class=line><span class=cl><span class=sd>          ddev drush core:status</span><span class=w>
+</span></span></span></code></pre></div><p>Each cell in the matrix validates that the Recipe composition installs cleanly, configuration imports without errors, and no dependency conflicts surface. Failed compositions block the pipeline before they ever reach production.</p><h2 id=operational-advantages>Operational Advantages
+<span><a href=#operational-advantages><svg viewBox="0 0 28 23" height="100%" width="19"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h2><p>The shift from Installation Profiles to Recipes yields measurable operational benefits for enterprise teams:</p><p><strong>Independent Lifecycles.</strong> Base infrastructure modules can be updated independently of division-specific features. A patch to the SAML authentication module does not require revalidating HR workflows or the hiring portal.</p><p><strong>Gradual Adoption.</strong> Recipes can be applied to existing production sites. You can migrate a legacy installation profile site piece by piece, extracting functionality into Recipes incrementally, rather than planning a risky big-bang cutover.</p><p><strong>Testing Surface Reduction.</strong> Each Recipe can be tested in isolation and in known compositions. The testing matrix is combinatorial across your active compositions rather than exponential across all possible feature interactions.</p><p><strong>Role Specialization.</strong> A platform team owns the base infrastructure Recipe. Division teams own their domain-specific Recipes. The dependency graph provides a clear contract between teams, eliminating the coordination overhead of a shared monolithic profile.</p><h2 id=migration-strategy-for-existing-installation-profiles>Migration Strategy for Existing Installation Profiles
+<span><a href=#migration-strategy-for-existing-installation-profiles><svg viewBox="0 0 28 23" height="100%" width="19"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h2><p>If you are managing a legacy Drupal 7 or 10 platform with a custom installation profile today, the migration path to Recipes is deliberate but achievable:</p><ol><li><strong>Audit your profile.</strong> Decompose it into logical feature boundaries. Each boundary becomes a candidate Recipe.</li><li><strong>Identify shared infrastructure.</strong> SSO, media, analytics, and governance should become your base Recipe.</li><li><strong>Extract incrementally.</strong> Build each Recipe against a fresh <code>minimal</code> Drupal 11 install. Validate that it works in isolation.</li><li><strong>Compose in staging.</strong> Apply Recipes in groups matching your current multisite configuration. Compare the resulting configuration against your legacy sites.</li><li><strong>Roll out gradually.</strong> Apply the base Recipe first across all sites, then layer division-specific Recipes. The ability to apply Recipes to running sites means you can iterate without maintenance windows.</li></ol><h2 id=when-installation-profiles-still-make-sense>When Installation Profiles Still Make Sense
+<span><a href=#when-installation-profiles-still-make-sense><svg viewBox="0 0 28 23" height="100%" width="19"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h2><p>To be precise: Recipes do not obsolete Installation Profiles entirely. If you are distributing a standalone product &ndash; say, a Drupal distribution for universities or non-profits &ndash; a well-crafted installation profile still provides a single-package experience that is simpler for end users. Recipes excel in environments where you control the deployment pipeline and need composability over packaging simplicity.</p><h2 id=the-architectural-takeaway>The Architectural Takeaway
+<span><a href=#the-architectural-takeaway><svg viewBox="0 0 28 23" height="100%" width="19"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg></a></span></h2><p>The stabilization of Drupal Recipes in 2026 is not merely a new feature &ndash; it is an architectural shift in how we think about platform provisioning. Installation Profiles optimized for the <strong>packaging</strong> problem: how to ship a complete Drupal experience in one artifact. Recipes optimize for the <strong>composition</strong> problem: how to assemble standardized, testable, independently maintained feature sets across a heterogeneous ecosystem.</p><p>For enterprise teams managing multisite platforms at scale, the choice is clear. Recipes reduce the coordination tax, eliminate the fork-maintenance cycle, and bring the same composability principles that transformed microservices architecture to the world of Drupal site provisioning.</p></div><div class="glass-card rounded-xl p-8 w-full"><h3 class="text-xl font-display font-bold mb-8 text-slate-100 flex items-center gap-2"><span class="material-symbols-outlined text-hud-cyan">&#xe8af;</span>
+Comments</h3><script src=https://giscus.app/client.js data-repo=neurox/www.juaning.dev data-repo-id="DEwOlJlcG9zaXRvcnk0NzU1MjY4Mg==" data-category=Announcements data-category-id=DIC_kwDOAtWYqs4CjAd4 data-mapping=pathname data-strict=0 data-reactions-enabled=1 data-emit-metadata=0 data-input-position=bottom data-theme=preferred_color_scheme data-lang=en crossorigin=anonymous async></script></div></article></main><footer class="w-full py-8 md:py-12 bg-hud-bg border-t border-white/5 mt-8 md:mt-12"><div class="flex flex-col md:flex-row justify-between items-center px-6 md:px-8 max-w-7xl mx-auto gap-6 md:gap-8"><div class="text-xl font-display font-bold tracking-tight text-slate-300">JUANING<span class=text-hud-cyan/70>.dev</span></div><div class="flex space-x-6"><a href=https://github.com/ class="text-slate-500 hover:text-hud-cyan transition-colors flex items-center gap-2 group" target=_blank rel=noopener><svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483.0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951.0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65.0.0.84-.27 2.75 1.026A9.564 9.564.0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688.0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855.0 1.338-.012 2.419-.012 2.747.0.268.18.58.688.482A10.019 10.019.0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
+<span class="hidden sm:inline-block text-sm font-mono">GitHub</span>
+</a><a href=ZgotmplZ class="text-slate-500 hover:text-hud-cyan transition-colors flex items-center gap-2 group" target=_blank rel=noopener><svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853.0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601.0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144.0-2.063-.926-2.063-2.065.0-1.138.92-2.063 2.063-2.063 1.14.0 2.064.925 2.064 2.063.0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225.0H1.771C.792.0.0.774.0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2.0 22.222.0h.003z"/></svg>
+<span class="hidden sm:inline-block text-sm font-mono">LinkedIn</span></a></div><div class="text-slate-600 text-sm flex items-center gap-2 font-mono">&copy; 2026 Juan Gómez.
+<span class="hidden sm:inline">All rights reserved.</span></div></div></footer><script>document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll(".highlight").forEach(e=>{if(e.querySelector(".copy-button"))return;const n=document.createElement("button");n.className="copy-button absolute top-2 right-2 text-slate-500 hover:text-slate-300 transition-colors p-2 rounded-md hover:bg-slate-800/50 focus:outline-none flex items-center justify-center",n.setAttribute("aria-label","Copy code to clipboard"),n.title="Copy code";const t=document.createElement("span");t.className="material-symbols-outlined text-lg pointer-events-none",t.innerHTML="&#xe14d;",n.appendChild(t),e.appendChild(n),n.addEventListener("click",async()=>{const n=e.querySelector("code");if(!n)return;const s=n.innerText||n.textContent;try{await navigator.clipboard.writeText(s),t.innerHTML="&#xe5ca;",t.classList.remove("text-slate-500"),t.classList.add("text-green-500"),setTimeout(()=>{t.innerHTML="&#xe14d;",t.classList.add("text-slate-500"),t.classList.remove("text-green-500")},2e3)}catch(e){console.error("Failed to copy text: ",e),t.innerHTML="&#xf8b6;",t.classList.add("text-red-500")}})})})</script></body></html>

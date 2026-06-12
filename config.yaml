@@ -9,8 +9,6 @@ enableRobotsTXT: true
 services:
   googleAnalytics:
     id: G-ZSRN0E5HWF
-  disqus:
-    shortname: juaning
 
 params:
   title: 'JUANING'

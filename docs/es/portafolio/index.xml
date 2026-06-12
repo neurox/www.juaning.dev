@@ -1,59 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Portafolio de Arquitectura Cloud &amp; Drupal on JUANING.dev</title>
-    <link>https://www.juaning.dev/es/portafolio/</link>
-    <description>Recent content in Portafolio de Arquitectura Cloud &amp; Drupal on JUANING.dev</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <managingEditor>juanjose@ingomez.com (Juan Gómez)</managingEditor>
-    <webMaster>juanjose@ingomez.com (Juan Gómez)</webMaster>
-    <copyright>JUANING</copyright>
-    <lastBuildDate>Sat, 15 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.juaning.dev/es/portafolio/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Portafolio de Drupal</title>
-      <link>https://www.juaning.dev/es/portfolio/drupal/</link>
-      <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
-      <author>juanjose@ingomez.com (Juan Gómez)</author>
-      <guid>https://www.juaning.dev/es/portfolio/drupal/</guid>
-      <description>&lt;h2 id=&#34;ingeniería-de-drupal-para-alta-complejidad&#34; &gt;Ingeniería de Drupal para Alta Complejidad
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Portafolio de Arquitectura Cloud &amp; Drupal on JUANING.dev</title><link>https://www.juaning.dev/es/portafolio/</link><description>Recent content in Portafolio de Arquitectura Cloud &amp; Drupal on JUANING.dev</description><generator>Hugo -- gohugo.io</generator><language>es</language><managingEditor>juanjose@ingomez.com (Juan Gómez)</managingEditor><webMaster>juanjose@ingomez.com (Juan Gómez)</webMaster><copyright>JUANING</copyright><lastBuildDate>Sat, 15 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.juaning.dev/es/portafolio/index.xml" rel="self" type="application/rss+xml"/><item><title>Portafolio de Drupal</title><link>https://www.juaning.dev/es/portfolio/drupal/</link><pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate><author>juanjose@ingomez.com (Juan Gómez)</author><guid>https://www.juaning.dev/es/portfolio/drupal/</guid><description>&lt;h2 id="ingeniería-de-drupal-para-alta-complejidad" &gt;Ingeniería de Drupal para Alta Complejidad
 &lt;span&gt;
-    &lt;a href=&#34;#ingenier%c3%ada-de-drupal-para-alta-complejidad&#34;&gt;
-        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
-    &lt;/a&gt;
+&lt;a href="#ingenier%c3%ada-de-drupal-para-alta-complejidad"&gt;
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"&gt;&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/&gt;&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/&gt;&lt;/svg&gt;
+&lt;/a&gt;
 &lt;/span&gt;
-&lt;/h2&gt;&lt;p&gt;Mi experiencia en Drupal se centra en entregar arquitecturas multisitio robustas y ejecutar migraciones impecables para ecosistemas de contenido masivo. Me especializo en cerrar la brecha entre el diseño creativo y la ingeniería de backend resiliente.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Portafolio de Umbraco</title>
-      <link>https://www.juaning.dev/es/portfolio/umbraco/</link>
-      <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
-      <author>juanjose@ingomez.com (Juan Gómez)</author>
-      <guid>https://www.juaning.dev/es/portfolio/umbraco/</guid>
-      <description>&lt;h2 id=&#34;próximamente&#34; &gt;Próximamente
+&lt;/h2&gt;&lt;p&gt;Mi experiencia en Drupal se centra en entregar arquitecturas multisitio robustas y ejecutar migraciones impecables para ecosistemas de contenido masivo. Me especializo en cerrar la brecha entre el diseño creativo y la ingeniería de backend resiliente.&lt;/p&gt;</description></item><item><title>Portafolio de Umbraco</title><link>https://www.juaning.dev/es/portfolio/umbraco/</link><pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate><author>juanjose@ingomez.com (Juan Gómez)</author><guid>https://www.juaning.dev/es/portfolio/umbraco/</guid><description>&lt;h2 id="próximamente" &gt;Próximamente
 &lt;span&gt;
-    &lt;a href=&#34;#pr%c3%b3ximamente&#34;&gt;
-        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
-    &lt;/a&gt;
+&lt;a href="#pr%c3%b3ximamente"&gt;
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"&gt;&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/&gt;&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/&gt;&lt;/svg&gt;
+&lt;/a&gt;
 &lt;/span&gt;
-&lt;/h2&gt;&lt;p&gt;Esta sección del portafolio se encuentra actualmente en construcción. Por favor, regresa pronto para ver las actualizaciones y casos de uso de mis integraciones empresariales trabajando con Umbraco CMS.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Portafolio de WordPress</title>
-      <link>https://www.juaning.dev/es/portfolio/wordpress/</link>
-      <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
-      <author>juanjose@ingomez.com (Juan Gómez)</author>
-      <guid>https://www.juaning.dev/es/portfolio/wordpress/</guid>
-      <description>&lt;h2 id=&#34;ingeniería-de-wordpress-escalable-para-empresas&#34; &gt;Ingeniería de WordPress Escalable para Empresas
+&lt;/h2&gt;&lt;p&gt;Esta sección del portafolio se encuentra actualmente en construcción. Por favor, regresa pronto para ver las actualizaciones y casos de uso de mis integraciones empresariales trabajando con Umbraco CMS.&lt;/p&gt;</description></item><item><title>Portafolio de WordPress</title><link>https://www.juaning.dev/es/portfolio/wordpress/</link><pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate><author>juanjose@ingomez.com (Juan Gómez)</author><guid>https://www.juaning.dev/es/portfolio/wordpress/</guid><description>&lt;h2 id="ingeniería-de-wordpress-escalable-para-empresas" &gt;Ingeniería de WordPress Escalable para Empresas
 &lt;span&gt;
-    &lt;a href=&#34;#ingenier%c3%ada-de-wordpress-escalable-para-empresas&#34;&gt;
-        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
-    &lt;/a&gt;
+&lt;a href="#ingenier%c3%ada-de-wordpress-escalable-para-empresas"&gt;
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"&gt;&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/&gt;&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/&gt;&lt;/svg&gt;
+&lt;/a&gt;
 &lt;/span&gt;
-&lt;/h2&gt;&lt;p&gt;Mi enfoque en WordPress va más allá de la construcción de sitios simples; me centro en diseñar plataformas performantes, seguras y fáciles de mantener que potencien a los equipos de marketing mientras satisfacen los requisitos técnicos más exigentes.&lt;/p&gt;</description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;/h2&gt;&lt;p&gt;Mi enfoque en WordPress va más allá de la construcción de sitios simples; me centro en diseñar plataformas performantes, seguras y fáciles de mantener que potencien a los equipos de marketing mientras satisfacen los requisitos técnicos más exigentes.&lt;/p&gt;</description></item></channel></rss>

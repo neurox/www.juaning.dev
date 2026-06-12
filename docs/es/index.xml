@@ -1,123 +1,30 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Juan Gómez • Automatizaciones, Backend y DevOps on JUANING.dev</title>
-    <link>https://www.juaning.dev/es/</link>
-    <description>Recent content in Juan Gómez • Automatizaciones, Backend y DevOps on JUANING.dev</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language>
-    <managingEditor>juanjose@ingomez.com (Juan Gómez)</managingEditor>
-    <webMaster>juanjose@ingomez.com (Juan Gómez)</webMaster>
-    <copyright>JUANING</copyright>
-    <lastBuildDate>Mon, 18 May 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://www.juaning.dev/es/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Cambio Arquitectónico: Reemplazando Perfiles de Instalación con Recetas en Drupal 11</title>
-      <link>https://www.juaning.dev/es/post/2026/recetas-drupal-11-reemplazan-perfiles-instalacion/</link>
-      <pubDate>Mon, 18 May 2026 00:00:00 +0000</pubDate>
-      <author>juanjose@ingomez.com (Juan Gómez)</author>
-      <guid>https://www.juaning.dev/es/post/2026/recetas-drupal-11-reemplazan-perfiles-instalacion/</guid>
-      <description>&lt;p&gt;Durante años, los equipos empresariales de Drupal han enfrentado una disyuntiva incómoda. Los &lt;strong&gt;Perfiles de Instalación&lt;/strong&gt; &amp;ndash; esos archivos &lt;code&gt;*.profile&lt;/code&gt; monolíticos empaquetados con módulos personalizados, configuración hardcodeada y lógica de instalador &amp;ndash; eran la única forma confiable de estandarizar una plataforma en docenas de sitios. Funcionaban, pero se fosilizaban. Cada ajuste por división significaba un fork. Cada fork significaba una carga de mantenimiento que crecía cuadráticamente con el número de inquilinos.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Hoja de Ruta para la Migración a Drupal 11: Estrategias de Tiempo de Inactividad Cero</title>
-      <link>https://www.juaning.dev/es/post/2025/hoja-de-ruta-migracion-drupal-11/</link>
-      <pubDate>Sat, 10 May 2025 00:00:00 +0000</pubDate>
-      <author>juanjose@ingomez.com (Juan Gómez)</author>
-      <guid>https://www.juaning.dev/es/post/2025/hoja-de-ruta-migracion-drupal-11/</guid>
-      <description>&lt;p&gt;El lanzamiento de &lt;strong&gt;Drupal 11&lt;/strong&gt; marca un hito significativo para la gestión de contenido empresarial. Para las organizaciones que ejecutan plataformas críticas en versiones heredadas (Drupal 7, 8 o 9), el camino de migración ya no es solo una actualización técnica: es una oportunidad estratégica para re-diseñar la &lt;strong&gt;alta disponibilidad, la seguridad y la escalabilidad nativa de la nube&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;En esta hoja de ruta, exploramos las estrategias arquitectónicas necesarias para ejecutar una migración compleja con &lt;strong&gt;tiempo de inactividad cero (zero-downtime)&lt;/strong&gt;, garantizando la continuidad del negocio mientras modernizas tu stack técnico.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Portafolio de Drupal</title>
-      <link>https://www.juaning.dev/es/portfolio/drupal/</link>
-      <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
-      <author>juanjose@ingomez.com (Juan Gómez)</author>
-      <guid>https://www.juaning.dev/es/portfolio/drupal/</guid>
-      <description>&lt;h2 id=&#34;ingeniería-de-drupal-para-alta-complejidad&#34; &gt;Ingeniería de Drupal para Alta Complejidad
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Juan Gómez • Automatizaciones, Backend y DevOps on JUANING.dev</title><link>https://www.juaning.dev/es/</link><description>Recent content in Juan Gómez • Automatizaciones, Backend y DevOps on JUANING.dev</description><generator>Hugo -- gohugo.io</generator><language>es</language><managingEditor>juanjose@ingomez.com (Juan Gómez)</managingEditor><webMaster>juanjose@ingomez.com (Juan Gómez)</webMaster><copyright>JUANING</copyright><lastBuildDate>Thu, 11 Jun 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://www.juaning.dev/es/index.xml" rel="self" type="application/rss+xml"/><item><title>LLMs Locales en Apple Silicon: Guía Práctica de Ollama y MLX</title><link>https://www.juaning.dev/es/post/2026/llms-locales-apple-silicon-ollama-mlx/</link><pubDate>Thu, 11 Jun 2026 00:00:00 +0000</pubDate><author>juanjose@ingomez.com (Juan Gómez)</author><guid>https://www.juaning.dev/es/post/2026/llms-locales-apple-silicon-ollama-mlx/</guid><description>&lt;p&gt;El caso para ejecutar modelos de lenguaje grandes (LLMs) localmente nunca ha sido más sólido. Privacidad garantizada (cero datos saliendo de tu máquina), latencia predecible (sin fluctuación de red), cero costos por token, y capacidad de funcionar sin conexión son ventajas contundentes para cualquier flujo de trabajo de desarrollo que interactúe con LLMs.&lt;/p&gt;
+&lt;p&gt;La arquitectura de memoria unificada de Apple Silicon la hace excepcionalmente capaz para inferencia local a nivel profesional y de consumo. A diferencia de configuraciones con GPU discretas donde la VRAM es un límite duro, el pool de memoria unificada de Apple es compartido entre CPU y GPU. Una MacBook Pro con 64 GB de memoria unificada puede cargar modelos que requerirían una GPU de datacenter de más de $20,000 USD para igualar.&lt;/p&gt;</description></item><item><title>Cambio Arquitectónico: Reemplazando Perfiles de Instalación con Recetas en Drupal 11</title><link>https://www.juaning.dev/es/post/2026/recetas-drupal-11-reemplazan-perfiles-instalacion/</link><pubDate>Mon, 18 May 2026 00:00:00 +0000</pubDate><author>juanjose@ingomez.com (Juan Gómez)</author><guid>https://www.juaning.dev/es/post/2026/recetas-drupal-11-reemplazan-perfiles-instalacion/</guid><description>&lt;p&gt;Durante años, los equipos empresariales de Drupal han enfrentado una disyuntiva incómoda. Los &lt;strong&gt;Perfiles de Instalación&lt;/strong&gt; &amp;ndash; esos archivos &lt;code&gt;*.profile&lt;/code&gt; monolíticos empaquetados con módulos personalizados, configuración hardcodeada y lógica de instalador &amp;ndash; eran la única forma confiable de estandarizar una plataforma en docenas de sitios. Funcionaban, pero se fosilizaban. Cada ajuste por división significaba un fork. Cada fork significaba una carga de mantenimiento que crecía cuadráticamente con el número de inquilinos.&lt;/p&gt;</description></item><item><title>Hoja de Ruta para la Migración a Drupal 11: Estrategias de Tiempo de Inactividad Cero</title><link>https://www.juaning.dev/es/post/2025/hoja-de-ruta-migracion-drupal-11/</link><pubDate>Sat, 10 May 2025 00:00:00 +0000</pubDate><author>juanjose@ingomez.com (Juan Gómez)</author><guid>https://www.juaning.dev/es/post/2025/hoja-de-ruta-migracion-drupal-11/</guid><description>&lt;p&gt;El lanzamiento de &lt;strong&gt;Drupal 11&lt;/strong&gt; marca un hito significativo para la gestión de contenido empresarial. Para las organizaciones que ejecutan plataformas críticas en versiones heredadas (Drupal 7, 8 o 9), el camino de migración ya no es solo una actualización técnica: es una oportunidad estratégica para re-diseñar la &lt;strong&gt;alta disponibilidad, la seguridad y la escalabilidad nativa de la nube&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;En esta hoja de ruta, exploramos las estrategias arquitectónicas necesarias para ejecutar una migración compleja con &lt;strong&gt;tiempo de inactividad cero (zero-downtime)&lt;/strong&gt;, garantizando la continuidad del negocio mientras modernizas tu stack técnico.&lt;/p&gt;</description></item><item><title>Portafolio de Drupal</title><link>https://www.juaning.dev/es/portfolio/drupal/</link><pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate><author>juanjose@ingomez.com (Juan Gómez)</author><guid>https://www.juaning.dev/es/portfolio/drupal/</guid><description>&lt;h2 id="ingeniería-de-drupal-para-alta-complejidad" &gt;Ingeniería de Drupal para Alta Complejidad
 &lt;span&gt;
-    &lt;a href=&#34;#ingenier%c3%ada-de-drupal-para-alta-complejidad&#34;&gt;
-        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
-    &lt;/a&gt;
+&lt;a href="#ingenier%c3%ada-de-drupal-para-alta-complejidad"&gt;
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"&gt;&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/&gt;&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/&gt;&lt;/svg&gt;
+&lt;/a&gt;
 &lt;/span&gt;
-&lt;/h2&gt;&lt;p&gt;Mi experiencia en Drupal se centra en entregar arquitecturas multisitio robustas y ejecutar migraciones impecables para ecosistemas de contenido masivo. Me especializo en cerrar la brecha entre el diseño creativo y la ingeniería de backend resiliente.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Portafolio de Umbraco</title>
-      <link>https://www.juaning.dev/es/portfolio/umbraco/</link>
-      <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
-      <author>juanjose@ingomez.com (Juan Gómez)</author>
-      <guid>https://www.juaning.dev/es/portfolio/umbraco/</guid>
-      <description>&lt;h2 id=&#34;próximamente&#34; &gt;Próximamente
+&lt;/h2&gt;&lt;p&gt;Mi experiencia en Drupal se centra en entregar arquitecturas multisitio robustas y ejecutar migraciones impecables para ecosistemas de contenido masivo. Me especializo en cerrar la brecha entre el diseño creativo y la ingeniería de backend resiliente.&lt;/p&gt;</description></item><item><title>Portafolio de Umbraco</title><link>https://www.juaning.dev/es/portfolio/umbraco/</link><pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate><author>juanjose@ingomez.com (Juan Gómez)</author><guid>https://www.juaning.dev/es/portfolio/umbraco/</guid><description>&lt;h2 id="próximamente" &gt;Próximamente
 &lt;span&gt;
-    &lt;a href=&#34;#pr%c3%b3ximamente&#34;&gt;
-        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
-    &lt;/a&gt;
+&lt;a href="#pr%c3%b3ximamente"&gt;
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"&gt;&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/&gt;&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/&gt;&lt;/svg&gt;
+&lt;/a&gt;
 &lt;/span&gt;
-&lt;/h2&gt;&lt;p&gt;Esta sección del portafolio se encuentra actualmente en construcción. Por favor, regresa pronto para ver las actualizaciones y casos de uso de mis integraciones empresariales trabajando con Umbraco CMS.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Portafolio de WordPress</title>
-      <link>https://www.juaning.dev/es/portfolio/wordpress/</link>
-      <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
-      <author>juanjose@ingomez.com (Juan Gómez)</author>
-      <guid>https://www.juaning.dev/es/portfolio/wordpress/</guid>
-      <description>&lt;h2 id=&#34;ingeniería-de-wordpress-escalable-para-empresas&#34; &gt;Ingeniería de WordPress Escalable para Empresas
+&lt;/h2&gt;&lt;p&gt;Esta sección del portafolio se encuentra actualmente en construcción. Por favor, regresa pronto para ver las actualizaciones y casos de uso de mis integraciones empresariales trabajando con Umbraco CMS.&lt;/p&gt;</description></item><item><title>Portafolio de WordPress</title><link>https://www.juaning.dev/es/portfolio/wordpress/</link><pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate><author>juanjose@ingomez.com (Juan Gómez)</author><guid>https://www.juaning.dev/es/portfolio/wordpress/</guid><description>&lt;h2 id="ingeniería-de-wordpress-escalable-para-empresas" &gt;Ingeniería de WordPress Escalable para Empresas
 &lt;span&gt;
-    &lt;a href=&#34;#ingenier%c3%ada-de-wordpress-escalable-para-empresas&#34;&gt;
-        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
-    &lt;/a&gt;
+&lt;a href="#ingenier%c3%ada-de-wordpress-escalable-para-empresas"&gt;
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"&gt;&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/&gt;&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/&gt;&lt;/svg&gt;
+&lt;/a&gt;
 &lt;/span&gt;
-&lt;/h2&gt;&lt;p&gt;Mi enfoque en WordPress va más allá de la construcción de sitios simples; me centro en diseñar plataformas performantes, seguras y fáciles de mantener que potencien a los equipos de marketing mientras satisfacen los requisitos técnicos más exigentes.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Instalación de Solr 8 en macOS Ventura: Guía para Ingenieros Drupal</title>
-      <link>https://www.juaning.dev/es/post/2023/2023-04-14-how-to-install-solr-8-on-macos-13-ventura-for-drupal-compatibility/</link>
-      <pubDate>Fri, 14 Apr 2023 00:00:00 +0000</pubDate>
-      <author>juanjose@ingomez.com (Juan Gómez)</author>
-      <guid>https://www.juaning.dev/es/post/2023/2023-04-14-how-to-install-solr-8-on-macos-13-ventura-for-drupal-compatibility/</guid>
-      <description>&lt;p&gt;Al construir plataformas Drupal de nivel empresarial, mantener la paridad entre el desarrollo local y los entornos de producción es crítico. A menudo, las versiones más recientes disponibles a través de gestores de paquetes como Homebrew (como Solr 9) introducen cambios disruptivos o incompatibilidades de esquema con el ecosistema actual de &lt;strong&gt;Drupal Search API&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Para los desarrolladores que necesitan compatibilidad con &lt;strong&gt;Solr 8&lt;/strong&gt; en macOS 13 Ventura, esta guía proporciona un camino de instalación estructurado y profesional.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Configuración de Acceso FTP Seguro en AWS EC2 (CentOS 7)</title>
-      <link>https://www.juaning.dev/es/post/2022/2022-11-24-install-and-enable-ftp-access-in-aws-ec2-instance-with-linux-centos-7/</link>
-      <pubDate>Thu, 24 Nov 2022 00:00:00 +0000</pubDate>
-      <author>juanjose@ingomez.com (Juan Gómez)</author>
-      <guid>https://www.juaning.dev/es/post/2022/2022-11-24-install-and-enable-ftp-access-in-aws-ec2-instance-with-linux-centos-7/</guid>
-      <description>&lt;p&gt;La gestión de infraestructuras en la nube heredadas a menudo requiere equilibrar los protocolos de seguridad modernos con las necesidades tradicionales de transferencia de datos. Si bien &lt;strong&gt;SFTP&lt;/strong&gt; (SSH File Transfer Protocol) es el estándar de la industria para transferencias seguras, ciertos flujos de trabajo empresariales o integraciones legacy aún requieren un entorno &lt;strong&gt;FTP&lt;/strong&gt; robusto.&lt;/p&gt;
-&lt;p&gt;Esta guía detalla el proceso de instalación y configuración de &lt;strong&gt;VSFTPD&lt;/strong&gt; (Very Secure FTP Daemon) en una instancia de AWS EC2 con Linux CentOS 7.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Sobre Mí</title>
-      <link>https://www.juaning.dev/es/acerca/</link>
-      <pubDate>Sat, 12 Nov 2022 00:00:00 +0000</pubDate>
-      <author>juanjose@ingomez.com (Juan Gómez)</author>
-      <guid>https://www.juaning.dev/es/acerca/</guid>
-      <description>&lt;h2 id=&#34;ingeniero-de-software-senior--arquitecto-de-backend--devops-e-ingeniería-de-plataformas--experto-en-drupal-y-wordpress&#34; &gt;Ingeniero de Software Senior | Arquitecto de Backend | DevOps e Ingeniería de Plataformas | Experto en Drupal y WordPress
+&lt;/h2&gt;&lt;p&gt;Mi enfoque en WordPress va más allá de la construcción de sitios simples; me centro en diseñar plataformas performantes, seguras y fáciles de mantener que potencien a los equipos de marketing mientras satisfacen los requisitos técnicos más exigentes.&lt;/p&gt;</description></item><item><title>Instalación de Solr 8 en macOS Ventura: Guía para Ingenieros Drupal</title><link>https://www.juaning.dev/es/post/2023/2023-04-14-how-to-install-solr-8-on-macos-13-ventura-for-drupal-compatibility/</link><pubDate>Fri, 14 Apr 2023 00:00:00 +0000</pubDate><author>juanjose@ingomez.com (Juan Gómez)</author><guid>https://www.juaning.dev/es/post/2023/2023-04-14-how-to-install-solr-8-on-macos-13-ventura-for-drupal-compatibility/</guid><description>&lt;p&gt;Al construir plataformas Drupal de nivel empresarial, mantener la paridad entre el desarrollo local y los entornos de producción es crítico. A menudo, las versiones más recientes disponibles a través de gestores de paquetes como Homebrew (como Solr 9) introducen cambios disruptivos o incompatibilidades de esquema con el ecosistema actual de &lt;strong&gt;Drupal Search API&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Para los desarrolladores que necesitan compatibilidad con &lt;strong&gt;Solr 8&lt;/strong&gt; en macOS 13 Ventura, esta guía proporciona un camino de instalación estructurado y profesional.&lt;/p&gt;</description></item><item><title>Configuración de Acceso FTP Seguro en AWS EC2 (CentOS 7)</title><link>https://www.juaning.dev/es/post/2022/2022-11-24-install-and-enable-ftp-access-in-aws-ec2-instance-with-linux-centos-7/</link><pubDate>Thu, 24 Nov 2022 00:00:00 +0000</pubDate><author>juanjose@ingomez.com (Juan Gómez)</author><guid>https://www.juaning.dev/es/post/2022/2022-11-24-install-and-enable-ftp-access-in-aws-ec2-instance-with-linux-centos-7/</guid><description>&lt;p&gt;La gestión de infraestructuras en la nube heredadas a menudo requiere equilibrar los protocolos de seguridad modernos con las necesidades tradicionales de transferencia de datos. Si bien &lt;strong&gt;SFTP&lt;/strong&gt; (SSH File Transfer Protocol) es el estándar de la industria para transferencias seguras, ciertos flujos de trabajo empresariales o integraciones legacy aún requieren un entorno &lt;strong&gt;FTP&lt;/strong&gt; robusto.&lt;/p&gt;
+&lt;p&gt;Esta guía detalla el proceso de instalación y configuración de &lt;strong&gt;VSFTPD&lt;/strong&gt; (Very Secure FTP Daemon) en una instancia de AWS EC2 con Linux CentOS 7.&lt;/p&gt;</description></item><item><title>Sobre Mí</title><link>https://www.juaning.dev/es/acerca/</link><pubDate>Sat, 12 Nov 2022 00:00:00 +0000</pubDate><author>juanjose@ingomez.com (Juan Gómez)</author><guid>https://www.juaning.dev/es/acerca/</guid><description>&lt;h2 id="ingeniero-de-software-senior--arquitecto-de-backend--devops-e-ingeniería-de-plataformas--experto-en-drupal-y-wordpress" &gt;Ingeniero de Software Senior | Arquitecto de Backend | DevOps e Ingeniería de Plataformas | Experto en Drupal y WordPress
 &lt;span&gt;
-    &lt;a href=&#34;#ingeniero-de-software-senior--arquitecto-de-backend--devops-e-ingenier%c3%ada-de-plataformas--experto-en-drupal-y-wordpress&#34;&gt;
-        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
-    &lt;/a&gt;
+&lt;a href="#ingeniero-de-software-senior--arquitecto-de-backend--devops-e-ingenier%c3%ada-de-plataformas--experto-en-drupal-y-wordpress"&gt;
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"&gt;&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/&gt;&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/&gt;&lt;/svg&gt;
+&lt;/a&gt;
 &lt;/span&gt;
-&lt;/h2&gt;&lt;p&gt;Hola, soy &lt;strong&gt;Juan José Gómez López&lt;/strong&gt;. Soy un Ingeniero de Software Senior y Arquitecto de Backend con sede en &lt;strong&gt;Cuernavaca, México&lt;/strong&gt;, dedicado a diseñar, escalar y optimizar plataformas web empresariales complejas para organizaciones globales.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Contáctame</title>
-      <link>https://www.juaning.dev/es/contacto/</link>
-      <pubDate>Fri, 11 Nov 2022 00:00:00 +0000</pubDate>
-      <author>juanjose@ingomez.com (Juan Gómez)</author>
-      <guid>https://www.juaning.dev/es/contacto/</guid>
-      <description>&lt;p&gt;Hola, soy &lt;strong&gt;Juan Gómez&lt;/strong&gt;, Ingeniero de Plataformas Web e Infraestructura especialista en Drupal y WordPress en Cuernavaca, Morelos, Mexico.&lt;/p&gt;
-&lt;p&gt;No dudes en contactarme si tienes más preguntas, ofertas de proyectos, necesitas ayuda para resolver un problema con tu sitio o arquitectura de servidor. Estoy disponible para trabajar por hora.&lt;/p&gt;</description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;/h2&gt;&lt;p&gt;Hola, soy &lt;strong&gt;Juan José Gómez López&lt;/strong&gt;. Soy un Ingeniero de Software Senior y Arquitecto de Backend con sede en &lt;strong&gt;Cuernavaca, México&lt;/strong&gt;, dedicado a diseñar, escalar y optimizar plataformas web empresariales complejas para organizaciones globales.&lt;/p&gt;</description></item><item><title>Contáctame</title><link>https://www.juaning.dev/es/contacto/</link><pubDate>Fri, 11 Nov 2022 00:00:00 +0000</pubDate><author>juanjose@ingomez.com (Juan Gómez)</author><guid>https://www.juaning.dev/es/contacto/</guid><description>&lt;p&gt;Hola, soy &lt;strong&gt;Juan Gómez&lt;/strong&gt;, Ingeniero de Plataformas Web e Infraestructura especialista en Drupal y WordPress en Cuernavaca, Morelos, Mexico.&lt;/p&gt;
+&lt;p&gt;No dudes en contactarme si tienes más preguntas, ofertas de proyectos, necesitas ayuda para resolver un problema con tu sitio o arquitectura de servidor. Estoy disponible para trabajar por hora.&lt;/p&gt;</description></item></channel></rss>

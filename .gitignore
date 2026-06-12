@@ -21,3 +21,8 @@ package-lock.json
 
 # Font backup from subsetting
 static/fonts/*.bak
+
+# IA context Files
+.claude
+.kilo
+.playwright-mcp
