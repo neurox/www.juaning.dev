@@ -1,5 +1,6 @@
 ---
 import Base from '@/layouts/Base.astro';
+import { getRelativeLocaleUrl } from 'astro:i18n';
 import { t } from '@/lib/i18n';
 import { getCollection } from 'astro:content';
 import Icon from '@/components/Icon.astro';
@@ -7,7 +8,11 @@ import Icon from '@/components/Icon.astro';
 const locale = Astro.currentLocale ?? 'en';
 const portfolio = (await getCollection('portfolio'))
   .filter(p => p.id.startsWith(`${locale}/`))
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .map(item => ({
+    ...item,
+    url: getRelativeLocaleUrl(locale, `portfolio/${item.slug.split('/').slice(1).join('/')}`),
+  }));
 ---
 
 <Base title={t(locale, 'btn_view_portfolio')} description={t(locale, 'section_expertise_desc')}>
@@ -30,7 +35,7 @@ const portfolio = (await getCollection('portfolio'))
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {portfolio.map(item => (
         <article class="glass-card rounded-xl p-6 hover:border-hud-cyan/50 hover:-translate-y-1 transition-colors transition-opacity transition-transform duration-300 group cursor-pointer flex flex-col h-full"
-          onclick={`window.location.href='${locale === 'es' ? '/es' : ''}/portfolio/${item.slug}'`}>
+          onclick={`window.location.href='${item.url}'`}>
           <div class="font-mono text-xs text-slate-500 mb-3 flex justify-between items-center">
             <span>{item.data.date.toLocaleDateString(locale === 'es' ? 'es-MX' : 'en-US', { year: 'numeric', month: '2-digit', day: '2-digit' })}</span>
             <span class="text-hud-cyan opacity-0 group-hover:opacity-100 transition-opacity tracking-wider">&lt;open&gt;</span>

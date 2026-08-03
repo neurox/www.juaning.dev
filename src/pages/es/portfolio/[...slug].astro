@@ -6,9 +6,9 @@ import Icon from '@/components/Icon.astro';
 export async function getStaticPaths() {
   const items = await getCollection('portfolio');
   return items
-    .filter(item => item.id.startsWith('en/'))
+    .filter(item => item.id.startsWith('es/'))
     .map(item => {
-      const slug = item.id.replace(/^en\//, '').replace(/\.md$/, '');
+      const slug = item.id.replace(/^es\//, '').replace(/\.md$/, '');
       return {
         params: { slug },
         props: { item },

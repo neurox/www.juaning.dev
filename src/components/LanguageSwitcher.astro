@@ -1,9 +1,10 @@
 ---
+import { getRelativeLocaleUrl } from 'astro:i18n';
 const currentPath = Astro.url.pathname;
 const locale = Astro.currentLocale ?? 'en';
 const otherLocale = locale === 'en' ? 'es' : 'en';
-const basePath = currentPath.replace(/^\/(en|es)/, '') || '/';
-const otherPath = `/${otherLocale}${basePath}`;
+const basePath = currentPath.replace(/^\/(es)?/, '') || '/';
+const otherPath = getRelativeLocaleUrl(otherLocale, basePath);
 ---
 
 <div class="flex items-center gap-2 text-sm font-mono uppercase tracking-wider">
