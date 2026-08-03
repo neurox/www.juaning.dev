@@ -46,6 +46,8 @@ const posts = (await getCollection('posts'))
               width={256}
               height={256}
               loading="eager"
+              fetchpriority="high"
+              sizes="(max-width: 768px) 140px, 180px"
               class="w-full h-full object-cover opacity-90 group-hover/avatar:opacity-100 transition-opacity duration-500"
             />
           </div>

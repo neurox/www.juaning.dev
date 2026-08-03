@@ -1,5 +1,6 @@
 ---
 import '@/styles/tailwind.css';
+import cssUrl from '@/styles/tailwind.css?url';
 import { t } from '@/lib/i18n';
 import { ViewTransitions } from 'astro:transitions';
 import SEO from '@/components/SEO.astro';
@@ -47,11 +48,24 @@ const isProduction = import.meta.env.PROD;
 
   <ViewTransitions />
 
-  <!-- Local Fonts Preload (High Priority) -->
-  <link rel="preload" href="/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Critical inline CSS (above-the-fold) -->
+  <style is:inline>
+    body{margin:0;background-color:#0b0f15;color:#cbd5e1;overflow-x:hidden;overflow-y:scroll;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+    nav{position:fixed;top:0;width:100%;z-index:50;background:rgba(11,15,21,.8);-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px);border-bottom:1px solid rgba(255,255,255,.05);height:73px}
+    main{margin:0 auto;width:100%;max-width:1280px;padding:105px 24px 0}
+    @media(min-width:768px){main{padding-top:121px;padding-left:32px;padding-right:32px}}
+  </style>
+
+  <!-- Preload render-blocking CSS -->
+  <link rel="preload" href={cssUrl} as="style">
+
+  <!-- Critical fonts only -->
   <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/JetBrainsMono-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/MaterialSymbolsOutlined.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Non-critical fonts (loaded on demand) -->
+  <link rel="preload" href="/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin media="print" onload="this.media='all'">
+  <link rel="preload" href="/fonts/JetBrainsMono-Variable.woff2" as="font" type="font/woff2" crossorigin media="print" onload="this.media='all'">
 
   <!-- Preconnect for Google Analytics -->
   {isProduction && (
