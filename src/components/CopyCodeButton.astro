@@ -3,7 +3,7 @@
 ---
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('astro:page-load', () => {
     document.querySelectorAll('.highlight').forEach((highlight) => {
       if (highlight.querySelector('.copy-button')) return;
 
