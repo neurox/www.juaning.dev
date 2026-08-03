@@ -4,7 +4,7 @@
   <div class="flex justify-between items-center px-6 md:px-8 h-full max-w-7xl mx-auto">
 
     <!-- Brand -->
-    <a href={{ "/" | relLangURL }}
+    <a href="{{ "/" | relLangURL }}"
       class="text-xl md:text-2xl font-display font-bold tracking-tight text-slate-100 hover:opacity-80 transition-opacity">
       JUANING<span class="text-hud-cyan">.dev</span>
     </a>
@@ -16,7 +16,7 @@
       {{ $menuURL := .URL | relLangURL }}
       {{ $isActive := or (eq $current.RelPermalink $menuURL) (and (ne $menuURL "/") (ne $menuURL "/es/") (hasPrefix
       $current.RelPermalink $menuURL)) }}
-      <a href={{ $menuURL }}
+      <a href="{{ $menuURL }}"
         class="text-sm font-medium transition-colors duration-200 {{ if $isActive }}text-hud-cyan border-b-2 border-hud-cyan pb-1{{ else }}text-slate-400 hover:text-hud-cyan{{ end }}">
         {{ .Name }}
       </a>
@@ -29,13 +29,13 @@
         {{ partial "language-switcher.html" . }}
       </div>
 
-      <a href={{ with site.GetPage "contact" }}{{ .RelPermalink }}{{ end }}
+      <a href="{{ with site.GetPage "contact" }}{{ .RelPermalink }}{{ end }}"
         class="bg-hud-cyan text-slate-950 px-5 py-2.5 rounded text-sm font-semibold hover:bg-[#38bdf8] transition-colors transition-opacity transition-transform hover:shadow-[0_0_15px_rgba(14,165,233,0.4)] active:scale-95 flex items-center justify-center">
         {{ T "nav_contact" }}
       </a>
 
       <!-- Mobile Menu Toggle -->
-      <button class="md:hidden text-slate-300 hover:text-white" id="mobile-menu-btn">
+      <button class="md:hidden text-slate-300 hover:text-white" id="mobile-menu-btn" aria-label="Toggle mobile menu">
         <span class="material-symbols-outlined">&#xe5d2;</span>
       </button>
     </div>
@@ -52,7 +52,7 @@
     {{ $isActive := or (eq $current.RelPermalink $menuURL) (and (ne $menuURL "/") (ne $menuURL "/es/") (hasPrefix
     $current.RelPermalink $menuURL)) }}
     <a class="text-xl font-medium transition-colors {{ if $isActive }}text-hud-cyan{{ else }}text-slate-300 hover:text-white{{ end }}"
-      href={{ $menuURL }}>
+      href="{{ $menuURL }}">
       {{ .Name }}
     </a>
     {{ end }}

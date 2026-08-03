@@ -41,15 +41,15 @@
     <nav class="flex justify-center mt-10">
         <ul class="flex items-center gap-2 font-mono text-sm">
             {{ if $paginator.HasPrev }}
-            <li><a href={{ $paginator.Prev.URL }} class="px-4 py-2 border border-white/10 bg-slate-800/30 rounded hover:border-hud-cyan/50 hover:text-hud-cyan transition-colors">&larr; PREV</a></li>
+            <li><a href="{{ $paginator.Prev.URL }}" class="px-4 py-2 border border-white/10 bg-slate-800/30 rounded hover:border-hud-cyan/50 hover:text-hud-cyan transition-colors">&larr; PREV</a></li>
             {{ end }}
             
             {{ range $paginator.Pagers }}
-            <li><a href={{ .URL }} class="w-10 h-10 flex items-center justify-center border rounded transition-colors {{ if eq . $paginator }}bg-hud-cyan text-slate-900 border-hud-cyan font-bold{{ else }}border-white/10 bg-slate-800/30 hover:border-hud-cyan/50 hover:text-hud-cyan{{ end }}">{{ .PageNumber }}</a></li>
+            <li><a href="{{ .URL }}" class="w-10 h-10 flex items-center justify-center border rounded transition-colors {{ if eq . $paginator }}bg-hud-cyan text-slate-900 border-hud-cyan font-bold{{ else }}border-white/10 bg-slate-800/30 hover:border-hud-cyan/50 hover:text-hud-cyan{{ end }}">{{ .PageNumber }}</a></li>
             {{ end }}
             
             {{ if $paginator.HasNext }}
-            <li><a href={{ $paginator.Next.URL }} class="px-4 py-2 border border-white/10 bg-slate-800/30 rounded hover:border-hud-cyan/50 hover:text-hud-cyan transition-colors">NEXT &rarr;</a></li>
+            <li><a href="{{ $paginator.Next.URL }}" class="px-4 py-2 border border-white/10 bg-slate-800/30 rounded hover:border-hud-cyan/50 hover:text-hud-cyan transition-colors">NEXT &rarr;</a></li>
             {{ end }}
         </ul>
     </nav>

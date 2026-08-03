@@ -1,6 +1,7 @@
 # OS files
 .DS_Store
 *-bak
+tmp
 
 # Dependencies
 node_modules

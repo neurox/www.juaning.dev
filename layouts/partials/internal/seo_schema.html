@@ -4,11 +4,11 @@
   "@graph": [
     {
       "@type": "Person",
-      "@id": "{{ " /" | absURL }}#person",
+      "@id": "{{ "/" | absURL }}#person",
       "name": "Juan José Gómez López",
-      "url": "{{ " /" | absURL }}",
+      "url": "{{ "/" | absURL }}",
       "jobTitle": "Senior Software Engineer & Backend Architect",
-      "image": "{{ " images/profile.png" | absURL }}",
+      "image": "{{ "images/profile.png" | absURL }}",
       "description": "Senior Software Engineer and Backend Architect specializing in Drupal 11, high-availability infrastructures, and DevOps automation.",
       "sameAs": [
         "https://linkedin.com/in/juaningdotdev",
@@ -20,22 +20,22 @@
     },
     {
       "@type": "WebSite",
-      "@id": "{{ " /" | absURL }}#website",
-      "url": "{{ " /" | absURL }}",
+      "@id": "{{ "/" | absURL }}#website",
+      "url": "{{ "/" | absURL }}",
       "name": "JUANING.dev",
       "description": "Technical consulting and engineering logs by Juan Gómez.",
       "publisher": {
-        "@id": "{{ " /" | absURL }}#person"
+        "@id": "{{ "/" | absURL }}#person"
       },
       "inLanguage": "{{ .Language.Lang }}"
     }
     {{ if .IsHome }}
     ,{
       "@type": "ProfessionalService",
-      "@id": "{{ " /" | absURL }}#service",
+      "@id": "{{ "/" | absURL }}#service",
       "name": "Juaning: Enterprise Technical Consulting",
       "description": "Senior-level technical consulting for enterprise web platforms, legacy refactoring, and cloud-native infrastructure automation.",
-      "url": "{{ " /" | absURL }}",
+      "url": "{{ "/" | absURL }}",
       "priceRange": "$$$",
       "address": {
         "@type": "PostalAddress",
@@ -44,7 +44,7 @@
         "addressCountry": "MX"
       },
       "provider": {
-        "@id": "{{ " /" | absURL }}#person"
+        "@id": "{{ "/" | absURL }}#person"
       }
     }
     {{ end }}
@@ -56,10 +56,10 @@
       "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
       "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
       "author": {
-        "@id": "{{ " /" | absURL }}#person"
+        "@id": "{{ "/" | absURL }}#person"
       },
       "publisher": {
-        "@id": "{{ " /" | absURL }}#person"
+        "@id": "{{ "/" | absURL }}#person"
       },
       "mainEntityOfPage": {
         "@type": "WebPage",

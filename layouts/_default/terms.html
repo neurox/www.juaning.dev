@@ -9,7 +9,7 @@
   {{ $postsNum := len (where .Pages "Params.hidden" "!=" true) }}
   {{ if gt $postsNum 0 }}
   <li>
-    <a href={{ .Page.RelPermalink }}>{{ .Page.Title }}</a>
+    <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
     ({{ $postsNum }})
   </li>
   {{ end}}
