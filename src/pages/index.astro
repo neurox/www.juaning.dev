@@ -1,13 +1,122 @@
 ---
-import '../styles/tailwind.css';
+import Base from '@/layouts/Base.astro';
+import { t } from '@/lib/i18n';
+import { getCollection } from 'astro:content';
+import PostCard from '@/components/PostCard.astro';
+import ExpertiseCard from '@/components/ExpertiseCard.astro';
+import { Image } from 'astro:assets';
+import profileImg from '@/assets/images/profile.jpg';
+
+const locale = Astro.currentLocale ?? 'en';
+const posts = (await getCollection('posts'))
+  .filter(p => p.id.startsWith(`${locale}/`))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
 ---
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>juaning.dev</title>
-  </head>
-  <body>
-    <h1>juaning.dev</h1>
-  </body>
-</html>
+
+<Base title={t(locale, 'hero_title')} description={t(locale, 'hero_description')}>
+  <!-- Top Layout Grid -->
+  <div class="grid grid-cols-1 xl:grid-cols-12 gap-8 md:gap-10">
+
+    <!-- System Overview -->
+    <section class="lg:col-span-12 xl:col-span-7 glass-card rounded-xl p-6 md:p-8 flex flex-col gap-6 relative overflow-hidden group">
+      <div class="absolute -top-10 -right-10 p-4 opacity-[0.03] group-hover:opacity-[0.05] transition-opacity duration-700 pointer-events-none">
+        <span class="material-symbols-outlined text-[200px] text-hud-cyan">&#xf2e2;</span>
+      </div>
+
+      <header class="flex items-center justify-between border-b border-white/10 pb-4 relative z-10">
+        <div class="text-xl md:text-2xl font-semibold flex items-center gap-3">
+          <span class="material-symbols-outlined text-hud-cyan">&#xe875;</span>
+          {t(locale, 'section_overview_title')}
+        </div>
+        <span class="font-mono text-xs md:text-sm text-hud-cyan bg-hud-cyan/10 px-3 py-1.5 rounded border border-hud-cyan/20">
+          {t(locale, 'status_online')}
+        </span>
+      </header>
+
+      <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start mt-2 relative z-10">
+        <!-- Profile Image -->
+        <div class="relative group/avatar cursor-pointer shrink-0">
+          <div class="absolute inset-0 bg-hud-cyan/20 blur-xl rounded-full opacity-0 group-hover/avatar:opacity-100 transition-opacity duration-500"></div>
+          <div class="w-28 h-28 md:w-36 md:h-36 rounded-lg bg-[#0b0f15] border border-white/10 overflow-hidden relative z-10 hud-glow transition-all duration-300 flex items-center justify-center">
+            <Image
+              src={profileImg}
+              alt="Juan Gómez - Senior Software Engineer"
+              width={256}
+              height={256}
+              loading="eager"
+              class="w-full h-full object-cover opacity-90 group-hover/avatar:opacity-100 transition-opacity duration-500"
+            />
+          </div>
+        </div>
+
+        <!-- Bio Info -->
+        <div class="flex-grow">
+          <h1 class="text-3xl md:text-4xl font-display font-bold mb-2 tracking-tight">{t(locale, 'hero_title')}</h1>
+          <p class="font-mono text-hud-cyan text-sm md:text-base mb-4 flex items-center gap-2">
+            <span class="material-symbols-outlined text-sm">&#xeb8e;</span> &gt;{t(locale, 'hero_subtitle')}_
+          </p>
+          <p class="text-slate-400 leading-relaxed mb-6 max-w-2xl text-sm md:text-base">
+            {t(locale, 'hero_description')}
+          </p>
+
+          <!-- Tech Stack Tags -->
+          <div class="flex flex-wrap gap-2.5">
+            <span class="font-mono text-xs bg-slate-800/60 text-slate-300 px-2.5 py-1.5 rounded border border-white/5 flex items-center gap-2 hover:border-slate-500 transition-colors">
+              <span class="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(255,255,255,0.3)]"></span> Kubernetes
+            </span>
+            <span class="font-mono text-xs bg-slate-800/60 text-slate-300 px-2.5 py-1.5 rounded border border-white/5 flex items-center gap-2 hover:border-slate-500 transition-colors">
+              <span class="w-2 h-2 rounded-full bg-orange-500 shadow-[0_0_8px_rgba(255,255,255,0.3)]"></span> AWS
+            </span>
+            <span class="font-mono text-xs bg-slate-800/60 text-slate-300 px-2.5 py-1.5 rounded border border-white/5 flex items-center gap-2 hover:border-slate-500 transition-colors">
+              <span class="w-2 h-2 rounded-full bg-hud-cyan shadow-[0_0_8px_rgba(255,255,255,0.3)]"></span> Docker
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Logbook (Posts) -->
+    <section class="lg:col-span-12 xl:col-span-5 glass-card rounded-xl p-6 md:p-8 flex flex-col gap-6 h-full">
+      <header class="flex items-center justify-between border-b border-white/10 pb-4">
+        <h2 class="text-xl md:text-2xl font-semibold flex items-center gap-3">
+          <span class="material-symbols-outlined text-hud-cyan">&#xf190;</span>
+          {t(locale, 'section_logbook_title')}
+        </h2>
+        <a href="/posts/"
+          class="font-mono text-sm text-hud-cyan hover:text-cyan-300 transition-colors flex items-center gap-1 group">
+          {t(locale, 'articles_view_all').toUpperCase()} <span class="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-colors transition-opacity transition-transform duration-300">&rarr;</span>
+        </a>
+      </header>
+
+      <div class="flex flex-col gap-4 overflow-y-auto flex-grow scrollbar-hide py-1">
+        {posts.length > 0 ? (
+          posts.map(post => <PostCard post={post} />)
+        ) : (
+          <p class="text-slate-500 italic font-mono text-sm">{t(locale, 'no_logs_found')}</p>
+        )}
+      </div>
+    </section>
+  </div>
+
+  <!-- Bottom Grid: Expertise -->
+  <section class="glass-card rounded-xl p-6 md:p-8 flex flex-col gap-6">
+    <header class="flex items-center justify-between border-b border-white/10 pb-4">
+      <h2 class="text-xl md:text-2xl font-semibold flex items-center gap-3">
+        <span class="material-symbols-outlined text-hud-cyan">&#xe9f4;</span>
+        {t(locale, 'section_expertise_title')}
+      </h2>
+      <a href="/portfolio/"
+        class="font-mono text-sm text-hud-cyan hover:text-cyan-300 transition-colors flex items-center gap-1 group">
+        {t(locale, 'btn_view_portfolio').toUpperCase()} <span class="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-colors transition-opacity transition-transform duration-300">&rarr;</span>
+      </a>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <ExpertiseCard icon="web" titleKey="exp_drupal_title" descKey="exp_drupal_desc" badgeKey="badge_stable" badgeColor="blue" />
+      <ExpertiseCard icon="cloud" titleKey="exp_cloud_title" descKey="exp_cloud_desc" badgeKey="badge_active" badgeColor="orange" />
+      <ExpertiseCard icon="terminal" titleKey="exp_devops_title" descKey="exp_devops_desc" badgeKey="badge_deploying" badgeColor="purple" borderColor="purple" />
+      <ExpertiseCard icon="code" titleKey="exp_modern_title" descKey="exp_modern_desc" badgeKey="badge_planning" badgeColor="slate" />
+    </div>
+  </section>
+</Base>

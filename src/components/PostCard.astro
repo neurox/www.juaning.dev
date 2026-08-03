@@ -11,7 +11,7 @@ interface Props {
     data: {
       title: string;
       description: string;
-      pubDate: Date;
+      date: Date;
       updatedDate?: Date;
       heroImage?: string;
     };
@@ -20,14 +20,14 @@ interface Props {
 
 const { post } = Astro.props;
 const locale = Astro.currentLocale ?? 'en';
-const date = post.data.pubDate.toLocaleDateString(locale === 'es' ? 'es-MX' : 'en-US', {
+const date = post.data.date.toLocaleDateString(locale === 'es' ? 'es-MX' : 'en-US', {
   year: 'numeric',
   month: '2-digit',
   day: '2-digit',
 });
 ---
 
-<article onclick={`window.location.href='/${locale === 'es' ? 'es/' : ''}post/${post.slug}'`}
+<article onclick={`window.location.href='${locale === 'es' ? '/es' : ''}/posts/${post.slug}'`}
   class="p-4 md:p-5 bg-slate-800/40 border border-white/5 rounded-lg hover:border-cyan-500/40 hover:bg-slate-800/80 transition-colors transition-opacity transition-transform duration-300 group cursor-pointer">
   <div class="font-mono text-xs text-slate-500 mb-2 flex justify-between items-center">
     <span>SYS.LOG // {date}</span>

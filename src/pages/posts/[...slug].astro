@@ -1,0 +1,86 @@
+---
+import Base from '@/layouts/Base.astro';
+import { t } from '@/lib/i18n';
+import { getCollection, render } from 'astro:content';
+import Icon from '@/components/Icon.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  return posts.map(post => {
+    const [lang, ...slugParts] = post.id.split('/');
+    const slug = slugParts.join('/').replace(/\.md$/, '');
+    return {
+      params: { lang, slug },
+      props: { post },
+    };
+  });
+}
+
+const { post } = Astro.props;
+const locale = Astro.currentLocale ?? 'en';
+const { Content } = await render(post);
+
+const date = post.data.date.toLocaleDateString(locale === 'es' ? 'es-MX' : 'en-US', {
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit',
+});
+---
+
+<Base title={post.data.title} description={post.data.description} type="article">
+  <article class="flex flex-col w-full gap-8 md:gap-10">
+    <header class="glass-card rounded-xl p-8 border-b-[3px] border-b-hud-cyan relative overflow-hidden group">
+      <h1 class="font-display text-slate-100 text-3xl md:text-4xl font-bold leading-tight tracking-tight mb-4 flex items-center gap-4">
+        {post.data.icon && (
+          <div class="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-lg bg-hud-cyan/10 border border-hud-cyan/20 text-hud-cyan shrink-0">
+            <Icon name={post.data.icon} class="text-3xl md:text-4xl" />
+          </div>
+        )}
+        {post.data.title}
+      </h1>
+      <div class="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-400 uppercase tracking-wider">
+        <span class="flex items-center gap-1">
+          <span class="material-symbols-outlined text-sm">&#xebcc;</span>
+          SYS.LOG // {date}
+        </span>
+      </div>
+
+      {post.data.tags && post.data.tags.length > 0 && (
+        <div class="flex flex-wrap gap-2 mt-6">
+          {post.data.tags.map(tag => (
+            <span class="inline-block px-3 py-1 bg-slate-800/60 text-slate-300 border border-white/5 rounded text-xs font-mono uppercase tracking-wider">
+              <span class="text-hud-cyan mr-1">#</span>{tag}
+            </span>
+          ))}
+        </div>
+      )}
+    </header>
+
+    <div class="glass-card rounded-xl p-8 md:p-12 prose prose-slate prose-invert max-w-none w-full prose-headings:font-display prose-headings:tracking-tight prose-a:text-hud-cyan hover:prose-a:text-cyan-400 prose-img:rounded-xl prose-h2:text-3xl prose-h2:md:text-4xl prose-h2:leading-tight prose-h3:text-xl prose-h3:leading-tight">
+      <Content />
+    </div>
+
+    <!-- Giscus Comments -->
+    <div class="glass-card rounded-xl p-8 w-full">
+      <h3 class="text-xl font-display font-bold mb-8 text-slate-100 flex items-center gap-2">
+        <span class="material-symbols-outlined text-hud-cyan">&#xe8af;</span>
+        {t(locale, 'comments_title')}
+      </h3>
+      <script src="https://giscus.app/client.js"
+        data-repo="neurox/www.juaning.dev"
+        data-repo-id="R_kgDOJdSZSw"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOJdSZS84Cjlnn"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="dark"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+      </script>
+    </div>
+  </article>
+</Base>
