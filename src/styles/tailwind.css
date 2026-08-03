@@ -138,7 +138,7 @@
     scrollbar-width: none;
   }
 
-  /* Premium Code Snippet Styling */
+  /* Code Snippet Styling (Shiki-compatible) */
   .highlight {
     @apply relative p-4 md:p-5 rounded-xl mt-6 mb-8 border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#0d1a20] shadow-sm;
   }
@@ -149,7 +149,17 @@
     background-color: transparent !important;
   }
 
-  /* Ensure prose pre styles don't conflict with our custom wrapper */
+  .highlight code {
+    font-family: 'JetBrains Mono', 'JetBrainsMono-Fallback', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+    font-size: 0.875rem !important;
+    line-height: 1.7 !important;
+  }
+
+  /* Shiki outputs <pre class="shiki"> with inline styles; ensure no bg conflict */
+  .shiki {
+    background-color: transparent !important;
+  }
+
   .prose pre {
     @apply p-0 bg-transparent m-0 rounded-none border-0;
   }

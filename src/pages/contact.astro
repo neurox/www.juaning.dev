@@ -1,0 +1,45 @@
+---
+import Base from '@/layouts/Base.astro';
+import Icon from '@/components/Icon.astro';
+import ContactForm from '@/components/ContactForm';
+import { t } from '@/lib/i18n';
+
+const locale = Astro.currentLocale ?? 'en';
+const T = (key: string) => t(locale as 'en' | 'es', key);
+---
+
+<Base title={T('nav_contact')} description="Contact Juan Gómez for freelance projects, consulting, and Drupal expertise.">
+  <div class="flex flex-col gap-8 md:gap-10">
+    <header class="glass-card rounded-xl p-8 border-l-[3px] border-l-hud-cyan relative overflow-hidden group">
+      <h1 class="font-display text-3xl md:text-4xl font-bold leading-tight tracking-tight text-slate-100 relative z-10 flex items-center gap-4">
+        <div class="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-lg bg-hud-cyan/10 border border-hud-cyan/20 text-hud-cyan shrink-0">
+          <Icon name="mail" class="text-3xl md:text-4xl" />
+        </div>
+        {T('nav_contact')}
+      </h1>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10">
+      <div class="lg:col-span-5 flex flex-col gap-6 glass-card rounded-xl p-8 relative overflow-hidden group border-t-[3px] border-t-hud-purple accent-purple">
+        <div class="prose prose-slate prose-invert prose-lg max-w-none prose-headings:font-display prose-headings:tracking-tight text-slate-300">
+          <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+        </div>
+
+        <div class="mt-4 flex flex-col gap-4">
+          <a class="flex items-center gap-4 p-4 rounded-lg bg-slate-800/40 border border-white/5 hover:border-hud-cyan/50 hover:bg-slate-800/80 transition-colors group/email"
+            href="mailto:juanjose@ingomez.com">
+            <div class="flex items-center justify-center w-12 h-12 rounded bg-hud-cyan/10 text-hud-cyan group-hover/email:bg-hud-cyan group-hover/email:text-slate-900 transition-colors">
+              <span class="material-symbols-outlined">&#xe0e6;</span>
+            </div>
+            <div>
+              <span class="block text-xs font-mono text-slate-500 mb-1 uppercase tracking-wider">{T('contact_form_email')}</span>
+              <span class="font-bold text-slate-200 group-hover/email:text-hud-cyan transition-colors">juanjose@ingomez.com</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <ContactForm client:load locale={locale} t={T} />
+    </div>
+  </div>
+</Base>
