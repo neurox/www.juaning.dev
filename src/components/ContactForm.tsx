@@ -1,12 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
 import React from 'react';
+import { t } from '@/lib/i18n';
 
 interface ContactFormProps {
   locale: string;
-  t: (key: string) => string;
 }
 
-export default function ContactForm({ locale, t }: ContactFormProps) {
+export default function ContactForm({ locale }: ContactFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -37,7 +37,7 @@ export default function ContactForm({ locale, t }: ContactFormProps) {
       window.Swal?.fire({
         icon: 'error',
         title: 'VERIFICATION FAILED',
-        text: t('contact_form_recaptcha_err'),
+        text: t(locale, 'contact_form_recaptcha_err'),
         confirmButtonText: 'RETRY',
       });
       setIsSubmitting(false);
@@ -67,7 +67,7 @@ export default function ContactForm({ locale, t }: ContactFormProps) {
         window.Swal?.fire({
           icon: 'success',
           title: 'TRANSMISSION COMPLETE',
-          text: t('contact_form_success_text'),
+          text: t(locale, 'contact_form_success_text'),
           confirmButtonText: 'ACKNOWLEDGE',
         });
         form?.reset();
@@ -81,7 +81,7 @@ export default function ContactForm({ locale, t }: ContactFormProps) {
       window.Swal?.fire({
         icon: 'error',
         title: 'COMMUNICATION ERROR',
-        text: t('contact_form_error_text'),
+        text: t(locale, 'contact_form_error_text'),
         confirmButtonText: 'RETRY',
       });
     } finally {
@@ -96,7 +96,7 @@ export default function ContactForm({ locale, t }: ContactFormProps) {
     <div className="lg:col-span-7 glass-card rounded-xl p-8 md:p-10">
       <h2 className="text-2xl md:text-3xl font-display font-bold text-slate-100 mb-8 flex items-center gap-3">
         <span className="material-symbols-outlined text-hud-cyan">&#xe163;</span>
-        {t('contact_form_title')}
+        {t(locale, 'contact_form_title')}
       </h2>
 
       <style>{`
@@ -113,13 +113,13 @@ export default function ContactForm({ locale, t }: ContactFormProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="flex flex-col gap-2">
             <label htmlFor="name" className={labelClass}>
-              {t('contact_form_name')} <span className="text-hud-cyan">*</span>
+              {t(locale, 'contact_form_name')} <span className="text-hud-cyan">*</span>
             </label>
             <input type="text" id="name" name="name" required className={inputClass} placeholder="John Doe" />
           </div>
           <div className="flex flex-col gap-2">
             <label htmlFor="email" className={labelClass}>
-              {t('contact_form_email')} <span className="text-hud-cyan">*</span>
+              {t(locale, 'contact_form_email')} <span className="text-hud-cyan">*</span>
             </label>
             <input type="email" id="email" name="email" required className={inputClass} placeholder="john@example.com" />
           </div>
@@ -127,14 +127,14 @@ export default function ContactForm({ locale, t }: ContactFormProps) {
 
         <div className="flex flex-col gap-2">
           <label htmlFor="subject" className={labelClass}>
-            {t('contact_form_subject')} <span className="text-hud-cyan">*</span>
+            {t(locale, 'contact_form_subject')} <span className="text-hud-cyan">*</span>
           </label>
           <input type="text" id="subject" name="subject" required className={inputClass} />
         </div>
 
         <div className="flex flex-col gap-2">
           <label htmlFor="message" className={labelClass}>
-            {t('contact_form_message')} <span className="text-hud-cyan">*</span>
+            {t(locale, 'contact_form_message')} <span className="text-hud-cyan">*</span>
           </label>
           <textarea id="message" name="message" rows={5} required className={`${inputClass} resize-none`} />
         </div>
@@ -159,7 +159,7 @@ export default function ContactForm({ locale, t }: ContactFormProps) {
               SENDING...
             </>
           ) : (
-            t('contact_form_submit')
+            t(locale, 'contact_form_submit')
           )}
         </button>
       </form>
