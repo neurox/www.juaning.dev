@@ -1,3 +1,156 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* 
+   Advanced Font Metrics Overrides 
+   Matching local fallbacks to webfont metrics to eliminate CLS (Cumulative Layout Shift)
+*/
+
+/* Inter Fallback */
+@font-face {
+  font-family: 'Inter-Fallback';
+  src: local('Arial');
+  ascent-override: 90%;
+  descent-override: 22.43%;
+  line-gap-override: 0%;
+  size-adjust: 107.08%;
+}
+
+/* Geist Fallback */
+@font-face {
+  font-family: 'Geist-Fallback';
+  src: local('Segoe UI'), local('Helvetica Neue'), local('Arial');
+  ascent-override: 92%;
+  descent-override: 23%;
+  line-gap-override: 0%;
+  size-adjust: 105%;
+}
+
+/* JetBrains Mono Fallback */
+@font-face {
+  font-family: 'JetBrainsMono-Fallback';
+  src: local('Courier New'), local('monospace');
+  ascent-override: 98%;
+  descent-override: 27%;
+  size-adjust: 105%;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/Geist-Variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrainsMono-Variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@layer base {
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    scroll-behavior: auto !important;
+  }
+
+  body {
+    @apply bg-hud-bg text-slate-300 antialiased overflow-x-hidden overflow-y-scroll;
+    font-family: 'Inter', 'Inter-Fallback', ui-sans-serif, system-ui, sans-serif !important;
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    font-feature-settings: "kern" 1, "liga" 1 !important;
+    -webkit-text-size-adjust: 100% !important;
+    text-size-adjust: 100% !important;
+  }
+    
+  header a, header button {
+    position: relative !important;
+    display: inline-flex !important;
+    vertical-align: middle !important;
+  }
+
+  input, button, textarea, select {
+    transition: none !important;
+    animation: none !important;
+  }
+    
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-slate-100;
+  }
+
+  @font-face {
+    font-family: 'Material Symbols Outlined';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/MaterialSymbolsOutlined.woff2') format('woff2');
+  }
+
+  .material-symbols-outlined {
+    font-family: 'Material Symbols Outlined' !important;
+    font-weight: normal !important;
+    font-style: normal !important;
+    font-size: 24px !important;
+    line-height: 1 !important;
+    letter-spacing: normal !important;
+    text-transform: none !important;
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 1em !important;
+    height: 1em !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    word-wrap: normal !important;
+    direction: ltr !important;
+    -webkit-font-feature-settings: 'liga' !important;
+    font-feature-settings: 'liga' !important;
+    -webkit-font-smoothing: antialiased !important;
+    vertical-align: middle !important;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-slate-800/30 backdrop-blur-md border border-white/10;
+  }
+  .hud-glow {
+    box-shadow: 0 0 15px rgba(14, 165, 233, 0.2);
+  }
+  .accent-purple {
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.3);
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Premium Code Snippet Styling */
+  .highlight {
+    @apply relative p-4 md:p-5 rounded-xl mt-6 mb-8 border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#0d1a20] shadow-sm;
+  }
+
+  .highlight pre {
+    @apply text-sm m-0 p-0 bg-transparent overflow-x-auto border-0;
+    padding: 0 !important;
+    background-color: transparent !important;
+  }
+
+  /* Ensure prose pre styles don't conflict with our custom wrapper */
+  .prose pre {
+    @apply p-0 bg-transparent m-0 rounded-none border-0;
+  }
+}
