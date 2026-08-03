@@ -1,5 +1,6 @@
 ---
 import Base from '@/layouts/Base.astro';
+import { getRelativeLocaleUrl } from 'astro:i18n';
 import { t } from '@/lib/i18n';
 import { getCollection } from 'astro:content';
 import PostCard from '@/components/PostCard.astro';
@@ -83,7 +84,7 @@ const posts = (await getCollection('posts'))
           <span class="material-symbols-outlined text-hud-cyan">&#xf190;</span>
           {t(locale, 'section_logbook_title')}
         </h2>
-        <a href="/posts/"
+        <a href={getRelativeLocaleUrl(locale, 'posts/')}
           class="font-mono text-sm text-hud-cyan hover:text-cyan-300 transition-colors flex items-center gap-1 group">
           {t(locale, 'articles_view_all').toUpperCase()} <span class="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-colors transition-opacity transition-transform duration-300">&rarr;</span>
         </a>
@@ -106,7 +107,7 @@ const posts = (await getCollection('posts'))
         <span class="material-symbols-outlined text-hud-cyan">&#xe9f4;</span>
         {t(locale, 'section_expertise_title')}
       </h2>
-      <a href="/portfolio/"
+      <a href={getRelativeLocaleUrl(locale, 'portfolio/')}
         class="font-mono text-sm text-hud-cyan hover:text-cyan-300 transition-colors flex items-center gap-1 group">
         {t(locale, 'btn_view_portfolio').toUpperCase()} <span class="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-colors transition-opacity transition-transform duration-300">&rarr;</span>
       </a>
