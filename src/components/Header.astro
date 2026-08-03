@@ -22,8 +22,12 @@ const homeUrl = getRelativeLocaleUrl(locale, '/');
 const contactUrl = getRelativeLocaleUrl(locale, 'contact');
 
 function isActive(url: string): boolean {
-  const cleanUrl = url.replace(/\/$/, '') || '/';
-  const cleanPath = pathname.replace(/\/$/, '') || '/';
+  const stripLocale = (p: string) => {
+    const stripped = p.startsWith('/es') ? p.slice(3) : p.slice(1);
+    return stripped.startsWith('/') ? stripped : '/' + stripped;
+  };
+  const cleanUrl = stripLocale(url);
+  const cleanPath = stripLocale(pathname);
   if (cleanUrl === cleanPath) return true;
   if (cleanUrl !== '/' && cleanPath.startsWith(cleanUrl)) return true;
   return false;
