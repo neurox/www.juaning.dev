@@ -18,6 +18,7 @@ export default defineConfig({
     '/es/post/:slug': '/es/posts/:slug',
     '/es/acerca/': '/es/about/',
     '/es/contacto/': '/es/contact/',
+    '/es/portafolio/': '/es/portfolio/',
   },
   i18n: {
     locales: ['en', 'es'],
