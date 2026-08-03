@@ -10,4 +10,4 @@ const { name, class: className = '' } = Astro.props;
 const codepoint = iconMap[name] ?? 'e873';
 ---
 
-<span class:list={['material-symbols-outlined', className]}>&#{codepoint};</span>
+<span class:list={['material-symbols-outlined', className]}>&#x{codepoint};</span>
