@@ -1,0 +1,44 @@
+---
+import { t } from '@/lib/i18n';
+import Icon from './Icon.astro';
+
+interface Props {
+  icon: string;
+  titleKey: string;
+  descKey: string;
+  badgeKey: string;
+  badgeColor: string;
+  borderColor?: string;
+}
+
+const { icon, titleKey, descKey, badgeKey, badgeColor, borderColor } = Astro.props;
+const locale = Astro.currentLocale ?? 'en';
+---
+
+<div class:list={[
+  'bg-slate-800/20 border border-white/5 rounded-xl p-6 relative group hover:-translate-y-1.5 transition-colors transition-opacity transition-transform duration-300 cursor-pointer flex flex-col h-full',
+  borderColor ? `border-t-[3px] border-t-${borderColor}` : 'border-t-[3px] border-t-transparent hover:border-slate-500/50',
+]}>
+  <div class="absolute top-5 right-5 flex items-center gap-2">
+    {badgeColor === 'purple' ? (
+      <span class="relative flex h-2.5 w-2.5">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#8a2be2] opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#8a2be2]"></span>
+      </span>
+    ) : (
+      <span class:list={['w-2.5 h-2.5 rounded-full', `bg-${badgeColor}`]}></span>
+    )}
+    <span class:list={[
+      'font-mono text-[10px] sm:text-xs tracking-wider',
+      borderColor === 'purple' ? 'text-[#8a2be2]' : 'text-slate-500',
+    ]}>
+      {t(locale, badgeKey)}
+    </span>
+  </div>
+  <Icon name={icon} class:list={[
+    'text-4xl mb-4',
+    borderColor === 'purple' ? 'text-[#8a2be2] opacity-90 group-hover:opacity-100' : 'text-slate-500 group-hover:text-hud-cyan',
+  ]} />
+  <h3 class="text-lg font-semibold text-slate-100 mb-2">{t(locale, titleKey)}</h3>
+  <p class="text-sm text-slate-400 mb-4 line-clamp-3">{t(locale, descKey)}</p>
+</div>

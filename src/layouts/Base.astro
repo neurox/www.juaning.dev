@@ -1,0 +1,87 @@
+---
+import { t } from '@/lib/i18n';
+import SEO from '@/components/SEO.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import CopyCodeButton from '@/components/CopyCodeButton.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  canonicalURL?: string;
+  type?: 'website' | 'article';
+}
+
+const { title, description, image, canonicalURL, type } = Astro.props;
+const locale = Astro.currentLocale ?? 'en';
+const isProduction = import.meta.env.PROD;
+---
+
+<!DOCTYPE html>
+<html lang={locale} class="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content={`Astro ${Astro.generator}`}>
+  <title>{title === 'JUANING.dev' || title === 'Inicio' ? title : `${title} | JUANING.dev`}</title>
+
+  <SEO title={title} description={description} image={image} canonicalURL={canonicalURL} type={type} />
+
+  <!-- Favicon & PWA -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0b0f15">
+  <meta name="msapplication-TileColor" content="#0b0f15">
+  <meta name="msapplication-config" content="/browserconfig.xml">
+
+  <!-- Security Headers -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="same-origin">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+
+  <!-- Critical inline CSS (above-the-fold) -->
+  <style>
+    html.dark,html.dark body{margin:0;padding:0}
+    html.dark body{background-color:#0b0f15;color:#cbd5e1;overflow-x:hidden;overflow-y:scroll;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+    html.dark .material-symbols-outlined{font-family:"Material Symbols Outlined";font-weight:400;font-style:normal;font-size:24px;line-height:1;display:inline-flex;justify-content:center;align-items:center;width:1em;height:1em;overflow:hidden;white-space:nowrap;direction:ltr;-webkit-font-smoothing:antialiased;vertical-align:middle}
+    html.dark nav{position:fixed;top:0;width:100%;z-index:50;background:rgba(11,15,21,.8);-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px);border-bottom:1px solid rgba(255,255,255,.05);height:73px}
+    html.dark main{margin:0 auto;width:100%;max-width:1280px;padding:105px 24px 0}@media(min-width:768px){html.dark main{padding-top:121px;padding-left:32px;padding-right:32px}}
+  </style>
+
+  <!-- Local Fonts Preload (High Priority) -->
+  <link rel="preload" href="/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/JetBrainsMono-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/MaterialSymbolsOutlined.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Preconnect for Google Analytics -->
+  {isProduction && (
+    <>
+      <link rel="preconnect" href="https://www.googletagmanager.com">
+      <link rel="preconnect" href="https://www.google-analytics.com">
+    </>
+  )}
+
+  <!-- Google Analytics (Production only) -->
+  {isProduction && (
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZSRN0E5HWF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ZSRN0E5HWF');
+    </script>
+  )}
+</head>
+<body class="min-h-screen font-sans selection:bg-cyan-500/30 selection:text-cyan-200 bg-hud-bg">
+  <Header />
+  <main class="w-full max-w-7xl mx-auto px-6 md:px-8 pt-[105px] pb-0 md:pt-[121px] md:pb-0 flex flex-col gap-8 md:gap-12">
+    <slot />
+  </main>
+  <Footer />
+  <CopyCodeButton />
+</body>
+</html>

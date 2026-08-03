@@ -1,0 +1,112 @@
+---
+import { t } from '@/lib/i18n';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+import Icon from './Icon.astro';
+
+const locale = Astro.currentLocale ?? 'en';
+const pathname = Astro.url.pathname;
+
+const menus: Record<string, { name: string; url: string }[]> = {
+  en: [
+    { name: 'Home', url: '/' },
+    { name: 'About', url: '/about' },
+    { name: 'Portfolio', url: '/portfolio' },
+  ],
+  es: [
+    { name: 'Inicio', url: '/' },
+    { name: 'Acerca', url: '/acerca' },
+    { name: 'Portafolio', url: '/portafolio' },
+  ],
+};
+
+const menu = menus[locale] ?? menus.en;
+
+function isActive(url: string): boolean {
+  if (url === '/') return pathname === '/' || pathname === '/en/' || pathname === '/es/';
+  return pathname.startsWith(url);
+}
+---
+
+<nav class="fixed top-0 w-full z-50 bg-[#0b0f15]/80 backdrop-blur-xl border-b border-white/5 transition-colors duration-300 h-[73px] overflow-hidden">
+  <div class="flex justify-between items-center px-6 md:px-8 h-full max-w-7xl mx-auto">
+    <a href={`/${locale === 'es' ? 'es/' : ''}`}
+      class="text-xl md:text-2xl font-display font-bold tracking-tight text-slate-100 hover:opacity-80 transition-opacity">
+      JUANING<span class="text-hud-cyan">.dev</span>
+    </a>
+
+    <div class="hidden md:flex items-center gap-8 -ml-12">
+      {menu.map((item) => (
+        <a href={item.url}
+          class:list={[
+            'text-sm font-medium transition-colors duration-200',
+            isActive(item.url)
+              ? 'text-hud-cyan border-b-2 border-hud-cyan pb-1'
+              : 'text-slate-400 hover:text-hud-cyan',
+          ]}>
+          {item.name}
+        </a>
+      ))}
+    </div>
+
+    <div class="flex items-center gap-4 md:gap-6">
+      <div class="hidden sm:block">
+        <LanguageSwitcher />
+      </div>
+
+      <a href={`/${locale === 'es' ? 'acerca' : 'about'}`}
+        class="bg-hud-cyan text-slate-950 px-5 py-2.5 rounded text-sm font-semibold hover:bg-[#38bdf8] transition-colors transition-opacity transition-transform hover:shadow-[0_0_15px_rgba(14,165,233,0.4)] active:scale-95 flex items-center justify-center">
+        {t(locale, 'nav_contact')}
+      </a>
+
+      <button class="md:hidden text-slate-300 hover:text-white" id="mobile-menu-btn" aria-label="Toggle mobile menu">
+        <Icon name="menu" />
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div id="mobile-menu"
+  class="fixed top-[73px] left-0 w-full h-[calc(100vh-73px)] bg-[#0b0f15]/95 backdrop-blur-xl z-40 hidden flex-col px-6 py-8 border-t border-white/5 md:hidden">
+  <div class="flex flex-col gap-6">
+    {menu.map((item) => (
+      <a class:list={[
+        'text-xl font-medium transition-colors',
+        isActive(item.url)
+          ? 'text-hud-cyan'
+          : 'text-slate-300 hover:text-white',
+      ]} href={item.url}>
+        {item.name}
+      </a>
+    ))}
+
+    <div class="pt-6 border-t border-white/10">
+      <span class="text-[10px] text-slate-500 font-mono uppercase tracking-[0.2em] mb-4 block">{t(locale, 'sys_lang_select')}</span>
+      <div class="flex gap-4">
+        <LanguageSwitcher />
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const icon = btn?.querySelector('span');
+
+    if (btn && menu && icon) {
+      btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+        menu.classList.toggle('flex');
+
+        if (menu.classList.contains('hidden')) {
+          icon.innerHTML = '&#xe5d2;';
+          document.body.style.overflow = 'auto';
+        } else {
+          icon.innerHTML = '&#xe5cd;';
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    }
+  });
+</script>

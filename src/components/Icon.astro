@@ -1,0 +1,13 @@
+---
+import { iconMap } from '@/lib/material-icons';
+
+interface Props {
+  name: string;
+  class?: string;
+}
+
+const { name, class: className = '' } = Astro.props;
+const codepoint = iconMap[name] ?? 'e873';
+---
+
+<span class:list={['material-symbols-outlined', className]}>&#{codepoint};</span>
