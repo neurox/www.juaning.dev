@@ -23,6 +23,10 @@ export default function ContactForm({ locale }: ContactFormProps) {
     const recaptcha = document.createElement('script');
     recaptcha.src = 'https://www.google.com/recaptcha/api.js';
     document.head.appendChild(recaptcha);
+
+    const swalStyle = document.createElement('style');
+    swalStyle.textContent = `.swal2-popup{background:#0b0f1a!important;border:1px solid rgba(14,165,233,.2)!important;box-shadow:0 0 20px rgba(14,165,233,.1)!important;border-radius:12px!important;font-family:ui-sans-serif,system-ui,-apple-system,sans-serif!important}.swal2-title{color:#f1f5f9!important;font-family:'Outfit',sans-serif!important;font-weight:700!important}.swal2-html-container{color:#94a3b8!important}.swal2-confirm{background-color:#0ea5e9!important;color:#020617!important;font-weight:700!important;text-transform:uppercase!important;letter-spacing:.05em!important;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace!important;font-size:.875rem!important;padding:12px 24px!important}.swal2-icon.swal2-success{border-color:#0ea5e9!important;color:#0ea5e9!important}.swal2-icon.swal2-success [class^='swal2-success-line']{background-color:#0ea5e9!important}.swal2-icon.swal2-success .swal2-success-ring{border:.25em solid rgba(14,165,233,.3)!important}`;
+    document.head.appendChild(swalStyle);
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -98,16 +102,6 @@ export default function ContactForm({ locale }: ContactFormProps) {
         <span className="material-symbols-outlined text-hud-cyan">&#xe163;</span>
         {t(locale, 'contact_form_title')}
       </h2>
-
-      <style>{`
-        .swal2-popup{background:#0b0f1a!important;border:1px solid rgba(14,165,233,.2)!important;box-shadow:0 0 20px rgba(14,165,233,.1)!important;border-radius:12px!important;font-family:ui-sans-serif,system-ui,-apple-system,sans-serif!important}
-        .swal2-title{color:#f1f5f9!important;font-family:'Outfit',sans-serif!important;font-weight:700!important}
-        .swal2-html-container{color:#94a3b8!important}
-        .swal2-confirm{background-color:#0ea5e9!important;color:#020617!important;font-weight:700!important;text-transform:uppercase!important;letter-spacing:.05em!important;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace!important;font-size:.875rem!important;padding:12px 24px!important}
-        .swal2-icon.swal2-success{border-color:#0ea5e9!important;color:#0ea5e9!important}
-        .swal2-icon.swal2-success [class^='swal2-success-line']{background-color:#0ea5e9!important}
-        .swal2-icon.swal2-success .swal2-success-ring{border:.25em solid rgba(14,165,233,.3)!important}
-      `}</style>
 
       <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
