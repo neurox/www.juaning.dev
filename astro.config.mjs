@@ -13,9 +13,7 @@ export default defineConfig({
   ],
   redirects: {
     '/post/': '/posts/',
-    '/post/:slug': '/posts/:slug',
     '/es/post/': '/es/posts/',
-    '/es/post/:slug': '/es/posts/:slug',
     '/es/acerca/': '/es/about/',
     '/es/contacto/': '/es/contact/',
     '/es/portafolio/': '/es/portfolio/',

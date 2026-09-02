@@ -22,8 +22,9 @@ const { Content } = await render(item);
 
 <Base title={item.data.title} description={item.data.description} type="article">
   <article class="flex flex-col w-full gap-8 md:gap-10">
-    <header class="glass-card rounded-xl p-8 border-b-[3px] border-b-hud-cyan relative overflow-hidden group">
-      <h1 class="font-display text-slate-100 text-3xl md:text-4xl font-bold leading-tight tracking-tight mb-4 flex items-center gap-4">
+    <header class="page-heading">
+      <div class="flex items-center justify-between gap-4"><span class="case-tag">{item.data.category}</span><span class="font-display text-3xl font-bold text-hud-cyan">{item.data.metric}</span></div>
+      <h1 class="font-display text-slate-100 text-4xl md:text-6xl font-bold leading-tight tracking-tight mt-6 flex items-center gap-4">
         {item.data.icon && (
           <div class="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-lg bg-hud-cyan/10 border border-hud-cyan/20 text-hud-cyan shrink-0">
             <Icon name={item.data.icon} class="text-3xl md:text-4xl" />
@@ -33,7 +34,7 @@ const { Content } = await render(item);
       </h1>
     </header>
 
-    <div class="glass-card rounded-xl p-8 md:p-12 prose prose-slate prose-invert max-w-none w-full prose-headings:font-display prose-headings:tracking-tight prose-a:text-hud-cyan hover:prose-a:text-cyan-400 prose-img:rounded-xl prose-h2:text-3xl prose-h2:md:text-4xl prose-h2:leading-tight prose-h3:text-xl prose-h3:leading-tight">
+    <div class="content-panel prose prose-slate prose-invert max-w-none w-full prose-headings:font-display prose-headings:tracking-tight prose-a:text-hud-cyan hover:prose-a:text-cyan-400 prose-h2:text-3xl prose-h2:md:text-4xl prose-h2:leading-tight prose-h3:text-xl">
       <Content />
     </div>
   </article>

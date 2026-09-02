@@ -9,8 +9,9 @@ const pathname = Astro.url.pathname;
 
 const menuItems = [
   { nameKey: 'nav_home', path: '/' },
-  { nameKey: 'nav_about', path: '/about' },
   { nameKey: 'nav_portfolio', path: '/portfolio' },
+  { nameKey: 'nav_experience', path: '/experience' },
+  { nameKey: 'nav_about', path: '/about' },
 ];
 
 const menu = menuItems.map(item => ({
@@ -34,14 +35,14 @@ function isActive(url: string): boolean {
 }
 ---
 
-<nav class="fixed top-0 w-full z-50 bg-[#0b0f15]/80 backdrop-blur-xl border-b border-white/5 transition-colors duration-300 h-[73px] overflow-hidden">
+<nav class="fixed top-0 w-full z-50 bg-[#090f16]/90 backdrop-blur-xl border-b border-white/10 transition-colors duration-300 h-[73px] overflow-hidden">
   <div class="flex justify-between items-center px-6 md:px-8 h-full max-w-7xl mx-auto">
     <a href={homeUrl}
       class="text-xl md:text-2xl font-display font-bold tracking-tight text-slate-100 hover:opacity-80 transition-opacity">
       JUANING<span class="text-hud-cyan">.dev</span>
     </a>
 
-    <div class="hidden md:flex items-center gap-8 -ml-12">
+    <div class="hidden md:flex items-center gap-7">
       {menu.map((item) => (
         <a href={item.url}
           class:list={[
@@ -60,8 +61,7 @@ function isActive(url: string): boolean {
         <LanguageSwitcher />
       </div>
 
-      <a href={contactUrl}
-        class="bg-hud-cyan text-slate-950 px-5 py-2.5 rounded text-sm font-semibold hover:bg-[#38bdf8] transition-colors transition-opacity transition-transform hover:shadow-[0_0_15px_rgba(14,165,233,0.4)] active:scale-95 flex items-center justify-center">
+      <a href={contactUrl} class="button-primary !px-4 !py-2 text-sm">
         {t(locale, 'nav_contact')}
       </a>
 

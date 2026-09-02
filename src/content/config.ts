@@ -22,6 +22,8 @@ const portfolio = defineCollection({
     description: z.string().optional(),
     date: z.coerce.date(),
     icon: z.string().optional(),
+    category: z.string(),
+    metric: z.string(),
   }),
 });
 

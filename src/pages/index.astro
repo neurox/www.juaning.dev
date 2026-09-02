@@ -4,122 +4,59 @@ import { getRelativeLocaleUrl } from 'astro:i18n';
 import { t } from '@/lib/i18n';
 import { getCollection } from 'astro:content';
 import PostCard from '@/components/PostCard.astro';
-import ExpertiseCard from '@/components/ExpertiseCard.astro';
+import Icon from '@/components/Icon.astro';
 import { Image } from 'astro:assets';
 import profileImg from '@/assets/images/profile.jpg';
 
 const locale = Astro.currentLocale ?? 'en';
-const posts = (await getCollection('posts'))
-  .filter(p => p.id.startsWith(`${locale}/`))
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0, 3);
+const T = (key: string) => t(locale as 'en' | 'es', key);
+const posts = (await getCollection('posts')).filter(p => p.id.startsWith(`${locale}/`)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 3);
+const work = (await getCollection('portfolio')).filter(p => p.id.startsWith(`${locale}/`)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const metrics = [['9+', 'metric_years'], ['50+', 'metric_divisions'], ['20K+', 'metric_records'], ['70%', 'metric_reduction']];
+const capabilities = [['account_tree', 'exp_arch_title', 'exp_arch_desc'], ['cloud', 'exp_cloud_title', 'exp_cloud_desc'], ['sync_alt', 'exp_async_title', 'exp_async_desc'], ['upgrade', 'exp_modern_title', 'exp_modern_desc']];
 ---
 
-<Base title={t(locale, 'hero_title')} description={t(locale, 'hero_description')}>
-  <!-- Top Layout Grid -->
-  <div class="grid grid-cols-1 xl:grid-cols-12 gap-8 md:gap-10">
-
-    <!-- System Overview -->
-    <section class="lg:col-span-12 xl:col-span-7 glass-card rounded-xl p-6 md:p-8 flex flex-col gap-6 relative overflow-hidden group">
-      <div class="absolute -top-10 -right-10 p-4 opacity-[0.03] group-hover:opacity-[0.05] transition-opacity duration-700 pointer-events-none">
-        <span class="material-symbols-outlined text-[200px] text-hud-cyan">&#xf2e2;</span>
-      </div>
-
-      <header class="flex items-center justify-between border-b border-white/10 pb-4 relative z-10">
-        <div class="text-xl md:text-2xl font-semibold flex items-center gap-3">
-          <span class="material-symbols-outlined text-hud-cyan">&#xe875;</span>
-          {t(locale, 'section_overview_title')}
+<Base title={T('hero_title')} description={T('hero_description')}>
+  <section class="hero-shell relative overflow-hidden rounded-2xl border border-white/10 px-6 py-8 md:px-10 md:py-12 lg:px-14 lg:py-14">
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="relative z-10 grid items-center gap-10 lg:grid-cols-[1fr_300px]">
+      <div>
+        <div class="eyebrow mb-5"><span></span>{T('hero_kicker')}</div>
+        <h1 class="max-w-4xl font-display text-4xl font-bold leading-[1.04] tracking-[-0.04em] text-white sm:text-5xl lg:text-7xl">{T('hero_title')}</h1>
+        <p class="mt-6 max-w-3xl text-lg leading-relaxed text-slate-300 md:text-xl">{T('hero_description')}</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href={getRelativeLocaleUrl(locale, 'portfolio/')} class="button-primary">{T('btn_view_work')} <Icon name="arrow_outward" class="text-lg" /></a>
+          <a href="/pdf/juan-gomez-cv.pdf" target="_blank" class="button-secondary"><Icon name="description" class="text-lg" /> {T('btn_download_cv')}</a>
+          <a href={getRelativeLocaleUrl(locale, 'contact')} class="button-ghost">{T('nav_contact')}</a>
         </div>
-        <span class="font-mono text-xs md:text-sm text-hud-cyan bg-hud-cyan/10 px-3 py-1.5 rounded border border-hud-cyan/20">
-          {t(locale, 'status_online')}
-        </span>
-      </header>
-
-      <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start mt-2 relative z-10">
-        <!-- Profile Image -->
-        <div class="relative group/avatar cursor-pointer shrink-0">
-          <div class="absolute inset-0 bg-hud-cyan/20 blur-xl rounded-full opacity-0 group-hover/avatar:opacity-100 transition-opacity duration-500"></div>
-          <div class="w-28 h-28 md:w-36 md:h-36 rounded-lg bg-[#0b0f15] border border-white/10 overflow-hidden relative z-10 hud-glow transition-all duration-300 flex items-center justify-center">
-            <Image
-              src={profileImg}
-              alt="Juan Gómez - Senior Software Engineer"
-              width={256}
-              height={256}
-              loading="eager"
-              fetchpriority="high"
-              sizes="(max-width: 768px) 140px, 180px"
-              class="w-full h-full object-cover opacity-90 group-hover/avatar:opacity-100 transition-opacity duration-500"
-            />
-          </div>
-        </div>
-
-        <!-- Bio Info -->
-        <div class="flex-grow">
-          <h1 class="text-3xl md:text-4xl font-display font-bold mb-2 tracking-tight">{t(locale, 'hero_title')}</h1>
-          <p class="font-mono text-hud-cyan text-sm md:text-base mb-4 flex items-center gap-2">
-            <span class="material-symbols-outlined text-sm">&#xeb8e;</span> &gt;{t(locale, 'hero_subtitle')}_
-          </p>
-          <p class="text-slate-400 leading-relaxed mb-6 max-w-2xl text-sm md:text-base">
-            {t(locale, 'hero_description')}
-          </p>
-
-          <!-- Tech Stack Tags -->
-          <div class="flex flex-wrap gap-2.5">
-            <span class="font-mono text-xs bg-slate-800/60 text-slate-300 px-2.5 py-1.5 rounded border border-white/5 flex items-center gap-2 hover:border-slate-500 transition-colors">
-              <span class="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(255,255,255,0.3)]"></span> Kubernetes
-            </span>
-            <span class="font-mono text-xs bg-slate-800/60 text-slate-300 px-2.5 py-1.5 rounded border border-white/5 flex items-center gap-2 hover:border-slate-500 transition-colors">
-              <span class="w-2 h-2 rounded-full bg-orange-500 shadow-[0_0_8px_rgba(255,255,255,0.3)]"></span> AWS
-            </span>
-            <span class="font-mono text-xs bg-slate-800/60 text-slate-300 px-2.5 py-1.5 rounded border border-white/5 flex items-center gap-2 hover:border-slate-500 transition-colors">
-              <span class="w-2 h-2 rounded-full bg-hud-cyan shadow-[0_0_8px_rgba(255,255,255,0.3)]"></span> Docker
-            </span>
-          </div>
-        </div>
+        <div class="mt-8 flex flex-wrap gap-x-5 gap-y-2 font-mono text-xs uppercase tracking-[0.12em] text-slate-400"><span>PHP 8.3</span><span>Drupal 11</span><span>AWS</span><span>Acquia Cloud</span><span>REST / GraphQL</span></div>
       </div>
-    </section>
-
-    <!-- Logbook (Posts) -->
-    <section class="lg:col-span-12 xl:col-span-5 glass-card rounded-xl p-6 md:p-8 flex flex-col gap-6 h-full">
-      <header class="flex items-center justify-between border-b border-white/10 pb-4">
-        <h2 class="text-xl md:text-2xl font-semibold flex items-center gap-3">
-          <span class="material-symbols-outlined text-hud-cyan">&#xf190;</span>
-          {t(locale, 'section_logbook_title')}
-        </h2>
-        <a href={getRelativeLocaleUrl(locale, 'posts/')}
-          class="font-mono text-sm text-hud-cyan hover:text-cyan-300 transition-colors flex items-center gap-1 group">
-          {t(locale, 'articles_view_all').toUpperCase()} <span class="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-colors transition-opacity transition-transform duration-300">&rarr;</span>
-        </a>
-      </header>
-
-      <div class="flex flex-col gap-4 overflow-y-auto flex-grow scrollbar-hide py-1">
-        {posts.length > 0 ? (
-          posts.map(post => <PostCard post={post} />)
-        ) : (
-          <p class="text-slate-500 italic font-mono text-sm">{t(locale, 'no_logs_found')}</p>
-        )}
+      <div class="mx-auto w-full max-w-[300px] lg:mx-0">
+        <div class="portrait-frame"><Image src={profileImg} alt="Juan Gómez, Senior Backend and Cloud Architect" width={420} height={420} loading="eager" fetchpriority="high" class="aspect-square w-full object-cover" /></div>
+        <div class="mt-4 flex items-center justify-between border-t border-white/10 pt-4 font-mono text-xs uppercase tracking-[0.12em] text-slate-400"><span>Cuernavaca, MX</span><span class="flex items-center gap-2 text-emerald-300"><i class="h-2 w-2 rounded-full bg-emerald-400"></i>{T('availability')}</span></div>
       </div>
-    </section>
-  </div>
-
-  <!-- Bottom Grid: Expertise -->
-  <section class="glass-card rounded-xl p-6 md:p-8 flex flex-col gap-6">
-    <header class="flex items-center justify-between border-b border-white/10 pb-4">
-      <h2 class="text-xl md:text-2xl font-semibold flex items-center gap-3">
-        <span class="material-symbols-outlined text-hud-cyan">&#xe9f4;</span>
-        {t(locale, 'section_expertise_title')}
-      </h2>
-      <a href={getRelativeLocaleUrl(locale, 'portfolio/')}
-        class="font-mono text-sm text-hud-cyan hover:text-cyan-300 transition-colors flex items-center gap-1 group">
-        {t(locale, 'btn_view_portfolio').toUpperCase()} <span class="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-colors transition-opacity transition-transform duration-300">&rarr;</span>
-      </a>
-    </header>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      <ExpertiseCard icon="water_drop" titleKey="exp_drupal_title" descKey="exp_drupal_desc" badgeKey="badge_stable" badgeColor="blue" />
-      <ExpertiseCard icon="cloud" titleKey="exp_cloud_title" descKey="exp_cloud_desc" badgeKey="badge_active" badgeColor="orange" />
-      <ExpertiseCard icon="rocket_launch" titleKey="exp_devops_title" descKey="exp_devops_desc" badgeKey="badge_deploying" badgeColor="purple" borderColor="purple" />
-      <ExpertiseCard icon="architecture" titleKey="exp_modern_title" descKey="exp_modern_desc" badgeKey="badge_planning" badgeColor="slate" />
     </div>
   </section>
+
+  <section aria-label={T('impact_title')} class="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 lg:grid-cols-4">
+    {metrics.map(([value, key]) => <div class="bg-[#0d141c] px-6 py-7 md:px-8"><div class="font-display text-3xl font-bold text-white md:text-4xl">{value}</div><div class="mt-2 text-sm leading-snug text-slate-400">{T(key)}</div></div>)}
+  </section>
+
+  <section class="section-block">
+    <div class="section-heading"><div><div class="eyebrow"><span></span>{T('expertise_kicker')}</div><h2>{T('section_expertise_title')}</h2></div><p>{T('section_expertise_desc')}</p></div>
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4">{capabilities.map(([icon, title, desc], index) => <article class="capability-card"><div class="flex items-start justify-between"><Icon name={icon} class="text-3xl text-hud-cyan" /><span class="font-mono text-xs text-slate-600">0{index + 1}</span></div><h3>{T(title)}</h3><p>{T(desc)}</p></article>)}</div>
+  </section>
+
+  <section class="section-block">
+    <div class="section-heading"><div><div class="eyebrow"><span></span>{T('work_kicker')}</div><h2>{T('selected_work_title')}</h2></div><a href={getRelativeLocaleUrl(locale, 'portfolio/')} class="text-link">{T('btn_all_case_studies')} <span>&rarr;</span></a></div>
+    <div class="grid gap-5 lg:grid-cols-3">{work.map((item, index) => { const slug = item.id.split('/').slice(1).join('/').replace(/\.md$/, ''); return <a href={getRelativeLocaleUrl(locale, `portfolio/${slug}`)} class="case-card group"><div class="flex items-center justify-between"><span class="case-tag">{item.data.category}</span><span class="font-mono text-xs text-slate-600">0{index + 1}</span></div><div class="case-metric">{item.data.metric}</div><h3>{item.data.title}</h3><p>{item.data.description}</p><span class="mt-auto pt-6 text-sm font-semibold text-hud-cyan">{T('case_read')} <span class="inline-block transition-transform group-hover:translate-x-1">&rarr;</span></span></a>; })}</div>
+  </section>
+
+  <section class="section-block grid gap-8 rounded-2xl border border-white/10 bg-slate-900/35 p-6 md:p-9 lg:grid-cols-[0.8fr_1.2fr]">
+    <div><div class="eyebrow"><span></span>{T('experience_kicker')}</div><h2 class="mt-4 font-display text-3xl font-bold text-white md:text-4xl">{T('experience_title')}</h2><p class="mt-4 max-w-md leading-relaxed text-slate-400">{T('experience_intro')}</p><a href={getRelativeLocaleUrl(locale, 'experience')} class="button-secondary mt-6">{T('btn_full_experience')} <Icon name="arrow_forward" class="text-lg" /></a></div>
+    <div class="divide-y divide-white/10 border-y border-white/10"><div class="timeline-row"><span>2024—{T('present')}</span><div><strong>{T('role_consultant')}</strong><small>Freelance / Self-Employed</small></div></div><div class="timeline-row"><span>2025—2026</span><div><strong>{T('role_weknow')}</strong><small>weKnow Inc</small></div></div><div class="timeline-row"><span>2019—2024</span><div><strong>{T('role_d4all')}</strong><small>D4ALL</small></div></div></div>
+  </section>
+
+  <section class="section-block"><div class="section-heading"><div><div class="eyebrow"><span></span>{T('writing_kicker')}</div><h2>{T('section_logbook_title')}</h2></div><a href={getRelativeLocaleUrl(locale, 'posts/')} class="text-link">{T('articles_view_all')} <span>&rarr;</span></a></div><div class="grid gap-4 md:grid-cols-3">{posts.map(post => <PostCard post={post} />)}</div></section>
+  <section class="cta-shell"><div><div class="eyebrow"><span></span>{T('contact_kicker')}</div><h2>{T('cta_title')}</h2><p>{T('cta_desc')}</p></div><a href={getRelativeLocaleUrl(locale, 'contact')} class="button-primary shrink-0">{T('cta_button')} <Icon name="arrow_outward" class="text-lg" /></a></section>
 </Base>

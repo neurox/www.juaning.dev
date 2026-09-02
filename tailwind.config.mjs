@@ -15,9 +15,9 @@ export default {
           dark: '#1e293b',
         },
         hud: {
-          bg: '#0b0f15',
+          bg: '#090f16',
           cyan: '#0ea5e9',
-          purple: '#8a2be2',
+          purple: '#d58a3c',
         },
       },
       fontFamily: {
