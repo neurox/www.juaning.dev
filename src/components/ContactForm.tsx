@@ -25,7 +25,7 @@ export default function ContactForm({ locale }: ContactFormProps) {
     document.head.appendChild(recaptcha);
 
     const swalStyle = document.createElement('style');
-    swalStyle.textContent = `.swal2-popup{background:#0b0f1a!important;border:1px solid rgba(14,165,233,.2)!important;box-shadow:0 0 20px rgba(14,165,233,.1)!important;border-radius:12px!important;font-family:ui-sans-serif,system-ui,-apple-system,sans-serif!important}.swal2-title{color:#f1f5f9!important;font-family:'Outfit',sans-serif!important;font-weight:700!important}.swal2-html-container{color:#94a3b8!important}.swal2-confirm{background-color:#0ea5e9!important;color:#020617!important;font-weight:700!important;text-transform:uppercase!important;letter-spacing:.05em!important;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace!important;font-size:.875rem!important;padding:12px 24px!important}.swal2-icon.swal2-success{border-color:#0ea5e9!important;color:#0ea5e9!important}.swal2-icon.swal2-success [class^='swal2-success-line']{background-color:#0ea5e9!important}.swal2-icon.swal2-success .swal2-success-ring{border:.25em solid rgba(14,165,233,.3)!important}`;
+    swalStyle.textContent = `.swal2-popup{background:#0d141c!important;border:1px solid rgba(255,255,255,.1)!important;box-shadow:0 30px 100px rgba(0,0,0,.35)!important;border-radius:16px!important;font-family:'Inter',ui-sans-serif,system-ui,sans-serif!important}.swal2-title{color:#f8fafc!important;font-family:'Geist','Inter',sans-serif!important;font-weight:700!important}.swal2-html-container{color:#94a3b8!important}.swal2-confirm{background-color:#0ea5e9!important;color:#020617!important;font-weight:700!important;border-radius:6px!important;padding:12px 24px!important}.swal2-icon.swal2-success{border-color:#0ea5e9!important;color:#0ea5e9!important}.swal2-icon.swal2-success [class^='swal2-success-line']{background-color:#0ea5e9!important}.swal2-icon.swal2-success .swal2-success-ring{border:.25em solid rgba(14,165,233,.25)!important}`;
     document.head.appendChild(swalStyle);
   }, []);
 
@@ -40,9 +40,9 @@ export default function ContactForm({ locale }: ContactFormProps) {
       // @ts-expect-error Swal is loaded globally
       window.Swal?.fire({
         icon: 'error',
-        title: 'VERIFICATION FAILED',
+        title: t(locale, 'contact_verify_title'),
         text: t(locale, 'contact_form_recaptcha_err'),
-        confirmButtonText: 'RETRY',
+        confirmButtonText: t(locale, 'contact_retry'),
       });
       setIsSubmitting(false);
       return;
@@ -70,9 +70,9 @@ export default function ContactForm({ locale }: ContactFormProps) {
         // @ts-expect-error Swal is loaded globally
         window.Swal?.fire({
           icon: 'success',
-          title: 'TRANSMISSION COMPLETE',
+          title: t(locale, 'contact_success_heading'),
           text: t(locale, 'contact_form_success_text'),
-          confirmButtonText: 'ACKNOWLEDGE',
+          confirmButtonText: t(locale, 'contact_acknowledge'),
         });
         form?.reset();
         // @ts-expect-error grecaptcha is loaded globally
@@ -84,24 +84,25 @@ export default function ContactForm({ locale }: ContactFormProps) {
       // @ts-expect-error Swal is loaded globally
       window.Swal?.fire({
         icon: 'error',
-        title: 'COMMUNICATION ERROR',
+        title: t(locale, 'contact_error_heading'),
         text: t(locale, 'contact_form_error_text'),
-        confirmButtonText: 'RETRY',
+        confirmButtonText: t(locale, 'contact_retry'),
       });
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  const inputClass = 'w-full rounded bg-slate-900/80 border border-white/10 px-4 py-3 text-slate-200 focus:border-hud-cyan focus:ring-1 focus:ring-hud-cyan outline-none transition-colors placeholder:text-slate-600 font-sans';
-  const labelClass = 'font-mono text-xs text-slate-400 tracking-wider uppercase';
+  const inputClass = 'w-full rounded-md bg-[#090f16]/70 border border-white/10 px-4 py-3.5 text-slate-100 focus:border-hud-cyan focus:ring-1 focus:ring-hud-cyan outline-none transition-colors placeholder:text-slate-600 font-sans';
+  const labelClass = 'font-mono text-[11px] text-slate-400 tracking-[0.12em] uppercase';
 
   return (
-    <div className="lg:col-span-7 glass-card rounded-xl p-8 md:p-10">
-      <h2 className="text-2xl md:text-3xl font-display font-bold text-slate-100 mb-8 flex items-center gap-3">
-        <span className="material-symbols-outlined text-hud-cyan">&#xe163;</span>
-        {t(locale, 'contact_form_title')}
-      </h2>
+    <div className="content-panel p-6 md:p-9">
+      <div className="mb-8 border-b border-white/10 pb-6">
+        <div className="eyebrow"><span></span>{t(locale, 'contact_form_kicker')}</div>
+        <h2 className="mt-4 text-2xl md:text-3xl font-display font-bold text-white">{t(locale, 'contact_form_title')}</h2>
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-400">{t(locale, 'contact_form_intro')}</p>
+      </div>
 
       <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -109,13 +110,13 @@ export default function ContactForm({ locale }: ContactFormProps) {
             <label htmlFor="name" className={labelClass}>
               {t(locale, 'contact_form_name')} <span className="text-hud-cyan">*</span>
             </label>
-            <input type="text" id="name" name="name" required className={inputClass} placeholder="John Doe" />
+            <input type="text" id="name" name="name" required className={inputClass} autoComplete="name" />
           </div>
           <div className="flex flex-col gap-2">
             <label htmlFor="email" className={labelClass}>
               {t(locale, 'contact_form_email')} <span className="text-hud-cyan">*</span>
             </label>
-            <input type="email" id="email" name="email" required className={inputClass} placeholder="john@example.com" />
+            <input type="email" id="email" name="email" required className={inputClass} autoComplete="email" />
           </div>
         </div>
 
@@ -145,12 +146,12 @@ export default function ContactForm({ locale }: ContactFormProps) {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="mt-2 flex w-full items-center justify-center rounded bg-hud-cyan px-6 py-4 text-slate-950 font-bold text-lg hover:bg-[#38bdf8] transition-colors hover:shadow-[0_0_15px_rgba(14,165,233,0.4)] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
+          className="button-primary mt-2 w-full px-6 py-4 text-base disabled:cursor-not-allowed disabled:opacity-50"
         >
           {isSubmitting ? (
             <>
               <span className="material-symbols-outlined animate-spin mr-2">&#xe627;</span>
-              SENDING...
+              {t(locale, 'contact_sending')}
             </>
           ) : (
             t(locale, 'contact_form_submit')
