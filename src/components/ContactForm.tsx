@@ -2,51 +2,69 @@ import { useState, useEffect, useRef } from 'react';
 import React from 'react';
 import { t } from '@/lib/i18n';
 
+interface Recaptcha {
+  render: (container: HTMLElement, options: Record<string, string>) => number;
+  getResponse: (id: number) => string;
+  reset: (id: number) => void;
+}
+const captchaWindow = () => window as typeof window & { grecaptcha?: Recaptcha; contactCaptchaLoaded?: () => void };
+let captchaLoading: Promise<Recaptcha> | undefined;
+function loadCaptcha() {
+  if (captchaWindow().grecaptcha?.render) return Promise.resolve(captchaWindow().grecaptcha!);
+  if (!captchaLoading) {
+    captchaLoading = new Promise<Recaptcha>((resolve, reject) => {
+      const script = document.createElement('script');
+      captchaWindow().contactCaptchaLoaded = () => resolve(captchaWindow().grecaptcha!);
+      script.src = 'https://www.google.com/recaptcha/api.js?onload=contactCaptchaLoaded&render=explicit';
+      script.async = true;
+      script.onerror = () => { captchaLoading = undefined; script.remove(); reject(new Error('CAPTCHA unavailable')); };
+      document.head.appendChild(script);
+    });
+  }
+  return captchaLoading;
+}
+
 interface ContactFormProps {
-  locale: string;
+  locale: 'en' | 'es';
 }
 
 export default function ContactForm({ locale }: ContactFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState<'success' | 'error' | 'verify' | null>(null);
+  const submittingRef = useRef(false);
   const formRef = useRef<HTMLFormElement>(null);
 
+  const captchaRef = useRef<HTMLDivElement>(null);
+  const widgetRef = useRef<number | null>(null);
   useEffect(() => {
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = 'https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css';
-    document.head.appendChild(link);
-
-    const script = document.createElement('script');
-    script.src = 'https://cdn.jsdelivr.net/npm/sweetalert2@11';
-    document.head.appendChild(script);
-
-    const recaptcha = document.createElement('script');
-    recaptcha.src = 'https://www.google.com/recaptcha/api.js';
-    document.head.appendChild(recaptcha);
-
-    const swalStyle = document.createElement('style');
-    swalStyle.textContent = `.swal2-popup{background:#0d141c!important;border:1px solid rgba(255,255,255,.1)!important;box-shadow:0 30px 100px rgba(0,0,0,.35)!important;border-radius:16px!important;font-family:'Inter',ui-sans-serif,system-ui,sans-serif!important}.swal2-title{color:#f8fafc!important;font-family:'Geist','Inter',sans-serif!important;font-weight:700!important}.swal2-html-container{color:#94a3b8!important}.swal2-confirm{background-color:#0ea5e9!important;color:#020617!important;font-weight:700!important;border-radius:6px!important;padding:12px 24px!important}.swal2-icon.swal2-success{border-color:#0ea5e9!important;color:#0ea5e9!important}.swal2-icon.swal2-success [class^='swal2-success-line']{background-color:#0ea5e9!important}.swal2-icon.swal2-success .swal2-success-ring{border:.25em solid rgba(14,165,233,.25)!important}`;
-    document.head.appendChild(swalStyle);
+    let cancelled = false;
+    loadCaptcha().then((captcha) => {
+      if (!cancelled && captchaRef.current) {
+        widgetRef.current = captcha.render(captchaRef.current, {
+          sitekey: '6LfH2-oiAAAAAO8yeRMVEugLESUVWaUe8qUtTNCn', theme: 'dark',
+        });
+      }
+    }).catch(() => { if (!cancelled) setStatus('verify'); });
+    return () => { cancelled = true; widgetRef.current = null; };
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-
-    // @ts-expect-error grecaptcha is loaded globally
-    const recaptchaResponse = window.grecaptcha?.getResponse();
-
-    if (!recaptchaResponse) {
-      // @ts-expect-error Swal is loaded globally
-      window.Swal?.fire({
-        icon: 'error',
-        title: t(locale, 'contact_verify_title'),
-        text: t(locale, 'contact_form_recaptcha_err'),
-        confirmButtonText: t(locale, 'contact_retry'),
-      });
-      setIsSubmitting(false);
+    if (submittingRef.current) return;
+    setStatus(null);
+    let recaptchaResponse: string | undefined;
+    try {
+      recaptchaResponse = widgetRef.current === null ? undefined : captchaWindow().grecaptcha?.getResponse(widgetRef.current);
+    } catch {
+      setStatus('verify');
       return;
     }
+    if (!recaptchaResponse) {
+      setStatus('verify');
+      return;
+    }
+    submittingRef.current = true;
+    setIsSubmitting(true);
 
     const form = formRef.current;
     const formData = {
@@ -62,34 +80,24 @@ export default function ContactForm({ locale }: ContactFormProps) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify(formData),
+        signal: AbortSignal.timeout(20000),
       });
 
       const result = await response.json();
 
-      if (result.success === 'true' || response.ok) {
-        // @ts-expect-error Swal is loaded globally
-        window.Swal?.fire({
-          icon: 'success',
-          title: t(locale, 'contact_success_heading'),
-          text: t(locale, 'contact_form_success_text'),
-          confirmButtonText: t(locale, 'contact_acknowledge'),
-        });
-        form?.reset();
-        // @ts-expect-error grecaptcha is loaded globally
-        window.grecaptcha?.reset();
-      } else {
-        throw new Error('FormSubmit error');
+      if (!response.ok || (result?.success !== 'true' && result?.success !== true)) {
+        throw new Error('FormSubmit rejected the message');
       }
+      setStatus('success');
+      form?.reset();
     } catch {
-      // @ts-expect-error Swal is loaded globally
-      window.Swal?.fire({
-        icon: 'error',
-        title: t(locale, 'contact_error_heading'),
-        text: t(locale, 'contact_form_error_text'),
-        confirmButtonText: t(locale, 'contact_retry'),
-      });
+      setStatus('error');
     } finally {
+      submittingRef.current = false;
       setIsSubmitting(false);
+      try {
+        if (widgetRef.current !== null) captchaWindow().grecaptcha?.reset(widgetRef.current);
+      } catch { /* Keep the submission outcome if the widget reset fails. */ }
     }
   };
 
@@ -104,7 +112,7 @@ export default function ContactForm({ locale }: ContactFormProps) {
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-400">{t(locale, 'contact_form_intro')}</p>
       </div>
 
-      <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-6">
+      <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-6" aria-busy={isSubmitting}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="flex flex-col gap-2">
             <label htmlFor="name" className={labelClass}>
@@ -136,11 +144,18 @@ export default function ContactForm({ locale }: ContactFormProps) {
 
         <div className="mt-2 opacity-90">
           <div
-            className="g-recaptcha"
-            data-sitekey="6LfH2-oiAAAAAO8yeRMVEugLESUVWaUe8qUtTNCn"
-            data-theme="dark"
+            ref={captchaRef}
             aria-label="Please complete the reCAPTCHA to verify that you are not a robot."
           />
+        </div>
+
+        <div aria-live="polite" aria-atomic="true">
+          {status && (
+            <p className={status === 'success' ? 'text-emerald-300' : 'text-red-300'}>
+              {t(locale, status === 'success' ? 'contact_form_success_text' : status === 'verify' ? 'contact_form_recaptcha_err' : 'contact_form_error_text')}
+              {status !== 'success' && <> <a className="underline" href="mailto:juanjose@ingomez.com">juanjose@ingomez.com</a></>}
+            </p>
+          )}
         </div>
 
         <button
